@@ -1,9 +1,9 @@
 package view
 
-import app.Styles
 import javafx.scene.control.TabPane
 import tornadofx.*
-import view.tabs.SimulationTabView
+import view.support.CoreView
+import view.tabs.Tab1Subview
 
 class MainView : CoreView("Agentovo orientovaná simulácia") {
 
@@ -14,7 +14,7 @@ class MainView : CoreView("Agentovo orientovaná simulácia") {
 
         tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
 
-        tab(SimulationTabView::class)
+        tab(Tab1Subview::class)
     }
 
 }

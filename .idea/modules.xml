@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dis_3_final.iml" filepath="$PROJECT_DIR$/.idea/modules/dis_3_final.iml" group="dis_3_final" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dis_3_final_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dis_3_final_main.iml" group="dis_3_final" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dis_3_final_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dis_3_final_test.iml" group="dis_3_final" />
+    </modules>
+  </component>
+</project>

@@ -3,22 +3,17 @@ package aba.simulation
 import OSPABA.*
 import aba.agents.*
 
-class MySimulation : Simulation() {
+class BusHockeySimulation : Simulation() {
 
     private var _agentModel: AgentModel? = null
-
     private var _agentStation: AgentStation? = null
-
     private var _agentBusStop: AgentBusStop? = null
-
     private var _agentTransport: AgentTransport? = null
-
     private var _agentBus: AgentBus? = null
-
     private var _agentEnviroment: AgentEnviroment? = null
 
     init {
-        init()
+        prepareAgents()
     }
 
     public override fun prepareSimulation() {
@@ -42,13 +37,13 @@ class MySimulation : Simulation() {
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"
-    private fun init() {
+    private fun prepareAgents() {
         setAgentModel(AgentModel(Id.agentModel, this, null))
-        setAgentStation(AgentStation(Id.agentStation, this, agentModel()))
-        setAgentBusStop(AgentBusStop(Id.agentBusStop, this, agentStation()))
-        setAgentTransport(AgentTransport(Id.agentTransport, this, agentStation()))
-        setAgentBus(AgentBus(Id.agentBus, this, agentStation()))
-        setAgentEnviroment(AgentEnviroment(Id.agentEnviroment, this, agentModel()))
+        setAgentStation(AgentStation(Id.agentStation, this, agentModel()!!))
+        setAgentBusStop(AgentBusStop(Id.agentBusStop, this, agentStation()!!))
+        setAgentTransport(AgentTransport(Id.agentTransport, this, agentStation()!!))
+        setAgentBus(AgentBus(Id.agentBus, this, agentStation()!!))
+        setAgentEnviroment(AgentEnviroment(Id.agentEnviroment, this, agentModel()!!))
     }
 
     fun agentModel(): AgentModel? {

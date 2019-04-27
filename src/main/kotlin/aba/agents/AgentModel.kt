@@ -7,7 +7,7 @@ import aba.continualAssistants.*
 import aba.instantAssistants.*
 
 //meta! id="2"
-class AgentModel(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
+class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, parent) {
     init {
         init()
     }

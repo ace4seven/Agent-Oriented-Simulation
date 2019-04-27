@@ -20,8 +20,19 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
     //meta! userInfo="Generated code: do not modify", tag="begin"
     private fun init() {
         ManagerModel(Id.managerModel, mySim(), this)
+
         addOwnMessage(Mc.travelingProcess)
         addOwnMessage(Mc.travelerArrival)
     }
     //meta! tag="end"
+
+    fun startSimulation() {
+        val message = AppMessage(mySim())
+
+        message.setCode(Mc.initVehicles)
+        message.setAddressee(mySim().findAgent(Id.agentStation))
+
+        manager().notice(message)
+    }
+
 }

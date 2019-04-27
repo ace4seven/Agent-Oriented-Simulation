@@ -20,7 +20,7 @@ enum class BusStop {
     C_A, C_B, C_C, C_D, C_E, C_F, C_G,
     A_K1, A_K2, A_K3,
     B_K1, B_K2, B_K3,
-    C_K1, C_K2, C_K3;
+    C_K1, C_K2, C_K3, STATION;
 
     fun capacity(): Int {
         when(this) {
@@ -55,6 +55,7 @@ enum class BusStop {
             C_E -> return 132
             C_F -> return 128
             C_G -> return 70
+            STATION -> return 0
 
             A_K1, B_K1, C_K1 -> return 260
             A_K2, B_K2, C_K2 -> return 210
@@ -107,6 +108,8 @@ enum class BusStop {
             C_K1 -> return 246.0
             C_K2 -> return 360.0
             C_K3 -> return 0.0
+
+            STATION -> return 0.0
         }
     }
 

@@ -4,10 +4,13 @@ import OSPABA.*
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
+import aba.entities.Vehicle
 import aba.instantAssistants.*
 
 //meta! id="47"
 class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
+
+    var vehicles = mutableListOf<Vehicle>()
 
     init {
         init()
@@ -24,10 +27,11 @@ class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, par
         PrepareForStartCA(Id.prepareForStartCA, mySim(), this)
 
         addOwnMessage(Mc.prepareForStart)
+        addOwnMessage(Mc.finishInitVehicle)
     }
     //meta! tag="end"
 
-    fun initBusSchedule() {
-
+    fun addVehicle(vehicle: Vehicle) {
+        vehicles.add(vehicle)
     }
 }

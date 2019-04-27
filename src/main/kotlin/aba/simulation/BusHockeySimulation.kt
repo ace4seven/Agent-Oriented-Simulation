@@ -2,6 +2,7 @@ package aba.simulation
 
 import OSPABA.*
 import aba.agents.*
+import aba.entities.Vehicle
 
 class BusHockeySimulation : Simulation() {
 
@@ -18,7 +19,6 @@ class BusHockeySimulation : Simulation() {
 
     public override fun prepareSimulation() {
         super.prepareSimulation()
-
         // Create global statistcis
     }
 
@@ -26,6 +26,7 @@ class BusHockeySimulation : Simulation() {
         super.prepareReplication()
 
         // Reset entities, queues, local statistics, etc...
+        agentModel()?.startSimulation()
     }
 
     public override fun replicationFinished() {
@@ -96,4 +97,9 @@ class BusHockeySimulation : Simulation() {
         _agentEnviroment = agentEnviroment
     }
     //meta! tag="end"
+
+    fun addVehicle(vehicle: Vehicle) {
+        _agentBus?.addVehicle(vehicle)
+    }
+
 }

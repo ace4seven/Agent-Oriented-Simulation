@@ -25,10 +25,18 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     fun processWaitForBus(message: MessageForm) {}
 
     //meta! sender="AgentStation", id="31", type="Request"
-    fun processBusArrival(message: MessageForm) {}
+    fun processBusArrival(message: MessageForm) {
+        val msg = message as AppMessage
+
+        // TODO: Nastup cestujucich
+        println(msg.vehicle?.scheduler?.getNextStop())
+        response(msg)
+    }
 
     //meta! sender="IncomeIntoBusCA", id="58", type="Finish"
-    fun processFinish(message: MessageForm) {}
+    fun processFinish(message: MessageForm) {
+
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {

@@ -22,10 +22,18 @@ class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id,
     }
 
     //meta! sender="TravellingCA", id="55", type="Finish"
-    fun processFinish(message: MessageForm) {}
+    fun processFinish(message: MessageForm) {
+        message.setCode(Mc.busMoveStart)
+
+        response(message)
+    }
 
     //meta! sender="AgentStation", id="33", type="Request"
-    fun processBusMoveStart(message: MessageForm) {}
+    fun processBusMoveStart(message: MessageForm) {
+        message.setAddressee(myAgent().findAssistant(Id.travellingCA))
+
+        startContinualAssistant(message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {

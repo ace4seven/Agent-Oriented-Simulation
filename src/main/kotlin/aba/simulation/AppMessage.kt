@@ -4,7 +4,7 @@ import OSPABA.*
 import aba.entities.Vehicle
 
 class AppMessage : MessageForm {
-    
+
     var vehicle: Vehicle? = null
 
     constructor(sim: Simulation) : super(sim) {}

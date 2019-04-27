@@ -21,7 +21,9 @@ class AgentTransport(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySi
     private fun init() {
         ManagerTransport(Id.managerTransport, mySim(), this)
         TravellingCA(Id.travellingCA, mySim(), this)
+
         addOwnMessage(Mc.busMoveStart)
+        addOwnMessage(Mc.finishTravelStop)
     }
     //meta! tag="end"
 }

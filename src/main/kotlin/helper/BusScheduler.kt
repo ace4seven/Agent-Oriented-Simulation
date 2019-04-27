@@ -15,6 +15,14 @@ class BusScheduler(val busLink: BusLink) {
         }
     }
 
+    fun isFinalDestination(): Boolean {
+        when(nextStop) {
+            BusStop.STATION -> return true
+        }
+
+        return false
+    }
+
     fun getNextStop(): BusStop? {
         return nextStop
     }
@@ -40,7 +48,8 @@ class BusScheduler(val busLink: BusLink) {
             BusStop.C_D -> nextStop = BusStop.C_E
             BusStop.C_E -> nextStop = BusStop.C_F
             BusStop.C_F -> nextStop = BusStop.C_G
-            BusStop.C_G -> nextStop = BusStop.C_A
+            BusStop.C_G -> nextStop = BusStop.STATION
+            BusStop.STATION -> nextStop = BusStop.C_A
         }
     }
 
@@ -57,7 +66,8 @@ class BusScheduler(val busLink: BusLink) {
             BusStop.B_G -> nextStop = BusStop.B_H
             BusStop.B_H -> nextStop = BusStop.B_I
             BusStop.B_I -> nextStop = BusStop.B_J
-            BusStop.B_J -> nextStop = BusStop.B_A
+            BusStop.B_J -> nextStop = BusStop.STATION
+            BusStop.STATION -> nextStop = BusStop.B_A
         }
     }
 
@@ -76,7 +86,8 @@ class BusScheduler(val busLink: BusLink) {
             BusStop.A_I -> nextStop = BusStop.A_J
             BusStop.A_J -> nextStop = BusStop.A_K
             BusStop.A_K -> nextStop = BusStop.A_L
-            BusStop.A_L -> nextStop = BusStop.A_A
+            BusStop.A_L -> nextStop = BusStop.STATION
+            BusStop.STATION -> nextStop = BusStop.A_A
         }
     }
 

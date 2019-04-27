@@ -9,4 +9,5 @@ import tornadofx.*
 
 class AppController: CoreController() {
 
+
 }

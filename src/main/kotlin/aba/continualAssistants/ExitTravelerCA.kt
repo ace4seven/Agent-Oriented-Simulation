@@ -14,7 +14,10 @@ class ExitTravelerCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process
     }
 
     //meta! sender="AgentStation", id="66", type="Start"
-    fun processStart(message: MessageForm) {}
+    fun processStart(message: MessageForm) {
+        hold(10.0, message)
+        message.setCode(Mc.passengersFinishExit)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
@@ -23,10 +26,15 @@ class ExitTravelerCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process
         }
     }
 
+    fun processFinishExit(message: MessageForm) {
+        assistantFinished(message)
+    }
+
     //meta! userInfo="Generated code: do not modify", tag="begin"
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
+            Mc.passengersFinishExit -> processFinishExit(message)
 
             else -> processDefault(message)
         }

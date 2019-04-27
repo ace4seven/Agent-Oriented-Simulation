@@ -10,11 +10,24 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
 
     override fun prepareReplication() {
         super.prepareReplication()
-        // Setup component for the next replication
+
     }
 
     //meta! sender="AgentBus", id="50", type="Start"
-    fun processStart(message: MessageForm) {}
+    fun processStart(message: MessageForm) {
+        myAgent().vehicles.forEach {
+            val msgCopy: AppMessage = message.createCopy() as AppMessage
+            // TODO: Make some delay of busses
+            msgCopy.vehicle = it
+            msgCopy.setCode(Mc.finishInitVehicle)
+
+            hold(10.0, msgCopy)
+        }
+    }
+
+    fun processFinishInitVehicle(message: MessageForm) {
+        assistantFinished(message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
@@ -27,6 +40,7 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
+            Mc.finishInitVehicle -> processFinishInitVehicle(message)
 
             else -> processDefault(message)
         }

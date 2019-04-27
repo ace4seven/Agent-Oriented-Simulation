@@ -50,5 +50,5 @@ enum class TravelStrategyType {
 
 abstract class Vehicle(val link: BusLink, val type: BusType, val strategy: TravelStrategyType, sim: BusHockeySimulation): Entity(sim) {
 
-    private val scheduler = BusScheduler(link)
+    val scheduler = BusScheduler(link)
 }

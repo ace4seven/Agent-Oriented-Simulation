@@ -23,6 +23,7 @@ class Id : IdList() {
         val travellingCA = 1003
         val incomeIntoBusCA = 1004
         val checkStationAction = 1005
+        val returnBusCA = 1006
     }
     //meta! tag="end"
 }

@@ -22,10 +22,19 @@ class ManagerBus(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim
     }
 
     //meta! sender="PrepareForStartCA", id="50", type="Finish"
-    fun processFinish(message: MessageForm) {}
+    fun processFinish(message: MessageForm) {
+        println("Vozidlo zacina vyrazat na svoju trasu")
+
+        message.setCode(Mc.prepareForStart)
+        response(message)
+    }
 
     //meta! sender="AgentStation", id="51", type="Request"
-    fun processPrepareForStart(message: MessageForm) {}
+    fun processPrepareForStart(message: MessageForm) {
+        message.setAddressee(myAgent().findAssistant(Id.prepareForStartCA))
+        println("Zapinam kontinualneho asistenta")
+        startContinualAssistant(message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
@@ -40,7 +49,6 @@ class ManagerBus(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.prepareForStart -> processPrepareForStart(message)
-
             Mc.finish -> processFinish(message)
 
             else -> processDefault(message)

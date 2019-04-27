@@ -8,6 +8,7 @@ import aba.instantAssistants.*
 
 //meta! id="47"
 class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
+
     init {
         init()
     }
@@ -21,7 +22,12 @@ class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, par
     private fun init() {
         ManagerBus(Id.managerBus, mySim(), this)
         PrepareForStartCA(Id.prepareForStartCA, mySim(), this)
+
         addOwnMessage(Mc.prepareForStart)
     }
     //meta! tag="end"
+
+    fun initBusSchedule() {
+
+    }
 }

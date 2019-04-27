@@ -11,8 +11,12 @@ class BusScheduler(val busLink: BusLink) {
         when(busLink) {
             BusLink.LINK_A -> nextStop = BusStop.A_A
             BusLink.LINK_B -> nextStop = BusStop.B_A
-            BusLink.LINK_B -> nextStop = BusStop.B_A
+            BusLink.LINK_C -> nextStop = BusStop.C_A
         }
+    }
+
+    fun getNextStop(): BusStop? {
+        return nextStop
     }
 
     fun getDuration(): Double? {
@@ -23,7 +27,7 @@ class BusScheduler(val busLink: BusLink) {
         when(busLink) {
             BusLink.LINK_A -> progressALink()
             BusLink.LINK_B -> progressBLink()
-            BusLink.LINK_B -> progressALink()
+            BusLink.LINK_C -> progressCLink()
         }
     }
 

@@ -18,11 +18,13 @@ class BusHockeySimulation : Simulation() {
 
     public override fun prepareSimulation() {
         super.prepareSimulation()
+
         // Create global statistcis
     }
 
     public override fun prepareReplication() {
         super.prepareReplication()
+
         // Reset entities, queues, local statistics, etc...
     }
 

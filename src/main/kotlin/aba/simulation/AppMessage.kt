@@ -1,21 +1,26 @@
 package aba.simulation
 
 import OSPABA.*
+import aba.entities.Vehicle
 
-class MyMessage : MessageForm {
+class AppMessage : MessageForm {
+    
+    var vehicle: Vehicle? = null
+
     constructor(sim: Simulation) : super(sim) {}
 
-    constructor(original: MyMessage) : super(original) {
+    constructor(original: AppMessage) : super(original) {
         // copy() is called in superclass
     }
 
     override fun createCopy(): MessageForm {
-        return MyMessage(this)
+        return AppMessage(this)
     }
 
     override fun copy(message: MessageForm) {
         super.copy(message)
-        val original = message as MyMessage
+        val original = message as AppMessage
         // Copy attributes
+        vehicle = original.vehicle
     }
 }

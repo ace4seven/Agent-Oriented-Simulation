@@ -3,8 +3,12 @@ package view.support
 import controller.AppController
 import javafx.collections.FXCollections
 import javafx.scene.control.ComboBox
+import javafx.scene.control.Label
 import javafx.scene.control.TableView
 import javafx.scene.control.TextField
+import javafx.scene.layout.HBox
+import javafx.scene.text.FontWeight
+import model.BusProgressCell
 import model.BusTableData
 import tornadofx.*
 
@@ -14,11 +18,20 @@ abstract class CoreView(title: String) : View(title) {
 
     protected val controller: AppController by inject()
 
+    protected var simulationTime: Label by singleAssign()
+
+    protected var busID = 1
+
+    protected val simulationActionsViewTab1: SimulationActionsView by inject()
+    protected val simulationActionsViewTab2: SimulationActionsView by inject()
+
     protected val busLinks = FXCollections.observableArrayList("Linka A", "Linka B","Linka C")
     protected val busType = FXCollections.observableArrayList("Štandartný", "Vylepšený")
     protected val busStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
 
     // TABLES
+
+    protected var busProgressTableView: TableView<BusProgressCell> by singleAssign()
 
     protected var linkATableView: TableView<BusTableData> by singleAssign()
     var linkATableViewDataSource= FXCollections.observableArrayList<BusTableData>()
@@ -50,18 +63,49 @@ abstract class CoreView(title: String) : View(title) {
 
         when(busLinkComboBox.value) {
             "Linka A" -> {
-                busTableData.id = linkATableViewDataSource.count() + 1
+                busTableData.id = busID
                 linkATableViewDataSource.add(busTableData)
             }
             "Linka B" -> {
-                busTableData.id = linkBTableViewDataSource.count() + 1
+                busTableData.id = busID
                 linkBTableViewDataSource.add(busTableData)
             }
             "Linka C" -> {
-                busTableData.id = linkCTableViewDataSource.count() + 1
+                busTableData.id = busID
                 linkCTableViewDataSource.add(busTableData)
             }
         }
+
+        busID += 1
+    }
+
+    fun simulationActions(): HBox {
+        return hbox {
+            simulationTime = label("11 : 00 : 00") {
+                style {
+                    fontWeight = FontWeight.BOLD
+                    fontSize = 30.px
+                }
+                vboxConstraints {
+                    marginTop = 50.0
+                    marginBottom = 10.0
+                    marginLeft = 30.0
+                }
+//                bind(controller.simulationTimeProperty)
+            }
+        }
+    }
+
+    fun startSimulationButtonPressed() {
+        controller.startSimulation()
+    }
+
+    fun stopSimulation() {
+        controller.stopSimulation()
+    }
+
+    fun pauseSimulation() {
+        controller.pauseSimulation()
     }
 
 }

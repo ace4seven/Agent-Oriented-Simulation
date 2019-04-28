@@ -44,5 +44,4 @@ class ExitTravelerCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process
     override fun myAgent(): AgentStation {
         return super.myAgent() as AgentStation
     }
-
 }

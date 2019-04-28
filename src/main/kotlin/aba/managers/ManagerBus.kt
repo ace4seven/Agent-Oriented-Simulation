@@ -32,7 +32,6 @@ class ManagerBus(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim
     //meta! sender="AgentStation", id="51", type="Request"
     fun processPrepareForStart(message: MessageForm) {
         message.setAddressee(myAgent().findAssistant(Id.prepareForStartCA))
-        println("Zapinam kontinualneho asistenta")
         startContinualAssistant(message)
     }
 

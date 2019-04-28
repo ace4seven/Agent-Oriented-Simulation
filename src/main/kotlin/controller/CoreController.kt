@@ -5,26 +5,30 @@ import OSPABA.SimState
 import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
 import javafx.beans.property.SimpleIntegerProperty
+import javafx.beans.property.SimpleStringProperty
+import javafx.collections.FXCollections
+import model.BusProgressCell
+import model.BusTableData
 import tornadofx.*
 
 /** Author: Bc. Juraj Macak **/
 
-abstract class CoreController: Controller(), ISimDelegate {
+abstract class CoreController: Controller() {
+
+    val timeOfOneReplication = 10800.0
 
     val numberOfReplicationsProperty = SimpleIntegerProperty()
     val numberOfReplications: Int by numberOfReplicationsProperty
 
-    fun test() {
-        val core = BusHockeySimulation()
-        core.registerDelegate(this)
-    }
+    val simulationTimeProperty = SimpleStringProperty("15 : 00 : 00")
+    var simulationTime: String by simulationTimeProperty
 
-    override fun refresh(core: Simulation?) {
+    var busProgressDataSource= FXCollections.observableArrayList<BusProgressCell>()
 
-    }
+    var simulationCore: BusHockeySimulation
 
-    override fun simStateChanged(p0: Simulation?, p1: SimState?) {
-
+    init {
+        simulationCore = BusHockeySimulation()
     }
 
 }

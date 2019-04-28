@@ -3,6 +3,8 @@ package aba.simulation
 import OSPABA.*
 import aba.agents.*
 import aba.entities.Vehicle
+import model.BusProgressCell
+import java.util.function.Consumer
 
 class BusHockeySimulation : Simulation() {
 
@@ -100,6 +102,22 @@ class BusHockeySimulation : Simulation() {
 
     fun addVehicle(vehicle: Vehicle) {
         _agentBus?.addVehicle(vehicle)
+    }
+
+    fun getVehiclesDatasource(): List<BusProgressCell> {
+        val result = mutableListOf<BusProgressCell>()
+
+        agentBus()?.vehicles?.forEach {
+            val cell = BusProgressCell()
+            cell.id = it.id
+            cell.activity = it.currentActivity
+            cell.currentStop = "${it.getActualStop()} -> ${it.getNextStop()} (${it.getRouteProgress()})"
+            cell.link = it.link.name
+            cell.freeCapacity = "0"
+            result.add(cell)
+        }
+
+        return result
     }
 
 }

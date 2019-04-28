@@ -1,8 +1,10 @@
 package view.tabs
 
+import javafx.scene.text.FontWeight
 import model.BusTableData
 import tornadofx.*
 import view.support.CoreView
+import view.support.SimulationActionsView
 
 /** Author: Bc. Juraj Macak **/
 
@@ -131,6 +133,62 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                     column("Stratégia", BusTableData::strategy) {
                         minWidth = 140.0
                     }
+                }
+            }
+        }
+
+        vbox {
+            hbox {
+                simulationTime = label("11 : 00 : 00") {
+                    style {
+                        fontWeight = FontWeight.BOLD
+                        fontSize = 30.px
+                    }
+                    hboxConstraints {
+                        marginTop = 50.0
+                        marginBottom = 10.0
+                        marginLeft = 10.0
+                    }
+                bind(controller.simulationTimeProperty)
+                }
+
+                slider {
+                    hboxConstraints {
+                        marginTop = 60.0
+                        marginBottom = 10.0
+                        marginLeft = 10.0
+                    }
+
+                    minWidth = 700.0
+                }
+            }
+            hbox {
+                button("Start") {
+                    hboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    action { startSimulationButtonPressed() }
+                }
+                button("Pauza") {
+                    hboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    action { pauseSimulation() }
+                }
+                button("Krok") {
+                    hboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                }
+                button("Stop") {
+                    hboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    action { stopSimulation() }
                 }
             }
         }

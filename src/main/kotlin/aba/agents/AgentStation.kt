@@ -4,7 +4,6 @@ import OSPABA.*
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
-import aba.entities.Vehicle
 import aba.instantAssistants.*
 import continualAssistants.ReturnBusCA
 

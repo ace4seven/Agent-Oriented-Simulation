@@ -3,8 +3,7 @@ package aba.managers
 import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
-import aba.continualAssistants.*
-import aba.instantAssistants.*
+import helper.Messages
 
 //meta! id="5"
 class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -29,7 +28,8 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         val msg = message as AppMessage
 
         // TODO: Nastup cestujucich
-        println(msg.vehicle?.scheduler?.getNextStop())
+        msg.vehicle?.currentActivity = Messages.busPassengersIncome
+        println(msg.vehicle?.scheduler?.getActualStop())
         response(msg)
     }
 

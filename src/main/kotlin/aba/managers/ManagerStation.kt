@@ -5,6 +5,7 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.Messages
 
 //meta! id="3"
 class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -38,7 +39,8 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
             Id.returnBusCA -> {
                 val msg = message as AppMessage
 
-                msg.vehicle?.scheduler?.moveToAnotherStop()
+                msg.vehicle?.prepareToMoveNextStop()
+
                 msg.setCode(Mc.busArrival)
                 msg.setAddressee(mySim().findAgent(Id.agentBusStop))
 
@@ -46,7 +48,11 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
             }
             Id.exitTravelerCA -> {
                 message.setAddressee(myAgent().findAssistant(Id.returnBusCA))
-                startContinualAssistant(message)
+
+                val msg = message as AppMessage
+                msg.vehicle?.currentActivity = Messages.busReturn
+
+                startContinualAssistant(msg)
             }
         }
     }
@@ -59,9 +65,12 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         if (message.vehicle!!.scheduler.isFinalDestination()) {
             message.setAddressee(Id.exitTravelerCA)
 
-            startContinualAssistant(message)
+            val msg = message as AppMessage
+            msg.vehicle?.currentActivity = Messages.busPassengersOutcome
+
+            startContinualAssistant(msg)
         } else {
-            message.vehicle?.scheduler?.moveToAnotherStop()
+            message.vehicle?.prepareToMoveNextStop()
             message.setCode(Mc.busArrival)
             message.setAddressee(mySim().findAgent(Id.agentBusStop))
 

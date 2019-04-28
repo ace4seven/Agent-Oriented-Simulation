@@ -34,4 +34,5 @@ class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, par
     fun addVehicle(vehicle: Vehicle) {
         vehicles.add(vehicle)
     }
+
 }

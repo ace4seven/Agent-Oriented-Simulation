@@ -5,6 +5,6 @@ import helper.BusLink
 
 /** Author: Bc. Juraj Macak **/
 
-class MicroBusEntity(link: BusLink, type: BusType, strategy: TravelStrategyType, sim: BusHockeySimulation): Vehicle(link, type, strategy, sim) {
+class MicroBusEntity(id: Int, link: BusLink, type: BusType, strategy: TravelStrategyType, sim: BusHockeySimulation): Vehicle(id, link, type, strategy, sim) {
 
 }

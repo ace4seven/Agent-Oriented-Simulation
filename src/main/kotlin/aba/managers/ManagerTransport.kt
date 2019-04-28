@@ -5,6 +5,7 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.Messages
 
 //meta! id="6"
 class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -32,7 +33,10 @@ class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id,
     fun processBusMoveStart(message: MessageForm) {
         message.setAddressee(myAgent().findAssistant(Id.travellingCA))
 
-        startContinualAssistant(message)
+        val msg = message as AppMessage
+        msg.vehicle?.currentActivity = Messages.busTravelling
+
+        startContinualAssistant(msg)
     }
 
     //meta! userInfo="Process messages defined in code", id="0"

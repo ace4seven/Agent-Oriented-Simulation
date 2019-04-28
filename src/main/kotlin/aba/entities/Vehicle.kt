@@ -49,7 +49,12 @@ enum class TravelStrategyType {
     }
 }
 
-abstract class Vehicle(val id: Int, val link: BusLink, val type: BusType, val strategy: TravelStrategyType, val sim: BusHockeySimulation): Entity(sim) {
+abstract class Vehicle(val id: Int,
+                       val link: BusLink,
+                       val type: BusType,
+                       val strategy: TravelStrategyType,
+                       val deployTime: Double,
+                       val sim: BusHockeySimulation): Entity(sim) {
 
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
@@ -58,6 +63,14 @@ abstract class Vehicle(val id: Int, val link: BusLink, val type: BusType, val st
 
     fun getActualStop(): String {
         return scheduler.getActualStop()!!.name
+    }
+
+    fun getNumberOfPassengers(): Int {
+        return passengers.count()
+    }
+
+    fun getFreeCapacity(): Int {
+        return type.capacity() - passengers.count()
     }
 
     fun getRouteProgress(): String {
@@ -70,6 +83,10 @@ abstract class Vehicle(val id: Int, val link: BusLink, val type: BusType, val st
 
     fun prepareToMoveNextStop() {
         scheduler.prepareToMoveNextStop(sim.currentTime())
+    }
+
+    fun initStartStats() {
+        scheduler.initTransportStats(mySim().currentTime())
     }
 
     fun getNextStop(): String {

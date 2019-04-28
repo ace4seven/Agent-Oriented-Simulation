@@ -50,6 +50,10 @@ open class Tab2Subview : CoreView("Priebeh simulácie") {
                 column("Voľná kapacita", BusProgressCell::freeCapacity) {
                     minWidth = 100.0
                 }
+
+                column("Počet cestujúcich", BusProgressCell::numbOfTravelers) {
+                    minWidth = 100.0
+                }
             }
 
             hbox {

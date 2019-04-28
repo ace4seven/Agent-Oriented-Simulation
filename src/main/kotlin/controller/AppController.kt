@@ -50,7 +50,7 @@ class AppController: CoreController(), ISimDelegate {
         if (simulationCore.isPaused) {
             simulationCore.resumeSimulation()
         } else {
-//            simulationCore.setSimSpeed(100.0, 0.1)
+            simulationCore.setSimSpeed(5.0, 0.1)
             testBusses()
             val thread = object: Thread() {
                 override fun run() {
@@ -78,14 +78,14 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     private fun testBusses() {
-        simulationCore.addVehicle(BusEntity(1, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, simulationCore))
-        simulationCore.addVehicle(BusEntity(2, BusLink.LINK_B, BusType.SMALL, TravelStrategyType.WAIT, simulationCore))
-        simulationCore.addVehicle(BusEntity(3, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, simulationCore))
+        simulationCore.addVehicle(BusEntity(1, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
+        simulationCore.addVehicle(BusEntity(2, BusLink.LINK_B, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
+        simulationCore.addVehicle(BusEntity(3, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
 
-        simulationCore.addVehicle(BusEntity(4, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, simulationCore))
-        simulationCore.addVehicle(BusEntity(5, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, simulationCore))
-        simulationCore.addVehicle(BusEntity(6, BusLink.LINK_B, BusType.MICROBUS, TravelStrategyType.NO_WAIT, simulationCore))
-        simulationCore.addVehicle(BusEntity(7, BusLink.LINK_C, BusType.MICROBUS, TravelStrategyType.WAIT, simulationCore))
+        simulationCore.addVehicle(BusEntity(4, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, 3000.0, simulationCore))
+        simulationCore.addVehicle(BusEntity(5, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, 4000.0, simulationCore))
+        simulationCore.addVehicle(BusEntity(6, BusLink.LINK_B, BusType.MICROBUS, TravelStrategyType.NO_WAIT, 2000.0, simulationCore))
+        simulationCore.addVehicle(BusEntity(7, BusLink.LINK_C, BusType.MICROBUS, TravelStrategyType.WAIT, 7000.0, simulationCore))
     }
 
 

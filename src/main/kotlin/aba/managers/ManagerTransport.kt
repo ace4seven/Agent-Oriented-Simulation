@@ -26,6 +26,9 @@ class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id,
     fun processFinish(message: MessageForm) {
         message.setCode(Mc.busMoveStart)
 
+        val msg = message as AppMessage
+        msg.vehicle?.initStartStats()
+
         response(message)
     }
 

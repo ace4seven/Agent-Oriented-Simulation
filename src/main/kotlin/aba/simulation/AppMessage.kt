@@ -32,4 +32,5 @@ class AppMessage : MessageForm {
         passengerIncomeStop = original.passengerIncomeStop
         isFirstTraveller = original.isFirstTraveller
     }
+
 }

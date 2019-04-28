@@ -147,6 +147,11 @@ class BusScheduler(val busLink: BusLink) {
         throw Exception("Error connecting BUS STOP link in scheduler")
     }
 
+    fun initTransportStats(inTime: Double) {
+        startTime = inTime
+        endTime = inTime + currentStop!!.duration()
+    }
+
     fun prepareToMoveNextStop(inTime: Double) {
         moveToAnotherStop()
 

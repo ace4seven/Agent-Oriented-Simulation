@@ -1,5 +1,7 @@
 package helper
 
+import java.util.*
+
 /** Author: Bc. Juraj Macak **/
 
 class Constants {
@@ -13,6 +15,8 @@ class Constants {
                 BusStop.B_A, BusStop.B_B, BusStop.B_C, BusStop.B_D, BusStop.B_E, BusStop.B_F, BusStop.B_G, BusStop.B_H, BusStop.B_I, BusStop.B_J,
                 BusStop.C_A, BusStop.C_B, BusStop.C_C, BusStop.C_D, BusStop.C_E, BusStop.C_F, BusStop.C_G,
                 BusStop.K1, BusStop.K2, BusStop.K3)
+
+        val randomSeader = Random()
     }
 
 }

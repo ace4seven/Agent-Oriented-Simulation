@@ -20,35 +20,22 @@ class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
         msg.setCode(Mc.newPassenger)
         hold(msg.passengerIncomeStop!!.generateInterval().lambda + msg.passengerIncomeStop!!.generateInterval().startGenerateTime(), msg)
-
-//        passenger.passengerCameInBusStop()
-//        msgCopy.passenger = passenger
-//
-//        if (msg!!.passengerIncomeStop!!.generateInterval()!!.stopGenerateTime() > mySim().currentTime()) {
-//            assistantFinished(message)
-//        } else {
-//            msgCopy.setCode(Mc.newPassenger)
-//            val passenger = PassengerEntity(msgCopy.passengerIncomeStop!!, mySim())
-//
-//            passenger.passengerCameInBusStop()
-//            msgCopy.passenger = passenger
-//
-//            if (msgCopy.isFirstTraveller) {
-//                msgCopy.isFirstTraveller = false
-//                hold(msgCopy.passengerIncomeStop!!.generateInterval().lambda + msgCopy.passengerIncomeStop!!.generateInterval().startGenerateTime(), msgCopy)
-//            } else {
-//                hold(msgCopy.passengerIncomeStop!!.generateInterval().lambda, msgCopy)
-//            }
-//        }
-
     }
 
     fun processNewPassenger(message: MessageForm) {
         val msg = message as AppMessage
         val cpyMsg = msg.createCopy()
 
-        if (msg!!.passengerIncomeStop!!.generateInterval()!!.stopGenerateTime() > mySim().currentTime()) {
-            hold(msg.passengerIncomeStop!!.generateInterval().lambda, cpyMsg)
+        if(myAgent().incomeChecker.containsKey(msg.passengerIncomeStop!!.name)) {
+            myAgent().incomeChecker[msg.passengerIncomeStop!!.name] = myAgent().incomeChecker[msg.passengerIncomeStop!!.name]!! + 1
+        } else {
+            myAgent().incomeChecker[msg.passengerIncomeStop!!.name] = 1
+        }
+
+        if (msg.passengerIncomeStop!!.generateInterval().stopGenerateTime() > mySim().currentTime()) {
+            if (myAgent().incomeChecker[msg.passengerIncomeStop!!.name]!! < msg.passengerIncomeStop!!.capacity()) {
+                hold(myAgent().arrivalGenerator[msg.passengerIncomeStop!!.name]!!.sample(), cpyMsg)
+            }
         }
 
         val passenger = PassengerEntity(msg.passengerIncomeStop!!, mySim())

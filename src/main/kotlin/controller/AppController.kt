@@ -50,7 +50,7 @@ class AppController: CoreController(), ISimDelegate {
         if (simulationCore.isPaused) {
             simulationCore.resumeSimulation()
         } else {
-            simulationCore.setSimSpeed(100.0, 0.1)
+//            simulationCore.setSimSpeed(100.0, 0.1)
             testBusses()
             val thread = object: Thread() {
                 override fun run() {

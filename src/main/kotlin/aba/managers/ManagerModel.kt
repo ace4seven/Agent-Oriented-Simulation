@@ -25,7 +25,12 @@ class ManagerModel(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, myS
     fun processTravelingProcess(message: MessageForm) {}
 
     //meta! sender="AgentEnviroment", id="37", type="Notice"
-    fun processTravelerArrival(message: MessageForm) {}
+    fun processTravelerArrival(message: MessageForm) {
+        message.setCode(Mc.waitForBus)
+        message.setAddressee(Id.agentBusStop)
+
+        notice(message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {

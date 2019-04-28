@@ -35,4 +35,9 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
         addOwnMessage(Mc.busArrival)
     }
     //meta! tag="end"
+
+    fun getBusStopAdministration(): BusStopAdministration {
+        return busStopAdministration!!
+    }
+
 }

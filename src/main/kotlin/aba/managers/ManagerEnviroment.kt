@@ -5,6 +5,8 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.Constants
+import tornadofx.*
 
 //meta! id="1"
 class ManagerEnviroment(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -25,13 +27,25 @@ class ManagerEnviroment(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id
     fun processTravellerExit(message: MessageForm) {}
 
     //meta! sender="IncomeScheduler", id="44", type="Finish"
-    fun processFinish(message: MessageForm) {}
+    fun processFinish(message: MessageForm) {
+        message.setCode(Mc.travelerArrival)
+        message.setAddressee(Id.agentModel)
+
+        notice(message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
         when (message.code()) {
 
         }
+    }
+
+    fun processInitPassengers(message: MessageForm) {
+        // Príprava na inicializáciu
+
+        message.setAddressee(myAgent().findAssistant(Id.incomeScheduler))
+        startContinualAssistant(message)
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"
@@ -42,6 +56,7 @@ class ManagerEnviroment(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id
             Mc.finish -> processFinish(message)
 
             Mc.travellerExit -> processTravellerExit(message)
+            Mc.initPassengers -> processInitPassengers(message)
 
             else -> processDefault(message)
         }

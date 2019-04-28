@@ -111,6 +111,7 @@ class BusScheduler(val busLink: BusLink) {
             BusStop.A_I -> return BusStop.A_J
             BusStop.A_J -> return BusStop.A_K
             BusStop.A_K -> return BusStop.A_L
+            BusStop.A_L -> return BusStop.STATION
 
             BusStop.B_A -> return BusStop.B_B
             BusStop.B_B -> return BusStop.B_C
@@ -137,8 +138,8 @@ class BusScheduler(val busLink: BusLink) {
             BusStop.STATION -> {
                 when(busLink) {
                     BusLink.LINK_A -> return BusStop.A_A
-                    BusLink.LINK_A -> return BusStop.B_A
-                    BusLink.LINK_A -> return BusStop.C_A
+                    BusLink.LINK_B -> return BusStop.B_A
+                    BusLink.LINK_C -> return BusStop.C_A
                 }
             }
         }

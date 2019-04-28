@@ -8,6 +8,7 @@ import helper.BusStop
 
 /** Author: Bc. Juraj Macak **/
 
+
 class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     private var waitingPassengersQueue = SimQueue<PassengerEntity>()
@@ -16,6 +17,10 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
         passenger.passengerCameInBusStop()
 
         waitingPassengersQueue.add(passenger)
+    }
+
+    fun getWaitingPassengersQueue(): SimQueue<PassengerEntity> {
+        return waitingPassengersQueue
     }
 
 }

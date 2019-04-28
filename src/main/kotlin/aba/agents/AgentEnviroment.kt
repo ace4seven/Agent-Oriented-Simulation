@@ -5,6 +5,7 @@ import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.BusStop
 
 //meta! id="1"
 class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
@@ -22,6 +23,8 @@ class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, myS
         ManagerEnviroment(Id.managerEnviroment, mySim(), this)
         IncomeScheduler(Id.incomeScheduler, mySim(), this)
         addOwnMessage(Mc.travellerExit)
+        addOwnMessage(Mc.initPassengers)
+        addOwnMessage(Mc.newPassenger)
     }
     //meta! tag="end"
 }

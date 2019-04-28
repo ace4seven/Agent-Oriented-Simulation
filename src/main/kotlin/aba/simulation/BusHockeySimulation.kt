@@ -39,6 +39,10 @@ class BusHockeySimulation : Simulation() {
     public override fun simulationFinished() {
         // Dysplay simulation results
         super.simulationFinished()
+
+        agentBusStop()!!.getBusStopAdministration().busStops.forEach {
+            println("${it.key} -- ${it.value.getWaitingPassengersQueue().count()}")
+        }
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

@@ -39,6 +39,10 @@ class BusHockeySimulation : Simulation() {
     public override fun simulationFinished() {
         // Dysplay simulation results
         super.simulationFinished()
+
+        agentBusStop()!!.getBusStopAdministration().busStops.forEach {
+            println("${it.key} -- ${it.value.getWaitingPassengersQueue().count()}")
+        }
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"
@@ -113,7 +117,8 @@ class BusHockeySimulation : Simulation() {
             cell.activity = it.currentActivity
             cell.currentStop = "${it.getActualStop()} -> ${it.getNextStop()} (${it.getRouteProgress()})"
             cell.link = it.link.name
-            cell.freeCapacity = "0"
+            cell.freeCapacity = "${it.getFreeCapacity()}"
+            cell.numbOfTravelers = "${it.getNumberOfPassengers()}"
             result.add(cell)
         }
 

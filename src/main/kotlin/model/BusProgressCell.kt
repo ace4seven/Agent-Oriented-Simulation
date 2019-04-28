@@ -11,5 +11,6 @@ class BusProgressCell {
     var currentStop: String by property<String>()
     var activity: String by property<String>()
     var freeCapacity: String by property<String>()
+    var numbOfTravelers: String by property<String>()
 
 }

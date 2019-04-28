@@ -17,11 +17,11 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
     fun processStart(message: MessageForm) {
         myAgent().vehicles.forEach {
             val msgCopy: AppMessage = message.createCopy() as AppMessage
-            // TODO: Make some delay of busses
+
             msgCopy.vehicle = it
             msgCopy.setCode(Mc.finishInitVehicle)
 
-            hold(10.0, msgCopy)
+            hold(it.deployTime, msgCopy)
         }
     }
 

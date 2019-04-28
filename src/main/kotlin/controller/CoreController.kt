@@ -4,6 +4,7 @@ import OSPABA.ISimDelegate
 import OSPABA.SimState
 import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
+import helper.Constants
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
@@ -15,7 +16,7 @@ import tornadofx.*
 
 abstract class CoreController: Controller() {
 
-    val timeOfOneReplication = 10800.0
+    val timeOfOneReplication = Constants.simulationTime
 
     val numberOfReplicationsProperty = SimpleIntegerProperty()
     val numberOfReplications: Int by numberOfReplicationsProperty

@@ -23,7 +23,7 @@ class ManagerBus(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim
 
     //meta! sender="PrepareForStartCA", id="50", type="Finish"
     fun processFinish(message: MessageForm) {
-        println("Vozidlo zacina vyrazat na svoju trasu")
+
 
         message.setCode(Mc.prepareForStart)
         response(message)

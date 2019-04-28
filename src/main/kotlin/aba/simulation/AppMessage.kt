@@ -1,11 +1,17 @@
 package aba.simulation
 
 import OSPABA.*
+import aba.entities.PassengerEntity
 import aba.entities.Vehicle
+import helper.BusStop
 
 class AppMessage : MessageForm {
 
     var vehicle: Vehicle? = null
+    var passenger: PassengerEntity? = null
+    var passengerIncomeStop: BusStop? = null
+
+    var isFirstTraveller = true
 
     constructor(sim: Simulation) : super(sim) {}
 
@@ -22,5 +28,9 @@ class AppMessage : MessageForm {
         val original = message as AppMessage
         // Copy attributes
         vehicle = original.vehicle
+        passenger = original.passenger
+        passengerIncomeStop = original.passengerIncomeStop
+        isFirstTraveller = original.isFirstTraveller
     }
+
 }

@@ -5,6 +5,7 @@ import OSPABA.SimState
 import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
 import helper.Constants
+import helper.FileManager
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
@@ -27,6 +28,8 @@ abstract class CoreController: Controller() {
     var busProgressDataSource= FXCollections.observableArrayList<BusProgressCell>()
 
     var simulationCore: BusHockeySimulation
+
+    val fileManager: FileManager = FileManager()
 
     init {
         simulationCore = BusHockeySimulation()

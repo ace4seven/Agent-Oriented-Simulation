@@ -8,7 +8,7 @@ import java.lang.Exception
 
 /** Author: Bc. Juraj Macak **/
 
-class PassengerEntity(val type: BusStop, val sim: Simulation): Entity(sim)  {
+class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Entity(sim)  {
 
     private var incomeBusStop: Double? = null
     private var icomeBus: Double? = null
@@ -27,6 +27,14 @@ class PassengerEntity(val type: BusStop, val sim: Simulation): Entity(sim)  {
         }
 
         return icomeBus!! - incomeBusStop!!
+    }
+
+    companion object {
+        var indexPassenger = 1
+
+        fun incIndex() {
+            indexPassenger += 1
+        }
     }
 
 }

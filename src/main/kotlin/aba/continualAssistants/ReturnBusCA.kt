@@ -4,6 +4,8 @@ import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
 import OSPABA.Process
+import helper.Constants
+import javax.security.auth.login.Configuration
 
 //meta! id="71"
 class ReturnBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(id, mySim, myAgent) {
@@ -15,8 +17,12 @@ class ReturnBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(id
 
     //meta! sender="AgentStation", id="72", type="Start"
     fun processStart(message: MessageForm) {
-        println("Autobus sa vracia spat na stanoviste ...")
         val msg = message as AppMessage
+
+        if (Constants.isDebug) {
+            println("Autobus ${msg.vehicle!!.id} sa vracia spat na stanoviste ...")
+        }
+
         msg.setCode(Mc.finishBusReturn)
 
         hold(msg.vehicle!!.link.backWayDuration(), msg)

@@ -1,10 +1,12 @@
 package aba.entities
 
 import OSPABA.Entity
+import OSPABA.Simulation
 import OSPDataStruct.SimQueue
 import aba.simulation.BusHockeySimulation
 import helper.BusLink
 import helper.BusScheduler
+import helper.BusStop
 
 
 /** Author: Bc. Juraj Macak **/
@@ -54,15 +56,19 @@ abstract class Vehicle(val id: Int,
                        val type: BusType,
                        val strategy: TravelStrategyType,
                        val deployTime: Double,
-                       val sim: BusHockeySimulation): Entity(sim) {
+                       val sim: Simulation): Entity(sim) {
 
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
 
     private var passengers = SimQueue<PassengerEntity>()
 
-    fun getActualStop(): String {
-        return scheduler.getActualStop()!!.name
+    private var busyDoors = 0
+
+    var isReadyForNextStop = false
+
+    fun getActualStop(): BusStop {
+        return scheduler.getActualStop()!!
     }
 
     fun getNumberOfPassengers(): Int {
@@ -89,14 +95,26 @@ abstract class Vehicle(val id: Int,
         scheduler.initTransportStats(mySim().currentTime())
     }
 
-    fun getNextStop(): String {
-        return scheduler.getNextStop()!!.name
+    fun getNextStop(): BusStop {
+        return scheduler.getNextStop()!!
     }
 
     fun addPassenger(passenger: PassengerEntity) {
         passenger.passengerIncomeIntoBus()
 
         passengers.add(passenger)
+    }
+
+    fun incBusyDoor() {
+        busyDoors += 1
+    }
+
+    fun decBusyDoor() {
+        busyDoors -= 1
+    }
+
+    fun isBusy(): Boolean {
+        return busyDoors != 0
     }
 
 }

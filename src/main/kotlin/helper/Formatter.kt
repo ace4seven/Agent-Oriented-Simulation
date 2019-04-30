@@ -19,6 +19,26 @@ class Formatter {
             return "${formatedHour} : ${formatedMinutes} : ${formatedSeconds}"
         }
 
+        fun convertToText(value: String): String {
+            when(value) {
+                // Links
+                "A" -> return "Linka A"
+                "B" -> return "Linka B"
+                "C" -> return "Linka C"
+
+                // BusTyps
+                "S" -> return "Malý autobus"
+                "L" -> return "Veľký autobus"
+                "M" -> return "Mikrobus"
+
+                // Strategy
+                "WAIT" -> return "S čakaním"
+                "NO WAIT" -> return "Bez čakania"
+            }
+
+            return value
+        }
+
     }
 
 }

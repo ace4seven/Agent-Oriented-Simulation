@@ -12,6 +12,7 @@ class AppMessage : MessageForm {
     var passengerIncomeStop: BusStop? = null
 
     var isFirstTraveller = true
+    var activeDoor = 0
 
     constructor(sim: Simulation) : super(sim) {}
 
@@ -31,6 +32,7 @@ class AppMessage : MessageForm {
         passenger = original.passenger
         passengerIncomeStop = original.passengerIncomeStop
         isFirstTraveller = original.isFirstTraveller
+        activeDoor = original.activeDoor
     }
 
 }

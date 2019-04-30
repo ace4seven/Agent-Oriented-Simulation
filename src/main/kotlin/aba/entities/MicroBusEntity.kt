@@ -1,5 +1,6 @@
 package aba.entities
 
+import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
 import helper.BusLink
 
@@ -11,6 +12,6 @@ class MicroBusEntity(
         type: BusType,
         strategy: TravelStrategyType,
         deployTime: Double,
-        sim: BusHockeySimulation): Vehicle(id, link, type, strategy, deployTime, sim) {
+        sim: Simulation): Vehicle(id, link, type, strategy, deployTime, sim) {
 
 }

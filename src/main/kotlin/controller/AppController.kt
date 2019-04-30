@@ -11,11 +11,7 @@ import aba.simulation.BusHockeySimulation
 import helper.BusLink
 import helper.Formatter
 import javafx.application.Platform
-import javafx.beans.property.SimpleIntegerProperty
-import javafx.collections.FXCollections
-import javafx.scene.control.TableView
 import model.BusTableData
-import tornadofx.*
 
 /** Author: Bc. Juraj Macak **/
 
@@ -50,8 +46,7 @@ class AppController: CoreController(), ISimDelegate {
         if (simulationCore.isPaused) {
             simulationCore.resumeSimulation()
         } else {
-            simulationCore.setSimSpeed(5.0, 0.1)
-            testBusses()
+//            simulationCore.setSimSpeed(20.0, 0.1)
             val thread = object: Thread() {
                 override fun run() {
                     simulationCore.simulate(numberOfReplications, timeOfOneReplication)
@@ -59,6 +54,10 @@ class AppController: CoreController(), ISimDelegate {
             }
             thread.start()
         }
+    }
+
+    fun addVehicle(busData: BusTableData) {
+        simulationCore.addVehicle(busData.transformToVehicle(simulationCore))
     }
 
     fun pauseSimulation() {
@@ -75,17 +74,6 @@ class AppController: CoreController(), ISimDelegate {
 
     fun stepSimulation() {
 
-    }
-
-    private fun testBusses() {
-        simulationCore.addVehicle(BusEntity(1, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
-        simulationCore.addVehicle(BusEntity(2, BusLink.LINK_B, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
-        simulationCore.addVehicle(BusEntity(3, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, 1000.0, simulationCore))
-
-        simulationCore.addVehicle(BusEntity(4, BusLink.LINK_C, BusType.SMALL, TravelStrategyType.WAIT, 3000.0, simulationCore))
-        simulationCore.addVehicle(BusEntity(5, BusLink.LINK_A, BusType.SMALL, TravelStrategyType.WAIT, 4000.0, simulationCore))
-        simulationCore.addVehicle(BusEntity(6, BusLink.LINK_B, BusType.MICROBUS, TravelStrategyType.NO_WAIT, 2000.0, simulationCore))
-        simulationCore.addVehicle(BusEntity(7, BusLink.LINK_C, BusType.MICROBUS, TravelStrategyType.WAIT, 7000.0, simulationCore))
     }
 
 

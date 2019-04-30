@@ -17,6 +17,8 @@ class Constants {
                 BusStop.K1, BusStop.K2, BusStop.K3)
 
         val randomSeader = Random()
+
+        val isDebug = true
     }
 
 }

@@ -1,6 +1,7 @@
 package view.support
 
 import controller.AppController
+import helper.Formatter
 import javafx.collections.FXCollections
 import javafx.scene.control.ComboBox
 import javafx.scene.control.Label
@@ -52,8 +53,34 @@ abstract class CoreView(title: String) : View(title) {
 
     protected var replicationTextField: TextField by singleAssign()
 
+    private var busData = mutableListOf<BusTableData>()
 
     // METHODS
+
+    protected fun loadBusesFromFile() {
+        val busData = controller.fileManager.getBusSchedule().map {
+            val formattedBus = BusTableData()
+
+            formattedBus.scheduleTime = Formatter.timeFormatterInc(it.scheduleTime.toDouble())
+            formattedBus.type = Formatter.convertToText(it.type)
+            formattedBus.strategy = Formatter.convertToText(it.strategy)
+            formattedBus.id = it.id
+            formattedBus.link = Formatter.convertToText(it.link)
+            formattedBus.rawTime = it.scheduleTime.toDouble()
+
+            return@map formattedBus
+        }
+
+        this.busData = busData.toMutableList()
+
+        busData.forEach {
+            when(it.link) {
+                "Linka A" -> linkATableViewDataSource.add(it)
+                "Linka B" -> linkBTableViewDataSource.add(it)
+                "Linka C" -> linkCTableViewDataSource.add(it)
+            }
+        }
+    }
 
     protected fun addBuss() {
         var busTableData = BusTableData()
@@ -97,10 +124,16 @@ abstract class CoreView(title: String) : View(title) {
     }
 
     fun startSimulationButtonPressed() {
+        busData.forEach {
+            controller.addVehicle(it)
+        }
+
         controller.startSimulation()
     }
 
     fun stopSimulation() {
+        busData.clear()
+
         controller.stopSimulation()
     }
 

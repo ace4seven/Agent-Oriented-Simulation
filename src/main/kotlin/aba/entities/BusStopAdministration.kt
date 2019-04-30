@@ -49,7 +49,10 @@ class BusStopAdministration(val sim: Simulation): Entity(sim) {
         busStops["C_G"] = BusStopEntity(BusStop.C_G, sim)
 
         busStops["STATION"] = BusStopEntity(BusStop.STATION, sim)
+    }
 
+    fun busStopHasPassenger(busStop: BusStop): Boolean {
+        return busStops[busStop.getConcreteStop().name]?.getWaitingPassengersQueue()!!.isEmpty()
     }
 
 }

@@ -113,9 +113,10 @@ class BusHockeySimulation : Simulation() {
 
         agentBus()?.vehicles?.forEach {
             val cell = BusProgressCell()
+
             cell.id = it.id
             cell.activity = it.currentActivity
-            cell.currentStop = "${it.getActualStop()} -> ${it.getNextStop()} (${it.getRouteProgress()})"
+            cell.currentStop = "${it.getActualStop().name} -> ${it.getNextStop().name} (${it.getRouteProgress()})"
             cell.link = it.link.name
             cell.freeCapacity = "${it.getFreeCapacity()}"
             cell.numbOfTravelers = "${it.getNumberOfPassengers()}"

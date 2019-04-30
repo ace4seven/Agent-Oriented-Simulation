@@ -1,0 +1,11 @@
+ID,Linka,Typ autobusu,Stratégia vozenia,Čas vyslania
+1,A,S,WAIT,500
+2,B,L,WAIT,1000
+3,C,S,WAIT,1500
+4,A,S,WAIT,2000
+5,B,L,WAIT,700
+6,C,L,WAIT,1400
+7,A,S,WAIT,2100
+8,B,L,NO WAIT,300
+9,C,L,WAIT,100
+10,A,S,NO WAIT,4000

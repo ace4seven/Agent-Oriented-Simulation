@@ -23,7 +23,7 @@ class TravellingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
     }
 
     fun processFinishTravel(message: MessageForm) {
-        println("Koniec cestovania")
+//        println("Koniec cestovania")
 
         assistantFinished(message)
     }

@@ -174,4 +174,14 @@ enum class BusStop {
         throw Exception("Chain enum bad calling")
     }
 
+    fun getConcreteStop(): BusStop {
+        when (this) {
+            A_K1, B_K1, C_K1, K1 -> return K1
+            A_K2, B_K2, C_K2, K2 -> return K2
+            A_K3, B_K3, C_K3, K3 -> return K3
+        }
+
+        return this
+    }
+
 }

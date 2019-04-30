@@ -38,7 +38,9 @@ class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
             }
         }
 
-        val passenger = PassengerEntity(msg.passengerIncomeStop!!, mySim())
+        val passenger = PassengerEntity(PassengerEntity.indexPassenger, msg.passengerIncomeStop!!, mySim())
+        PassengerEntity.incIndex()
+
         msg.passenger = passenger
 
         assistantFinished(msg)

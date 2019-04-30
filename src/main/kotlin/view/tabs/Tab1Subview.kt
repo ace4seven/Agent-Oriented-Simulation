@@ -1,5 +1,6 @@
 package view.tabs
 
+import helper.Formatter
 import javafx.scene.text.FontWeight
 import model.BusTableData
 import tornadofx.*
@@ -43,6 +44,14 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                                 }
                             }
                         }
+
+                        field {
+                            button("Načítaj zo súboru") {
+                                action {
+                                    loadBusesFromFile()
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -77,13 +86,18 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
 
                     minWidth = 300.0
                     items = linkATableViewDataSource
+
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
                 }
@@ -102,12 +116,16 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                     items = linkBTableViewDataSource
 
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
                 }
@@ -125,12 +143,16 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                     items = linkCTableViewDataSource
 
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
                 }

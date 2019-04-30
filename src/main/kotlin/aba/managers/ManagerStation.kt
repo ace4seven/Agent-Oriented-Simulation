@@ -5,7 +5,9 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.Constants
 import helper.Messages
+import tornadofx.*
 
 //meta! id="3"
 class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -29,6 +31,12 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     fun processBusArrival(message: MessageForm) {
         message.setCode(Mc.busMoveStart)
         message.setAddressee(mySim().findAgent(Id.agentTransport))
+
+        val msg = message as AppMessage
+
+        if (Constants.isDebug) {
+            println("Autobus ${msg.vehicle!!.id} vyjazd s ${msg.vehicle!!.getNumberOfPassengers()}")
+        }
 
         request(message)
     }

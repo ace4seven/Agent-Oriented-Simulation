@@ -7,6 +7,7 @@ import helper.Formatter
 import model.BusProgressCell
 import model.LogCell
 import model.LogEntry
+import java.util.*
 import java.util.function.Consumer
 
 class BusHockeySimulation : Simulation() {
@@ -23,7 +24,7 @@ class BusHockeySimulation : Simulation() {
     }
 
     companion object {
-        var logEntries = mutableListOf<LogEntry>()
+        var logEntries = LinkedList<LogEntry>()
 
         fun logEntry(time: Double, desc: String) {
             logEntries.add(LogEntry(LogCell.index, time, desc))

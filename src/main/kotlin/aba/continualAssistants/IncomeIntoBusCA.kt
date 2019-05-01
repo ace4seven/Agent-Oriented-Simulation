@@ -69,30 +69,30 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
 
         if(passengers.size > 0 && bus.getFreeCapacity() > 0) {
             if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
-                assistantFinished(msg)
-            }
-
-            bus.incBusyDoor()
-
-            val passenger = passengers.dequeue()
-            passenger.numberOfDoorIn = msg.doorIdentifier
-
-            BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
-
-            passenger.passengerIncomeIntoBus()
-            bus.addPassenger(passenger)
-
-            val msgCopy = msg.createCopy()
-
-            var sample: Double
-
-            if (bus.isMicroBus()) {
-                sample = myAgent().incomeGeneratorMicroBus.sample()
+//                assistantFinished(msg)
             } else {
-                sample = myAgent().incomeGeneratorBus.sample()
-            }
+                bus.incBusyDoor()
 
-            hold(sample, msgCopy)
+                val passenger = passengers.dequeue()
+                passenger.numberOfDoorIn = msg.doorIdentifier
+
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
+
+                passenger.passengerIncomeIntoBus()
+                bus.addPassenger(passenger)
+
+                val msgCopy = msg.createCopy()
+
+                var sample: Double
+
+                if (bus.isMicroBus()) {
+                    sample = myAgent().incomeGeneratorMicroBus.sample()
+                } else {
+                    sample = myAgent().incomeGeneratorBus.sample()
+                }
+
+                hold(sample, msgCopy)
+            }
         }
 
         if (!bus.isBusy()) {

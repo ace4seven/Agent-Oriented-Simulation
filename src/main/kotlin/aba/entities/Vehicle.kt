@@ -4,6 +4,7 @@ import OSPABA.Entity
 import OSPABA.Simulation
 import OSPDataStruct.SimQueue
 import aba.simulation.BusHockeySimulation
+import com.sun.org.apache.xpath.internal.operations.Bool
 import helper.BusLink
 import helper.BusScheduler
 import helper.BusStop
@@ -139,6 +140,10 @@ abstract class Vehicle(val id: Int,
 
     fun isBusy(): Boolean {
         return busyDoors != 0
+    }
+
+    fun hasFreeDoor(): Boolean {
+        return  busyDoors < type.numbOfDors()
     }
 
     fun isMicroBus(): Boolean {

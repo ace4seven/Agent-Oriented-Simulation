@@ -7,6 +7,7 @@ import tornadofx.*
 class PassengerCell {
 
     var id: Int by property<Int>()
+    var waitingTime: String by property<String>()
     var doorIn: String by property<String>()
     var doorOut: String by property<String>()
     var stopArrival: String by property<String>()

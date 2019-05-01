@@ -32,6 +32,10 @@ open class BusDetailView : View("Detail autobusu") {
                     minWidth = 150.0
                 }
 
+                column("Čas čakania", PassengerCell::waitingTime) {
+                    minWidth = 150.0
+                }
+
                 column("Príchod na zastávku", PassengerCell::stopArrival) {
                     minWidth = 150.0
                 }

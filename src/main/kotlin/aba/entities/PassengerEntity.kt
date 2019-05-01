@@ -33,15 +33,15 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
     }
 
     fun getWaitingTime(): Double {
-        if (icomeBus == null || incomeBusStop == null) {
-            throw Exception("Passenger time not properly tracked")
+        if (icomeBus == null) {
+            return sim.currentTime() - incomeBusStop!!
         }
 
         return icomeBus!! - incomeBusStop!!
     }
 
     fun wantToGoByMicroBus(): Boolean {
-        return (sim.currentTime() - incomeBusStop!! > 3600)
+        return (sim.currentTime() - incomeBusStop!! > 360)
     }
 
     companion object {
@@ -57,6 +57,7 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
 
         cell.id = id
         cell.stopArrival = Formatter.timeFormatterInc(incomeBusStop!!)
+        cell.waitingTime = Formatter.timeFormatterInc(getWaitingTime(), true)
         cell.busArrival = if (icomeBus != null) Formatter.timeFormatterInc(this.icomeBus!!) else "-"
         cell.busOut = if (outFromBus != null) Formatter.timeFormatterInc(outFromBus!!) else "-"
         cell.doorIn = "Dvere ${numberOfDoorIn}"

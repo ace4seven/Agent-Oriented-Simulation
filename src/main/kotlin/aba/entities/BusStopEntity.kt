@@ -13,11 +13,22 @@ import model.LinkCell
 class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     private var waitingPassengersQueue = SimQueue<PassengerEntity>()
+    private var waitingBuses = mutableListOf<Vehicle>()
 
     fun addPassenger(passenger: PassengerEntity) {
         passenger.passengerCameInBusStop()
 
         waitingPassengersQueue.add(passenger)
+    }
+
+    fun getAvailableWaitingBus(): Vehicle? {
+        waitingBuses.forEach {
+            if (it.getFreeCapacity() > 0 && !it.hasFreeDoor()) {
+                return it
+            }
+        }
+
+        return null
     }
 
     fun getWaitingPassengersQueue(): SimQueue<PassengerEntity> {

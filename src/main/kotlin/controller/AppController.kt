@@ -11,6 +11,7 @@ import javafx.application.Platform
 import javafx.collections.FXCollections
 import model.BusPassengersCollection
 import model.BusTableData
+import model.LogEntry
 import model.PassengerCell
 import java.util.*
 
@@ -85,10 +86,8 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     private fun refreshLogs() {
-        logTableViewDataSource.clear()
-        logTableViewDataSource.removeAll()
-
-        val entries = BusHockeySimulation.logEntries.toMutableList()
+        val entries = BusHockeySimulation.logEntries.clone() as LinkedList<LogEntry>
+        BusHockeySimulation.logEntries.clear()
         entries.forEach {
             logTableViewDataSource.add(it.logCell())
         }

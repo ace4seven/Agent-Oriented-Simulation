@@ -22,6 +22,14 @@ enum class BusType {
         }
     }
 
+    fun formattedName(): String {
+        when(this) {
+            SMALL -> return "Malý"
+            BIG -> return "Veľký"
+            MICROBUS -> return "Mikrobus"
+        }
+    }
+
     fun capacity(): Int {
         when(this) {
             SMALL -> return 107
@@ -47,6 +55,13 @@ enum class TravelStrategyType {
         when(this) {
             WAIT -> return 90.0
             NO_WAIT -> return 0.0
+        }
+    }
+
+    fun formattedName(): String {
+        when(this) {
+            WAIT -> return "S čakaním"
+            NO_WAIT -> return "Bez čakania"
         }
     }
 }

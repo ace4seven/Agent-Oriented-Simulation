@@ -4,16 +4,18 @@ import OSPABA.Entity
 import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
 import helper.BusStop
+import helper.Formatter
+import model.PassengerCell
 import java.lang.Exception
 
 /** Author: Bc. Juraj Macak **/
 
 class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Entity(sim)  {
 
-    private var incomeBusStop: Double? = null
+    var incomeBusStop: Double? = null
 
-    private var icomeBus: Double? = null
-    private var outFromBus: Double? = null
+    var icomeBus: Double? = null
+    var outFromBus: Double? = null
 
     var numberOfDoorIn = 0
     var numberOfDoorOut = 0
@@ -44,6 +46,19 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
         fun incIndex() {
             indexPassenger += 1
         }
+    }
+
+    fun transformToCell(): PassengerCell {
+        val cell = PassengerCell()
+
+        cell.id = id
+        cell.stopArrival = Formatter.timeFormatterInc(incomeBusStop!!)
+        cell.busArrival = if (icomeBus != null) Formatter.timeFormatterInc(this.icomeBus!!) else "-"
+        cell.busOut = if (outFromBus != null) Formatter.timeFormatterInc(outFromBus!!) else "-"
+        cell.doorIn = "Dvere ${numberOfDoorIn}"
+        cell.doorOut = "Dvere ${numberOfDoorOut}"
+
+        return cell
     }
 
 }

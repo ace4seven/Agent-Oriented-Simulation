@@ -3,9 +3,7 @@ package aba.agents
 import OSPABA.*
 import aba.simulation.*
 import aba.managers.*
-import aba.continualAssistants.*
 import aba.instantAssistants.*
-import continualAssistants.ReturnBusCA
 
 //meta! id="3"
 class AgentStation(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
@@ -22,7 +20,6 @@ class AgentStation(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
     private fun init() {
         ManagerStation(Id.managerStation, mySim(), this)
         CheckStationAction(Id.checkStationAction, mySim(), this)
-        ReturnBusCA(Id.returnBusCA, mySim(), this)
 
         addOwnMessage(Mc.travelingProcess)
         addOwnMessage(Mc.busArrival)

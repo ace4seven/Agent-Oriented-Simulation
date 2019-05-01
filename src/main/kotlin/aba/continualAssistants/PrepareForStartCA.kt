@@ -31,6 +31,8 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
         val msg = message as AppMessage
         msg.vehicle?.isDeployed = true
 
+        BusHockeySimulation.logEntry(mySim().currentTime(), "AUTOBUS ${msg.vehicle!!.id} (${msg.vehicle!!.link.formattedName()}) vyslaný na zastávku: ${msg.vehicle!!.scheduler.getActualStop()!!.formattedStop()}")
+
         assistantFinished(message)
     }
 

@@ -24,7 +24,10 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
             if (passengers.size > 0 && bus.getFreeCapacity() > 0) {
                 bus.incBusyDoor()
 
+
                 val passenger = passengers.dequeue()
+
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
                 passenger.passengerIncomeIntoBus()
                 passenger.numberOfDoorIn = i
@@ -56,6 +59,8 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
 
             val passenger = passengers.dequeue()
             passenger.numberOfDoorIn = msg.doorIdentifier
+
+            BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
             passenger.passengerIncomeIntoBus()
             bus.addPassenger(passenger)

@@ -46,6 +46,15 @@ enum class BusStop {
     C_K1, C_K2, C_K3, STATION,
     K1, K2, K3;
 
+    fun getLink(): BusLink? {
+        when(this) {
+            A_A, A_B, A_C, A_D, A_E, A_F, A_G, A_H, A_I, A_J, A_K, A_L -> return BusLink.LINK_A
+            B_A, B_B, B_C, B_D, B_E, B_F, B_G, B_H, B_I, B_J -> return BusLink.LINK_B
+            C_A, C_B, C_C, C_D, C_E, C_F, C_G -> return BusLink.LINK_C
+            A_K1, A_K2, A_K3, B_K1, B_K2, B_K3,C_K1, C_K2, C_K3, STATION, K1, K2, K3 -> return null
+        }
+    }
+
     fun capacity(): Int {
         when(this) {
             A_A -> return 123

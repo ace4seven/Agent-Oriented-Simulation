@@ -1,19 +1,20 @@
 package view.tabs
 
-import javafx.scene.text.FontWeight
 import model.BusProgressCell
-import model.BusTableData
+import model.LinkCell
 import tornadofx.*
-import view.support.CoreView
+import view.support.D
+import view.window.BusDetailView
+
 
 /** Author: Bc. Juraj Macak **/
 
-open class OverviewSimulationTabView : CoreView("Stav objektov") {
+open class OverviewSimulationTabView : View("Stav objektov") {
 
     override val root = vbox {
 
         prefWidth = 1500.0
-        prefHeight = 1000.0
+        prefHeight = 700.0
 
         label("Prehľad autobusov") {
             vboxConstraints {
@@ -21,14 +22,25 @@ open class OverviewSimulationTabView : CoreView("Stav objektov") {
                 marginTop = 20.0
             }
         }
-        busProgressTableView = tableview {
+        D.busProgressTableView = tableview {
             vboxConstraints {
                 marginLeft = 20.0
                 marginRight = 20.0
                 marginTop = 10.0
             }
 
-            items = controller.busProgressDataSource
+            onUserSelect {
+                D.controller.busPassengerSelectedIndex = it.id
+                D.controller.updateBusPassengersTable()
+            }
+
+            onDoubleClick {
+                openInternalWindow(BusDetailView::class)
+            }
+
+            maxHeight = 300.0
+
+            items = D.controller.busProgressDataSource
             column("ID", BusProgressCell::id) {
                 minWidth = 20.0
             }
@@ -37,12 +49,20 @@ open class OverviewSimulationTabView : CoreView("Stav objektov") {
                 minWidth = 100.0
             }
 
-            column("Aktuálna zastávka", BusProgressCell::currentStop) {
+            column("Typ", BusProgressCell::type) {
                 minWidth = 100.0
             }
 
-            column("Nasledujúca zastávka", BusProgressCell::nextStop) {
+            column("Stratégia", BusProgressCell::strategy) {
                 minWidth = 100.0
+            }
+
+            column("Aktuálna zastávka", BusProgressCell::currentStop) {
+                minWidth = 150.0
+            }
+
+            column("Nasledujúca zastávka", BusProgressCell::nextStop) {
+                minWidth = 150.0
             }
 
             column("Progress jazdy", BusProgressCell::progress) {
@@ -54,12 +74,116 @@ open class OverviewSimulationTabView : CoreView("Stav objektov") {
             }
 
             column("Voľná kapacita", BusProgressCell::freeCapacity) {
-                minWidth = 100.0
+                minWidth = 150.0
             }
 
             column("Počet cestujúcich", BusProgressCell::numbOfTravelers) {
-                minWidth = 100.0
+                minWidth = 150.0
             }
+        }
+
+        hbox {
+            vbox {
+                label("Linka A - Prehľad") {
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginTop = 20.0
+                    }
+                }
+                D.linkATableView = tableview {
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginTop = 10.0
+                    }
+                    maxHeight = 300.0
+
+                    items = D.controller.linkADataSource
+                    column("Zastávka", LinkCell::busStop) {
+                        minWidth = 50.0
+                    }
+
+                    column("Počet čakajúcich", LinkCell::peopleCount) {
+                        minWidth = 120.0
+                    }
+                }
+            }
+
+            vbox {
+                label("Linka B - Prehľad") {
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginTop = 20.0
+                    }
+                }
+                D.linkBTableView = tableview {
+                    vboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    maxHeight = 300.0
+
+                    items = D.controller.linkBDataSource
+                    column("Zastávka", LinkCell::busStop) {
+                        minWidth = 50.0
+                    }
+
+                    column("Počet čakajúcich", LinkCell::peopleCount) {
+                        minWidth = 120.0
+                    }
+                }
+            }
+
+            vbox {
+                label("Linka C - Prehľad") {
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginTop = 20.0
+                    }
+                }
+                D.linkCTableView = tableview {
+                    vboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    maxHeight = 300.0
+
+                    items = D.controller.linkCDataSource
+                    column("Zastávka", LinkCell::busStop) {
+                        minWidth = 50.0
+                    }
+
+                    column("Počet čakajúcich", LinkCell::peopleCount) {
+                        minWidth = 120.0
+                    }
+                }
+            }
+
+
+            vbox {
+                label("Ostatné - Prehľad") {
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginTop = 20.0
+                    }
+                }
+                D.linkKTableView = tableview {
+                    vboxConstraints {
+                        marginLeft = 10.0
+                        marginTop = 10.0
+                    }
+                    maxHeight = 300.0
+
+                    items = D.controller.linkKDataSource
+                    column("Zastávka", LinkCell::busStop) {
+                        minWidth = 50.0
+                    }
+
+                    column("Počet čakajúcich", LinkCell::peopleCount) {
+                        minWidth = 120.0
+                    }
+                }
+            }
+
         }
     }
 

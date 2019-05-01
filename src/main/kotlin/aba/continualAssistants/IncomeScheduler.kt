@@ -41,6 +41,8 @@ class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         val passenger = PassengerEntity(PassengerEntity.indexPassenger, msg.passengerIncomeStop!!, mySim())
         PassengerEntity.incIndex()
 
+        BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} príchod na zastávku: ${passenger.type.name}")
+
         msg.passenger = passenger
 
         assistantFinished(msg)

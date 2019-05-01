@@ -32,6 +32,8 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
 
                 val passenger = busPassengers.dequeue()
 
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok odchodu z AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
+
                 passenger.passengerOutComeFromBus()
                 passenger.numberOfDoorOut = i
 
@@ -65,6 +67,8 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
             bus.incBusyDoor()
 
             val passenger = busPassengers.dequeue()
+
+            BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok odchodu z AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
             passenger.passengerOutComeFromBus()
             passenger.numberOfDoorOut = msg.doorIdentifier

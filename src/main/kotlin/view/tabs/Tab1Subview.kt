@@ -2,11 +2,11 @@ package view.tabs
 
 import model.BusTableData
 import tornadofx.*
-import view.support.CoreView
+import view.support.D
 
 /** Author: Bc. Juraj Macak **/
 
-open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
+open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
     override val root = vbox {
         form {
@@ -14,27 +14,27 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                 fieldset("Nastavenia autobusov") {
                     hbox(20) {
                         field("Linka") {
-                            busLinkComboBox = combobox{
-                                items = busLinks
+                            D.busLinkComboBox = combobox{
+                                items = D.busLinks
                             }
                         }
 
                         field("Typ autobusu") {
-                            busTypeComboBox = combobox {
-                                items = busType
+                            D.busTypeComboBox = combobox {
+                                items = D.busType
                             }
                         }
 
                         field("Stratégia vozenia") {
-                            busStrategyComboBox = combobox {
-                                items = busStrategy
+                            D.busStrategyComboBox = combobox {
+                                items = D.busStrategy
                             }
                         }
 
                         field {
                             button("Pridať") {
                                 action {
-                                    addBuss()
+                                    D.addBuss()
                                 }
                             }
                         }
@@ -42,7 +42,7 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                         field {
                             button("Načítaj zo súboru") {
                                 action {
-                                    loadBusesFromFile()
+                                    D.loadBusesFromFile()
                                 }
                             }
                         }
@@ -55,10 +55,10 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                     }
                     field("Počet replikácii") {
                         textfield {
-                            bind(controller.numberOfReplicationsProperty)
+                            bind(D.controller.numberOfReplicationsProperty)
 
-                            replicationTextField = this
-                            replicationTextField.promptText = "Min 30"
+                            D.replicationTextField = this
+                            D.replicationTextField.promptText = "Min 30"
                             text = "1"
                         }
                     }
@@ -67,19 +67,20 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
         }
         hbox {
             hboxConstraints {
-                paddingLeft = 20.0
+                paddingRight = 10.0
             }
+
             vbox {
                 label("LINKA A") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkATableView = tableview {
+                D.busLinkATableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
 
                     minWidth = 300.0
-                    items = linkATableViewDataSource
+                    items = D.busLinkATableViewDatasource
 
                     column("ID", BusTableData::id) {
                         minWidth = 10.0
@@ -101,13 +102,13 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                 label("LINKA B") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkBTableView = tableview {
+                D.busLinkBTableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
 
                     minWidth = 300.0
-                    items = linkBTableViewDataSource
+                    items = D.busLinkBTableViewDataSource
 
                     column("ID", BusTableData::id) {
                         minWidth = 10.0
@@ -129,12 +130,12 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                 label("LINKA C") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkCTableView = tableview {
+                D.busLinkCTableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
                     minWidth = 300.0
-                    items = linkCTableViewDataSource
+                    items = D.busLinkCTableViewDataSource
 
                     column("ID", BusTableData::id) {
                         minWidth = 10.0
@@ -150,11 +151,6 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                         minWidth = 140.0
                     }
                 }
-            }
-        }
-        button("TEST") {
-            action {
-                test()
             }
         }
     }

@@ -3,12 +3,8 @@ package view.support
 import controller.AppController
 import helper.Formatter
 import javafx.collections.FXCollections
-import javafx.scene.control.ComboBox
-import javafx.scene.control.Label
-import javafx.scene.control.TableView
-import javafx.scene.control.TextField
-import model.BusProgressCell
-import model.BusTableData
+import javafx.scene.control.*
+import model.*
 import tornadofx.*
 
 /** Author: Bc. Juraj Macak **/
@@ -20,24 +16,45 @@ class D {
 
         var simulationTime: Label by singleAssign()
 
+        var bussPassengerSelectedIndex = 1
+
         var busID = 1
 
         val busLinks = FXCollections.observableArrayList("Linka A", "Linka B","Linka C")
         val busType = FXCollections.observableArrayList("Štandartný", "Vylepšený")
         val busStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
 
+        var logCheckbox = CheckBox()
+        var fastModeCheckBox = CheckBox()
+
+        var speedSlider = Slider()
+
         // TABLES
+
+        var startButton: Button by singleAssign()
+        var pauseButton: Button by singleAssign()
+        var stopButton: Button by singleAssign()
 
         var busProgressTableView: TableView<BusProgressCell> by singleAssign()
 
-        var linkATableView: TableView<BusTableData> by singleAssign()
-        var linkATableViewDataSource= FXCollections.observableArrayList<BusTableData>()
+        var linkATableView: TableView<LinkCell> by singleAssign()
+        var linkBTableView: TableView<LinkCell> by singleAssign()
+        var linkCTableView: TableView<LinkCell> by singleAssign()
+        var linkKTableView: TableView<LinkCell> by singleAssign()
 
-        var linkBTableView: TableView<BusTableData> by singleAssign()
-        var linkBTableViewDataSource= FXCollections.observableArrayList<BusTableData>()
+        var busPassengersTableView: TableView<PassengerCell> by singleAssign()
 
-        var linkCTableView: TableView<BusTableData> by singleAssign()
-        var linkCTableViewDataSource= FXCollections.observableArrayList<BusTableData>()
+        var busLinkATableView: TableView<BusTableData> by singleAssign()
+        var busLinkATableViewDatasource= FXCollections.observableArrayList<BusTableData>()
+
+        var busLinkBTableView: TableView<BusTableData> by singleAssign()
+        var busLinkBTableViewDataSource= FXCollections.observableArrayList<BusTableData>()
+
+        var busLinkCTableView: TableView<BusTableData> by singleAssign()
+        var busLinkCTableViewDataSource= FXCollections.observableArrayList<BusTableData>()
+
+        var logTableView: TableView<LogCell> by singleAssign()
+        var logTableViewDataSource= FXCollections.observableArrayList<BusTableData>()
 
         // MARK: CoMBOBOX
 
@@ -71,9 +88,9 @@ class D {
 
             busData?.forEach {
                 when(it.link) {
-                    "Linka A" -> linkATableViewDataSource.add(it)
-                    "Linka B" -> linkBTableViewDataSource.add(it)
-                    "Linka C" -> linkCTableViewDataSource.add(it)
+                    "Linka A" -> busLinkATableViewDatasource.add(it)
+                    "Linka B" -> busLinkBTableViewDataSource.add(it)
+                    "Linka C" -> busLinkCTableViewDataSource.add(it)
                 }
             }
         }
@@ -87,15 +104,15 @@ class D {
             when (busLinkComboBox.value) {
                 "Linka A" -> {
                     busTableData.id = busID
-                    linkATableViewDataSource.add(busTableData)
+                    busLinkATableViewDatasource.add(busTableData)
                 }
                 "Linka B" -> {
                     busTableData.id = busID
-                    linkBTableViewDataSource.add(busTableData)
+                    busLinkBTableViewDataSource.add(busTableData)
                 }
                 "Linka C" -> {
                     busTableData.id = busID
-                    linkCTableViewDataSource.add(busTableData)
+                    busLinkCTableViewDataSource.add(busTableData)
                 }
             }
 
@@ -103,6 +120,13 @@ class D {
         }
 
         fun startSimulationButtonPressed() {
+            startButton.isDisable = true
+            stopButton.isDisable = false
+            pauseButton.isDisable = false
+
+            logCheckbox.isDisable = true
+            fastModeCheckBox.isDisable = true
+
             busData?.forEach {
                 controller.addVehicle(it)
             }
@@ -111,18 +135,26 @@ class D {
         }
 
         fun stopSimulation() {
+            startButton.isDisable = false
+            stopButton.isDisable = true
+            pauseButton.isDisable = true
+
+            logCheckbox.isDisable = false
+            fastModeCheckBox.isDisable = false
+
             busData?.clear()
 
             controller.stopSimulation()
         }
 
         fun pauseSimulation() {
+            startButton.isDisable = true
+            stopButton.isDisable = false
+            pauseButton.isDisable = false
+
             controller.pauseSimulation()
         }
 
-        fun test() {
-            println("OK")
-        }
     }
 
 }

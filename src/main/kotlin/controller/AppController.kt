@@ -3,15 +3,16 @@ package controller
 import OSPABA.ISimDelegate
 import OSPABA.SimState
 import OSPABA.Simulation
-import aba.entities.BusEntity
-import aba.entities.BusType
-import aba.entities.TravelStrategyType
-import aba.entities.Vehicle
+import aba.entities.*
 import aba.simulation.BusHockeySimulation
 import helper.BusLink
 import helper.Formatter
 import javafx.application.Platform
+import javafx.collections.FXCollections
+import model.BusPassengersCollection
 import model.BusTableData
+import model.PassengerCell
+import java.util.*
 
 /** Author: Bc. Juraj Macak **/
 
@@ -25,8 +26,72 @@ class AppController: CoreController(), ISimDelegate {
         Platform.runLater(Runnable {
             simulationTime = Formatter.timeFormatterInc(core!!.currentTime())
 
-            refreshSimulationStates(core as BusHockeySimulation)
+            if (!isFastModeEnabled) {
+                refreshSimulationStates(core as BusHockeySimulation)
+                refreshBusLinks(core as BusHockeySimulation)
+                refreshBusPassengers(core as BusHockeySimulation)
+            }
+
+            if (isLogEnabled) {
+                refreshLogs()
+            }
         })
+    }
+
+    private fun refreshBusPassengers(core: BusHockeySimulation) {
+        busPassengersDatasources.forEach {
+            it.value.busPassengers.clear()
+        }
+
+        busPassengerDatasource.removeAll()
+        busPassengerDatasource.clear()
+
+        core.agentBus()!!.vehicles.forEach {
+            val passengers = it.getPassengers().clone() as LinkedList<PassengerEntity>
+            val vehicle = it
+            passengers.forEach {
+                busPassengersDatasources[vehicle.id]?.busPassengers?.add(it.transformToCell())
+            }
+        }
+
+        busPassengersDatasources[busPassengerSelectedIndex]!!.busPassengers.forEach {
+            busPassengerDatasource.add(it)
+        }
+    }
+
+    private fun refreshBusLinks(core: BusHockeySimulation) {
+        linkADataSource.clear()
+        linkBDataSource.clear()
+        linkCDataSource.clear()
+        linkKDataSource.clear()
+
+        linkADataSource.removeAll()
+        linkBDataSource.removeAll()
+        linkCDataSource.removeAll()
+        linkKDataSource.removeAll()
+
+
+        core.agentBusStop()?.getBusStopAdministration()?.busStops?.forEach {
+            if (it.value.type.getLink() == null) {
+                linkKDataSource.add(it.value.transformToCell())
+            } else {
+                when(it.value.type.getLink()!!) {
+                    BusLink.LINK_A -> linkADataSource.add(it.value.transformToCell())
+                    BusLink.LINK_B -> linkBDataSource.add(it.value.transformToCell())
+                    BusLink.LINK_C -> linkCDataSource.add(it.value.transformToCell())
+                }
+            }
+        }
+    }
+
+    private fun refreshLogs() {
+        logTableViewDataSource.clear()
+        logTableViewDataSource.removeAll()
+
+        val entries = BusHockeySimulation.logEntries.toMutableList()
+        entries.forEach {
+            logTableViewDataSource.add(it.logCell())
+        }
     }
 
     private fun refreshSimulationStates(core: BusHockeySimulation) {
@@ -38,15 +103,24 @@ class AppController: CoreController(), ISimDelegate {
         }
     }
 
+    fun setSimSpeed(value: Double) {
+        simulationCore.setSimSpeed(value, 0.1)
+    }
+
     override fun simStateChanged(core: Simulation?, state: SimState?) {
 
     }
 
     fun startSimulation() {
+        if(isFastModeEnabled) {
+            simulationCore.setMaxSimSpeed()
+        } else {
+            simulationCore.setSimSpeed(1.0, 0.1)
+        }
+
         if (simulationCore.isPaused) {
             simulationCore.resumeSimulation()
         } else {
-            simulationCore.setSimSpeed(5.0, 0.1)
             val thread = object: Thread() {
                 override fun run() {
                     simulationCore.simulate(numberOfReplications, timeOfOneReplication)
@@ -57,7 +131,11 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     fun addVehicle(busData: BusTableData) {
-        simulationCore.addVehicle(busData.transformToVehicle(simulationCore))
+        val bus = busData.transformToVehicle(simulationCore)
+        simulationCore.addVehicle(bus)
+
+        var busDataSource = BusPassengersCollection()
+        busPassengersDatasources[bus.id] = busDataSource
     }
 
     fun pauseSimulation() {
@@ -72,9 +150,13 @@ class AppController: CoreController(), ISimDelegate {
         simulationCore.stopSimulation()
     }
 
-    fun stepSimulation() {
+    fun updateBusPassengersTable() {
+        busPassengerDatasource.removeAll()
+        busPassengerDatasource.clear()
 
+        busPassengersDatasources[busPassengerSelectedIndex]!!.busPassengers.forEach {
+            busPassengerDatasource.add(it)
+        }
     }
-
 
 }

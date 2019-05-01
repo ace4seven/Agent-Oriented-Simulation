@@ -5,6 +5,8 @@ import aba.agents.*
 import aba.entities.Vehicle
 import helper.Formatter
 import model.BusProgressCell
+import model.LogCell
+import model.LogEntry
 import java.util.function.Consumer
 
 class BusHockeySimulation : Simulation() {
@@ -18,6 +20,15 @@ class BusHockeySimulation : Simulation() {
 
     init {
         prepareAgents()
+    }
+
+    companion object {
+        var logEntries = mutableListOf<LogEntry>()
+
+        fun logEntry(time: Double, desc: String) {
+            logEntries.add(LogEntry(LogCell.index, time, desc))
+            LogCell.inc()
+        }
     }
 
     public override fun prepareSimulation() {
@@ -116,6 +127,8 @@ class BusHockeySimulation : Simulation() {
             val cell = BusProgressCell()
 
             cell.id = it.id
+            cell.type = it.type.formattedName()
+            cell.strategy = it.strategy.formattedName()
             cell.activity = it.currentActivity
             cell.progress = "${if (it.isDeployed) Formatter.round2Decimals(it.getRouteProgress()) else "-"} %"
             cell.currentStop = "${it.getActualStop().formattedStop()}"

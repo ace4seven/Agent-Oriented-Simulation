@@ -41,7 +41,15 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
                 msgCopy.setCode(Mc.passengerOutFromBusFinish)
                 msgCopy.doorIdentifier = i
 
-                hold(Constants.outcomeBusTime, msgCopy)
+                var sample: Double
+
+                if (bus.isMicroBus()) {
+                    sample = myAgent().outGeneratorMicroBus
+                } else {
+                    sample = myAgent().outComeGeneratorBus.sample()
+                }
+
+                hold(sample, msgCopy)
             }
         }
 
@@ -75,7 +83,15 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
 
             val msgCopy = msg.createCopy()
 
-            hold(Constants.outcomeBusTime, msgCopy)
+            var sample: Double
+
+            if (bus.isMicroBus()) {
+                sample = myAgent().outGeneratorMicroBus
+            } else {
+                sample = myAgent().outComeGeneratorBus.sample()
+            }
+
+            hold(sample, msgCopy)
         }
 
         if (bus.busyDoors < 0) {

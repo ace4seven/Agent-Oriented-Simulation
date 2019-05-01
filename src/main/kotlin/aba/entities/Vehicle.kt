@@ -141,4 +141,12 @@ abstract class Vehicle(val id: Int,
         return busyDoors != 0
     }
 
+    fun isMicroBus(): Boolean {
+        when(type) {
+            BusType.MICROBUS -> return true
+        }
+
+        return false
+    }
+
 }

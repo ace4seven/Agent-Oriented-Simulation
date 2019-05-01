@@ -3,6 +3,7 @@ package aba.agents
 import OSPABA.*
 import OSPDataStruct.SimQueue
 import OSPRNG.TriangularRNG
+import OSPRNG.UniformContinuousRNG
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
@@ -15,7 +16,11 @@ import helper.Constants
 class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
 
     private var busStopAdministration: BusStopAdministration? = null
-    var incomeGenerator = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
+
+    var incomeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
+    var outComeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
+    var incomeGeneratorMicroBus = UniformContinuousRNG(6.0, 10.0, Constants.randomSeader)
+    var outGeneratorMicroBus = 4.0
 
     init {
         init()

@@ -40,6 +40,10 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
         return icomeBus!! - incomeBusStop!!
     }
 
+    fun wantToGoByMicroBus(): Boolean {
+        return (sim.currentTime() - incomeBusStop!! > 3600)
+    }
+
     companion object {
         var indexPassenger = 1
 

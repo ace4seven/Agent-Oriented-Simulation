@@ -22,6 +22,11 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
 
         for (i in 1..bus.type.numbOfDors()) {
             if (passengers.size > 0 && bus.getFreeCapacity() > 0) {
+
+                if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
+                    break
+                }
+
                 bus.incBusyDoor()
 
 
@@ -39,7 +44,15 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
 
                 msgCopy.doorIdentifier = i
 
-                hold(myAgent().incomeGenerator.sample(), msgCopy)
+                var sample: Double
+
+                if (bus.isMicroBus()) {
+                    sample = myAgent().incomeGeneratorMicroBus.sample()
+                } else {
+                    sample = myAgent().incomeGeneratorBus.sample()
+                }
+
+                hold(sample, msgCopy)
             }
         }
 
@@ -55,6 +68,10 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
         bus.decBusyDoor()
 
         if(passengers.size > 0 && bus.getFreeCapacity() > 0) {
+            if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
+                assistantFinished(msg)
+            }
+
             bus.incBusyDoor()
 
             val passenger = passengers.dequeue()
@@ -67,7 +84,15 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
 
             val msgCopy = msg.createCopy()
 
-            hold(myAgent().incomeGenerator.sample(), msgCopy)
+            var sample: Double
+
+            if (bus.isMicroBus()) {
+                sample = myAgent().incomeGeneratorMicroBus.sample()
+            } else {
+                sample = myAgent().incomeGeneratorBus.sample()
+            }
+
+            hold(sample, msgCopy)
         }
 
         if (!bus.isBusy()) {

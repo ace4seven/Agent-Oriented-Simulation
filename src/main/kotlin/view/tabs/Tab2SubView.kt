@@ -26,11 +26,10 @@ open class Tab2Subview : CoreView("Priebeh simulácie") {
             busProgressTableView = tableview {
                 vboxConstraints {
                     marginLeft = 20.0
+                    marginRight = 20.0
                     marginTop = 10.0
                 }
 
-                minWidth = 700.0
-                maxWidth = 700.0
                 items = controller.busProgressDataSource
                 column("ID", BusProgressCell::id) {
                     minWidth = 20.0
@@ -39,12 +38,21 @@ open class Tab2Subview : CoreView("Priebeh simulácie") {
                 column("Linka", BusProgressCell::link) {
                     minWidth = 100.0
                 }
+
                 column("Aktuálna zastávka", BusProgressCell::currentStop) {
-                    minWidth = 150.0
+                    minWidth = 100.0
+                }
+
+                column("Nasledujúca zastávka", BusProgressCell::nextStop) {
+                    minWidth = 100.0
+                }
+
+                column("Progress jazdy", BusProgressCell::progress) {
+                    minWidth = 100.0
                 }
 
                 column("Aktivita", BusProgressCell::activity) {
-                    minWidth = 150.0
+                    minWidth = 200.0
                 }
 
                 column("Voľná kapacita", BusProgressCell::freeCapacity) {

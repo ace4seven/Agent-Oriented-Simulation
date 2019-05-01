@@ -46,7 +46,7 @@ class AppController: CoreController(), ISimDelegate {
         if (simulationCore.isPaused) {
             simulationCore.resumeSimulation()
         } else {
-//            simulationCore.setSimSpeed(20.0, 0.1)
+            simulationCore.setSimSpeed(5.0, 0.1)
             val thread = object: Thread() {
                 override fun run() {
                     simulationCore.simulate(numberOfReplications, timeOfOneReplication)

@@ -14,6 +14,15 @@ enum class BusLink {
             LINK_C -> return 1800.0
         }
     }
+
+    fun formattedName(): String {
+        when(this) {
+            LINK_A -> return "Linka A"
+            LINK_B -> return "Linka B"
+            LINK_C -> return "Linka C"
+        }
+    }
+
 }
 
 data class GeneratorData(val start: Double, val stop: Double, val lambda: Double) {
@@ -182,6 +191,27 @@ enum class BusStop {
         }
 
         return this
+    }
+
+    fun formattedStop(): String {
+        when(this) {
+            A_A, B_A, C_A -> return "A"
+            A_B, B_B, C_B -> return "B"
+            A_C, B_C, C_C -> return "C"
+            A_D, B_D, C_D -> return "D"
+            A_E, B_E, C_E -> return "E"
+            A_F, B_F, C_F -> return "F"
+            A_G, B_G, C_G -> return "G"
+            A_H, B_H -> return "H"
+            A_I, B_I -> return "I"
+            A_J, B_J -> return "J"
+            A_K -> return "K"
+            A_L -> return "L"
+            A_K1, B_K1, C_K1, K1 -> return "K1"
+            A_K2, B_K2, C_K2, K2 -> return "K2"
+            A_K3, B_K3, C_K3, K3 -> return "K3"
+            STATION -> return "Štadión"
+        }
     }
 
 }

@@ -14,6 +14,8 @@ class AppMessage : MessageForm {
     var isFirstTraveller = true
     var activeDoor = 0
 
+    var doorIdentifier = 0
+
     constructor(sim: Simulation) : super(sim) {}
 
     constructor(original: AppMessage) : super(original) {
@@ -33,6 +35,7 @@ class AppMessage : MessageForm {
         passengerIncomeStop = original.passengerIncomeStop
         isFirstTraveller = original.isFirstTraveller
         activeDoor = original.activeDoor
+        doorIdentifier = original.doorIdentifier
     }
 
 }

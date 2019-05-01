@@ -3,6 +3,7 @@ package aba.simulation
 import OSPABA.*
 import aba.agents.*
 import aba.entities.Vehicle
+import helper.Formatter
 import model.BusProgressCell
 import java.util.function.Consumer
 
@@ -116,10 +117,13 @@ class BusHockeySimulation : Simulation() {
 
             cell.id = it.id
             cell.activity = it.currentActivity
-            cell.currentStop = "${it.getActualStop().name} -> ${it.getNextStop().name} (${it.getRouteProgress()})"
+            cell.progress = "${if (it.isDeployed) Formatter.round2Decimals(it.getRouteProgress()) else "-"} %"
+            cell.currentStop = "${it.getActualStop().formattedStop()}"
+            cell.nextStop =  "${it.getNextStop().formattedStop()}"
             cell.link = it.link.name
             cell.freeCapacity = "${it.getFreeCapacity()}"
             cell.numbOfTravelers = "${it.getNumberOfPassengers()}"
+
             result.add(cell)
         }
 

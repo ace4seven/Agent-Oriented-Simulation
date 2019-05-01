@@ -22,7 +22,7 @@ class AgentStation(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
     private fun init() {
         ManagerStation(Id.managerStation, mySim(), this)
         CheckStationAction(Id.checkStationAction, mySim(), this)
-        ExitTravelerCA(Id.exitTravelerCA, mySim(), this)
+        OutCameFromBusCA(Id.exitTravelerCA, mySim(), this)
         ReturnBusCA(Id.returnBusCA, mySim(), this)
 
         addOwnMessage(Mc.travelingProcess)

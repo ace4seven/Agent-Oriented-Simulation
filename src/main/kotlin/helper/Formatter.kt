@@ -19,6 +19,10 @@ class Formatter {
             return "${formatedHour} : ${formatedMinutes} : ${formatedSeconds}"
         }
 
+        fun round2Decimals(value: Double): String {
+            return "${Math.round(value * 10.0) / 10.0}"
+        }
+
         fun convertToText(value: String): String {
             when(value) {
                 // Links

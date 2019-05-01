@@ -41,14 +41,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         }
 
         msg.setAddressee(Id.incomeIntoBusCA)
-//        val bus = msg.vehicle!!
 
-//        for (i in 1..bus.type.numbOfDors()) {
-//            val msgCopy = msg.createCopy() as AppMessage
-//
-//            msgCopy.activeDoor = i
-//            startContinualAssistant(msg.createCopy())
-//        }
         startContinualAssistant(msg)
     }
 

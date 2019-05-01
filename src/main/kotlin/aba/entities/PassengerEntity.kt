@@ -11,7 +11,12 @@ import java.lang.Exception
 class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Entity(sim)  {
 
     private var incomeBusStop: Double? = null
+
     private var icomeBus: Double? = null
+    private var outFromBus: Double? = null
+
+    var numberOfDoorIn = 0
+    var numberOfDoorOut = 0
 
     fun passengerCameInBusStop() {
         incomeBusStop = sim.currentTime()
@@ -19,6 +24,10 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
 
     fun passengerIncomeIntoBus() {
         icomeBus = sim.currentTime()
+    }
+
+    fun passengerOutComeFromBus() {
+        outFromBus = sim.currentTime()
     }
 
     fun getWaitingTime(): Double {

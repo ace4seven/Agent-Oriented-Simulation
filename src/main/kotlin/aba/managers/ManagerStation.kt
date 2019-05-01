@@ -5,6 +5,7 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.BusStop
 import helper.Constants
 import helper.Messages
 import tornadofx.*
@@ -41,13 +42,13 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         request(message)
     }
 
-    //meta! sender="ExitTravelerCA", id="66", type="Finish"
+    //meta! sender="OutCameFromBusCA", id="66", type="Finish"
     fun processFinish(message: MessageForm) {
         when(message.sender().id()) {
             Id.returnBusCA -> {
                 val msg = message as AppMessage
 
-                msg.vehicle?.prepareToMoveNextStop()
+//                msg.vehicle?.prepareToMoveNextStop()
 
                 msg.setCode(Mc.busArrival)
                 msg.setAddressee(mySim().findAgent(Id.agentBusStop))
@@ -55,12 +56,18 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                 request(msg)
             }
             Id.exitTravelerCA -> {
-                message.setAddressee(myAgent().findAssistant(Id.returnBusCA))
-
                 val msg = message as AppMessage
-                msg.vehicle?.currentActivity = Messages.busReturn
+                val bus  = msg.vehicle!!
+                if (!bus.isBusy()) {
+                    msg.setAddressee(myAgent().findAssistant(Id.returnBusCA))
+                    bus.currentActivity = Messages.busReturn
 
-                startContinualAssistant(msg)
+                    if (Constants.isDebug) {
+                        println("Autobus ${msg.vehicle!!.id} vystupovanie ukončené: ${msg.vehicle!!.getNumberOfPassengers()} ${bus.busyDoors}")
+                    }
+
+                    startContinualAssistant(msg)
+                }
             }
         }
     }
@@ -69,16 +76,22 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     fun processBusMoveStart(message: MessageForm) {
         val message = message as AppMessage
 
-        // Ak som vo finalnej destinaci, tak zacnem proces vystup
+        val bus = message.vehicle!!
+
+        message.vehicle?.prepareToMoveNextStop()
+
         if (message.vehicle!!.scheduler.isFinalDestination()) {
             message.setAddressee(Id.exitTravelerCA)
 
-            val msg = message as AppMessage
+            val msg = message
             msg.vehicle?.currentActivity = Messages.busPassengersOutcome
+
+            if (Constants.isDebug) {
+                println("Autobus ${msg.vehicle!!.id} vystupovanie: ${msg.vehicle!!.getNumberOfPassengers()}")
+            }
 
             startContinualAssistant(msg)
         } else {
-            message.vehicle?.prepareToMoveNextStop()
             message.setCode(Mc.busArrival)
             message.setAddressee(mySim().findAgent(Id.agentBusStop))
 

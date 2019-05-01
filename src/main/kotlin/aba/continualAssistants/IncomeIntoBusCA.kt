@@ -6,7 +6,7 @@ import aba.agents.*
 import OSPABA.Process
 
 //meta! id="57"
-class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Scheduler(id, mySim, myAgent) {
+class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(id, mySim, myAgent) {
 
     override fun prepareReplication() {
         super.prepareReplication()
@@ -25,21 +25,20 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
                 bus.incBusyDoor()
 
                 val passenger = passengers.dequeue()
+
                 passenger.passengerIncomeIntoBus()
+                passenger.numberOfDoorIn = i
+
                 bus.addPassenger(passenger)
 
-                val msgCopy = msg.createCopy()
+                val msgCopy = msg.createCopy() as AppMessage
                 msgCopy.setCode(Mc.passengerFinishIncome)
+
+                msgCopy.doorIdentifier = i
 
                 hold(myAgent().incomeGenerator.sample(), msgCopy)
             }
         }
-
-//        if (mySim().currentTime() > 8000) {
-//            println("OK")
-//        }
-
-//        bus.isReadyForNextStop = true
 
         assistantFinished(msg)
     }
@@ -50,8 +49,13 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
         var passengers = myAgent().getBusStopPassengers(bus.getActualStop())
 
+        bus.decBusyDoor()
+
         if(passengers.size > 0 && bus.getFreeCapacity() > 0) {
+            bus.incBusyDoor()
+
             val passenger = passengers.dequeue()
+            passenger.numberOfDoorIn = msg.doorIdentifier
 
             passenger.passengerIncomeIntoBus()
             bus.addPassenger(passenger)
@@ -59,11 +63,11 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
             val msgCopy = msg.createCopy()
 
             hold(myAgent().incomeGenerator.sample(), msgCopy)
-        } else {
-            bus.decBusyDoor()
         }
 
-        assistantFinished(msg)
+        if (!bus.isBusy()) {
+            assistantFinished(msg)
+        }
     }
 
     //meta! userInfo="Process messages defined in code", id="0"

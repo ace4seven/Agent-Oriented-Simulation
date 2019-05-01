@@ -18,6 +18,8 @@ class Constants {
 
         val randomSeader = Random()
 
+        val outcomeBusTime = 4.0
+
         val isDebug = true
     }
 

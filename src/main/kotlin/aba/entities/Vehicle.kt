@@ -60,15 +60,24 @@ abstract class Vehicle(val id: Int,
 
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
+    var isDeployed = false
 
     private var passengers = SimQueue<PassengerEntity>()
 
-    private var busyDoors = 0
+    var busyDoors = 0
 
     var isReadyForNextStop = false
 
     fun getActualStop(): BusStop {
         return scheduler.getActualStop()!!
+    }
+
+    fun getNextStop(): BusStop {
+        return scheduler.getNextStop()!!
+    }
+
+    fun getPassengers(): SimQueue<PassengerEntity> {
+        return passengers
     }
 
     fun getNumberOfPassengers(): Int {
@@ -79,12 +88,12 @@ abstract class Vehicle(val id: Int,
         return type.capacity() - passengers.count()
     }
 
-    fun getRouteProgress(): String {
+    fun getRouteProgress(): Double {
         val percentInterval = (scheduler.getEndTime() - scheduler.getStarTime())
         val progressTime = sim.currentTime() - scheduler.getStarTime()
         val progress = progressTime / percentInterval * 100
 
-        return "${progress} %"
+        return progress
     }
 
     fun prepareToMoveNextStop() {
@@ -93,10 +102,6 @@ abstract class Vehicle(val id: Int,
 
     fun initStartStats() {
         scheduler.initTransportStats(mySim().currentTime())
-    }
-
-    fun getNextStop(): BusStop {
-        return scheduler.getNextStop()!!
     }
 
     fun addPassenger(passenger: PassengerEntity) {

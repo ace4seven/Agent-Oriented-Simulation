@@ -8,6 +8,7 @@ import javafx.scene.control.Label
 import javafx.scene.control.TableView
 import javafx.scene.control.TextField
 import javafx.scene.layout.HBox
+import javafx.scene.layout.VBox
 import javafx.scene.text.FontWeight
 import model.BusProgressCell
 import model.BusTableData
@@ -22,9 +23,6 @@ abstract class CoreView(title: String) : View(title) {
     protected var simulationTime: Label by singleAssign()
 
     protected var busID = 1
-
-    protected val simulationActionsViewTab1: SimulationActionsView by inject()
-    protected val simulationActionsViewTab2: SimulationActionsView by inject()
 
     protected val busLinks = FXCollections.observableArrayList("Linka A", "Linka B","Linka C")
     protected val busType = FXCollections.observableArrayList("Štandartný", "Vylepšený")
@@ -53,12 +51,12 @@ abstract class CoreView(title: String) : View(title) {
 
     protected var replicationTextField: TextField by singleAssign()
 
-    private var busData = mutableListOf<BusTableData>()
+    var busData: MutableList<BusTableData>? = null
 
     // METHODS
 
     protected fun loadBusesFromFile() {
-        val busData = controller.fileManager.getBusSchedule().map {
+        val bData = controller.fileManager.getBusSchedule().map {
             val formattedBus = BusTableData()
 
             formattedBus.scheduleTime = Formatter.timeFormatterInc(it.scheduleTime.toDouble())
@@ -71,9 +69,9 @@ abstract class CoreView(title: String) : View(title) {
             return@map formattedBus
         }
 
-        this.busData = busData.toMutableList()
+        this.busData = bData.toMutableList()
 
-        busData.forEach {
+        busData?.forEach {
             when(it.link) {
                 "Linka A" -> linkATableViewDataSource.add(it)
                 "Linka B" -> linkBTableViewDataSource.add(it)
@@ -88,7 +86,7 @@ abstract class CoreView(title: String) : View(title) {
         busTableData.type = busTypeComboBox.value
         busTableData.strategy = busStrategyComboBox.value
 
-        when(busLinkComboBox.value) {
+        when (busLinkComboBox.value) {
             "Linka A" -> {
                 busTableData.id = busID
                 linkATableViewDataSource.add(busTableData)
@@ -106,25 +104,8 @@ abstract class CoreView(title: String) : View(title) {
         busID += 1
     }
 
-    fun simulationActions(): HBox {
-        return hbox {
-            simulationTime = label("11 : 00 : 00") {
-                style {
-                    fontWeight = FontWeight.BOLD
-                    fontSize = 30.px
-                }
-                vboxConstraints {
-                    marginTop = 50.0
-                    marginBottom = 10.0
-                    marginLeft = 30.0
-                }
-//                bind(controller.simulationTimeProperty)
-            }
-        }
-    }
-
     fun startSimulationButtonPressed() {
-        busData.forEach {
+        busData?.forEach {
             controller.addVehicle(it)
         }
 
@@ -132,13 +113,17 @@ abstract class CoreView(title: String) : View(title) {
     }
 
     fun stopSimulation() {
-        busData.clear()
+        busData?.clear()
 
         controller.stopSimulation()
     }
 
     fun pauseSimulation() {
         controller.pauseSimulation()
+    }
+
+    fun test() {
+        println("OK")
     }
 
 }

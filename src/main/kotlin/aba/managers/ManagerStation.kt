@@ -3,12 +3,8 @@ package aba.managers
 import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
-import aba.continualAssistants.*
-import aba.instantAssistants.*
-import helper.BusStop
 import helper.Constants
 import helper.Messages
-import tornadofx.*
 
 //meta! id="3"
 class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -34,6 +30,7 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         message.setAddressee(mySim().findAgent(Id.agentTransport))
 
         val msg = message as AppMessage
+        msg.vehicle!!.scheduler.addStartTime(mySim().currentTime())
 
         if (Constants.isDebug) {
             println("Autobus ${msg.vehicle!!.id} vyjazd s ${msg.vehicle!!.getNumberOfPassengers()}")
@@ -42,61 +39,21 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         request(message)
     }
 
-    //meta! sender="OutCameFromBusCA", id="66", type="Finish"
+    //meta! sender="OutCameFromBusCA OR RETURN", id="66", type="Finish"
     fun processFinish(message: MessageForm) {
-        when(message.sender().id()) {
-            Id.returnBusCA -> {
-                val msg = message as AppMessage
 
-//                msg.vehicle?.prepareToMoveNextStop()
-
-                msg.setCode(Mc.busArrival)
-                msg.setAddressee(mySim().findAgent(Id.agentBusStop))
-
-                request(msg)
-            }
-            Id.exitTravelerCA -> {
-                val msg = message as AppMessage
-                val bus  = msg.vehicle!!
-                if (!bus.isBusy()) {
-                    msg.setAddressee(myAgent().findAssistant(Id.returnBusCA))
-                    bus.currentActivity = Messages.busReturn
-
-                    if (Constants.isDebug) {
-                        println("Autobus ${msg.vehicle!!.id} vystupovanie ukončené: ${msg.vehicle!!.getNumberOfPassengers()} ${bus.busyDoors}")
-                    }
-
-                    startContinualAssistant(msg)
-                }
-            }
-        }
     }
 
     //meta! sender="AgentTransport", id="33", type="Response"
     fun processBusMoveStart(message: MessageForm) {
         val message = message as AppMessage
 
-        val bus = message.vehicle!!
-
         message.vehicle?.prepareToMoveNextStop()
 
-        if (message.vehicle!!.scheduler.isFinalDestination()) {
-            message.setAddressee(Id.exitTravelerCA)
+        message.setCode(Mc.busArrival)
+        message.setAddressee(mySim().findAgent(Id.agentBusStop))
 
-            val msg = message
-            msg.vehicle?.currentActivity = Messages.busPassengersOutcome
-
-            if (Constants.isDebug) {
-                println("Autobus ${msg.vehicle!!.id} vystupovanie: ${msg.vehicle!!.getNumberOfPassengers()}")
-            }
-
-            startContinualAssistant(msg)
-        } else {
-            message.setCode(Mc.busArrival)
-            message.setAddressee(mySim().findAgent(Id.agentBusStop))
-
-            request(message)
-        }
+        request(message)
     }
 
     //meta! sender="AgentBus", id="51", type="Response"

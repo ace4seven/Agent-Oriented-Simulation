@@ -15,7 +15,7 @@ class Mc : IdList() {
         val initVehicles = 1004
         val finishInitVehicle = 1005
         val finishTravelStop = 1006
-        var passengersFinishExit = 1101
+        var passengerOutFromBusFinish = 1101
         var finishBusReturn = 1102
         var initPassengers = 1103
         var newPassenger = 1104

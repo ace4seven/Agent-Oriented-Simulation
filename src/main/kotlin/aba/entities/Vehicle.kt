@@ -93,6 +93,10 @@ abstract class Vehicle(val id: Int,
         val progressTime = sim.currentTime() - scheduler.getStarTime()
         val progress = progressTime / percentInterval * 100
 
+        if (progress > 100) {
+            return 100.0
+        }
+
         return progress
     }
 

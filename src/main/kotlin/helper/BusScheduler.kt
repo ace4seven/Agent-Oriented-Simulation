@@ -155,13 +155,21 @@ class BusScheduler(val busLink: BusLink) {
     fun prepareToMoveNextStop(inTime: Double) {
         moveToAnotherStop()
 
-        if (isFinalDestination()) {
-            startTime = inTime
-            endTime = inTime + busLink.backWayDuration()
-        } else {
-            startTime = inTime
-            endTime = inTime + currentStop!!.duration()
-        }
+//        if (isFinalDestination()) {
+//            startTime = inTime
+//            endTime = inTime + busLink.backWayDuration()
+//        } else {
+//            startTime = inTime
+//            endTime = inTime + currentStop!!.duration()
+//        }
+    }
+
+    fun addStartTime(value: Double) {
+        startTime = value
+    }
+
+    fun addFinishTime(value: Double) {
+        endTime = value
     }
 
     fun getStarTime(): Double {

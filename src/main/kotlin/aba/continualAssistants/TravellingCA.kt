@@ -19,7 +19,17 @@ class TravellingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
         msg.vehicle?.scheduler?.getDuration()
 
         msg.setCode(Mc.finishTravelStop)
-        hold(msg.vehicle!!.scheduler.getDuration()!!, msg)
+
+        var duration: Double
+
+        if (msg.vehicle!!.scheduler.isFinalDestination()) {
+            duration = msg.vehicle!!.link.backWayDuration()
+        } else {
+            duration = msg.vehicle!!.scheduler.getDuration()!!
+        }
+
+        msg.vehicle!!.scheduler.addFinishTime(mySim().currentTime() + duration)
+        hold(duration, msg)
     }
 
     fun processFinishTravel(message: MessageForm) {

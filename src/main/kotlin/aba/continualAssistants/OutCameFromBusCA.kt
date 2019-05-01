@@ -36,7 +36,7 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
                 passenger.numberOfDoorOut = i
 
                 val msgCopy = msg.createCopy() as AppMessage
-                msgCopy.setCode(Mc.passengersFinishExit)
+                msgCopy.setCode(Mc.passengerOutFromBusFinish)
                 msgCopy.doorIdentifier = i
 
                 hold(Constants.outcomeBusTime, msgCopy)
@@ -53,7 +53,7 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
         }
     }
 
-    fun processFinishExit(message: MessageForm) {
+    fun processPassengerOutFromBusFinish(message: MessageForm) {
         val msg = message as AppMessage
         val bus = msg.vehicle!!
 
@@ -87,14 +87,14 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
-            Mc.passengersFinishExit -> processFinishExit(message)
+            Mc.passengerOutFromBusFinish -> processPassengerOutFromBusFinish(message)
 
             else -> processDefault(message)
         }
     }
     //meta! tag="end"
 
-    override fun myAgent(): AgentStation {
-        return super.myAgent() as AgentStation
+    override fun myAgent(): AgentBusStop {
+        return super.myAgent() as AgentBusStop
     }
 }

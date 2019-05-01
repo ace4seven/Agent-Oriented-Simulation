@@ -120,7 +120,7 @@ class BusHockeySimulation : Simulation() {
             cell.progress = "${if (it.isDeployed) Formatter.round2Decimals(it.getRouteProgress()) else "-"} %"
             cell.currentStop = "${it.getActualStop().formattedStop()}"
             cell.nextStop =  "${it.getNextStop().formattedStop()}"
-            cell.link = it.link.name
+            cell.link = it.link.formattedName()
             cell.freeCapacity = "${it.getFreeCapacity()}"
             cell.numbOfTravelers = "${it.getNumberOfPassengers()}"
 

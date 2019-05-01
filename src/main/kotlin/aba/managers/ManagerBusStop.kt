@@ -34,15 +34,28 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     fun processBusArrival(message: MessageForm) {
         val msg = message as AppMessage
 
-        msg.vehicle?.currentActivity = Messages.busPassengersIncome
+        if (msg.vehicle!!.scheduler.isFinalDestination()) {
+            message.setAddressee(Id.OutComFromBusCA)
 
-        if (Constants.isDebug) {
-            println("Autobus ${msg.vehicle!!.id} (obsadeny: ${msg.vehicle!!.getNumberOfPassengers()}) prichod na zastavku ${msg.vehicle!!.scheduler.getActualStop()} (${myAgent().getBusStopPassengers(msg.vehicle!!.getActualStop()).count()})")
+            val msg = message
+            msg.vehicle?.currentActivity = Messages.busPassengersOutcome
+
+            if (Constants.isDebug) {
+                println("Autobus ${msg.vehicle!!.id} vystupovanie: ${msg.vehicle!!.getNumberOfPassengers()}")
+            }
+
+            startContinualAssistant(msg)
+        } else {
+            msg.vehicle?.currentActivity = Messages.busPassengersIncome
+
+            if (Constants.isDebug) {
+                println("Autobus ${msg.vehicle!!.id} (obsadeny: ${msg.vehicle!!.getNumberOfPassengers()}) prichod na zastavku ${msg.vehicle!!.scheduler.getActualStop()} (${myAgent().getBusStopPassengers(msg.vehicle!!.getActualStop()).count()})")
+            }
+
+            msg.setAddressee(Id.incomeIntoBusCA)
+
+            startContinualAssistant(msg)
         }
-
-        msg.setAddressee(Id.incomeIntoBusCA)
-
-        startContinualAssistant(msg)
     }
 
     //meta! sender="IncomeIntoBusCA", id="58", type="Finish"
@@ -50,14 +63,32 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         val msg = message as AppMessage
         val bus = msg.vehicle!!
 
-        if (!bus.isBusy()) {
-            message.setCode(Mc.busArrival)
+        when(msg.sender().id()) {
+            Id.incomeIntoBusCA -> {
+                if (!bus.isBusy()) {
+                    message.setCode(Mc.busArrival)
 
-            if(Constants.isDebug) {
-                println("KAPACITA zastavky po odchode: ${myAgent().getBusStopPassengers(bus.getActualStop()).count()}")
+                    if(Constants.isDebug) {
+                        println("KAPACITA zastavky po odchode: ${myAgent().getBusStopPassengers(bus.getActualStop()).count()}")
+                    }
+                    response(message)
+                }
             }
 
-            response(message)
+            Id.OutComFromBusCA -> {
+                val bus  = msg.vehicle!!
+                if (!bus.isBusy()) {
+                    message.setCode(Mc.busArrival)
+
+                    bus.currentActivity = Messages.busReturn
+
+                    if (Constants.isDebug) {
+                        println("Autobus ${msg.vehicle!!.id} vystupovanie ukončené: ${msg.vehicle!!.getNumberOfPassengers()} ${bus.busyDoors}")
+                    }
+
+                    response(message)
+                }
+            }
         }
 
          // Start autobusu na dalsiu linku

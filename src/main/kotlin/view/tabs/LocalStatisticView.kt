@@ -4,11 +4,9 @@ import tornadofx.*
 
 /** Author: Bc. Juraj Macak **/
 
-open class Tab3SubView : View("Tab 3 title") {
+open class LocalStatisticView : View("Lokálne štatistiky") {
 
     override val root = vbox {
-        prefWidth = 1500.0
-        prefHeight = 1000.0
 
     }
 

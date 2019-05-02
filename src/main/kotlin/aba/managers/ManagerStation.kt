@@ -3,8 +3,7 @@ package aba.managers
 import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
-import aba.continualAssistants.*
-import aba.instantAssistants.*
+import helper.Constants
 import helper.Messages
 
 //meta! id="3"
@@ -30,52 +29,31 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         message.setCode(Mc.busMoveStart)
         message.setAddressee(mySim().findAgent(Id.agentTransport))
 
+        val msg = message as AppMessage
+        msg.vehicle!!.scheduler.addStartTime(mySim().currentTime())
+
+        if (Constants.isDebug) {
+            println("Autobus ${msg.vehicle!!.id} vyjazd s ${msg.vehicle!!.getNumberOfPassengers()}")
+        }
+
         request(message)
     }
 
-    //meta! sender="ExitTravelerCA", id="66", type="Finish"
+    //meta! sender="OutCameFromBusCA OR RETURN", id="66", type="Finish"
     fun processFinish(message: MessageForm) {
-        when(message.sender().id()) {
-            Id.returnBusCA -> {
-                val msg = message as AppMessage
 
-                msg.vehicle?.prepareToMoveNextStop()
-
-                msg.setCode(Mc.busArrival)
-                msg.setAddressee(mySim().findAgent(Id.agentBusStop))
-
-                request(msg)
-            }
-            Id.exitTravelerCA -> {
-                message.setAddressee(myAgent().findAssistant(Id.returnBusCA))
-
-                val msg = message as AppMessage
-                msg.vehicle?.currentActivity = Messages.busReturn
-
-                startContinualAssistant(msg)
-            }
-        }
     }
 
     //meta! sender="AgentTransport", id="33", type="Response"
     fun processBusMoveStart(message: MessageForm) {
         val message = message as AppMessage
 
-        // Ak som vo finalnej destinaci, tak zacnem proces vystup
-        if (message.vehicle!!.scheduler.isFinalDestination()) {
-            message.setAddressee(Id.exitTravelerCA)
+        message.vehicle?.prepareToMoveNextStop()
 
-            val msg = message as AppMessage
-            msg.vehicle?.currentActivity = Messages.busPassengersOutcome
+        message.setCode(Mc.busArrival)
+        message.setAddressee(mySim().findAgent(Id.agentBusStop))
 
-            startContinualAssistant(msg)
-        } else {
-            message.vehicle?.prepareToMoveNextStop()
-            message.setCode(Mc.busArrival)
-            message.setAddressee(mySim().findAgent(Id.agentBusStop))
-
-            request(message)
-        }
+        request(message)
     }
 
     //meta! sender="AgentBus", id="51", type="Response"

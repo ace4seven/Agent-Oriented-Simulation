@@ -17,11 +17,13 @@ class Id : IdList() {
         val managerBusStop = 105
         val managerTransport = 106
         val managerBus = 108
-        val exitTravelerCA = 1007
+        val OutComFromBusCA = 1007
         val incomeScheduler = 1001
         val prepareForStartCA = 1002
         val travellingCA = 1003
+
         val incomeIntoBusCA = 1004
+
         val checkStationAction = 1005
         val returnBusCA = 1006
     }

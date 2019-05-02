@@ -1,45 +1,48 @@
 package view.tabs
 
-import javafx.scene.text.FontWeight
 import model.BusTableData
 import tornadofx.*
-import view.support.CoreView
-import view.support.SimulationActionsView
+import view.support.D
 
 /** Author: Bc. Juraj Macak **/
 
-open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
+open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
     override val root = vbox {
-        prefWidth = 1500.0
-        prefHeight = 1000.0
-
         form {
             hbox {
                 fieldset("Nastavenia autobusov") {
                     hbox(20) {
                         field("Linka") {
-                            busLinkComboBox = combobox{
-                                items = busLinks
+                            D.busLinkComboBox = combobox{
+                                items = D.busLinks
                             }
                         }
 
                         field("Typ autobusu") {
-                            busTypeComboBox = combobox {
-                                items = busType
+                            D.busTypeComboBox = combobox {
+                                items = D.busType
                             }
                         }
 
                         field("Stratégia vozenia") {
-                            busStrategyComboBox = combobox {
-                                items = busStrategy
+                            D.busStrategyComboBox = combobox {
+                                items = D.busStrategy
                             }
                         }
 
                         field {
                             button("Pridať") {
                                 action {
-                                    addBuss()
+                                    D.addBuss()
+                                }
+                            }
+                        }
+
+                        field {
+                            button("Načítaj zo súboru") {
+                                action {
+                                    D.loadBusesFromFile()
                                 }
                             }
                         }
@@ -52,10 +55,10 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                     }
                     field("Počet replikácii") {
                         textfield {
-                            bind(controller.numberOfReplicationsProperty)
+                            bind(D.controller.numberOfReplicationsProperty)
 
-                            replicationTextField = this
-                            replicationTextField.promptText = "Min 30"
+                            D.replicationTextField = this
+                            D.replicationTextField.promptText = "Min 30"
                             text = "1"
                         }
                     }
@@ -64,26 +67,32 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
         }
         hbox {
             hboxConstraints {
-                paddingLeft = 20.0
+                paddingRight = 10.0
             }
+
             vbox {
                 label("LINKA A") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkATableView = tableview {
+                D.busLinkATableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
 
                     minWidth = 300.0
-                    items = linkATableViewDataSource
+                    items = D.busLinkATableViewDatasource
+
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
                 }
@@ -93,21 +102,25 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                 label("LINKA B") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkBTableView = tableview {
+                D.busLinkBTableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
 
                     minWidth = 300.0
-                    items = linkBTableViewDataSource
+                    items = D.busLinkBTableViewDataSource
 
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
                 }
@@ -117,78 +130,26 @@ open class Tab1Subview : CoreView("Nastavenie parametrov simulácie") {
                 label("LINKA C") {
                     vboxConstraints { marginLeft = 20.0 }
                 }
-                linkCTableView = tableview {
+                D.busLinkCTableView = tableview {
                     vboxConstraints {
                         marginLeft = 20.0
                     }
                     minWidth = 300.0
-                    items = linkCTableViewDataSource
+                    items = D.busLinkCTableViewDataSource
 
                     column("ID", BusTableData::id) {
-                        minWidth = 20.0
+                        minWidth = 10.0
                     }
                     column("Typ", BusTableData::type) {
-                        minWidth = 140.0
+                        minWidth = 120.0
                     }
                     column("Stratégia", BusTableData::strategy) {
+                        minWidth = 120.0
+                    }
+
+                    column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
-                }
-            }
-        }
-
-        vbox {
-            hbox {
-                simulationTime = label("11 : 00 : 00") {
-                    style {
-                        fontWeight = FontWeight.BOLD
-                        fontSize = 30.px
-                    }
-                    hboxConstraints {
-                        marginTop = 50.0
-                        marginBottom = 10.0
-                        marginLeft = 10.0
-                    }
-                bind(controller.simulationTimeProperty)
-                }
-
-                slider {
-                    hboxConstraints {
-                        marginTop = 60.0
-                        marginBottom = 10.0
-                        marginLeft = 10.0
-                    }
-
-                    minWidth = 700.0
-                }
-            }
-            hbox {
-                button("Start") {
-                    hboxConstraints {
-                        marginLeft = 10.0
-                        marginTop = 10.0
-                    }
-                    action { startSimulationButtonPressed() }
-                }
-                button("Pauza") {
-                    hboxConstraints {
-                        marginLeft = 10.0
-                        marginTop = 10.0
-                    }
-                    action { pauseSimulation() }
-                }
-                button("Krok") {
-                    hboxConstraints {
-                        marginLeft = 10.0
-                        marginTop = 10.0
-                    }
-                }
-                button("Stop") {
-                    hboxConstraints {
-                        marginLeft = 10.0
-                        marginTop = 10.0
-                    }
-                    action { stopSimulation() }
                 }
             }
         }

@@ -10,6 +10,7 @@ class AppMessage : MessageForm {
     var vehicle: Vehicle? = null
     var passenger: PassengerEntity? = null
     var passengerIncomeStop: BusStop? = null
+    var doorIdentifier = 0
 
     var isFirstTraveller = true
 
@@ -31,6 +32,7 @@ class AppMessage : MessageForm {
         passenger = original.passenger
         passengerIncomeStop = original.passengerIncomeStop
         isFirstTraveller = original.isFirstTraveller
+        doorIdentifier = original.doorIdentifier
     }
 
 }

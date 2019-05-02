@@ -14,7 +14,91 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
     }
 
     //meta! sender="AgentBusStop", id="58", type="Start"
-    fun processStart(message: MessageForm) {}
+    fun processStart(message: MessageForm) {
+        val msg = message as AppMessage
+        val bus = msg.vehicle!!
+
+        var passengers = myAgent().getBusStopPassengers(bus.getActualStop())
+
+        for (i in 1..bus.type.numbOfDors()) {
+            if (passengers.size > 0 && bus.getFreeCapacity() > 0) {
+
+                if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
+                    break
+                }
+
+                bus.incBusyDoor()
+
+
+                val passenger = passengers.dequeue()
+
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
+
+                passenger.passengerIncomeIntoBus()
+                passenger.numberOfDoorIn = i
+
+                bus.addPassenger(passenger)
+
+                val msgCopy = msg.createCopy() as AppMessage
+                msgCopy.setCode(Mc.passengerFinishIncome)
+
+                msgCopy.doorIdentifier = i
+
+                var sample: Double
+
+                if (bus.isMicroBus()) {
+                    sample = myAgent().incomeGeneratorMicroBus.sample()
+                } else {
+                    sample = myAgent().incomeGeneratorBus.sample()
+                }
+
+                hold(sample, msgCopy)
+            }
+        }
+
+        assistantFinished(msg)
+    }
+
+    fun processPassengerFinishIncome(message: MessageForm) {
+        val msg = message as AppMessage
+        val bus = msg.vehicle!!
+
+        var passengers = myAgent().getBusStopPassengers(bus.getActualStop())
+
+        bus.decBusyDoor()
+
+        if(passengers.size > 0 && bus.getFreeCapacity() > 0) {
+            if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
+//                assistantFinished(msg)
+            } else {
+                bus.incBusyDoor()
+
+                val passenger = passengers.dequeue()
+                passenger.numberOfDoorIn = msg.doorIdentifier
+
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
+
+                passenger.passengerIncomeIntoBus()
+                bus.addPassenger(passenger)
+
+                val msgCopy = msg.createCopy()
+
+                var sample: Double
+
+                if (bus.isMicroBus()) {
+                    sample = myAgent().incomeGeneratorMicroBus.sample()
+                } else {
+                    sample = myAgent().incomeGeneratorBus.sample()
+                }
+
+                hold(sample, msgCopy)
+            }
+        }
+
+        if (!bus.isBusy()) {
+            assistantFinished(msg)
+        }
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
@@ -27,6 +111,7 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proces
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
+            Mc.passengerFinishIncome -> processPassengerFinishIncome(message)
 
             else -> processDefault(message)
         }

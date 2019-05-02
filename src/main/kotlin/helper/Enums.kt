@@ -14,6 +14,15 @@ enum class BusLink {
             LINK_C -> return 1800.0
         }
     }
+
+    fun formattedName(): String {
+        when(this) {
+            LINK_A -> return "Linka A"
+            LINK_B -> return "Linka B"
+            LINK_C -> return "Linka C"
+        }
+    }
+
 }
 
 data class GeneratorData(val start: Double, val stop: Double, val lambda: Double) {
@@ -36,6 +45,15 @@ enum class BusStop {
     B_K1, B_K2, B_K3,
     C_K1, C_K2, C_K3, STATION,
     K1, K2, K3;
+
+    fun getLink(): BusLink? {
+        when(this) {
+            A_A, A_B, A_C, A_D, A_E, A_F, A_G, A_H, A_I, A_J, A_K, A_L -> return BusLink.LINK_A
+            B_A, B_B, B_C, B_D, B_E, B_F, B_G, B_H, B_I, B_J -> return BusLink.LINK_B
+            C_A, C_B, C_C, C_D, C_E, C_F, C_G -> return BusLink.LINK_C
+            A_K1, A_K2, A_K3, B_K1, B_K2, B_K3,C_K1, C_K2, C_K3, STATION, K1, K2, K3 -> return null
+        }
+    }
 
     fun capacity(): Int {
         when(this) {
@@ -172,6 +190,37 @@ enum class BusStop {
         }
 
         throw Exception("Chain enum bad calling")
+    }
+
+    fun getConcreteStop(): BusStop {
+        when (this) {
+            A_K1, B_K1, C_K1, K1 -> return K1
+            A_K2, B_K2, C_K2, K2 -> return K2
+            A_K3, B_K3, C_K3, K3 -> return K3
+        }
+
+        return this
+    }
+
+    fun formattedStop(): String {
+        when(this) {
+            A_A, B_A, C_A -> return "A"
+            A_B, B_B, C_B -> return "B"
+            A_C, B_C, C_C -> return "C"
+            A_D, B_D, C_D -> return "D"
+            A_E, B_E, C_E -> return "E"
+            A_F, B_F, C_F -> return "F"
+            A_G, B_G, C_G -> return "G"
+            A_H, B_H -> return "H"
+            A_I, B_I -> return "I"
+            A_J, B_J -> return "J"
+            A_K -> return "K"
+            A_L -> return "L"
+            A_K1, B_K1, C_K1, K1 -> return "K1"
+            A_K2, B_K2, C_K2, K2 -> return "K2"
+            A_K3, B_K3, C_K3, K3 -> return "K3"
+            STATION -> return "Štadión"
+        }
     }
 
 }

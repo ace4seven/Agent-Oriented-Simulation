@@ -19,12 +19,23 @@ class TravellingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
         msg.vehicle?.scheduler?.getDuration()
 
         msg.setCode(Mc.finishTravelStop)
-        hold(msg.vehicle!!.scheduler.getDuration()!!, msg)
+
+        var duration: Double
+
+        if (msg.vehicle!!.scheduler.isFinalDestination()) {
+            duration = msg.vehicle!!.link.backWayDuration()
+        } else {
+            duration = msg.vehicle!!.scheduler.getDuration()!!
+        }
+
+        msg.vehicle!!.scheduler.addFinishTime(mySim().currentTime() + duration)
+        BusHockeySimulation.logEntry(mySim().currentTime(), "Autobus ${msg.vehicle!!.id} odchod zo zastávky: ${msg.vehicle!!.getActualStop().name}")
+        hold(duration, msg)
     }
 
     fun processFinishTravel(message: MessageForm) {
-        println("Koniec cestovania")
-
+        val msg = message as AppMessage
+        BusHockeySimulation.logEntry(mySim().currentTime(), "Autobus ${msg.vehicle!!.id} príchod na zastávku: ${msg.vehicle!!.getNextStop().name}")
         assistantFinished(message)
     }
 

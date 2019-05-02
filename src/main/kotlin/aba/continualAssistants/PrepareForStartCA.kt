@@ -18,6 +18,8 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
         myAgent().vehicles.forEach {
             val msgCopy: AppMessage = message.createCopy() as AppMessage
 
+            msgCopy.vehicle?.currentActivity = "Čaká na prvé vyslanie"
+
             msgCopy.vehicle = it
             msgCopy.setCode(Mc.finishInitVehicle)
 
@@ -26,6 +28,11 @@ class PrepareForStartCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proc
     }
 
     fun processFinishInitVehicle(message: MessageForm) {
+        val msg = message as AppMessage
+        msg.vehicle?.isDeployed = true
+
+        BusHockeySimulation.logEntry(mySim().currentTime(), "AUTOBUS ${msg.vehicle!!.id} (${msg.vehicle!!.link.formattedName()}) vyslaný na zastávku: ${msg.vehicle!!.scheduler.getActualStop()!!.formattedStop()}")
+
         assistantFinished(message)
     }
 

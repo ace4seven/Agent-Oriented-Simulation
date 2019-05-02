@@ -1,9 +1,15 @@
 package aba.simulation
 
 import OSPABA.*
+import OSPRNG.ExponentialRNG
 import aba.agents.*
 import aba.entities.Vehicle
+import helper.Constants
+import helper.Formatter
 import model.BusProgressCell
+import model.LogCell
+import model.LogEntry
+import java.util.*
 import java.util.function.Consumer
 
 class BusHockeySimulation : Simulation() {
@@ -19,9 +25,21 @@ class BusHockeySimulation : Simulation() {
         prepareAgents()
     }
 
+    companion object {
+        var logEntries = LinkedList<LogEntry>()
+
+        fun logEntry(time: Double, desc: String) {
+            logEntries.add(LogEntry(LogCell.index, time, desc))
+            LogCell.inc()
+        }
+    }
+
     public override fun prepareSimulation() {
         super.prepareSimulation()
-        // Create global statistcis
+
+        Constants.availableBusStops.forEach {
+            agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(it.generateInterval().lambda)
+        }
     }
 
     public override fun prepareReplication() {
@@ -113,12 +131,18 @@ class BusHockeySimulation : Simulation() {
 
         agentBus()?.vehicles?.forEach {
             val cell = BusProgressCell()
+
             cell.id = it.id
+            cell.type = it.type.formattedName()
+            cell.strategy = it.strategy.formattedName()
             cell.activity = it.currentActivity
-            cell.currentStop = "${it.getActualStop()} -> ${it.getNextStop()} (${it.getRouteProgress()})"
-            cell.link = it.link.name
+            cell.progress = "${if (it.isDeployed) Formatter.round2Decimals(it.getRouteProgress()) else "-"} %"
+            cell.currentStop = "${it.getActualStop().formattedStop()}"
+            cell.nextStop =  "${it.getNextStop().formattedStop()}"
+            cell.link = it.link.formattedName()
             cell.freeCapacity = "${it.getFreeCapacity()}"
             cell.numbOfTravelers = "${it.getNumberOfPassengers()}"
+
             result.add(cell)
         }
 

@@ -29,7 +29,6 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
 
     fun startSimulation() {
         preparePassengers()
-
         prepareBusses()
     }
 

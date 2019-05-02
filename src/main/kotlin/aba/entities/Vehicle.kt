@@ -1,10 +1,13 @@
 package aba.entities
 
 import OSPABA.Entity
+import OSPABA.Simulation
 import OSPDataStruct.SimQueue
 import aba.simulation.BusHockeySimulation
+import com.sun.org.apache.xpath.internal.operations.Bool
 import helper.BusLink
 import helper.BusScheduler
+import helper.BusStop
 
 
 /** Author: Bc. Juraj Macak **/
@@ -17,6 +20,14 @@ enum class BusType {
             SMALL -> return 3
             BIG -> return 4
             MICROBUS -> return 1
+        }
+    }
+
+    fun formattedName(): String {
+        when(this) {
+            SMALL -> return "Malý"
+            BIG -> return "Veľký"
+            MICROBUS -> return "Mikrobus"
         }
     }
 
@@ -47,6 +58,13 @@ enum class TravelStrategyType {
             NO_WAIT -> return 0.0
         }
     }
+
+    fun formattedName(): String {
+        when(this) {
+            WAIT -> return "S čakaním"
+            NO_WAIT -> return "Bez čakania"
+        }
+    }
 }
 
 abstract class Vehicle(val id: Int,
@@ -54,15 +72,28 @@ abstract class Vehicle(val id: Int,
                        val type: BusType,
                        val strategy: TravelStrategyType,
                        val deployTime: Double,
-                       val sim: BusHockeySimulation): Entity(sim) {
+                       val sim: Simulation): Entity(sim) {
 
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
+    var isDeployed = false
 
     private var passengers = SimQueue<PassengerEntity>()
 
-    fun getActualStop(): String {
-        return scheduler.getActualStop()!!.name
+    var busyDoors = 0
+
+    var isReadyForNextStop = false
+
+    fun getActualStop(): BusStop {
+        return scheduler.getActualStop()!!
+    }
+
+    fun getNextStop(): BusStop {
+        return scheduler.getNextStop()!!
+    }
+
+    fun getPassengers(): SimQueue<PassengerEntity> {
+        return passengers
     }
 
     fun getNumberOfPassengers(): Int {
@@ -73,12 +104,16 @@ abstract class Vehicle(val id: Int,
         return type.capacity() - passengers.count()
     }
 
-    fun getRouteProgress(): String {
+    fun getRouteProgress(): Double {
         val percentInterval = (scheduler.getEndTime() - scheduler.getStarTime())
         val progressTime = sim.currentTime() - scheduler.getStarTime()
         val progress = progressTime / percentInterval * 100
 
-        return "${progress} %"
+        if (progress > 100) {
+            return 100.0
+        }
+
+        return progress
     }
 
     fun prepareToMoveNextStop() {
@@ -89,14 +124,34 @@ abstract class Vehicle(val id: Int,
         scheduler.initTransportStats(mySim().currentTime())
     }
 
-    fun getNextStop(): String {
-        return scheduler.getNextStop()!!.name
-    }
-
     fun addPassenger(passenger: PassengerEntity) {
         passenger.passengerIncomeIntoBus()
 
         passengers.add(passenger)
+    }
+
+    fun incBusyDoor() {
+        busyDoors += 1
+    }
+
+    fun decBusyDoor() {
+        busyDoors -= 1
+    }
+
+    fun isBusy(): Boolean {
+        return busyDoors != 0
+    }
+
+    fun hasFreeDoor(): Boolean {
+        return  busyDoors < type.numbOfDors()
+    }
+
+    fun isMicroBus(): Boolean {
+        when(type) {
+            BusType.MICROBUS -> return true
+        }
+
+        return false
     }
 
 }

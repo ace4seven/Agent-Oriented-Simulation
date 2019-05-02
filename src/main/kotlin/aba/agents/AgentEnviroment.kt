@@ -5,16 +5,18 @@ import OSPRNG.ExponentialRNG
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
-import aba.instantAssistants.*
-import helper.BusStop
-import helper.Constants
+import aba.entities.PassengerEntity
 
 //meta! id="1"
 class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
 
-    var arrivalGenerator = mutableMapOf<String, ExponentialRNG>()
+    val arrivalGenerator = mutableMapOf<String, ExponentialRNG>()
 
-    var incomeChecker = mutableMapOf<String, Int>()
+    var passengersCapacityChecker = mutableMapOf<String, Int>()
+        private set
+
+    var passengerRegisterList = mutableListOf<PassengerEntity>()
+        private set
 
     init {
         init()
@@ -24,12 +26,8 @@ class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, myS
         super.prepareReplication()
         // Setup component for the next replication
 
-        arrivalGenerator.clear()
-        incomeChecker.clear()
-
-        Constants.availableBusStops.forEach {
-            arrivalGenerator[it.name] = ExponentialRNG(it.generateInterval().lambda)
-        }
+        passengersCapacityChecker.clear()
+        passengerRegisterList.clear()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

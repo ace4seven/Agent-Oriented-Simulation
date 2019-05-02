@@ -1,8 +1,10 @@
 package aba.simulation
 
 import OSPABA.*
+import OSPRNG.ExponentialRNG
 import aba.agents.*
 import aba.entities.Vehicle
+import helper.Constants
 import helper.Formatter
 import model.BusProgressCell
 import model.LogCell
@@ -34,7 +36,10 @@ class BusHockeySimulation : Simulation() {
 
     public override fun prepareSimulation() {
         super.prepareSimulation()
-        // Create global statistcis
+
+        Constants.availableBusStops.forEach {
+            agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(it.generateInterval().lambda)
+        }
     }
 
     public override fun prepareReplication() {

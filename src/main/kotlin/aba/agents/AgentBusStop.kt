@@ -17,10 +17,10 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
 
     private var busStopAdministration: BusStopAdministration? = null
 
-    var incomeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
-    var outComeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
-    var incomeGeneratorMicroBus = UniformContinuousRNG(6.0, 10.0, Constants.randomSeader)
-    var outGeneratorMicroBus = 4.0
+    val incomeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
+    val outComeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
+    val incomeGeneratorMicroBus = UniformContinuousRNG(6.0, 10.0, Constants.randomSeader)
+    val outGeneratorMicroBus = 4.0
 
     init {
         init()

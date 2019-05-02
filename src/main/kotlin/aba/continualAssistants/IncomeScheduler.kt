@@ -4,7 +4,6 @@ import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
 import aba.entities.PassengerEntity
-import tornadofx.*
 
 //meta! id="43"
 class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Scheduler(id, mySim, myAgent) {
@@ -26,14 +25,14 @@ class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         val msg = message as AppMessage
         val cpyMsg = msg.createCopy()
 
-        if(myAgent().incomeChecker.containsKey(msg.passengerIncomeStop!!.name)) {
-            myAgent().incomeChecker[msg.passengerIncomeStop!!.name] = myAgent().incomeChecker[msg.passengerIncomeStop!!.name]!! + 1
+        if(myAgent().passengersCapacityChecker.containsKey(msg.passengerIncomeStop!!.name)) {
+            myAgent().passengersCapacityChecker[msg.passengerIncomeStop!!.name] = myAgent().passengersCapacityChecker[msg.passengerIncomeStop!!.name]!! + 1
         } else {
-            myAgent().incomeChecker[msg.passengerIncomeStop!!.name] = 1
+            myAgent().passengersCapacityChecker[msg.passengerIncomeStop!!.name] = 1
         }
 
         if (msg.passengerIncomeStop!!.generateInterval().stopGenerateTime() > mySim().currentTime()) {
-            if (myAgent().incomeChecker[msg.passengerIncomeStop!!.name]!! < msg.passengerIncomeStop!!.capacity()) {
+            if (myAgent().passengersCapacityChecker[msg.passengerIncomeStop!!.name]!! < msg.passengerIncomeStop!!.capacity()) {
                 hold(myAgent().arrivalGenerator[msg.passengerIncomeStop!!.name]!!.sample(), cpyMsg)
             }
         }
@@ -42,6 +41,8 @@ class IncomeScheduler(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         PassengerEntity.incIndex()
 
         BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} príchod na zastávku: ${passenger.type.name}")
+
+        myAgent().passengerRegisterList.add(passenger)
 
         msg.passenger = passenger
 

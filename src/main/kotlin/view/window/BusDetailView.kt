@@ -44,9 +44,9 @@ open class BusDetailView : View("Detail autobusu") {
                     minWidth = 150.0
                 }
 
-                column("Výstup z autobusu", PassengerCell::busArrival) {
-                    minWidth = 150.0
-                }
+//                column("Výstup z autobusu", PassengerCell::busArrival) {
+//                    minWidth = 150.0
+//                }
 
                 column("Dvere nástupu", PassengerCell::doorIn) {
                     minWidth = 150.0

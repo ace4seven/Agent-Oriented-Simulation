@@ -14,6 +14,7 @@ open class Tab2Subview : View("Priebeh simulácie") {
         tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
 
         tab(OverviewSimulationTabView::class)
+        tab(LocalStatisticView::class)
         tab(LogTabView::class)
     }
 

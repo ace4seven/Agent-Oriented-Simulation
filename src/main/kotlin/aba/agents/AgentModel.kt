@@ -33,7 +33,6 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
     }
 
     private fun preparePassengers() {
-
         Constants.availableBusStops.forEach {
             val message = AppMessage(mySim())
 

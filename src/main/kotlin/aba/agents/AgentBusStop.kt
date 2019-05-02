@@ -9,6 +9,7 @@ import aba.managers.*
 import aba.continualAssistants.*
 import aba.entities.BusStopAdministration
 import aba.entities.PassengerEntity
+import continualAssistants.BusWaitingCA
 import helper.BusStop
 import helper.Constants
 
@@ -42,6 +43,8 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
         ManagerBusStop(Id.managerBusStop, mySim(), this)
         IncomeIntoBusCA(Id.incomeIntoBusCA, mySim(), this)
         OutCameFromBusCA(Id.OutComFromBusCA, mySim(), this)
+        BusWaitingCA(Id.busWaitingCA, mySim(), this)
+        IncomeWaitingBusCA(Id.incomeWaitingBusCA, mySim(), this)
 
         addOwnMessage(Mc.waitForBus)
         addOwnMessage(Mc.busArrival)

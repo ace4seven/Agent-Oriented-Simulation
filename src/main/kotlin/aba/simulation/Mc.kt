@@ -22,6 +22,7 @@ class Mc : IdList() {
         var passengerFinishIncome = 1105
         var busFinishWaiting = 1106
         var passengerFinishIncomeWaitingBus = 1107
+        var passengerOut = 1108
 
         // MARK: - Contlin correction
         val start = 2147483647

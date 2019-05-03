@@ -22,7 +22,12 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     }
 
     //meta! sender="AgentModel", id="35", type="Request"
-    fun processTravelingProcess(message: MessageForm) {}
+    fun processTravellerArrival(message: MessageForm) {
+        message.setCode(Mc.waitForBus)
+        message.setAddressee(Id.agentBusStop)
+
+        notice(message)
+    }
 
     //meta! sender="AgentBusStop", id="31", type="Response"
     fun processBusArrival(message: MessageForm) {
@@ -38,11 +43,6 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         }
 
         request(message)
-    }
-
-    //meta! sender="OutCameFromBusCA OR RETURN", id="66", type="Finish"
-    fun processFinish(message: MessageForm) {
-
     }
 
     //meta! sender="AgentTransport", id="33", type="Response"
@@ -80,17 +80,24 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         request(message)
     }
 
+    fun processpassengerOutOfBus(message: MessageForm) {
+        message.setAddressee(mySim().findAgent(Id.agentModel))
+
+        notice(message)
+    }
+
     //meta! userInfo="Generated code: do not modify", tag="begin"
     fun init() {}
 
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
-            Mc.travelingProcess -> processTravelingProcess(message)
+            Mc.travelerArrival -> processTravellerArrival(message)
             Mc.busArrival -> processBusArrival(message)
-            Mc.finish -> processFinish(message)
             Mc.prepareForStart -> processPrepareForStart(message)
             Mc.busMoveStart -> processBusMoveStart(message)
             Mc.initVehicles -> processInitVehicles(message)
+            Mc.passengerOut -> processpassengerOutOfBus(message)
+
             else -> processDefault(message)
         }
     }

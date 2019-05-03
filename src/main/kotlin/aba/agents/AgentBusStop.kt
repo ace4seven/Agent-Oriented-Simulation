@@ -54,6 +54,7 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
         addOwnMessage(Mc.passengerOutFromBusFinish)
         addOwnMessage(Mc.passengerFinishIncomeWaitingBus)
         addOwnMessage(Mc.busFinishWaiting)
+        addOwnMessage(Mc.passengerOut)
     }
     //meta! tag="end"
 

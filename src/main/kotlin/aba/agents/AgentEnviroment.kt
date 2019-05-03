@@ -15,9 +15,6 @@ class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, myS
     var passengersCapacityChecker = mutableMapOf<String, Int>()
         private set
 
-    var passengerRegisterList = mutableListOf<PassengerEntity>()
-        private set
-
     init {
         init()
     }
@@ -27,7 +24,6 @@ class AgentEnviroment(id: Int, mySim: Simulation, parent: Agent) : Agent(id, myS
         // Setup component for the next replication
 
         passengersCapacityChecker.clear()
-        passengerRegisterList.clear()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

@@ -21,13 +21,14 @@ class AgentStation(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
         ManagerStation(Id.managerStation, mySim(), this)
         CheckStationAction(Id.checkStationAction, mySim(), this)
 
-        addOwnMessage(Mc.travelingProcess)
+        addOwnMessage(Mc.travelerArrival)
         addOwnMessage(Mc.busArrival)
         addOwnMessage(Mc.busMoveStart)
         addOwnMessage(Mc.prepareForStart)
 
         addOwnMessage(Mc.initVehicles)
         addOwnMessage(Mc.finishBusReturn)
+        addOwnMessage(Mc.passengerOut)
     }
     //meta! tag="end"
 

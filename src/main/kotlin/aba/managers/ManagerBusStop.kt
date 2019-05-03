@@ -4,6 +4,7 @@ import OSPABA.*
 import OSPRNG.TriangularRNG
 import aba.simulation.*
 import aba.agents.*
+import aba.entities.BusType
 import helper.Constants
 import helper.Messages
 
@@ -17,17 +18,37 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     override fun prepareReplication() {
         super.prepareReplication()
         // Setup component for the next replication
-
-        if (petriNet() != null) {
-            petriNet().clear()
-        }
     }
 
     //meta! sender="AgentStation", id="28", type="Notice"
     fun processWaitForBus(message: MessageForm) {
         val msg = message as AppMessage
 
-        myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
+        // Ak su autobusy, ktoré čakajú, treba prioritne ísť tam a nie čakať na zastávke
+
+        val waitingBus = myAgent().getBusStopEntity(msg.passengerIncomeStop!!).getAvailableWaitingBus()
+
+        if (waitingBus != null) {
+            when(waitingBus.type) {
+                BusType.MICROBUS -> {
+                    if (msg.passenger!!.wantToGoByMicroBus()) {
+                        msg.setAddressee(Id.incomeWaitingBusCA)
+                        msg.vehicle?.currentActivity = Messages.busPassengersIncome
+                        startContinualAssistant(msg)
+                    } else {
+                        myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
+                    }
+                }
+                else -> {
+                    msg.setAddressee(Id.incomeWaitingBusCA)
+                    msg.passenger?.incomingWaitingBus = waitingBus
+                    msg.vehicle?.currentActivity = Messages.busPassengersIncome
+                    startContinualAssistant(msg)
+                }
+            }
+        } else {
+            myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
+        }
     }
 
     //meta! sender="AgentStation", id="31", type="Request"
@@ -35,16 +56,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         val msg = message as AppMessage
 
         if (msg.vehicle!!.scheduler.isFinalDestination()) {
-            message.setAddressee(Id.OutComFromBusCA)
-
-            val msg = message
-            msg.vehicle?.currentActivity = Messages.busPassengersOutcome
-
-            if (Constants.isDebug) {
-                println("Autobus ${msg.vehicle!!.id} vystupovanie: ${msg.vehicle!!.getNumberOfPassengers()}")
-            }
-
-            startContinualAssistant(msg)
+            prepareOutcomePassengers(msg)
         } else {
             msg.vehicle?.currentActivity = Messages.busPassengersIncome
 
@@ -58,20 +70,46 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         }
     }
 
+    private fun prepareOutcomePassengers(msg: AppMessage) {
+        msg.setAddressee(Id.OutComFromBusCA)
+        msg.vehicle?.currentActivity = Messages.busPassengersOutcome
+
+        if (Constants.isDebug) {
+            println("Autobus ${msg.vehicle!!.id} vystupovanie: ${msg.vehicle!!.getNumberOfPassengers()}")
+        }
+
+        startContinualAssistant(msg)
+    }
+
     //meta! sender="IncomeIntoBusCA", id="58", type="Finish"
     fun processFinish(message: MessageForm) {
         val msg = message as AppMessage
-        val bus = msg.vehicle!!
 
         when(msg.sender().id()) {
             Id.incomeIntoBusCA -> {
+                val bus = msg.vehicle!!
                 if (!bus.isBusy()) {
                     message.setCode(Mc.busArrival)
 
                     if(Constants.isDebug) {
                         println("KAPACITA zastavky po odchode: ${myAgent().getBusStopPassengers(bus.getActualStop()).count()}")
                     }
-                    response(message)
+
+                    if (bus.strategy.hasWaitingStrategy() && bus.getFreeCapacity() > 0 && !bus.hasWait) { // Nastavenie na 1.5 min cakanie
+                        myAgent().getBusStopEntity(bus.getActualStop()).addBusForWaiting(msg)
+
+                        val cpyMessage = msg.createCopy()
+                        cpyMessage.setAddressee(Id.busWaitingCA)
+
+                        bus.hasWait = true
+
+                        bus.currentActivity = Messages.extraWait
+
+                        startContinualAssistant(cpyMessage)
+                    } else {
+                        msg.vehicle!!.hasWait = false
+                        response(message)
+                    }
                 }
             }
 
@@ -88,6 +126,41 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
                     response(message)
                 }
+            }
+
+            Id.busWaitingCA -> {
+                // Pokial vrati message, autobus este neodisiel, pokial vrati null, autobus odisiel
+                val bus = msg.vehicle!!
+
+                if (!bus.isBusy()) {
+                    val waitingBusMessage = myAgent().returnWaitingBusMsg(bus.getActualStop(), bus.id)
+
+                    if (waitingBusMessage != null) {
+                        waitingBusMessage.vehicle!!.hasWait = true
+
+                        bus.currentActivity = Messages.busPassengersIncome
+
+                        waitingBusMessage.setCode(Mc.busArrival)
+                        waitingBusMessage.setAddressee(this)
+
+                        notice(waitingBusMessage)
+                    }
+                }
+            }
+
+            // TODO: Not shure if good
+            Id.incomeWaitingBusCA -> {
+                val waitingBus = msg.passenger!!.incomingWaitingBus
+
+                if (waitingBus!!.getFreeCapacity() == 0) {
+                    val waitingFrontMessage = myAgent().returnWaitingBusMsg(waitingBus.getActualStop(), waitingBus.id)!!
+
+                    waitingFrontMessage.setCode(Mc.busArrival)
+
+                    response(waitingFrontMessage)
+                }
+
+
             }
         }
 

@@ -152,6 +152,11 @@ class BusScheduler(val busLink: BusLink) {
         endTime = inTime + currentStop!!.duration()
     }
 
+    fun resetTransposrtStats() {
+        startTime = 0.0
+        endTime = 0.0
+    }
+
     fun prepareToMoveNextStop(inTime: Double) {
         moveToAnotherStop()
 
@@ -178,6 +183,17 @@ class BusScheduler(val busLink: BusLink) {
 
     fun getEndTime(): Double {
         return endTime
+    }
+
+    fun clear() {
+        when(busLink) {
+            BusLink.LINK_A -> currentStop = BusStop.A_A
+            BusLink.LINK_B -> currentStop = BusStop.B_A
+            BusLink.LINK_C -> currentStop = BusStop.C_A
+        }
+
+        startTime = 0.0
+        endTime = 0.0
     }
 
 }

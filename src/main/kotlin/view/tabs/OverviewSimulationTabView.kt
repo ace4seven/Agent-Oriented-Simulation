@@ -5,6 +5,7 @@ import model.LinkCell
 import tornadofx.*
 import view.support.D
 import view.window.BusDetailView
+import view.window.BusStopDetail
 
 
 /** Author: Bc. Juraj Macak **/
@@ -31,10 +32,10 @@ open class OverviewSimulationTabView : View("Stav objektov") {
 
             onUserSelect {
                 D.controller.busPassengerSelectedIndex = it.id
-                D.controller.updateBusPassengersTable()
             }
 
             onDoubleClick {
+                D.controller.updateBusPassengersTable()
                 openInternalWindow(BusDetailView::class)
             }
 
@@ -97,6 +98,15 @@ open class OverviewSimulationTabView : View("Stav objektov") {
                     }
                     maxHeight = 300.0
 
+                    onUserSelect {
+                        D.controller.busStopPassengerSelectedIndex = "A_${it.busStop}"
+                    }
+
+                    onDoubleClick {
+                        D.controller.updateBusStopPassengersTable()
+                        openInternalWindow(BusStopDetail::class)
+                    }
+
                     items = D.controller.linkADataSource
                     column("Zastávka", LinkCell::busStop) {
                         minWidth = 50.0
@@ -122,6 +132,15 @@ open class OverviewSimulationTabView : View("Stav objektov") {
                     }
                     maxHeight = 300.0
 
+                    onUserSelect {
+                        D.controller.busStopPassengerSelectedIndex = "B_${it.busStop}"
+                    }
+
+                    onDoubleClick {
+                        D.controller.updateBusStopPassengersTable()
+                        openInternalWindow(BusStopDetail::class)
+                    }
+
                     items = D.controller.linkBDataSource
                     column("Zastávka", LinkCell::busStop) {
                         minWidth = 50.0
@@ -146,6 +165,15 @@ open class OverviewSimulationTabView : View("Stav objektov") {
                         marginTop = 10.0
                     }
                     maxHeight = 300.0
+
+                    onUserSelect {
+                        D.controller.busStopPassengerSelectedIndex = "C_${it.busStop}"
+                    }
+
+                    onDoubleClick {
+                        D.controller.updateBusStopPassengersTable()
+                        openInternalWindow(BusStopDetail::class)
+                    }
 
                     items = D.controller.linkCDataSource
                     column("Zastávka", LinkCell::busStop) {

@@ -4,7 +4,9 @@ import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
 import OSPABA.Process
+import aba.entities.PassengerEntity
 import helper.Constants
+import tornadofx.*
 import java.lang.Exception
 
 //meta! id="65"
@@ -41,6 +43,8 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
                 msgCopy.setCode(Mc.passengerOutFromBusFinish)
                 msgCopy.doorIdentifier = i
 
+                msgCopy.outGoingPassenger = passenger
+
                 var sample: Double
 
                 if (bus.isMicroBus()) {
@@ -63,11 +67,25 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
         }
     }
 
+    private fun passengerOut(passenger: PassengerEntity) {
+        val msg = AppMessage(mySim())
+
+        msg.passenger = passenger
+        msg.setAddressee(mySim().findAgent(Id.agentStation))
+        msg.setCode(Mc.passengerOut)
+
+        myAgent().manager().notice(msg)
+    }
+
     fun processPassengerOutFromBusFinish(message: MessageForm) {
         val msg = message as AppMessage
         val bus = msg.vehicle!!
 
         bus.decBusyDoor()
+
+        if (msg.outGoingPassenger != null) {
+            passengerOut(msg.outGoingPassenger!!)
+        }
 
         var busPassengers = bus.getPassengers()
 
@@ -81,7 +99,7 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
             passenger.passengerOutComeFromBus()
             passenger.numberOfDoorOut = msg.doorIdentifier
 
-            val msgCopy = msg.createCopy()
+            val msgCopy = msg.createCopy() as AppMessage
 
             var sample: Double
 
@@ -90,6 +108,8 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
             } else {
                 sample = myAgent().outComeGeneratorBus.sample()
             }
+
+            msgCopy.outGoingPassenger = passenger
 
             hold(sample, msgCopy)
         }

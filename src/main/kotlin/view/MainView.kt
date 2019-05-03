@@ -62,7 +62,7 @@ class MainView : View("Agentovo orientovaná simulácia") {
                     }
                     action { D.startSimulationButtonPressed() }
                 }
-                D.pauseButton = button("Pauza") {
+                D.pauseButton = button("Prestávka") {
                     hboxConstraints {
                         marginLeft = 10.0
                         marginTop = 10.0

@@ -4,11 +4,18 @@ import OSPABA.*
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
+import aba.entities.PassengerEntity
 import aba.instantAssistants.*
 import helper.Constants
 
 //meta! id="2"
 class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, parent) {
+    private var passengerRegisterList = mutableListOf<PassengerEntity>()
+        private set
+
+    private var numbOfIncome = 0
+    private var numberOfOutCome = 0
+
     init {
         init()
     }
@@ -16,6 +23,25 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
     override fun prepareReplication() {
         super.prepareReplication()
         // Setup component for the next replication
+
+        passengerRegisterList.clear()
+        numberOfOutCome = 0
+        numbOfIncome = 0
+        passengerRegisterList.clear()
+    }
+
+    fun registerPassenger(passenger: PassengerEntity) {
+        passengerRegisterList.add(passenger)
+
+        numbOfIncome += 1
+    }
+
+    fun passengerArrivedStadion() {
+        numberOfOutCome += 1
+    }
+
+    fun isAllPassengersBoarded(): Boolean {
+        return numbOfIncome == numberOfOutCome
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"
@@ -24,6 +50,7 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
 
         addOwnMessage(Mc.travelingProcess)
         addOwnMessage(Mc.travelerArrival)
+        addOwnMessage(Mc.passengerOut)
     }
     //meta! tag="end"
 
@@ -33,7 +60,6 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
     }
 
     private fun preparePassengers() {
-
         Constants.availableBusStops.forEach {
             val message = AppMessage(mySim())
 

@@ -7,8 +7,8 @@ import java.util.*
 class Constants {
 
     companion object {
-        val simulationTime = 10800.0
-        val simulationTimeExtra = simulationTime + 7200
+        val simulationTime = 6786.0  //10800.0
+        val simulationTimeExtra = simulationTime + 10000000
 
         val availableBusStops = arrayOf(
                 BusStop.A_A, BusStop.A_B, BusStop.A_C, BusStop.A_D, BusStop.A_E,

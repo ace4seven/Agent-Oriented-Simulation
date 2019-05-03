@@ -27,9 +27,8 @@ class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id,
         message.setCode(Mc.busMoveStart)
 
         val msg = message as AppMessage
-        msg.vehicle?.initStartStats()
 
-        response(message)
+        response(msg)
     }
 
     //meta! sender="AgentStation", id="33", type="Request"
@@ -38,6 +37,8 @@ class ManagerTransport(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id,
 
         val msg = message as AppMessage
         msg.vehicle?.currentActivity = Messages.busTravelling
+
+        msg.vehicle?.initStartStats()
 
         startContinualAssistant(msg)
     }

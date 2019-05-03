@@ -22,14 +22,24 @@ class ManagerModel(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, myS
     }
 
     //meta! sender="AgentStation", id="35", type="Response"
-    fun processTravelingProcess(message: MessageForm) {}
+    fun processPassengerOut(message: MessageForm) {
+        myAgent().passengerArrivedStadion()
+
+        if (myAgent().isAllPassengersBoarded()) {
+            mySim().stopReplication()
+        }
+    }
 
     //meta! sender="AgentEnviroment", id="37", type="Notice"
     fun processTravelerArrival(message: MessageForm) {
-        message.setCode(Mc.waitForBus)
-        message.setAddressee(Id.agentBusStop)
+        val msg = message as AppMessage
 
-        notice(message)
+        myAgent().registerPassenger(msg.passenger!!)
+
+        msg.setCode(Mc.travelerArrival)
+        msg.setAddressee(Id.agentStation)
+
+        notice(msg)
     }
 
     //meta! userInfo="Process messages defined in code", id="0"
@@ -44,7 +54,7 @@ class ManagerModel(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, myS
 
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
-            Mc.travelingProcess -> processTravelingProcess(message)
+            Mc.passengerOut -> processPassengerOut(message)
 
             Mc.travelerArrival -> processTravelerArrival(message)
 

@@ -6,13 +6,11 @@ import OSPABA.Simulation
 import aba.entities.*
 import aba.simulation.BusHockeySimulation
 import helper.BusLink
+import helper.BusStop
 import helper.Formatter
 import javafx.application.Platform
 import javafx.collections.FXCollections
-import model.BusPassengersCollection
-import model.BusTableData
-import model.LogEntry
-import model.PassengerCell
+import model.*
 import java.util.*
 
 /** Author: Bc. Juraj Macak **/
@@ -29,8 +27,9 @@ class AppController: CoreController(), ISimDelegate {
 
             if (!isFastModeEnabled) {
                 refreshSimulationStates(core as BusHockeySimulation)
-                refreshBusLinks(core as BusHockeySimulation)
-                refreshBusPassengers(core as BusHockeySimulation)
+                refreshBusLinks(core)
+                refreshBusPassengers(core)
+                refreshBusStopPassengers(core)
             }
 
             if (isLogEnabled) {
@@ -39,24 +38,25 @@ class AppController: CoreController(), ISimDelegate {
         })
     }
 
-    private fun refreshBusPassengers(core: BusHockeySimulation) {
-        busPassengersDatasources.forEach {
-            it.value.busPassengers.clear()
-        }
+    private fun refreshBusStopPassengers(core: BusHockeySimulation) {
+        stopPassengerDataSource.clear()
 
-        busPassengerDatasource.removeAll()
+        core.agentBusStop()!!.getBusStopAdministration().busStops.forEach {
+            var passengers = it.value.getWaitingPassengersQueue().clone() as MutableList<PassengerEntity>
+            val key = it.key
+
+            busStopPassengerCollection[key]!!.stopPassengers = passengers
+        }
+    }
+
+    private fun refreshBusPassengers(core: BusHockeySimulation) {
         busPassengerDatasource.clear()
 
         core.agentBus()!!.vehicles.forEach {
             val passengers = it.getPassengers().clone() as LinkedList<PassengerEntity>
             val vehicle = it
-            passengers.forEach {
-                busPassengersDatasources[vehicle.id]?.busPassengers?.add(it.transformToCell())
-            }
-        }
 
-        busPassengersDatasources[busPassengerSelectedIndex]!!.busPassengers.forEach {
-            busPassengerDatasource.add(it)
+            busPassengersDatasources[vehicle.id]?.busPassengers = passengers
         }
     }
 
@@ -103,7 +103,7 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     fun setSimSpeed(value: Double) {
-        simulationCore.setSimSpeed(value, 0.1)
+        simulationCore.setSimSpeed(value * 2, 0.1)
     }
 
     override fun simStateChanged(core: Simulation?, state: SimState?) {
@@ -115,6 +115,10 @@ class AppController: CoreController(), ISimDelegate {
             simulationCore.setMaxSimSpeed()
         } else {
             simulationCore.setSimSpeed(1.0, 0.1)
+        }
+
+        BusStop.values().forEach {
+            busStopPassengerCollection[it.name] = StopPassengersCollection()
         }
 
         if (simulationCore.isPaused) {
@@ -154,7 +158,16 @@ class AppController: CoreController(), ISimDelegate {
         busPassengerDatasource.clear()
 
         busPassengersDatasources[busPassengerSelectedIndex]!!.busPassengers.forEach {
-            busPassengerDatasource.add(it)
+            busPassengerDatasource.add(it.transformToCell())
+        }
+    }
+
+    fun updateBusStopPassengersTable() {
+        stopPassengerDataSource.removeAll()
+        stopPassengerDataSource.clear()
+
+        busStopPassengerCollection[busStopPassengerSelectedIndex]!!.stopPassengers.forEach {
+            stopPassengerDataSource.add(it.transformToCell())
         }
     }
 

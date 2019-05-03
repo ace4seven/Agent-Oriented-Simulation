@@ -55,4 +55,10 @@ class BusStopAdministration(val sim: Simulation): Entity(sim) {
         return busStops[busStop.getConcreteStop().name]?.getWaitingPassengersQueue()!!.isEmpty()
     }
 
+    fun clear() {
+        busStops.forEach {
+            it.value.clear()
+        }
+    }
+
 }

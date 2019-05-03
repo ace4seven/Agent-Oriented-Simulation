@@ -45,7 +45,7 @@ class BusHockeySimulation : Simulation() {
     public override fun prepareReplication() {
         super.prepareReplication()
 
-        // Reset entities, queues, local statistics, etc...
+        BusHockeySimulation.logEntries.clear()
         agentModel()?.startSimulation()
     }
 
@@ -55,12 +55,8 @@ class BusHockeySimulation : Simulation() {
     }
 
     public override fun simulationFinished() {
-        // Dysplay simulation results
         super.simulationFinished()
 
-        agentBusStop()!!.getBusStopAdministration().busStops.forEach {
-            println("${it.key} -- ${it.value.getWaitingPassengersQueue().count()}")
-        }
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

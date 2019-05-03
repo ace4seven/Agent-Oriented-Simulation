@@ -11,6 +11,7 @@ import aba.instantAssistants.*
 class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, parent) {
 
     var vehicles = mutableListOf<Vehicle>()
+        private set
 
     init {
         init()
@@ -19,6 +20,10 @@ class AgentBus(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim, par
     override fun prepareReplication() {
         super.prepareReplication()
         // Setup component for the next replication
+
+        vehicles.forEach {
+            it.clear()
+        }
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

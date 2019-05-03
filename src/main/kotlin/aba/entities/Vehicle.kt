@@ -59,6 +59,14 @@ enum class TravelStrategyType {
         }
     }
 
+    fun hasWaitingStrategy(): Boolean {
+        when(this) {
+            WAIT -> return true
+        }
+
+        return false
+    }
+
     fun formattedName(): String {
         when(this) {
             WAIT -> return "S čakaním"
@@ -78,11 +86,11 @@ abstract class Vehicle(val id: Int,
     var currentActivity = "-"
     var isDeployed = false
 
+    var hasWait = false
+
     private var passengers = SimQueue<PassengerEntity>()
 
     var busyDoors = 0
-
-    var isReadyForNextStop = false
 
     fun getActualStop(): BusStop {
         return scheduler.getActualStop()!!
@@ -106,6 +114,9 @@ abstract class Vehicle(val id: Int,
 
     fun getRouteProgress(): Double {
         val percentInterval = (scheduler.getEndTime() - scheduler.getStarTime())
+        if (percentInterval == 0.0) {
+            return 0.0
+        }
         val progressTime = sim.currentTime() - scheduler.getStarTime()
         val progress = progressTime / percentInterval * 100
 
@@ -122,6 +133,10 @@ abstract class Vehicle(val id: Int,
 
     fun initStartStats() {
         scheduler.initTransportStats(mySim().currentTime())
+    }
+
+    fun resetStartsStats() {
+        scheduler.resetTransposrtStats()
     }
 
     fun addPassenger(passenger: PassengerEntity) {
@@ -152,6 +167,11 @@ abstract class Vehicle(val id: Int,
         }
 
         return false
+    }
+
+    fun clear() {
+        scheduler.clear()
+        passengers.clear()
     }
 
 }

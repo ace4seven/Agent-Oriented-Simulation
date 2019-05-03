@@ -30,13 +30,9 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
 
     override fun prepareReplication() {
         super.prepareReplication()
-        // Setup component for the next replication
 
+        busStopAdministration?.clear()
         busStopAdministration = BusStopAdministration(mySim())
-
-        busStopAdministration?.busStops?.forEach {
-            println(it.key)
-        }
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

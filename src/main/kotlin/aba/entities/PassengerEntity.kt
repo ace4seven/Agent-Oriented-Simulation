@@ -68,4 +68,8 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
         return cell
     }
 
+    fun clear() {
+        incomingWaitingBus = null
+    }
+
 }

@@ -153,6 +153,12 @@ class D {
             pauseButton.isDisable = false
 
             controller.pauseSimulation()
+
+            if (controller.simulationCore.isPaused) {
+                pauseButton.text = "Prestávka"
+            } else {
+                pauseButton.text = "Pokračovať"
+            }
         }
 
     }

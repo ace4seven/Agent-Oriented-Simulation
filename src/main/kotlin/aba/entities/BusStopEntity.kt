@@ -54,4 +54,9 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
         return cell
     }
 
+    fun clear() {
+        waitingPassengersQueue.clear()
+        waitingBuses.clear()
+    }
+
 }

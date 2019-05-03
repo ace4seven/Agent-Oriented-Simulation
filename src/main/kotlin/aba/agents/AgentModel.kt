@@ -25,6 +25,9 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
         // Setup component for the next replication
 
         passengerRegisterList.clear()
+        numberOfOutCome = 0
+        numbOfIncome = 0
+        passengerRegisterList.clear()
     }
 
     fun registerPassenger(passenger: PassengerEntity) {

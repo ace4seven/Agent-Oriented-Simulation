@@ -103,7 +103,7 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     fun setSimSpeed(value: Double) {
-        simulationCore.setSimSpeed(value, 0.1)
+        simulationCore.setSimSpeed(value * 2, 0.1)
     }
 
     override fun simStateChanged(core: Simulation?, state: SimState?) {

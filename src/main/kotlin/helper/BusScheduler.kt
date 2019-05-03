@@ -185,4 +185,15 @@ class BusScheduler(val busLink: BusLink) {
         return endTime
     }
 
+    fun clear() {
+        when(busLink) {
+            BusLink.LINK_A -> currentStop = BusStop.A_A
+            BusLink.LINK_B -> currentStop = BusStop.B_A
+            BusLink.LINK_C -> currentStop = BusStop.C_A
+        }
+
+        startTime = 0.0
+        endTime = 0.0
+    }
+
 }

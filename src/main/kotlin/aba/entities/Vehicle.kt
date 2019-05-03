@@ -92,8 +92,6 @@ abstract class Vehicle(val id: Int,
 
     var busyDoors = 0
 
-    var isReadyForNextStop = false
-
     fun getActualStop(): BusStop {
         return scheduler.getActualStop()!!
     }
@@ -169,6 +167,11 @@ abstract class Vehicle(val id: Int,
         }
 
         return false
+    }
+
+    fun clear() {
+        scheduler.clear()
+        passengers.clear()
     }
 
 }

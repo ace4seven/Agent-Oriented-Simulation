@@ -172,6 +172,7 @@ abstract class Vehicle(val id: Int,
     fun clear() {
         scheduler.clear()
         passengers.clear()
+        currentActivity = "-"
     }
 
 }

@@ -40,18 +40,47 @@ class MainView : View("Agentovo orientovaná simulácia") {
                     }
 
                     isShowTickLabels = true
-                    majorTickUnit = 10.0
+                    majorTickUnit = 1.0
                     blockIncrement = 1.0
-                    minorTickCount = 10
+                    minorTickCount = 1
                     isSnapToTicks = true
+
+                    min = 1.0
+                    max = 100.0
 
                     valueProperty().addListener { _, oldValue, newValue ->
                         if (oldValue.toInt() != newValue.toInt()) {
-                            D.controller.setSimSpeed(newValue.toDouble())
+                            D.controller.setSimulationSpeed(newValue.toDouble())
                         }
                     }
 
                     minWidth = 700.0
+                }
+
+                D.intensitySlider = slider {
+                    hboxConstraints {
+                        marginTop = 20.0
+                        marginBottom = 10.0
+                        marginLeft = 20.0
+                    }
+
+                    isShowTickLabels = true
+                    isSnapToTicks = true
+
+                    majorTickUnit = 0.1
+                    blockIncrement = 0.1
+                    minorTickCount = 1
+
+                    min = 0.1
+                    max = 1.0
+
+                    valueProperty().addListener { _, oldValue, newValue ->
+                        if (oldValue.toDouble() != newValue.toDouble()) {
+                            D.controller.setSimulationIntensity(newValue.toDouble())
+                        }
+                    }
+
+                    minWidth = 400.0
                 }
             }
             hbox {
@@ -68,13 +97,16 @@ class MainView : View("Agentovo orientovaná simulácia") {
                         marginTop = 10.0
                     }
                     action { D.pauseSimulation() }
+                    isDisable = true
                 }
                 D.stopButton = button("Stop") {
                     hboxConstraints {
                         marginLeft = 10.0
                         marginTop = 10.0
                     }
+
                     action { D.stopSimulation() }
+                    isDisable = true
                 }
 
                 D.fastModeCheckBox = checkbox("Rýchly režim", D.controller.isFastModeEnabledProperty) {

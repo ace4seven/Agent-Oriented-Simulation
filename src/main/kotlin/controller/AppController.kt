@@ -15,8 +15,6 @@ import java.util.*
 
 /** Author: Bc. Juraj Macak **/
 
-// ONLY METHJODS
-
 class AppController: CoreController(), ISimDelegate {
 
     init { simulationCore.registerDelegate(this) }
@@ -102,8 +100,14 @@ class AppController: CoreController(), ISimDelegate {
         }
     }
 
-    fun setSimSpeed(value: Double) {
-        simulationCore.setSimSpeed(value * 2, 0.1)
+    fun setSimulationSpeed(value: Double) {
+        simSpeed = value
+        simulationCore.setSimSpeed(simSpeed, simIntensity)
+    }
+
+    fun setSimulationIntensity(value: Double) {
+        simIntensity = value
+        simulationCore.setSimSpeed(simSpeed, simIntensity)
     }
 
     override fun simStateChanged(core: Simulation?, state: SimState?) {

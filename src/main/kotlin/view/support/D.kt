@@ -12,6 +12,7 @@ import tornadofx.*
 class D {
 
     companion object {
+
         val controller = AppController()
 
         var simulationTime: Label by singleAssign()
@@ -28,6 +29,7 @@ class D {
         var fastModeCheckBox = CheckBox()
 
         var speedSlider = Slider()
+        var intensitySlider = Slider()
 
         // TABLES
 

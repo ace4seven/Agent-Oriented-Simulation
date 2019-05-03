@@ -8,6 +8,7 @@ import helper.BusStop
 class AppMessage : MessageForm {
 
     var vehicle: Vehicle? = null
+
     var passenger: PassengerEntity? = null
     var passengerIncomeStop: BusStop? = null
     var doorIdentifier = 0

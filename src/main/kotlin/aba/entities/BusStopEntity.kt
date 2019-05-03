@@ -3,6 +3,7 @@ package aba.entities
 import OSPABA.Entity
 import OSPABA.Simulation
 import OSPDataStruct.SimQueue
+import aba.simulation.AppMessage
 import aba.simulation.BusHockeySimulation
 import helper.BusStop
 import model.LinkCell
@@ -13,7 +14,7 @@ import model.LinkCell
 class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     private var waitingPassengersQueue = SimQueue<PassengerEntity>()
-    private var waitingBuses = mutableListOf<Vehicle>()
+    private var waitingBuses = mutableMapOf<Int, AppMessage>()
 
     fun addPassenger(passenger: PassengerEntity) {
         passenger.passengerCameInBusStop()
@@ -21,10 +22,19 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
         waitingPassengersQueue.add(passenger)
     }
 
+    fun addBusForWaiting(message: AppMessage) {
+        waitingBuses[message.vehicle!!.id] = message
+    }
+
+    fun removeVehicleFromWaitingQueue(id: Int): AppMessage? {
+        return waitingBuses.remove(id)
+    }
+
     fun getAvailableWaitingBus(): Vehicle? {
         waitingBuses.forEach {
-            if (it.getFreeCapacity() > 0 && !it.hasFreeDoor()) {
-                return it
+            if (it.value.vehicle!!.getFreeCapacity() > 0 && !it.value.vehicle!!.hasFreeDoor()) {
+                return it.value.vehicle
+
             }
         }
 

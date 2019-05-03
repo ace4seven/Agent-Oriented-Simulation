@@ -9,6 +9,7 @@ class Messages {
         val busPassengersOutcome = "Výstup cestujúcich"
         val busTravelling = "Cestovanie"
         val busReturn = "Návrat"
+        val extraWait = "Extra čakanie"
     }
 
 }

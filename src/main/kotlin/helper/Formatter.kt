@@ -7,10 +7,11 @@ class Formatter {
     companion object {
 
         fun timeFormatterInc(value: Double, noAddition: Boolean = false): String {
-            var hours = (value / 3600).toInt() // Begining is in 11:00
+            var hours = (value / 3600).toInt()
             if (!noAddition) {
                 hours += 15
             }
+            hours = hours % 24
             val rem = value % 3600
             val minutes = (rem / 60).toInt()
             val seconds = (rem % 60).toInt()

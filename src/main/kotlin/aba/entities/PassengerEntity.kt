@@ -20,6 +20,8 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
     var numberOfDoorIn = 0
     var numberOfDoorOut = 0
 
+    var incomingWaitingBus: Vehicle? = null
+
     fun passengerCameInBusStop() {
         incomeBusStop = sim.currentTime()
     }

@@ -6,7 +6,7 @@ import aba.agents.*
 import OSPABA.Process
 
 //meta! id="57"
-class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(id, mySim, myAgent) {
+class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Scheduler(id, mySim, myAgent) {
 
     override fun prepareReplication() {
         super.prepareReplication()

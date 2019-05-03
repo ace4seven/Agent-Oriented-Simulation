@@ -14,7 +14,11 @@ class BusWaitingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
     }
 
     //meta! sender="AgentBusStop", id="80", type="Start"
-    fun processStart(message: MessageForm) {}
+    fun processStart(message: MessageForm) {
+        message.setCode(Mc.busFinishWaiting)
+
+        hold(90.0, message)
+    }
 
     //meta! userInfo="Process messages defined in code", id="0"
     fun processDefault(message: MessageForm) {
@@ -27,6 +31,7 @@ class BusWaitingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
+            Mc.busFinishWaiting -> assistantFinished(message)
 
             else -> processDefault(message)
         }

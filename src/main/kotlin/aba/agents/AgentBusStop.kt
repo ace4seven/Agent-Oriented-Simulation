@@ -8,6 +8,7 @@ import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
 import aba.entities.BusStopAdministration
+import aba.entities.BusStopEntity
 import aba.entities.PassengerEntity
 import continualAssistants.BusWaitingCA
 import helper.BusStop
@@ -41,15 +42,18 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
     //meta! userInfo="Generated code: do not modify", tag="begin"
     private fun init() {
         ManagerBusStop(Id.managerBusStop, mySim(), this)
+
         IncomeIntoBusCA(Id.incomeIntoBusCA, mySim(), this)
         OutCameFromBusCA(Id.OutComFromBusCA, mySim(), this)
-        BusWaitingCA(Id.busWaitingCA, mySim(), this)
         IncomeWaitingBusCA(Id.incomeWaitingBusCA, mySim(), this)
+        BusWaitingCA(Id.busWaitingCA, mySim(), this)
 
         addOwnMessage(Mc.waitForBus)
         addOwnMessage(Mc.busArrival)
         addOwnMessage(Mc.passengerFinishIncome)
         addOwnMessage(Mc.passengerOutFromBusFinish)
+        addOwnMessage(Mc.passengerFinishIncomeWaitingBus)
+        addOwnMessage(Mc.busFinishWaiting)
     }
     //meta! tag="end"
 
@@ -57,8 +61,16 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
         return busStopAdministration!!
     }
 
+    fun returnWaitingBusMsg(stop: BusStop, vehicleID: Int): AppMessage? {
+        return busStopAdministration!!.busStops[stop.getConcreteStop().name]!!.removeVehicleFromWaitingQueue(vehicleID)
+    }
+
     fun getBusStopPassengers(stop: BusStop): SimQueue<PassengerEntity> {
         return busStopAdministration!!.busStops[stop.getConcreteStop().name]!!.getWaitingPassengersQueue()
+    }
+
+    fun getBusStopEntity(stop: BusStop): BusStopEntity {
+        return busStopAdministration!!.busStops[stop.getConcreteStop().name]!!
     }
 
 }

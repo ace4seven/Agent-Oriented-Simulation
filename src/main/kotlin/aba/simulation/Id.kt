@@ -21,7 +21,7 @@ class Id : IdList() {
         val incomeScheduler = 1001
         val prepareForStartCA = 1002
         val travellingCA = 1003
-        val busWaitingCA = 1008
+        val busWaitingCA = 1118
         val incomeWaitingBusCA = 1009
         val incomeIntoBusCA = 1004
         val checkStationAction = 1005

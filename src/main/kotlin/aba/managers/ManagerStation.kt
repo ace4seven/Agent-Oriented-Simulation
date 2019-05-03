@@ -30,7 +30,8 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         message.setAddressee(mySim().findAgent(Id.agentTransport))
 
         val msg = message as AppMessage
-        msg.vehicle!!.scheduler.addStartTime(mySim().currentTime())
+
+        msg.vehicle?.initStartStats()
 
         if (Constants.isDebug) {
             println("Autobus ${msg.vehicle!!.id} vyjazd s ${msg.vehicle!!.getNumberOfPassengers()}")

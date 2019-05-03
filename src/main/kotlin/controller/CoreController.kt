@@ -35,9 +35,13 @@ abstract class CoreController: Controller() {
     var busPassengersDatasources = mutableMapOf<Int, BusPassengersCollection>()
     var busPassengerDatasource = FXCollections.observableArrayList<PassengerCell>()
 
+    var busStopPassengerCollection = mutableMapOf<String, StopPassengersCollection>()
+    var stopPassengerDataSource = FXCollections.observableArrayList<PassengerCell>()
+
     var logTableViewDataSource= FXCollections.observableArrayList<LogCell>()
 
     var busPassengerSelectedIndex: Int = 1
+    var busStopPassengerSelectedIndex: String = ""
 
     var simulationCore: BusHockeySimulation
 

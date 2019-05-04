@@ -35,6 +35,9 @@ abstract class CoreController: Controller() {
     var linkCDataSource= FXCollections.observableArrayList<LinkCell>()
     var linkKDataSource= FXCollections.observableArrayList<LinkCell>()
 
+    var localStatisticsDatasource= FXCollections.observableArrayList<StatisticCell>()
+    var globalStatisticsDatasource= FXCollections.observableArrayList<StatisticCell>()
+
     var busPassengersDatasources = mutableMapOf<Int, BusPassengersCollection>()
     var busPassengerDatasource = FXCollections.observableArrayList<PassengerCell>()
 

@@ -5,8 +5,7 @@ import OSPABA.SimState
 import OSPABA.Simulation
 import aba.entities.*
 import aba.simulation.BusHockeySimulation
-import helper.BusLink
-import helper.BusStop
+import helper.*
 import helper.Formatter
 import javafx.application.Platform
 import javafx.collections.FXCollections
@@ -17,7 +16,24 @@ import java.util.*
 
 class AppController: CoreController(), ISimDelegate {
 
-    init { simulationCore.registerDelegate(this) }
+    init {
+        simulationCore.registerDelegate(this)
+
+        simulationCore.onReplicationDidFinish {
+            finishReplicationUpdateGUI(it as BusHockeySimulation)
+        }
+    }
+
+    private fun finishReplicationUpdateGUI(core: BusHockeySimulation) {
+        val replicationNumb = core.currentReplication() + 1
+
+        globalStatisticsDatasource.clear()
+        if (replicationNumb > 2) {
+            globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.numbOfReplications, "${replicationNumb}"))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.numbOfPassengerIncome, core.averageNumberOfPassengers!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.passengerWaitingTime, core.averageWaitingTimeStat!!))
+        }
+    }
 
     override fun refresh(core: Simulation?) {
         Platform.runLater(Runnable {
@@ -28,12 +44,25 @@ class AppController: CoreController(), ISimDelegate {
                 refreshBusLinks(core)
                 refreshBusPassengers(core)
                 refreshBusStopPassengers(core)
+
+                computeLocalStatistics(core)
             }
 
             if (isLogEnabled) {
                 refreshLogs()
             }
         })
+    }
+
+    private fun computeLocalStatistics(core: BusHockeySimulation) {
+        val numbOfPassengers = core.agentModel()?.getNumberOfPassengers()
+        val averageWaitingTime = core.agentBusStop()!!.averageWaitingStat.mean()
+        val profit = core.agentBus()!!.vehicles.fold(0) { sum, e -> e.profit + sum }
+
+        localStatisticsDatasource.clear()
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.numbOfPassengerIncome, "${numbOfPassengers}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.passengerWaitingTime, "${averageWaitingTime}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.profitFromMicrobus, "${profit}"))
     }
 
     private fun refreshBusStopPassengers(core: BusHockeySimulation) {

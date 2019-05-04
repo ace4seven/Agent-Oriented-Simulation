@@ -21,7 +21,7 @@ class Constants {
 
         val outcomeBusTime = 4.0
 
-        val isDebug = true
+        val isDebug = false
     }
 
 }

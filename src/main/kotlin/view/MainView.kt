@@ -1,6 +1,7 @@
 package view
 
 import javafx.scene.control.TabPane
+import javafx.scene.image.Image
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import view.support.D
@@ -82,6 +83,7 @@ class MainView : View("Agentovo orientovaná simulácia") {
 
                     minWidth = 400.0
                 }
+
             }
             hbox {
                 D.startButton = button("Start") {

@@ -2,6 +2,7 @@ package aba.simulation
 
 import OSPABA.*
 import OSPRNG.ExponentialRNG
+import OSPStat.Stat
 import aba.agents.*
 import aba.entities.Vehicle
 import helper.Constants
@@ -21,6 +22,11 @@ class BusHockeySimulation : Simulation() {
     private var _agentBus: AgentBus? = null
     private var _agentEnviroment: AgentEnviroment? = null
 
+    var averageWaitingTimeStat: Stat? = Stat()
+        private set
+    var averageNumberOfPassengers: Stat? = Stat()
+        private set
+
     init {
         prepareAgents()
     }
@@ -37,6 +43,9 @@ class BusHockeySimulation : Simulation() {
     public override fun prepareSimulation() {
         super.prepareSimulation()
 
+        averageNumberOfPassengers = Stat()
+        averageWaitingTimeStat = Stat()
+
         Constants.availableBusStops.forEach {
             agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(it.generateInterval().lambda)
         }
@@ -51,6 +60,9 @@ class BusHockeySimulation : Simulation() {
 
     public override fun replicationFinished() {
         // Collect local statistics into global, update UI, etc...
+        averageNumberOfPassengers!!.addSample(agentModel()!!.getNumberOfPassengers().toDouble())
+        averageWaitingTimeStat!!.addSample(agentBusStop()!!.averageWaitingStat.mean())
+
         super.replicationFinished()
     }
 

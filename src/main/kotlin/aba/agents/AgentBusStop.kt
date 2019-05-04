@@ -4,6 +4,7 @@ import OSPABA.*
 import OSPDataStruct.SimQueue
 import OSPRNG.TriangularRNG
 import OSPRNG.UniformContinuousRNG
+import OSPStat.Stat
 import aba.simulation.*
 import aba.managers.*
 import aba.continualAssistants.*
@@ -24,6 +25,9 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
     val incomeGeneratorMicroBus = UniformContinuousRNG(6.0, 10.0, Constants.randomSeader)
     val outGeneratorMicroBus = 4.0
 
+    var averageWaitingStat = Stat()
+        private set
+
     init {
         init()
     }
@@ -33,6 +37,8 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
 
         busStopAdministration?.clear()
         busStopAdministration = BusStopAdministration(mySim())
+
+        averageWaitingStat.clear()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

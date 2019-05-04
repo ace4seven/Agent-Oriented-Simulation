@@ -13,3 +13,18 @@ class Messages {
     }
 
 }
+
+class StatName {
+
+    companion object {
+        val numbOfReplications = "Počet replikácii"
+        val numbOfPassengerIncome = "Počet príchodov pasažierov"
+        val passengerWaitingTime = "Priemerné čakanie cestujúcich"
+        val passengerWaitingTimeLinkA = "Priemerné čakanie na Linke A"
+        val passengerWaitingTimeLinkB = "Priemerné čakanie na Linke B"
+        val passengerWaitingTimeLinkC = "Priemerné čakanie na Linke C"
+
+        val profitFromMicrobus = "Celkový profit súkromnej spoločnosti"
+    }
+
+}

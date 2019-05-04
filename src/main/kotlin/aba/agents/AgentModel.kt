@@ -20,6 +20,10 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
         init()
     }
 
+    fun getNumberOfPassengers(): Int {
+        return passengerRegisterList.count()
+    }
+
     override fun prepareReplication() {
         super.prepareReplication()
         // Setup component for the next replication

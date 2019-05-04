@@ -44,6 +44,9 @@ class D {
         var linkCTableView: TableView<LinkCell> by singleAssign()
         var linkKTableView: TableView<LinkCell> by singleAssign()
 
+        var localStatistics: TableView<StatisticCell> by singleAssign()
+        var globalStatistics: TableView<StatisticCell> by singleAssign()
+
         var busPassengersTableView: TableView<PassengerCell> by singleAssign()
 
         var busLinkATableView: TableView<BusTableData> by singleAssign()

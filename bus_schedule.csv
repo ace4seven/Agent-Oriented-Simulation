@@ -1,4 +1,4 @@
 ID,Linka,Typ autobusu,Stratégia vozenia,Čas vyslania
-1,A,L,NO WAIT,0
-2,B,L,NO WAIT,0
-3,C,L,NO WAIT,0
+1,A,S,NO WAIT,0
+2,B,S,NO WAIT,0
+3,C,S,NO WAIT,0

@@ -15,13 +15,18 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
 
     private var numbOfIncome = 0
     private var numberOfOutCome = 0
+    private var noOnTimePassengers = 0
 
     init {
         init()
     }
 
     fun getNumberOfPassengers(): Int {
-        return passengerRegisterList.count()
+        return numbOfIncome
+    }
+
+    fun getPercentagePeopleNoOnTime(): Double {
+        return noOnTimePassengers.toDouble() / numbOfIncome.toDouble()
     }
 
     override fun prepareReplication() {
@@ -31,7 +36,7 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
         passengerRegisterList.clear()
         numberOfOutCome = 0
         numbOfIncome = 0
-        passengerRegisterList.clear()
+        noOnTimePassengers = 0
     }
 
     fun registerPassenger(passenger: PassengerEntity) {
@@ -42,6 +47,10 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
 
     fun passengerArrivedStadion() {
         numberOfOutCome += 1
+    }
+
+    fun passengerComeLate() {
+        noOnTimePassengers += 1
     }
 
     fun isAllPassengersBoarded(): Boolean {

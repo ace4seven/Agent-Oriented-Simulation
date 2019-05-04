@@ -31,12 +31,11 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
                 bus.incBusyDoor()
 
-
                 val passenger = passengers.dequeue()
 
-                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
-
                 passenger.passengerIncomeIntoBus()
+
+                BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
                 updateStatistic(passenger)
 
@@ -83,11 +82,12 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
                 bus.incBusyDoor()
 
                 val passenger = passengers.dequeue()
+
+                passenger.passengerIncomeIntoBus()
+
                 passenger.numberOfDoorIn = msg.doorIdentifier
 
                 BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
-
-                passenger.passengerIncomeIntoBus()
 
                 updateStatistic(passenger)
 

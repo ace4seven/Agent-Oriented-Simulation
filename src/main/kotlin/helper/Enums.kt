@@ -28,11 +28,11 @@ enum class BusLink {
 data class GeneratorData(val start: Double, val stop: Double, val lambda: Double) {
 
     fun startGenerateTime(): Double {
-        return Constants.simulationTime - start
+        return start
     }
 
     fun stopGenerateTime(): Double {
-        return Constants.simulationTime - stop
+        return stop
     }
 
 }
@@ -152,41 +152,46 @@ enum class BusStop {
 
     fun generateInterval(): GeneratorData {
         when(this) {
-            A_A -> { return GeneratorData(6780.0, 2880.0, 31.70731707) }
-            A_B -> { return GeneratorData(6588.0, 2688.0, 42.39130435) }
-            A_C -> { return GeneratorData(6450.0, 2550.0, 16.18257261) }
-            A_D -> { return GeneratorData(6324.0, 2424.0, 31.70731707) }
-            A_E -> { return GeneratorData(5928.0, 2028.0, 18.13953488) }
-            A_F -> { return GeneratorData(5754.0, 1854.0, 15.91836735) }
-            A_G -> { return GeneratorData(5550.0, 1650.0, 28.46715328) }
-            A_H -> { return GeneratorData(5202.0, 1302.0, 29.54545455) }
-            A_I -> { return GeneratorData(5106.0, 1206.0, 23.7804878) }
-            A_J -> { return GeneratorData(4830.0, 930.0, 31.4516129) }
-            A_K -> { return GeneratorData(4626.0, 726.0, 18.30985915) }
-            A_L -> { return GeneratorData(4554.0, 654.0, 21.08108108) }
 
-            B_A -> { return GeneratorData(6462.0, 2562.0, 49.36708861) }
-            B_B -> { return GeneratorData(6390.0, 2490.0, 56.52173913) }
-            B_C -> { return GeneratorData(6252.0, 2352.0, 90.69767442) }
-            B_D -> { return GeneratorData(6060.0, 2160.0, 30.70866142) }
-            B_E -> { return GeneratorData(5730.0, 1830.0, 130.0) }
-            B_F -> { return GeneratorData(5568.0, 1668.0, 56.52173913) }
-            B_G -> { return GeneratorData(5028.0, 1128.0, 24.07407407) }
-            B_H -> { return GeneratorData(4770.0, 870.0, 43.33333333) }
-            B_I -> { return GeneratorData(4740.0, 840.0, 26.35135135) }
-            B_J -> { return GeneratorData(4578.0, 678.0, 22.80701754) }
+            A_A -> { return GeneratorData(6.0, 3906.0, 31.70731707) }
+            A_B -> { return GeneratorData(198.0, 4098.0, 42.39130435) }
+            A_C -> { return GeneratorData(336.0, 4236.0, 16.18257261) }
+            A_D -> { return GeneratorData(462.0, 4362.0, 31.70731707) }
+            A_E -> { return GeneratorData(858.0, 4434.0, 18.13953488) }
+            A_F -> { return GeneratorData(1032.0, 4758.0, 15.91836735) }
+            A_G -> { return GeneratorData(1236.0, 4932.0, 28.46715328) }
+            A_H -> { return GeneratorData(1584.0, 5136.0, 29.54545455) }
+            A_I -> { return GeneratorData(1680.0, 5244.0, 23.7804878) }
+            A_J -> { return GeneratorData(1956.0, 5484.0, 31.4516129) }
+            A_K -> { return GeneratorData(2160.0, 5580.0, 18.30985915) }
+            A_L -> { return GeneratorData(2232.0, 6060.0, 21.08108108) }
 
-            C_A -> { return GeneratorData(6786.0, 2886.0, 16.25) }
-            C_B -> { return GeneratorData(6750.0, 2850.0, 12.58064516) }
-            C_C -> { return GeneratorData(6006.0, 2106.0, 29.77099237) }
-            C_D -> { return GeneratorData(5868.0, 1968.0, 20.52631579) }
-            C_E -> { return GeneratorData(5442.0, 1542.0, 29.54545455) }
-            C_F -> { return GeneratorData(5154.0, 1254.0, 30.46875) }
-            C_G -> { return GeneratorData(4932.0, 1032.0, 55.71428571) }
 
-            K1 -> { return GeneratorData(6612.0, 2352.0, 16.38461538) }
-            K2 -> { return GeneratorData(6366.0, 1902.0, 21.25714286) }
-            K3 -> { return GeneratorData(5442.0, 1488.0, 17.97272727) }
+
+            B_A -> { return GeneratorData(324.0, 4224.0, 49.36708861) }
+            B_B -> { return GeneratorData(396.0, 4296.0, 56.52173913) }
+            B_C -> { return GeneratorData(534.0, 4434.0, 90.69767442) }
+            B_D -> { return GeneratorData(726.0, 4626.0, 30.70866142) }
+            B_E -> { return GeneratorData(1056.0, 4956.0, 130.0) }
+            B_F -> { return GeneratorData(1218.0, 5118.0, 56.52173913) }
+            B_G -> { return GeneratorData(1758.0, 5658.0, 24.07407407) }
+            B_H -> { return GeneratorData(2016.0, 5916.0, 43.33333333) }
+            B_I -> { return GeneratorData(2046.0, 5946.0, 26.35135135) }
+            B_J -> { return GeneratorData(2208.0, 6108.0, 22.80701754) }
+
+
+            C_A -> { return GeneratorData(0.0, 3900.0, 16.25) }
+            C_B -> { return GeneratorData(36.0, 3936.0, 12.58064516) }
+            C_C -> { return GeneratorData(780.0, 4680.0, 29.77099237) }
+            C_D -> { return GeneratorData(918.0, 4818.0, 20.52631579) }
+            C_E -> { return GeneratorData(1344.0, 5244.0, 29.54545455) }
+            C_F -> { return GeneratorData(1632.0, 5532.0, 30.46875) }
+            C_G -> { return GeneratorData(1854.0, 5754.0, 55.71428571) }
+
+
+            K1 -> { return GeneratorData(174.0, 4434.0, 16.38461538) }
+            K2 -> { return GeneratorData(420.0, 4884.0, 21.25714286) }
+            K3 -> { return GeneratorData(1344.0, 5298.0, 17.97272727) }
         }
 
         throw Exception("Chain enum bad calling")

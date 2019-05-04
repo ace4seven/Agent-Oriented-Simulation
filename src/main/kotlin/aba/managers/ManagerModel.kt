@@ -5,6 +5,7 @@ import aba.simulation.*
 import aba.agents.*
 import aba.continualAssistants.*
 import aba.instantAssistants.*
+import helper.Constants
 
 //meta! id="2"
 class ManagerModel(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -24,6 +25,10 @@ class ManagerModel(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, myS
     //meta! sender="AgentStation", id="35", type="Response"
     fun processPassengerOut(message: MessageForm) {
         myAgent().passengerArrivedStadion()
+
+        if (mySim().currentTime() > Constants.hockeyMachTime) {
+            myAgent().passengerComeLate()
+        }
 
         if (myAgent().isAllPassengersBoarded()) {
             mySim().stopReplication()

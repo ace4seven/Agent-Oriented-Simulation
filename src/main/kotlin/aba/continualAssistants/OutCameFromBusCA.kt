@@ -35,11 +35,10 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
                 val passenger = busPassengers.dequeue()
 
                 BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok odchodu z AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
-
-                passenger.passengerOutComeFromBus()
                 passenger.numberOfDoorOut = i
 
                 val msgCopy = msg.createCopy() as AppMessage
+
                 msgCopy.setCode(Mc.passengerOutFromBusFinish)
                 msgCopy.doorIdentifier = i
 
@@ -83,9 +82,7 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
 
         bus.decBusyDoor()
 
-        if (msg.outGoingPassenger != null) {
-            passengerOut(msg.outGoingPassenger!!)
-        }
+        passengerOut(msg.outGoingPassenger!!)
 
         var busPassengers = bus.getPassengers()
 

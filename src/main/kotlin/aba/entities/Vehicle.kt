@@ -142,8 +142,6 @@ abstract class Vehicle(val id: Int,
     }
 
     fun addPassenger(passenger: PassengerEntity) {
-        passenger.passengerIncomeIntoBus()
-
         passengers.add(passenger)
     }
 

@@ -26,6 +26,8 @@ class BusHockeySimulation : Simulation() {
         private set
     var averageNumberOfPassengers: Stat? = Stat()
         private set
+    var averageNoOnTime: Stat? = Stat()
+        private set
 
     init {
         prepareAgents()
@@ -47,7 +49,9 @@ class BusHockeySimulation : Simulation() {
         averageWaitingTimeStat = Stat()
 
         Constants.availableBusStops.forEach {
-            agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(it.generateInterval().lambda)
+            val middleValue = (it.generateInterval().stop - it.generateInterval().start) / it.capacity()
+
+            agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(middleValue, Constants.randomSeader)
         }
     }
 
@@ -62,6 +66,7 @@ class BusHockeySimulation : Simulation() {
         // Collect local statistics into global, update UI, etc...
         averageNumberOfPassengers!!.addSample(agentModel()!!.getNumberOfPassengers().toDouble())
         averageWaitingTimeStat!!.addSample(agentBusStop()!!.averageWaitingStat.mean())
+        averageNoOnTime!!.addSample(agentModel()!!.getPercentagePeopleNoOnTime())
 
         super.replicationFinished()
     }

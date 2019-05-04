@@ -17,8 +17,6 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
     private var waitingBuses = mutableMapOf<Int, AppMessage>()
 
     fun addPassenger(passenger: PassengerEntity) {
-        passenger.passengerCameInBusStop()
-
         waitingPassengersQueue.add(passenger)
     }
 

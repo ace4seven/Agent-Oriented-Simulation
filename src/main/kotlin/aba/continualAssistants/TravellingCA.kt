@@ -36,6 +36,7 @@ class TravellingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
     fun processFinishTravel(message: MessageForm) {
         val msg = message as AppMessage
         BusHockeySimulation.logEntry(mySim().currentTime(), "Autobus ${msg.vehicle!!.id} príchod na zastávku: ${msg.vehicle!!.getNextStop().name}")
+
         assistantFinished(message)
     }
 

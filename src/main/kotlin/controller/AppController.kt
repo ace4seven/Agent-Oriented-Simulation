@@ -32,6 +32,7 @@ class AppController: CoreController(), ISimDelegate {
             globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.numbOfReplications, "${replicationNumb}"))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.numbOfPassengerIncome, core.averageNumberOfPassengers!!))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.passengerWaitingTime, core.averageWaitingTimeStat!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.passengerNoGoMatchPercentage, core.averageNoOnTime!!))
         }
     }
 
@@ -159,7 +160,7 @@ class AppController: CoreController(), ISimDelegate {
         } else {
             val thread = object: Thread() {
                 override fun run() {
-                    simulationCore.simulate(numberOfReplications, timeOfOneReplication)
+                    simulationCore.simulate(numberOfReplications, 100000000000.0)
                 }
             }
             thread.start()

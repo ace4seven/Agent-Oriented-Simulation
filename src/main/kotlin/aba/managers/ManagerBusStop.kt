@@ -23,6 +23,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
     //meta! sender="AgentStation", id="28", type="Notice"
     fun processWaitForBus(message: MessageForm) {
         val msg = message as AppMessage
+        msg.passenger?.passengerCameInBusStop()
 
         // Ak su autobusy, ktoré čakajú, treba prioritne ísť tam a nie čakať na zastávke
 

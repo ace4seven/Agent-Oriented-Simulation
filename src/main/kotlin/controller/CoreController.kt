@@ -17,8 +17,6 @@ import tornadofx.*
 
 abstract class CoreController: Controller() {
 
-    val timeOfOneReplication = Constants.simulationTimeExtra
-
     var simSpeed: Double = 1.0
     var simIntensity: Double = 0.1
 

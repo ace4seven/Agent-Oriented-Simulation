@@ -9,6 +9,7 @@ import helper.*
 import helper.Formatter
 import javafx.application.Platform
 import javafx.collections.FXCollections
+import javafx.scene.chart.XYChart
 import model.*
 import java.util.*
 
@@ -20,7 +21,10 @@ class AppController: CoreController(), ISimDelegate {
         simulationCore.registerDelegate(this)
 
         simulationCore.onReplicationDidFinish {
-            finishReplicationUpdateGUI(it as BusHockeySimulation)
+            Platform.runLater(Runnable {
+                finishReplicationUpdateGUI(it as BusHockeySimulation)
+                updateAwerageWaitingGraph(it)
+            })
         }
     }
 
@@ -29,10 +33,10 @@ class AppController: CoreController(), ISimDelegate {
 
         globalStatisticsDatasource.clear()
         if (replicationNumb > 2) {
-            globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.numbOfReplications, "${replicationNumb}"))
-            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.numbOfPassengerIncome, core.averageNumberOfPassengers!!))
-            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.passengerWaitingTime, core.averageWaitingTimeStat!!))
-            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.passengerNoGoMatchPercentage, core.averageNoOnTime!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.globalNumberOfReplications, "${replicationNumb}"))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globallPassengersCount, core.averageNumberOfPassengers!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalPassengerWaiting, core.averageWaitingTimeStat!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMissHockey, core.averageNoOnTime!!))
         }
     }
 
@@ -55,15 +59,24 @@ class AppController: CoreController(), ISimDelegate {
         })
     }
 
+    private fun updateAwerageWaitingGraph(core: BusHockeySimulation) {
+        if (((core.currentReplication() + 1).toDouble() / numberOfReplications.toDouble()) > 0.1) {
+            val border = if (numberOfReplications / 4000 == 0) 1 else numberOfReplications / 4000
+            if ((core.currentReplication() + 1) % border == 0) {
+                averageWaitingChartData.add(XYChart.Data(core.currentReplication() + 1, core.averageWaitingTimeStat!!.mean()))
+            }
+        }
+    }
+
     private fun computeLocalStatistics(core: BusHockeySimulation) {
         val numbOfPassengers = core.agentModel()?.getNumberOfPassengers()
         val averageWaitingTime = core.agentBusStop()!!.averageWaitingStat.mean()
         val profit = core.agentBus()!!.vehicles.fold(0) { sum, e -> e.profit + sum }
 
         localStatisticsDatasource.clear()
-        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.numbOfPassengerIncome, "${numbOfPassengers}"))
-        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.passengerWaitingTime, "${averageWaitingTime}"))
-        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.profitFromMicrobus, "${profit}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengersCount, "${numbOfPassengers}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengerWaiting, "${averageWaitingTime}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localMicrobusProfit, "${profit}"))
     }
 
     private fun refreshBusStopPassengers(core: BusHockeySimulation) {

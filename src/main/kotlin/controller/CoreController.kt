@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
+import javafx.scene.chart.XYChart
 import model.*
 import tornadofx.*
 
@@ -19,6 +20,8 @@ abstract class CoreController: Controller() {
 
     var simSpeed: Double = 1.0
     var simIntensity: Double = 0.1
+
+    var averageWaitingChartData = FXCollections.observableArrayList<XYChart.Data<Number, Number>>()
 
     val numberOfReplicationsProperty = SimpleIntegerProperty()
     val numberOfReplications: Int by numberOfReplicationsProperty

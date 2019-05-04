@@ -17,15 +17,17 @@ class Messages {
 class StatName {
 
     companion object {
-        val numbOfReplications = "Počet replikácii"
-        val numbOfPassengerIncome = "Počet príchodov pasažierov"
-        val passengerWaitingTime = "Priemerné čakanie cestujúcich"
-        val passengerNoGoMatchPercentage = "Priemerné oneskorenie na zápas"
-        val passengerWaitingTimeLinkA = "Priemerné čakanie na Linke A"
-        val passengerWaitingTimeLinkB = "Priemerné čakanie na Linke B"
-        val passengerWaitingTimeLinkC = "Priemerné čakanie na Linke C"
+        val globalNumberOfReplications = "Počet replikácii"
+        val globallPassengersCount = "Priemerný počet príchodov pasažierov"
+        val globalPassengerWaiting = "Priemerne čakanie cestujúcich"
+        val globalMissHockey = "Priemerne % pasažierov zmeškalo zápas"
+        val globalMicrobusProfit = "Priemerný zisk súkromnej spoločnosti"
 
-        val profitFromMicrobus = "Celkový profit súkromnej spoločnosti"
+        val localPassengersCount = "Príchody pasažierov"
+        val localPassengerWaiting = "Čakanie cestujúcich"
+        val localMissHockey = "Nestihli prísť včas na zápas"
+
+        val localMicrobusProfit = "Profit súkromnej spoločnosti"
     }
 
 }

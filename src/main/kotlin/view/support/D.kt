@@ -3,6 +3,8 @@ package view.support
 import controller.AppController
 import helper.Formatter
 import javafx.collections.FXCollections
+import javafx.scene.chart.LineChart
+import javafx.scene.chart.XYChart
 import javafx.scene.control.*
 import model.*
 import tornadofx.*
@@ -38,6 +40,9 @@ class D {
         var stopButton: Button by singleAssign()
 
         var busProgressTableView: TableView<BusProgressCell> by singleAssign()
+
+        var averageWaitingChart: LineChart<Number, Number> by singleAssign()
+        var averageWaitingChartData by singleAssign<XYChart.Series<Number, Number>>()
 
         var linkATableView: TableView<LinkCell> by singleAssign()
         var linkBTableView: TableView<LinkCell> by singleAssign()

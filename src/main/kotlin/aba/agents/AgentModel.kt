@@ -34,6 +34,8 @@ class AgentModel(id: Int, mySim: Simulation, parent: Agent?) : Agent(id, mySim, 
         // Setup component for the next replication
 
         passengerRegisterList.clear()
+        PassengerEntity.indexPassenger = 1
+        
         numberOfOutCome = 0
         numbOfIncome = 0
         noOnTimePassengers = 0

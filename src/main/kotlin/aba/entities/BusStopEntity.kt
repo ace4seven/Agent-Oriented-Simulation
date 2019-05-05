@@ -3,6 +3,7 @@ package aba.entities
 import OSPABA.Entity
 import OSPABA.Simulation
 import OSPDataStruct.SimQueue
+import OSPStat.Stat
 import aba.simulation.AppMessage
 import aba.simulation.BusHockeySimulation
 import helper.BusStop
@@ -15,9 +16,18 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     private var waitingPassengersQueue = SimQueue<PassengerEntity>()
     private var waitingBuses = mutableMapOf<Int, AppMessage>()
+    private var waitingOnStopStat = Stat()
 
     fun addPassenger(passenger: PassengerEntity) {
         waitingPassengersQueue.add(passenger)
+    }
+
+    fun addWaitingStat(passenger: PassengerEntity) {
+        waitingOnStopStat.addSample(passenger.getWaitingTime())
+    }
+
+    fun getWaitingStats(): Stat {
+        return waitingOnStopStat
     }
 
     fun addBusForWaiting(message: AppMessage) {
@@ -55,6 +65,7 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
     fun clear() {
         waitingPassengersQueue.clear()
         waitingBuses.clear()
+        waitingOnStopStat.clear()
     }
 
 }

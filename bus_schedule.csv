@@ -1,15 +1,15 @@
 ID,Linka,Typ autobusu,Stratégia vozenia,Čas vyslania
-1,A,L,WAIT,0
+1,A,M,WAIT,0
 2,A,L,WAIT,0
 3,A,L,WAIT,0
 4,A,L,WAIT,0
 5,A,L,WAIT,0
-6,B,L,WAIT,0
+6,B,M,WAIT,0
 7,B,L,WAIT,0
 8,B,L,WAIT,0
 9,B,L,WAIT,0
 10,B,L,WAIT,0
-11,C,L,WAIT,0
+11,C,M,WAIT,0
 12,C,L,WAIT,0
 13,C,L,WAIT,0
 14,C,L,WAIT,0

@@ -114,6 +114,7 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
     private fun updateStatistic(passenger: PassengerEntity) {
         myAgent().averageWaitingStat.addSample(passenger.getWaitingTime())
+        myAgent().getBusStopAdministration().busStops[passenger.type.name]!!.addWaitingStat(passenger)
     }
 
     //meta! userInfo="Process messages defined in code", id="0"

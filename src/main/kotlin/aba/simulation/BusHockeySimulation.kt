@@ -5,6 +5,7 @@ import OSPRNG.ExponentialRNG
 import OSPStat.Stat
 import aba.agents.*
 import aba.entities.Vehicle
+import helper.BusStop
 import helper.Constants
 import helper.Formatter
 import model.BusProgressCell
@@ -27,6 +28,12 @@ class BusHockeySimulation : Simulation() {
     var averageNumberOfPassengers: Stat? = Stat()
         private set
     var averageNoOnTime: Stat? = Stat()
+        private set
+
+    var averageWaitingBusStopStat = mutableMapOf<String, Stat>()
+        private set
+
+    var averageMicrobusProfit = Stat()
         private set
 
     init {
@@ -52,6 +59,7 @@ class BusHockeySimulation : Simulation() {
             val middleValue = (it.generateInterval().stop - it.generateInterval().start) / it.capacity()
 
             agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(middleValue, Constants.randomSeader)
+            averageWaitingBusStopStat[it.name] = Stat()
         }
     }
 
@@ -68,12 +76,34 @@ class BusHockeySimulation : Simulation() {
         averageWaitingTimeStat!!.addSample(agentBusStop()!!.averageWaitingStat.mean())
         averageNoOnTime!!.addSample(agentModel()!!.getPercentagePeopleNoOnTime())
 
+        agentBusStop()?.getBusStopAdministration()?.busStops?.forEach {
+            if (it.key != BusStop.STATION.name) {
+                averageWaitingBusStopStat[it.key]?.addSample(it.value.getWaitingStats().mean())
+            }
+        }
+
+        var microbusProfit = 0
+        agentBus()?.vehicles?.forEach {
+            microbusProfit += it.profit
+        }
+
+        averageMicrobusProfit.addSample(microbusProfit.toDouble())
+
         super.replicationFinished()
     }
 
     public override fun simulationFinished() {
-        super.simulationFinished()
+//        averageMicrobusProfit.clear()
+//
+//        averageWaitingBusStopStat.forEach {
+//            it.value.clear()
+//        }
+//
+//        averageNoOnTime?.clear()
+//        averageNumberOfPassengers?.clear()
+//        averageWaitingTimeStat?.clear()
 
+        super.simulationFinished()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

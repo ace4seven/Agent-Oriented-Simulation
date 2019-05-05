@@ -35,8 +35,13 @@ class AppController: CoreController(), ISimDelegate {
         if (replicationNumb > 2) {
             globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.globalNumberOfReplications, "${replicationNumb}"))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globallPassengersCount, core.averageNumberOfPassengers!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMicrobusProfit, core.averageMicrobusProfit))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMissHockey, core.averageNoOnTime!!, true))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalPassengerWaiting, core.averageWaitingTimeStat!!))
-            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMissHockey, core.averageNoOnTime!!))
+
+            core.averageWaitingBusStopStat.forEach {
+                globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalWaitingOnBusStop} ${it.key}", it.value))
+            }
         }
     }
 

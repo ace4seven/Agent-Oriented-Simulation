@@ -38,7 +38,7 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
             }
         }
         vbox {
-            D.averageWaitingChart = linechart("Graf - priemerné čakanie na zastávke", NumberAxis(), NumberAxis()) {
+            D.averageWaitingChart = linechart("Graf - priemerné čakanie na zastávkach", NumberAxis(), NumberAxis()) {
                 createSymbols = false
                 isLegendVisible = false
                 maxHeight = 500.0

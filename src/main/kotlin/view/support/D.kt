@@ -154,6 +154,7 @@ class D {
 
             busData?.clear()
 
+            controller.averageWaitingChartData.clear()
             controller.stopSimulation()
         }
 

@@ -1,5 +1,7 @@
 package view.support
 
+import aba.entities.BusStopEntity
+import aba.entities.Vehicle
 import controller.AppController
 import helper.Formatter
 import javafx.collections.FXCollections
@@ -24,7 +26,7 @@ class D {
         var busID = 1
 
         val busLinks = FXCollections.observableArrayList("Linka A", "Linka B","Linka C")
-        val busType = FXCollections.observableArrayList("Štandartný", "Vylepšený")
+        val busType = FXCollections.observableArrayList("Malý autobus", "Veľký autobus")
         val busStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
 
         var logCheckbox = CheckBox()
@@ -40,6 +42,9 @@ class D {
         var startButton: Button by singleAssign()
         var pauseButton: Button by singleAssign()
         var stopButton: Button by singleAssign()
+
+        var resetBusTables: Button by singleAssign()
+        var startExperiments: Button by singleAssign()
 
         var busProgressTableView: TableView<BusProgressCell> by singleAssign()
 
@@ -111,28 +116,41 @@ class D {
             }
         }
 
+        fun startExperiments() {
+            controller.startExperiments()
+        }
+
+        fun clearBusTables() {
+            busLinkATableViewDatasource.clear()
+            busLinkBTableViewDataSource.clear()
+            busLinkCTableViewDataSource.clear()
+
+            controller.clearVehicles()
+        }
+
         fun addBuss() {
             var busTableData = BusTableData()
 
             busTableData.type = busTypeComboBox.value
             busTableData.strategy = busStrategyComboBox.value
+            busTableData.rawTime = timeToDeployTextField.text.toDouble()
+            busTableData.scheduleTime = Formatter.timeFormatterInc(timeToDeployTextField.text.toDouble())
+            busTableData.id = Vehicle.getUniqueID()
+            busTableData.link = busLinkComboBox.value
 
             when (busLinkComboBox.value) {
                 "Linka A" -> {
-                    busTableData.id = busID
                     busLinkATableViewDatasource.add(busTableData)
                 }
                 "Linka B" -> {
-                    busTableData.id = busID
                     busLinkBTableViewDataSource.add(busTableData)
                 }
                 "Linka C" -> {
-                    busTableData.id = busID
                     busLinkCTableViewDataSource.add(busTableData)
                 }
             }
 
-            busID += 1
+            controller.addVehicle(busTableData)
         }
 
         fun startSimulationButtonPressed() {

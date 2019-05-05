@@ -22,10 +22,12 @@ class AppController: CoreController(), ISimDelegate {
 
         simulationCore.onReplicationDidFinish {
             Platform.runLater(Runnable {
-                finishReplicationUpdateGUI(it as BusHockeySimulation)
+                if (simulationCore.isRunning) {
+                    finishReplicationUpdateGUI(it as BusHockeySimulation)
 
-                updateGraphs(it)
-                updateProgress(it)
+                    updateGraphs(it)
+                    updateProgress(it)
+                }
             })
         }
     }
@@ -232,6 +234,20 @@ class AppController: CoreController(), ISimDelegate {
         busStopPassengerCollection[busStopPassengerSelectedIndex]!!.stopPassengers.forEach {
             stopPassengerDataSource.add(it.transformToCell())
         }
+    }
+
+    fun clearVehicles() {
+        simulationCore.agentBus()?.vehicles?.clear()
+    }
+
+    fun startExperiments() {
+        experimentExporter.initializeWriter()
+
+        experimentExporter.addBusHeader()
+        experimentExporter.addRow(CSVBusEntry("test", "test", "test", "test"))
+        experimentExporter.addResultHeader()
+
+        experimentExporter.closeWriter()
     }
 
 }

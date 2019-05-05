@@ -7,6 +7,7 @@ import aba.agents.*
 import aba.entities.BusType
 import helper.Constants
 import helper.Messages
+import java.lang.Exception
 
 //meta! id="5"
 class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
@@ -25,8 +26,6 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         val msg = message as AppMessage
         msg.passenger?.passengerCameInBusStop()
 
-        // Ak su autobusy, ktoré čakajú, treba prioritne ísť tam a nie čakať na zastávke
-
         val waitingBus = myAgent().getBusStopEntity(msg.passengerIncomeStop!!).getAvailableWaitingBus()
 
         if (waitingBus != null) {
@@ -35,6 +34,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                     if (msg.passenger!!.wantToGoByMicroBus()) {
                         msg.setAddressee(Id.incomeWaitingBusCA)
                         msg.vehicle?.currentActivity = Messages.busPassengersIncome
+
                         startContinualAssistant(msg)
                     } else {
                         myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
@@ -44,6 +44,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                     msg.setAddressee(Id.incomeWaitingBusCA)
                     msg.passenger?.incomingWaitingBus = waitingBus
                     msg.vehicle?.currentActivity = Messages.busPassengersIncome
+
                     startContinualAssistant(msg)
                 }
             }
@@ -102,8 +103,6 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                         val cpyMessage = msg.createCopy()
                         cpyMessage.setAddressee(Id.busWaitingCA)
 
-                        bus.hasWait = true
-
                         bus.currentActivity = Messages.extraWait
 
                         startContinualAssistant(cpyMessage)
@@ -116,6 +115,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
             Id.OutComFromBusCA -> {
                 val bus  = msg.vehicle!!
+
                 if (!bus.isBusy()) {
                     message.setCode(Mc.busArrival)
 
@@ -135,11 +135,12 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                 // Pokial vrati message, autobus este neodisiel, pokial vrati null, autobus odisiel
                 val bus = msg.vehicle!!
 
+                bus.hasWait = true
+
                 if (!bus.isBusy()) {
                     val waitingBusMessage = myAgent().returnWaitingBusMsg(bus.getActualStop(), bus.id)
 
                     if (waitingBusMessage != null) {
-                        waitingBusMessage.vehicle!!.hasWait = true
 
                         bus.currentActivity = Messages.busPassengersIncome
 
@@ -151,19 +152,25 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                 }
             }
 
-            // TODO: Not shure if good
             Id.incomeWaitingBusCA -> {
                 val waitingBus = msg.passenger!!.incomingWaitingBus
 
                 if (waitingBus!!.getFreeCapacity() == 0) {
-                    val waitingFrontMessage = myAgent().returnWaitingBusMsg(waitingBus.getActualStop(), waitingBus.id)!!
+                    val waitingFrontMessage = myAgent().returnWaitingBusMsg(waitingBus.getActualStop(), waitingBus.id)
 
-                    waitingFrontMessage.setCode(Mc.busArrival)
+                    if (waitingFrontMessage != null) {
+                        waitingFrontMessage.setCode(Mc.busArrival)
+                        response(waitingFrontMessage)
+                    }
+                } else if (!waitingBus.isBusy() && waitingBus.hasWait) {
+                    val waitingFrontMessage = myAgent().returnWaitingBusMsg(waitingBus.getActualStop(), waitingBus.id)
 
-                    response(waitingFrontMessage)
+                    if (waitingFrontMessage != null) {
+                        waitingFrontMessage.setCode(Mc.busArrival)
+
+                        response(waitingFrontMessage)
+                    }
                 }
-
-
             }
         }
 

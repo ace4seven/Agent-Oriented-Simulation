@@ -6,6 +6,7 @@ import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import view.support.D
+import view.tabs.ExperimentView
 import view.tabs.GlobalStatisticView
 import view.tabs.Tab1Subview
 import view.tabs.Tab2Subview
@@ -168,6 +169,7 @@ class MainView : View("Agentovo orientovaná simulácia") {
             tab(Tab1Subview::class)
             tab(Tab2Subview::class)
             tab(GlobalStatisticView::class)
+            tab(ExperimentView::class)
         }
     }
 

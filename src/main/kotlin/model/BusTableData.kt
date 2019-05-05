@@ -35,9 +35,9 @@ class BusTableData {
         }
 
         when(this.type) {
-            "Malý autobus" -> return BusEntity(this.id, link, BusType.SMALL, strategy, this.rawTime, sim)
-            "Veľký autobus" -> return BusEntity(this.id, link, BusType.BIG, strategy, this.rawTime, sim)
-            "Mikrobus" -> return MicroBusEntity(this.id, link, BusType.MICROBUS, strategy, this.rawTime, sim)
+            "Malý autobus" -> return Vehicle(this.id, link, BusType.SMALL, strategy, this.rawTime, sim)
+            "Veľký autobus" -> return Vehicle(this.id, link, BusType.BIG, strategy, this.rawTime, sim)
+            "Mikrobus" -> return Vehicle(this.id, link, BusType.MICROBUS, strategy, this.rawTime, sim)
         }
 
         throw Exception("Error transform vehicle from table")

@@ -11,12 +11,6 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
 
     override val root = hbox {
         vbox {
-            label("Prehľad globálnych štatistík") {
-                vboxConstraints {
-                    marginLeft = 20.0
-                    marginTop = 20.0
-                }
-            }
             D.globalStatistics = tableview {
                 vboxConstraints {
                     marginLeft = 20.0
@@ -33,8 +27,8 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
                     minWidth = 400.0
                 }
 
-                minHeight = 650.0
-                maxHeight = 650.0
+                minHeight = 680.0
+                maxHeight = 680.0
             }
         }
         vbox {

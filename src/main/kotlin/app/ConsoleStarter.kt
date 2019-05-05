@@ -1,8 +1,5 @@
 package app
 
-import aba.entities.BusEntity
-import aba.entities.BusType
-import aba.entities.TravelStrategyType
 import aba.simulation.BusHockeySimulation
 import helper.BusLink
 import helper.BusScheduler

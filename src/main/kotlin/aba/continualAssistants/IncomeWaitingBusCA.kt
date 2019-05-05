@@ -6,6 +6,7 @@ import OSPABA.Process
 import OSPABA.Simulation
 import aba.agents.AgentBusStop
 import aba.entities.BusType
+import aba.entities.PassengerEntity
 import aba.simulation.AppMessage
 import aba.simulation.Mc
 
@@ -25,6 +26,12 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
 
         val bus = msg.passenger!!.incomingWaitingBus!!
 
+        bus.addPassenger(msg.passenger!!)
+
+        msg.passenger!!.passengerIncomeIntoBus()
+
+        updateStatistic(msg.passenger!!)
+
         bus.incBusyDoor()
 
         var sample: Double
@@ -36,6 +43,7 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
         }
 
         msg.setCode(Mc.passengerFinishIncomeWaitingBus)
+
         hold(sample, msg)
     }
 
@@ -53,10 +61,8 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
             Mc.passengerFinishIncomeWaitingBus -> {
 
                 val msg = message as AppMessage
-                val passenger = msg.passenger!!
                 val bus = msg.passenger!!.incomingWaitingBus!!
 
-                bus.addPassenger(passenger)
                 bus.decBusyDoor()
 
                 assistantFinished(msg)
@@ -69,6 +75,11 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
 
     override fun myAgent(): AgentBusStop {
         return super.myAgent() as AgentBusStop
+    }
+
+    private fun updateStatistic(passenger: PassengerEntity) {
+        myAgent().averageWaitingStat.addSample(passenger.getWaitingTime())
+        myAgent().getBusStopAdministration().busStops[passenger.type.name]!!.addWaitingStat(passenger)
     }
 
 }

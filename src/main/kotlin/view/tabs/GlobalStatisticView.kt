@@ -33,15 +33,15 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
                     minWidth = 400.0
                 }
 
-                minHeight = 800.0
-                maxHeight = 800.0
+                minHeight = 650.0
+                maxHeight = 650.0
             }
         }
         vbox {
             D.averageWaitingChart = linechart("Graf - priemerné čakanie na zastávkach", NumberAxis(), NumberAxis()) {
                 createSymbols = false
                 isLegendVisible = false
-                maxHeight = 500.0
+                maxHeight = 350.0
                 minWidth = 500.0
                 animated = false
                 D.averageWaitingChartData = series("", D.controller.averageWaitingChartData)
@@ -64,10 +64,10 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
                 }
             }
 
-            D.averageMissHockeyChart = linechart("Graf - priemerné čakanie na zastávkach", NumberAxis(), NumberAxis()) {
+            D.averageMissHockeyChart = linechart("Graf - percento meškania na zápas", NumberAxis(), NumberAxis()) {
                 createSymbols = false
                 isLegendVisible = false
-                maxHeight = 500.0
+                maxHeight = 350.0
                 minWidth = 500.0
                 animated = false
                 D.averageMissHockeyChartData = series("", D.controller.averageMissHockeyChartData)

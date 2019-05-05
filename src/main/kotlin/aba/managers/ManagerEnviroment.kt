@@ -23,9 +23,6 @@ class ManagerEnviroment(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id
         }
     }
 
-    //meta! sender="AgentModel", id="67", type="Notice"
-    fun processTravellerExit(message: MessageForm) {}
-
     //meta! sender="IncomeScheduler", id="44", type="Finish"
     fun processFinish(message: MessageForm) {
         message.setCode(Mc.travelerArrival)
@@ -54,8 +51,6 @@ class ManagerEnviroment(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.finish -> processFinish(message)
-
-            Mc.travellerExit -> processTravellerExit(message)
             Mc.initPassengers -> processInitPassengers(message)
 
             else -> processDefault(message)

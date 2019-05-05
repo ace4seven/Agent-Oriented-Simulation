@@ -44,6 +44,9 @@ class D {
         var averageWaitingChart: LineChart<Number, Number> by singleAssign()
         var averageWaitingChartData by singleAssign<XYChart.Series<Number, Number>>()
 
+        var averageMissHockeyChart: LineChart<Number, Number> by singleAssign()
+        var averageMissHockeyChartData by singleAssign<XYChart.Series<Number, Number>>()
+
         var linkATableView: TableView<LinkCell> by singleAssign()
         var linkBTableView: TableView<LinkCell> by singleAssign()
         var linkCTableView: TableView<LinkCell> by singleAssign()
@@ -155,6 +158,8 @@ class D {
             busData?.clear()
 
             controller.averageWaitingChartData.clear()
+            controller.averageMissHockeyChartData.clear()
+
             controller.stopSimulation()
         }
 

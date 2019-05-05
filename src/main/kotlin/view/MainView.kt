@@ -120,8 +120,13 @@ class MainView : View("Agentovo orientovaná simulácia") {
                     action {
                         if (D.fastModeCheckBox.isSelected) {
                             D.speedSlider.isDisable = true
+                            D.intensitySlider.isDisable = true
+                            D.replicationTextField.isDisable = false
                         } else {
                             D.speedSlider.isDisable = false
+                            D.intensitySlider.isDisable = false
+                            D.replicationTextField.isDisable = true
+                            D.controller.numberOfReplicationsProperty.value = 1
                         }
                     }
                 }

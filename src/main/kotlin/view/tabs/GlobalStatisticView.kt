@@ -26,15 +26,15 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
 
                 items = D.controller.globalStatisticsDatasource
                 column("Názov štatistiky", StatisticCell::name) {
-                    minWidth = 280.0
+                    minWidth = 370.0
                 }
 
                 column("Hodnota štatistiky", StatisticCell::desc) {
-                    minWidth = 520.0
+                    minWidth = 400.0
                 }
 
-                minHeight = 500.0
-                maxHeight = 500.0
+                minHeight = 800.0
+                maxHeight = 800.0
             }
         }
         vbox {
@@ -45,6 +45,32 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
                 minWidth = 500.0
                 animated = false
                 D.averageWaitingChartData = series("", D.controller.averageWaitingChartData)
+
+                vboxConstraints {
+                    marginLeft = 20.0
+                    marginRight = 20.0
+                    marginTop = 10.0
+                }
+
+                with(yAxis as NumberAxis) {
+                    label = "Priemerné čakanie [min]"
+                    isForceZeroInRange = false
+                    isAutoRanging = true
+                }
+                with(xAxis as NumberAxis) {
+                    xAxis.label = "Číslo replikácie"
+                    isForceZeroInRange = false
+                    isAutoRanging = true
+                }
+            }
+
+            D.averageMissHockeyChart = linechart("Graf - priemerné čakanie na zastávkach", NumberAxis(), NumberAxis()) {
+                createSymbols = false
+                isLegendVisible = false
+                maxHeight = 500.0
+                minWidth = 500.0
+                animated = false
+                D.averageMissHockeyChartData = series("", D.controller.averageMissHockeyChartData)
 
                 vboxConstraints {
                     marginLeft = 20.0

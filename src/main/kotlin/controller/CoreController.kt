@@ -22,6 +22,7 @@ abstract class CoreController: Controller() {
     var simIntensity: Double = 0.1
 
     var averageWaitingChartData = FXCollections.observableArrayList<XYChart.Data<Number, Number>>()
+    var averageMissHockeyChartData = FXCollections.observableArrayList<XYChart.Data<Number, Number>>()
 
     val numberOfReplicationsProperty = SimpleIntegerProperty()
     val numberOfReplications: Int by numberOfReplicationsProperty

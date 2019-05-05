@@ -23,7 +23,8 @@ class AppController: CoreController(), ISimDelegate {
         simulationCore.onReplicationDidFinish {
             Platform.runLater(Runnable {
                 finishReplicationUpdateGUI(it as BusHockeySimulation)
-                updateAwerageWaitingGraph(it)
+
+                updateGraphs(it)
             })
         }
     }
@@ -64,11 +65,12 @@ class AppController: CoreController(), ISimDelegate {
         })
     }
 
-    private fun updateAwerageWaitingGraph(core: BusHockeySimulation) {
+    private fun updateGraphs(core: BusHockeySimulation) {
         if (((core.currentReplication() + 1).toDouble() / numberOfReplications.toDouble()) > 0.1) {
             val border = if (numberOfReplications / 4000 == 0) 1 else numberOfReplications / 4000
             if ((core.currentReplication() + 1) % border == 0) {
                 averageWaitingChartData.add(XYChart.Data(core.currentReplication() + 1, core.averageWaitingTimeStat!!.mean()))
+                averageMissHockeyChartData.add(XYChart.Data(core.currentReplication() + 1, core.averageNoOnTime!!.mean()))
             }
         }
     }

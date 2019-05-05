@@ -60,6 +60,8 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
                             D.replicationTextField = this
                             D.replicationTextField.promptText = "Min 30"
                             text = "1"
+
+                            isDisable = true
                         }
                     }
                 }

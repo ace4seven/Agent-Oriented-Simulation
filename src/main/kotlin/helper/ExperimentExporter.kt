@@ -24,6 +24,7 @@ class ExperimentExporter(val fileName: String) {
 
     val busHeader = "Linka autobusu, Typ, Stratégia vozenia, Čas vyslania"
     val resultHeader = "Priemerný čas čakania, Percent nestihli"
+    val blockSeparator = "\n \n \n"
 
     fun initializeWriter() {
         fileWriter = FileWriter(fileName)
@@ -37,6 +38,10 @@ class ExperimentExporter(val fileName: String) {
     fun addRow(data: CSVResultEntry) {
         fileWriter?.append("${data.averageWaiting} ${delimeter} ${data.averageNoCome}")
         fileWriter?.append('\n')
+    }
+
+    fun addBlockLine() {
+        fileWriter?.append(blockSeparator)
     }
 
     fun addBusHeader() {

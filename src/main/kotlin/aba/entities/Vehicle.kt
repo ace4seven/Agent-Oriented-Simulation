@@ -8,12 +8,27 @@ import com.sun.org.apache.xpath.internal.operations.Bool
 import helper.BusLink
 import helper.BusScheduler
 import helper.BusStop
+import java.util.*
 
 
 /** Author: Bc. Juraj Macak **/
 
 enum class BusType {
     SMALL, BIG, MICROBUS;
+
+    companion object {
+        val random = Random()
+
+        fun generateRandom(): BusType {
+            var rand = BusLink.random.nextDouble()
+
+            if (rand < 0.50) {
+                return SMALL
+            }
+
+            return BIG
+        }
+    }
 
     fun numbOfDors(): Int {
         when(this) {
@@ -51,6 +66,20 @@ enum class BusType {
 
 enum class TravelStrategyType {
     WAIT, NO_WAIT;
+
+    companion object {
+        val random = Random()
+
+        fun generateRandom(): TravelStrategyType {
+            val rand = random.nextDouble()
+
+            if (rand < 0.50) {
+                return WAIT
+            }
+
+            return NO_WAIT
+        }
+    }
 
     fun getExtraWaitingTime(): Double {
         when(this) {

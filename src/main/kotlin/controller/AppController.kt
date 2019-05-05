@@ -241,13 +241,9 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     fun startExperiments() {
-        experimentExporter.initializeWriter()
+        analyzator = Analyzator(BusHockeySimulation())
 
-        experimentExporter.addBusHeader()
-        experimentExporter.addRow(CSVBusEntry("test", "test", "test", "test"))
-        experimentExporter.addResultHeader()
-
-        experimentExporter.closeWriter()
+        analyzator?.startExperiments()
     }
 
 }

@@ -4,6 +4,7 @@ import OSPABA.ISimDelegate
 import OSPABA.SimState
 import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
+import helper.Analyzator
 import helper.Constants
 import helper.ExperimentExporter
 import helper.FileManager
@@ -66,7 +67,7 @@ abstract class CoreController: Controller() {
     val isFastModeEnabledProperty = SimpleBooleanProperty()
     var isFastModeEnabled: Boolean by isFastModeEnabledProperty
 
-    var experimentExporter = ExperimentExporter("experiment_results")
+    var analyzator: Analyzator? = null
 
     init {
         simulationCore = BusHockeySimulation()

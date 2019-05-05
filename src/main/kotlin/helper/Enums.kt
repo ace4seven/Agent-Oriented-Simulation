@@ -1,11 +1,28 @@
 package helper
 
 import java.lang.Exception
+import java.util.*
 
 /** Author: Bc. Juraj Macak **/
 
 enum class BusLink {
     LINK_A, LINK_B, LINK_C;
+
+    companion object {
+        val random = Random()
+
+        fun generateRandom(): BusLink {
+            var rand = random.nextDouble()
+
+            if (rand < 0.33) {
+                return LINK_A
+            } else if (rand <= 0.66) {
+                return LINK_B
+            }
+
+            return LINK_C
+        }
+    }
 
     fun backWayDuration(): Double {
         when(this) {

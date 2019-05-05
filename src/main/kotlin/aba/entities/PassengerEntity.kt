@@ -47,10 +47,16 @@ class PassengerEntity(val id: Int, val type: BusStop, val sim: Simulation): Enti
     }
 
     companion object {
-        var indexPassenger = 1
+        private var uniquePassgengerIndex = 0
 
-        fun incIndex() {
-            indexPassenger += 1
+        fun getuniqueID(): Int {
+            uniquePassgengerIndex += 1
+
+            return uniquePassgengerIndex
+        }
+
+        fun clear() {
+            uniquePassgengerIndex = 0
         }
     }
 

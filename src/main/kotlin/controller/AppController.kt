@@ -234,4 +234,8 @@ class AppController: CoreController(), ISimDelegate {
         }
     }
 
+    fun clearVehicles() {
+        simulationCore.agentBus()?.vehicles?.clear()
+    }
+
 }

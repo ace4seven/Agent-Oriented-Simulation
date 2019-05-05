@@ -40,9 +40,8 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     fun getAvailableWaitingBus(): Vehicle? {
         waitingBuses.forEach {
-            if (it.value.vehicle!!.getFreeCapacity() > 0 && !it.value.vehicle!!.hasFreeDoor()) {
+            if (it.value.vehicle!!.getFreeCapacity() > 0 && it.value.vehicle!!.hasFreeDoor()) {
                 return it.value.vehicle
-
             }
         }
 

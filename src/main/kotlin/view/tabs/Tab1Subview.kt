@@ -11,53 +11,9 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
     override val root = vbox {
         form {
             hbox {
-                fieldset("Nastavenia autobusov") {
-                    hbox(20) {
-//                        field("Linka") {
-//                            D.busLinkComboBox = combobox{
-//                                items = D.busLinks
-//                            }
-//                        }
-//
-//                        field("Typ autobusu") {
-//                            D.busTypeComboBox = combobox {
-//                                items = D.busType
-//                            }
-//                        }
-//
-//                        field("Stratégia vozenia") {
-//                            D.busStrategyComboBox = combobox {
-//                                items = D.busStrategy
-//                            }
-//                        }
-//
-//                        field("Čas na vyslanie") {
-//                            textfield {
-//                                D.timeToDeployTextField = this
-//                            }
-//                        }
-//
-//                        field {
-//                            button("Pridať") {
-//                                action {
-//                                    D.addBuss()
-//                                }
-//                            }
-//                        }
-
-                        field {
-                            button("Načítaj zo súboru") {
-                                action {
-                                    D.loadBusesFromFile()
-                                }
-                            }
-                        }
-                    }
-                }
-
                 fieldset("Nastavenie simulácie") {
                     hboxConstraints {
-                        marginLeft = 20.0
+                        marginLeft = 15.0
                     }
                     field("Počet replikácii") {
                         textfield {
@@ -72,6 +28,55 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
                     }
                 }
             }
+
+            fieldset {
+                hbox(20) {
+                    hboxConstraints {
+                        paddingTop = 20.0
+                        paddingLeft = 15.0
+                        paddingRight = 60.0
+                    }
+                    field("Linka") {
+                        D.busLinkComboBox = combobox{
+                            items = D.busLinks
+                        }
+                    }
+
+                    field("Typ autobusu") {
+                        D.busTypeComboBox = combobox {
+                            items = D.busType
+                        }
+                    }
+
+                    field("Stratégia vozenia") {
+                        D.busStrategyComboBox = combobox {
+                            items = D.busStrategy
+                        }
+                    }
+
+                    field("Vyslanie v čase") {
+                        textfield {
+                            D.timeToDeployTextField = this
+                        }
+                    }
+
+                    field {
+                        button("Pridať") {
+                            action {
+                                D.addBuss()
+                            }
+                        }
+                    }
+
+                    field {
+                        button("Načítaj zo súboru") {
+                            action {
+                                D.loadBusesFromFile()
+                            }
+                        }
+                    }
+                }
+            }
         }
         hbox {
             hboxConstraints {
@@ -80,7 +85,10 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
             vbox {
                 label("LINKA A") {
-                    vboxConstraints { marginLeft = 20.0 }
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginBottom = 10.0
+                    }
                 }
                 D.busLinkATableView = tableview {
                     vboxConstraints {
@@ -108,7 +116,10 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
             vbox {
                 label("LINKA B") {
-                    vboxConstraints { marginLeft = 20.0 }
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginBottom = 10.0
+                    }
                 }
                 D.busLinkBTableView = tableview {
                     vboxConstraints {
@@ -136,7 +147,10 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
             vbox {
                 label("LINKA C") {
-                    vboxConstraints { marginLeft = 20.0 }
+                    vboxConstraints {
+                        marginLeft = 20.0
+                        marginBottom = 10.0
+                    }
                 }
                 D.busLinkCTableView = tableview {
                     vboxConstraints {
@@ -158,6 +172,18 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
                     column("Čas vyslania", BusTableData::scheduleTime) {
                         minWidth = 140.0
                     }
+                }
+            }
+        }
+
+        vbox {
+            D.resetBusTables = button("Vymaž záznamy") {
+                vboxConstraints {
+                    marginTop = 20.0
+                    marginLeft = 20.0
+                }
+                action {
+                    D.clearBusTables()
                 }
             }
         }

@@ -75,12 +75,26 @@ enum class TravelStrategyType {
     }
 }
 
-abstract class Vehicle(val id: Int,
+class Vehicle(val id: Int,
                        val link: BusLink,
                        val type: BusType,
                        val strategy: TravelStrategyType,
                        val deployTime: Double,
                        val sim: Simulation): Entity(sim) {
+
+    companion object {
+        private var uniqueID = 0
+
+        fun getUniqueID(): Int {
+            uniqueID += 1
+
+            return uniqueID
+        }
+
+        fun clear() {
+            uniqueID = 0
+        }
+    }
 
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
@@ -182,6 +196,8 @@ abstract class Vehicle(val id: Int,
         currentActivity = "-"
         profit = 0
         circuit = 1
+        hasWait = false
+        busyDoors = 0
     }
 
     fun payForticket() {

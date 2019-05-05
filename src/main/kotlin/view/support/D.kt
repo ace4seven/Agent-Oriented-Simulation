@@ -3,6 +3,8 @@ package view.support
 import controller.AppController
 import helper.Formatter
 import javafx.collections.FXCollections
+import javafx.scene.chart.LineChart
+import javafx.scene.chart.XYChart
 import javafx.scene.control.*
 import model.*
 import tornadofx.*
@@ -12,6 +14,7 @@ import tornadofx.*
 class D {
 
     companion object {
+
         val controller = AppController()
 
         var simulationTime: Label by singleAssign()
@@ -28,6 +31,7 @@ class D {
         var fastModeCheckBox = CheckBox()
 
         var speedSlider = Slider()
+        var intensitySlider = Slider()
 
         // TABLES
 
@@ -37,10 +41,16 @@ class D {
 
         var busProgressTableView: TableView<BusProgressCell> by singleAssign()
 
+        var averageWaitingChart: LineChart<Number, Number> by singleAssign()
+        var averageWaitingChartData by singleAssign<XYChart.Series<Number, Number>>()
+
         var linkATableView: TableView<LinkCell> by singleAssign()
         var linkBTableView: TableView<LinkCell> by singleAssign()
         var linkCTableView: TableView<LinkCell> by singleAssign()
         var linkKTableView: TableView<LinkCell> by singleAssign()
+
+        var localStatistics: TableView<StatisticCell> by singleAssign()
+        var globalStatistics: TableView<StatisticCell> by singleAssign()
 
         var busPassengersTableView: TableView<PassengerCell> by singleAssign()
 
@@ -144,6 +154,7 @@ class D {
 
             busData?.clear()
 
+            controller.averageWaitingChartData.clear()
             controller.stopSimulation()
         }
 

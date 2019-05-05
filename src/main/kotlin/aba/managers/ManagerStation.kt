@@ -76,7 +76,6 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         message.setCode(Mc.prepareForStart)
         message.setAddressee(Id.agentBus)
 
-        println("Poziadavka na prvotnú inicializaciu autobusov")
         request(message)
     }
 

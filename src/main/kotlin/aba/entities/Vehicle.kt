@@ -86,6 +86,8 @@ abstract class Vehicle(val id: Int,
     var currentActivity = "-"
     var isDeployed = false
 
+    var profit = 0
+
     var hasWait = false
 
     private var passengers = SimQueue<PassengerEntity>()
@@ -140,8 +142,6 @@ abstract class Vehicle(val id: Int,
     }
 
     fun addPassenger(passenger: PassengerEntity) {
-        passenger.passengerIncomeIntoBus()
-
         passengers.add(passenger)
     }
 
@@ -172,6 +172,12 @@ abstract class Vehicle(val id: Int,
     fun clear() {
         scheduler.clear()
         passengers.clear()
+        currentActivity = "-"
+        profit = 0
+    }
+
+    fun payForticket() {
+        profit += 1
     }
 
 }

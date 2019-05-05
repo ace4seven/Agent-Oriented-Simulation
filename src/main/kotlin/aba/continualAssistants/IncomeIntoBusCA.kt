@@ -4,6 +4,8 @@ import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
 import OSPABA.Process
+import aba.entities.BusType
+import aba.entities.PassengerEntity
 
 //meta! id="57"
 class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Scheduler(id, mySim, myAgent) {
@@ -29,12 +31,14 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
                 bus.incBusyDoor()
 
-
                 val passenger = passengers.dequeue()
+
+                passenger.passengerIncomeIntoBus()
 
                 BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
-                passenger.passengerIncomeIntoBus()
+                updateStatistic(passenger)
+
                 passenger.numberOfDoorIn = i
 
                 bus.addPassenger(passenger)
@@ -63,6 +67,10 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         val msg = message as AppMessage
         val bus = msg.vehicle!!
 
+        if (bus.type == BusType.MICROBUS) {
+            bus.payForticket()
+        }
+
         var passengers = myAgent().getBusStopPassengers(bus.getActualStop())
 
         bus.decBusyDoor()
@@ -74,11 +82,15 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
                 bus.incBusyDoor()
 
                 val passenger = passengers.dequeue()
+
+                passenger.passengerIncomeIntoBus()
+
                 passenger.numberOfDoorIn = msg.doorIdentifier
 
                 BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${msg.doorIdentifier}) na zastávke ${bus.scheduler.getActualStop()!!.name}")
 
-                passenger.passengerIncomeIntoBus()
+                updateStatistic(passenger)
+
                 bus.addPassenger(passenger)
 
                 val msgCopy = msg.createCopy()
@@ -98,6 +110,11 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         if (!bus.isBusy()) {
             assistantFinished(msg)
         }
+    }
+
+    private fun updateStatistic(passenger: PassengerEntity) {
+        myAgent().averageWaitingStat.addSample(passenger.getWaitingTime())
+        myAgent().getBusStopAdministration().busStops[passenger.type.name]!!.addWaitingStat(passenger)
     }
 
     //meta! userInfo="Process messages defined in code", id="0"

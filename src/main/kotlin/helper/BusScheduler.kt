@@ -48,7 +48,8 @@ class BusScheduler(val busLink: BusLink) {
         when(currentStop) {
             BusStop.C_A -> currentStop = BusStop.C_B
             BusStop.C_B -> currentStop = BusStop.C_K1
-            BusStop.C_K1 -> currentStop = BusStop.C_C
+            BusStop.C_K1 -> currentStop = BusStop.C_K2
+            BusStop.C_K2 -> currentStop = BusStop.C_C
             BusStop.C_C -> currentStop = BusStop.C_D
             BusStop.C_D -> currentStop = BusStop.C_E
             BusStop.C_E -> currentStop = BusStop.C_F
@@ -128,7 +129,8 @@ class BusScheduler(val busLink: BusLink) {
 
             BusStop.C_A -> return BusStop.C_B
             BusStop.C_B -> return BusStop.C_K1
-            BusStop.C_K1 -> return BusStop.C_C
+            BusStop.C_K1 -> return BusStop.C_K2
+            BusStop.C_K2 -> return BusStop.C_C
             BusStop.C_C -> return BusStop.C_D
             BusStop.C_D -> return BusStop.C_E
             BusStop.C_E -> return BusStop.C_F

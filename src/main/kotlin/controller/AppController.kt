@@ -5,21 +5,45 @@ import OSPABA.SimState
 import OSPABA.Simulation
 import aba.entities.*
 import aba.simulation.BusHockeySimulation
-import helper.BusLink
-import helper.BusStop
+import helper.*
 import helper.Formatter
 import javafx.application.Platform
 import javafx.collections.FXCollections
+import javafx.scene.chart.XYChart
 import model.*
 import java.util.*
 
 /** Author: Bc. Juraj Macak **/
 
-// ONLY METHJODS
-
 class AppController: CoreController(), ISimDelegate {
 
-    init { simulationCore.registerDelegate(this) }
+    init {
+        simulationCore.registerDelegate(this)
+
+        simulationCore.onReplicationDidFinish {
+            Platform.runLater(Runnable {
+                finishReplicationUpdateGUI(it as BusHockeySimulation)
+                updateAwerageWaitingGraph(it)
+            })
+        }
+    }
+
+    private fun finishReplicationUpdateGUI(core: BusHockeySimulation) {
+        val replicationNumb = core.currentReplication() + 1
+
+        globalStatisticsDatasource.clear()
+        if (replicationNumb > 2) {
+            globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.globalNumberOfReplications, "${replicationNumb}"))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globallPassengersCount, core.averageNumberOfPassengers!!))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMicrobusProfit, core.averageMicrobusProfit))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMissHockey, core.averageNoOnTime!!, true))
+            globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalPassengerWaiting, core.averageWaitingTimeStat!!))
+
+            core.averageWaitingBusStopStat.forEach {
+                globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalWaitingOnBusStop} ${it.key}", it.value))
+            }
+        }
+    }
 
     override fun refresh(core: Simulation?) {
         Platform.runLater(Runnable {
@@ -30,12 +54,34 @@ class AppController: CoreController(), ISimDelegate {
                 refreshBusLinks(core)
                 refreshBusPassengers(core)
                 refreshBusStopPassengers(core)
+
+                computeLocalStatistics(core)
             }
 
             if (isLogEnabled) {
                 refreshLogs()
             }
         })
+    }
+
+    private fun updateAwerageWaitingGraph(core: BusHockeySimulation) {
+        if (((core.currentReplication() + 1).toDouble() / numberOfReplications.toDouble()) > 0.1) {
+            val border = if (numberOfReplications / 4000 == 0) 1 else numberOfReplications / 4000
+            if ((core.currentReplication() + 1) % border == 0) {
+                averageWaitingChartData.add(XYChart.Data(core.currentReplication() + 1, core.averageWaitingTimeStat!!.mean()))
+            }
+        }
+    }
+
+    private fun computeLocalStatistics(core: BusHockeySimulation) {
+        val numbOfPassengers = core.agentModel()?.getNumberOfPassengers()
+        val averageWaitingTime = core.agentBusStop()!!.averageWaitingStat.mean()
+        val profit = core.agentBus()!!.vehicles.fold(0) { sum, e -> e.profit + sum }
+
+        localStatisticsDatasource.clear()
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengersCount, "${numbOfPassengers}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengerWaiting, "${averageWaitingTime}"))
+        localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localMicrobusProfit, "${profit}"))
     }
 
     private fun refreshBusStopPassengers(core: BusHockeySimulation) {
@@ -102,8 +148,14 @@ class AppController: CoreController(), ISimDelegate {
         }
     }
 
-    fun setSimSpeed(value: Double) {
-        simulationCore.setSimSpeed(value * 2, 0.1)
+    fun setSimulationSpeed(value: Double) {
+        simSpeed = value
+        simulationCore.setSimSpeed(simSpeed, simIntensity)
+    }
+
+    fun setSimulationIntensity(value: Double) {
+        simIntensity = value
+        simulationCore.setSimSpeed(simSpeed, simIntensity)
     }
 
     override fun simStateChanged(core: Simulation?, state: SimState?) {
@@ -126,7 +178,7 @@ class AppController: CoreController(), ISimDelegate {
         } else {
             val thread = object: Thread() {
                 override fun run() {
-                    simulationCore.simulate(numberOfReplications, timeOfOneReplication)
+                    simulationCore.simulate(numberOfReplications, 100000000000.0)
                 }
             }
             thread.start()

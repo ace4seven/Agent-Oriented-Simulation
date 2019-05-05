@@ -125,6 +125,8 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                         println("Autobus ${msg.vehicle!!.id} vystupovanie ukončené: ${msg.vehicle!!.getNumberOfPassengers()} ${bus.busyDoors}")
                     }
 
+                    bus.incCircuit()
+
                     response(message)
                 }
             }

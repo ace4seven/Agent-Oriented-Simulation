@@ -81,6 +81,10 @@ open class OverviewSimulationTabView : View("Stav objektov") {
             column("Počet cestujúcich", BusProgressCell::numbOfTravelers) {
                 minWidth = 150.0
             }
+
+            column("Aktuálny okruh", BusProgressCell::circuit) {
+                minWidth = 100.0
+            }
         }
 
         hbox {

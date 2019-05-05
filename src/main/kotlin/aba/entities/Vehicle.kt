@@ -94,6 +94,9 @@ abstract class Vehicle(val id: Int,
 
     var busyDoors = 0
 
+    var circuit = 1
+        private set
+
     fun getActualStop(): BusStop {
         return scheduler.getActualStop()!!
     }
@@ -127,6 +130,10 @@ abstract class Vehicle(val id: Int,
         }
 
         return progress
+    }
+
+    fun incCircuit() {
+        circuit += 1
     }
 
     fun prepareToMoveNextStop() {
@@ -174,6 +181,7 @@ abstract class Vehicle(val id: Int,
         passengers.clear()
         currentActivity = "-"
         profit = 0
+        circuit = 1
     }
 
     fun payForticket() {

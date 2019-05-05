@@ -185,6 +185,7 @@ class BusHockeySimulation : Simulation() {
             cell.link = it.link.formattedName()
             cell.freeCapacity = "${it.getFreeCapacity()}"
             cell.numbOfTravelers = "${it.getNumberOfPassengers()}"
+            cell.circuit = "${it.circuit} okruh"
 
             result.add(cell)
         }

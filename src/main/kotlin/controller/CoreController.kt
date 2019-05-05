@@ -7,6 +7,7 @@ import aba.simulation.BusHockeySimulation
 import helper.Constants
 import helper.FileManager
 import javafx.beans.property.SimpleBooleanProperty
+import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
@@ -20,6 +21,9 @@ abstract class CoreController: Controller() {
 
     var simSpeed: Double = 1.0
     var simIntensity: Double = 0.1
+
+    var progressProperty = SimpleDoubleProperty()
+    var progress: Double by progressProperty
 
     var averageWaitingChartData = FXCollections.observableArrayList<XYChart.Data<Number, Number>>()
     var averageMissHockeyChartData = FXCollections.observableArrayList<XYChart.Data<Number, Number>>()

@@ -2,6 +2,7 @@ package view
 
 import javafx.scene.control.TabPane
 import javafx.scene.image.Image
+import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import view.support.D
@@ -122,11 +123,13 @@ class MainView : View("Agentovo orientovaná simulácia") {
                             D.speedSlider.isDisable = true
                             D.intensitySlider.isDisable = true
                             D.replicationTextField.isDisable = false
+                            D.logCheckbox.isDisable = true
                         } else {
                             D.speedSlider.isDisable = false
                             D.intensitySlider.isDisable = false
                             D.replicationTextField.isDisable = true
                             D.controller.numberOfReplicationsProperty.value = 1
+                            D.logCheckbox.isDisable = false
                         }
                     }
                 }
@@ -136,6 +139,20 @@ class MainView : View("Agentovo orientovaná simulácia") {
                         marginTop = 10.0
                         marginLeft = 10.0
                     }
+                }
+
+                D.simulationProgressBar = progressbar {
+                    hboxConstraints {
+                        marginTop = 10.0
+                        marginLeft = 50.0
+                    }
+
+                    style {
+                        accentColor = Color.RED
+                    }
+
+                    minWidth = 840.0
+                    bind(D.controller.progressProperty)
                 }
 
                 hboxConstraints {

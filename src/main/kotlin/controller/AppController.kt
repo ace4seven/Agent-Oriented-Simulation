@@ -25,6 +25,7 @@ class AppController: CoreController(), ISimDelegate {
                 finishReplicationUpdateGUI(it as BusHockeySimulation)
 
                 updateGraphs(it)
+                updateProgress(it)
             })
         }
     }
@@ -63,6 +64,14 @@ class AppController: CoreController(), ISimDelegate {
                 refreshLogs()
             }
         })
+    }
+
+    private fun updateProgress(core: BusHockeySimulation) {
+        val repDelimeter = numberOfReplications.toDouble() / 100
+
+        if ((core.currentReplication() + 1) % repDelimeter.toDouble() <= 0.0) {
+            progress += 0.01
+        }
     }
 
     private fun updateGraphs(core: BusHockeySimulation) {

@@ -33,6 +33,8 @@ class D {
         var speedSlider = Slider()
         var intensitySlider = Slider()
 
+        var simulationProgressBar: ProgressBar by singleAssign()
+
         // TABLES
 
         var startButton: Button by singleAssign()
@@ -78,6 +80,7 @@ class D {
         // TEXTFIELDS
 
         var replicationTextField: TextField by singleAssign()
+        var timeToDeployTextField: TextField by singleAssign()
 
         var busData: MutableList<BusTableData>? = null
 
@@ -152,13 +155,17 @@ class D {
             stopButton.isDisable = true
             pauseButton.isDisable = true
 
+            controller.progress = 0.0
+
             logCheckbox.isDisable = false
             fastModeCheckBox.isDisable = false
 
             busData?.clear()
 
             controller.averageWaitingChartData.clear()
+            controller.averageWaitingChartData.removeAll()
             controller.averageMissHockeyChartData.clear()
+            controller.averageMissHockeyChartData.removeAll()
 
             controller.stopSimulation()
         }

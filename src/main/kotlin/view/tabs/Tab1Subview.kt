@@ -13,31 +13,37 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
             hbox {
                 fieldset("Nastavenia autobusov") {
                     hbox(20) {
-                        field("Linka") {
-                            D.busLinkComboBox = combobox{
-                                items = D.busLinks
-                            }
-                        }
-
-                        field("Typ autobusu") {
-                            D.busTypeComboBox = combobox {
-                                items = D.busType
-                            }
-                        }
-
-                        field("Stratégia vozenia") {
-                            D.busStrategyComboBox = combobox {
-                                items = D.busStrategy
-                            }
-                        }
-
-                        field {
-                            button("Pridať") {
-                                action {
-                                    D.addBuss()
-                                }
-                            }
-                        }
+//                        field("Linka") {
+//                            D.busLinkComboBox = combobox{
+//                                items = D.busLinks
+//                            }
+//                        }
+//
+//                        field("Typ autobusu") {
+//                            D.busTypeComboBox = combobox {
+//                                items = D.busType
+//                            }
+//                        }
+//
+//                        field("Stratégia vozenia") {
+//                            D.busStrategyComboBox = combobox {
+//                                items = D.busStrategy
+//                            }
+//                        }
+//
+//                        field("Čas na vyslanie") {
+//                            textfield {
+//                                D.timeToDeployTextField = this
+//                            }
+//                        }
+//
+//                        field {
+//                            button("Pridať") {
+//                                action {
+//                                    D.addBuss()
+//                                }
+//                            }
+//                        }
 
                         field {
                             button("Načítaj zo súboru") {
@@ -51,7 +57,7 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
 
                 fieldset("Nastavenie simulácie") {
                     hboxConstraints {
-                        marginLeft = 60.0
+                        marginLeft = 20.0
                     }
                     field("Počet replikácii") {
                         textfield {

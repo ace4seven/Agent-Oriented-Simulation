@@ -44,6 +44,7 @@ class D {
         var stopButton: Button by singleAssign()
 
         var resetBusTables: Button by singleAssign()
+        var startExperiments: Button by singleAssign()
 
         var busProgressTableView: TableView<BusProgressCell> by singleAssign()
 
@@ -113,6 +114,10 @@ class D {
                     "Linka C" -> busLinkCTableViewDataSource.add(it)
                 }
             }
+        }
+
+        fun startExperiments() {
+            controller.startExperiments()
         }
 
         fun clearBusTables() {

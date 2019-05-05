@@ -72,6 +72,8 @@ class BusHockeySimulation : Simulation() {
 
     public override fun replicationFinished() {
         // Collect local statistics into global, update UI, etc...
+        super.replicationFinished()
+        
         averageNumberOfPassengers!!.addSample(agentModel()!!.getNumberOfPassengers().toDouble())
         averageWaitingTimeStat!!.addSample(agentBusStop()!!.averageWaitingStat.mean())
         averageNoOnTime!!.addSample(agentModel()!!.getPercentagePeopleNoOnTime())
@@ -88,22 +90,20 @@ class BusHockeySimulation : Simulation() {
         }
 
         averageMicrobusProfit.addSample(microbusProfit.toDouble())
-
-        super.replicationFinished()
     }
 
     public override fun simulationFinished() {
-//        averageMicrobusProfit.clear()
-//
-//        averageWaitingBusStopStat.forEach {
-//            it.value.clear()
-//        }
-//
-//        averageNoOnTime?.clear()
-//        averageNumberOfPassengers?.clear()
-//        averageWaitingTimeStat?.clear()
-
         super.simulationFinished()
+
+        averageMicrobusProfit.clear()
+
+        averageWaitingBusStopStat.forEach {
+            it.value.clear()
+        }
+
+        averageNoOnTime?.clear()
+        averageNumberOfPassengers?.clear()
+        averageWaitingTimeStat?.clear()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

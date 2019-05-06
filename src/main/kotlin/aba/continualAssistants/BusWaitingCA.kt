@@ -4,6 +4,7 @@ import OSPABA.*
 import aba.simulation.*
 import aba.agents.*
 import OSPABA.Process
+import tornadofx.*
 
 //meta! id="79"
 class BusWaitingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(id, mySim, myAgent) {
@@ -15,9 +16,13 @@ class BusWaitingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
 
     //meta! sender="AgentBusStop", id="80", type="Start"
     fun processStart(message: MessageForm) {
-        message.setCode(Mc.busFinishWaiting)
+        val msg = message as AppMessage
 
-        hold(90.0, message)
+        msg.vehicle!!.isWaiting = true
+
+        msg.setCode(Mc.busFinishWaiting)
+
+        hold(90.0, msg)
     }
 
     //meta! userInfo="Process messages defined in code", id="0"
@@ -31,7 +36,12 @@ class BusWaitingCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Process(i
     override fun processMessage(message: MessageForm) {
         when (message.code()) {
             Mc.start -> processStart(message)
-            Mc.busFinishWaiting -> assistantFinished(message)
+            Mc.busFinishWaiting -> {
+                val msg = message as AppMessage
+
+                msg.vehicle!!.isWaiting = false
+                assistantFinished(msg)
+            }
 
             else -> processDefault(message)
         }

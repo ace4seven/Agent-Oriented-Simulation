@@ -93,8 +93,6 @@ class BusHockeySimulation : Simulation() {
     }
 
     public override fun simulationFinished() {
-        super.simulationFinished()
-
         averageMicrobusProfit.clear()
 
         averageWaitingBusStopStat.forEach {
@@ -104,6 +102,12 @@ class BusHockeySimulation : Simulation() {
         averageNoOnTime?.clear()
         averageNumberOfPassengers?.clear()
         averageWaitingTimeStat?.clear()
+
+        agentBus()!!.vehicles.forEach {
+            it.clear()
+        }
+
+        super.simulationFinished()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

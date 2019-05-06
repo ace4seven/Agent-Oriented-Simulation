@@ -16,7 +16,7 @@ class Analyzator {
     var microbuses = arrayListOf<Vehicle>()
 
     var scheduleGenerator = UniformDiscreteRNG(0, 3600)
-    var vehicleIndex = UniformDiscreteRNG(0, 9999)
+    var vehicleIndex = UniformDiscreteRNG(0, 999999)
 
     var replicationCount = 1
 
@@ -26,13 +26,13 @@ class Analyzator {
 
     var indexStop = 1000
 
-    var numberOfVehicles = 70
-    var maxNumberOfVehicles = 80
+    var numberOfVehicles = 100
+    var maxNumberOfVehicles = 150
 
     val core = BusHockeySimulation()
 
     private fun initVehiclesVariants() {
-        for (i in 1..10000) {
+        for (i in 1..1000000) {
             vehicles.add(
                     Vehicle(i,
                             BusLink.generateRandom(),
@@ -72,7 +72,14 @@ class Analyzator {
         }
 
         for(k in 1..numberOfVehicles) {
-            core.addVehicle(vehicles[vehicleIndex.sample()])
+            core.addVehicle(
+                    Vehicle(Vehicle.getUniqueID(),
+                            BusLink.generateRandom(),
+                            BusType.generateRandom(),
+                            TravelStrategyType.WAIT,
+                            scheduleGenerator.sample().toInt().toDouble(), core
+                    )
+            )
         }
     }
 

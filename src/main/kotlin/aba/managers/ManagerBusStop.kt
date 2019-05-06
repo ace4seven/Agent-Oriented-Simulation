@@ -5,12 +5,16 @@ import OSPRNG.TriangularRNG
 import aba.simulation.*
 import aba.agents.*
 import aba.entities.BusType
+import helper.CSVBusEntry
 import helper.Constants
+import helper.ExperimentExporter
 import helper.Messages
 import java.lang.Exception
 
 //meta! id="5"
 class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
+
+    val exporter = ExperimentExporter("bad_config_for_test")
 
     init {
         init()
@@ -60,15 +64,20 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
         if (msg.vehicle!!.scheduler.isFinalDestination()) {
             prepareOutcomePassengers(msg)
         } else {
-            msg.vehicle?.currentActivity = Messages.busPassengersIncome
+            if (msg.vehicle!!.getFreeCapacity() <= 0) {
+                msg.setCode(Mc.busArrival)
+                response(msg)
+            } else {
+                msg.vehicle?.currentActivity = Messages.busPassengersIncome
 
-            if (Constants.isDebug) {
-                println("Autobus ${msg.vehicle!!.id} (obsadeny: ${msg.vehicle!!.getNumberOfPassengers()}) prichod na zastavku ${msg.vehicle!!.scheduler.getActualStop()} (${myAgent().getBusStopPassengers(msg.vehicle!!.getActualStop()).count()})")
+                if (Constants.isDebug) {
+                    println("Autobus ${msg.vehicle!!.id} (obsadeny: ${msg.vehicle!!.getNumberOfPassengers()}) prichod na zastavku ${msg.vehicle!!.scheduler.getActualStop()} (${myAgent().getBusStopPassengers(msg.vehicle!!.getActualStop()).count()})")
+                }
+
+                msg.setAddressee(Id.incomeIntoBusCA)
+
+                startContinualAssistant(msg)
             }
-
-            msg.setAddressee(Id.incomeIntoBusCA)
-
-            startContinualAssistant(msg)
         }
     }
 
@@ -98,14 +107,14 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                     }
 
                     if (bus.strategy.hasWaitingStrategy() && bus.getFreeCapacity() > 0 && !bus.hasWait) { // Nastavenie na 1.5 min cakanie
-                        myAgent().getBusStopEntity(bus.getActualStop()).addBusForWaiting(msg)
-
-                        val cpyMessage = msg.createCopy()
-                        cpyMessage.setAddressee(Id.busWaitingCA)
+                        val cpyMessage = msg.createCopy() as AppMessage
+                        myAgent().getBusStopEntity(bus.getActualStop()).addBusForWaiting(cpyMessage)
 
                         bus.currentActivity = Messages.extraWait
 
-                        startContinualAssistant(cpyMessage)
+                        msg.setAddressee(Id.busWaitingCA)
+
+                        startContinualAssistant(msg)
                     } else {
                         msg.vehicle!!.hasWait = false
                         response(message)
@@ -127,6 +136,16 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
                     bus.incCircuit()
 
+                    if (bus.circuit > 500) {
+                        val sim = mySim() as BusHockeySimulation
+                        exporter.initializeWriter()
+                        sim.agentBus()!!.vehicles.forEach {
+                            exporter.addRow(CSVBusEntry(it.link.formattedName(true), it.type.formattedName(true), it.strategy.formattedName(true), "${it.deployTime}"))
+                        }
+                        exporter.closeWriter()
+                        throw Exception("Zacyklenie")
+                    }
+
                     response(message)
                 }
             }
@@ -145,9 +164,8 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                         bus.currentActivity = Messages.busPassengersIncome
 
                         waitingBusMessage.setCode(Mc.busArrival)
-                        waitingBusMessage.setAddressee(this)
 
-                        notice(waitingBusMessage)
+                        response(waitingBusMessage)
                     }
                 }
             }
@@ -162,7 +180,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                         waitingFrontMessage.setCode(Mc.busArrival)
                         response(waitingFrontMessage)
                     }
-                } else if (!waitingBus.isBusy() && waitingBus.hasWait) {
+                } else if (!waitingBus.isWaiting) {
                     val waitingFrontMessage = myAgent().returnWaitingBusMsg(waitingBus.getActualStop(), waitingBus.id)
 
                     if (waitingFrontMessage != null) {

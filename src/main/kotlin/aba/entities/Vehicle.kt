@@ -8,6 +8,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool
 import helper.BusLink
 import helper.BusScheduler
 import helper.BusStop
+import view.window.BusStopDetail
 import java.util.*
 
 
@@ -38,12 +39,20 @@ enum class BusType {
         }
     }
 
-    fun formattedName(): String {
-        when(this) {
-            SMALL -> return "Malý"
-            BIG -> return "Veľký"
-            MICROBUS -> return "Mikrobus"
-        }
+    fun formattedName(isSample: Boolean = false): String {
+       if (isSample) {
+           when(this) {
+               SMALL -> return "S"
+               BIG -> return "L"
+               MICROBUS -> return "M"
+           }
+       } else {
+           when(this) {
+               SMALL -> return "Malý"
+               BIG -> return "Veľký"
+               MICROBUS -> return "Mikrobus"
+           }
+       }
     }
 
     fun capacity(): Int {
@@ -96,11 +105,18 @@ enum class TravelStrategyType {
         return false
     }
 
-    fun formattedName(): String {
-        when(this) {
-            WAIT -> return "S čakaním"
-            NO_WAIT -> return "Bez čakania"
-        }
+    fun formattedName(isSample: Boolean = false): String {
+       if (isSample) {
+           when(this) {
+               WAIT -> return "WAIT"
+               NO_WAIT -> return "NO WAIT"
+           }
+       } else {
+           when(this) {
+               WAIT -> return "S čakaním"
+               NO_WAIT -> return "Bez čakania"
+           }
+       }
     }
 }
 
@@ -128,6 +144,10 @@ class Vehicle(val id: Int,
     val scheduler = BusScheduler(link)
     var currentActivity = "-"
     var isDeployed = false
+    var waitingStop: BusStop? = null
+    var hasLeftWithFullCapacity = false
+    var isWaiting = false
+    var firstLoad = false
 
     var profit = 0
 
@@ -227,6 +247,10 @@ class Vehicle(val id: Int,
         circuit = 1
         hasWait = false
         busyDoors = 0
+        waitingStop = null
+        hasLeftWithFullCapacity = false
+        isWaiting = false
+        firstLoad = false
     }
 
     fun payForticket() {

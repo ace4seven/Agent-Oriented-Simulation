@@ -25,14 +25,13 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
         val msg = message as AppMessage
 
         val bus = msg.passenger!!.incomingWaitingBus!!
+        bus.incBusyDoor()
 
         bus.addPassenger(msg.passenger!!)
 
         msg.passenger!!.passengerIncomeIntoBus()
 
         updateStatistic(msg.passenger!!)
-
-        bus.incBusyDoor()
 
         var sample: Double
 

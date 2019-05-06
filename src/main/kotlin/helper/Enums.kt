@@ -32,11 +32,19 @@ enum class BusLink {
         }
     }
 
-    fun formattedName(): String {
-        when(this) {
-            LINK_A -> return "Linka A"
-            LINK_B -> return "Linka B"
-            LINK_C -> return "Linka C"
+    fun formattedName(isSample: Boolean = false): String {
+        if (isSample) {
+            when(this) {
+                LINK_A -> return "A"
+                LINK_B -> return "B"
+                LINK_C -> return "C"
+            }
+        } else {
+            when(this) {
+                LINK_A -> return "Linka A"
+                LINK_B -> return "Linka B"
+                LINK_C -> return "Linka C"
+            }
         }
     }
 

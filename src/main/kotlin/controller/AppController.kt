@@ -241,7 +241,7 @@ class AppController: CoreController(), ISimDelegate {
     }
 
     fun startExperiments() {
-        analyzator = Analyzator(BusHockeySimulation())
+        analyzator = Analyzator()
 
         analyzator?.startExperiments()
     }

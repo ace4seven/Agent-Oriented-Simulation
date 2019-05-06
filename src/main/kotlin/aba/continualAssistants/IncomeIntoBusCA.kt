@@ -23,7 +23,7 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
         var passengers = myAgent().getBusStopPassengers(bus.getActualStop())
 
         for (i in 1..bus.type.numbOfDors()) {
-            if (passengers.size > 0 && bus.getFreeCapacity() > 0) {
+            if (passengers.size > 0 && bus.getFreeCapacity() > 0 && bus.hasFreeDoor()) {
 
                 if (bus.isMicroBus() && !passengers.peek().wantToGoByMicroBus()) {
                     break

@@ -23,6 +23,7 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
     val incomeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
     val outComeGeneratorBus = TriangularRNG(0.6, 1.2, 4.2, Constants.randomSeader)
     val incomeGeneratorMicroBus = UniformContinuousRNG(6.0, 10.0, Constants.randomSeader)
+
     val outGeneratorMicroBus = 4.0
 
     var averageWaitingStat = Stat()
@@ -66,6 +67,10 @@ class AgentBusStop(id: Int, mySim: Simulation, parent: Agent) : Agent(id, mySim,
 
     fun returnWaitingBusMsg(stop: BusStop, vehicleID: Int): AppMessage? {
         return busStopAdministration!!.busStops[stop.getConcreteStop().name]!!.removeVehicleFromWaitingQueue(vehicleID)
+    }
+
+    fun getWaitingBus(stop: BusStop, id: Int): AppMessage? {
+        return busStopAdministration!!.busStops[stop.getConcreteStop().name]!!.getWaitingBus(id)
     }
 
     fun getBusStopPassengers(stop: BusStop): SimQueue<PassengerEntity> {

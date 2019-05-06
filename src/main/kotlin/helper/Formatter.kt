@@ -28,7 +28,7 @@ class Formatter {
         }
 
         fun convertToText(value: String): String {
-            when(value) {
+            when(value.trim()) {
                 // Links
                 "A" -> return "Linka A"
                 "B" -> return "Linka B"

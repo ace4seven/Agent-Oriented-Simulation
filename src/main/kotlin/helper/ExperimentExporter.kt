@@ -14,7 +14,9 @@ data class CSVBusEntry(
 
 data class CSVResultEntry(
         val averageWaiting: Double,
-        val averageNoCome: Double
+        val averageNoCome: Double,
+        val averageIncomeMicrobus: Double,
+        val busCostExpenses: Int
 )
 
 class ExperimentExporter(val fileName: String) {
@@ -23,7 +25,7 @@ class ExperimentExporter(val fileName: String) {
     val delimeter = ','
 
     val busHeader = "Linka autobusu, Typ, Stratégia vozenia, Čas vyslania"
-    val resultHeader = "Priemerný čas čakania, Percent nestihli"
+    val resultHeader = "Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti"
     val blockSeparator = "\n \n \n"
 
     fun initializeWriter() {
@@ -36,7 +38,7 @@ class ExperimentExporter(val fileName: String) {
     }
 
     fun addRow(data: CSVResultEntry) {
-        fileWriter?.append("${data.averageWaiting} ${delimeter} ${data.averageNoCome}")
+        fileWriter?.append("${data.averageWaiting} ${delimeter} ${data.averageNoCome} ${delimeter} ${data.averageIncomeMicrobus} ${delimeter} ${data.busCostExpenses}")
         fileWriter?.append('\n')
     }
 

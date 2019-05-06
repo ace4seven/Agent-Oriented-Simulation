@@ -246,4 +246,20 @@ class AppController: CoreController(), ISimDelegate {
         analyzator?.startExperiments()
     }
 
+    fun exportGlobalStatistics(): Boolean {
+        if (globalStatisticsDatasource.count() > 0) {
+            statisticExporter.initializeWriter()
+
+            globalStatisticsDatasource.forEach {
+                statisticExporter.addRow(it)
+            }
+
+            statisticExporter.closeWriter()
+
+            return true
+        }
+
+        return false
+    }
+
 }

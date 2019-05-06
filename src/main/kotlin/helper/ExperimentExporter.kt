@@ -1,5 +1,6 @@
 package helper
 
+import model.StatisticCell
 import java.io.FileWriter
 import java.io.IOException
 
@@ -19,7 +20,7 @@ data class CSVResultEntry(
         val busCostExpenses: Int
 )
 
-class ExperimentExporter(val fileName: String) {
+class ExperimentExporter(var fileName: String) {
 
     var fileWriter: FileWriter? = null
     val delimeter = ','
@@ -39,6 +40,11 @@ class ExperimentExporter(val fileName: String) {
 
     fun addRow(data: CSVResultEntry) {
         fileWriter?.append("${data.averageWaiting} ${delimeter} ${data.averageNoCome} ${delimeter} ${data.averageIncomeMicrobus} ${delimeter} ${data.busCostExpenses}")
+        fileWriter?.append('\n')
+    }
+
+    fun addRow(data: StatisticCell) {
+        fileWriter?.append("${data.name} ${delimeter} ${data.desc}")
         fileWriter?.append('\n')
     }
 

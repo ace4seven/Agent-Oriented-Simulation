@@ -60,6 +60,7 @@ abstract class CoreController: Controller() {
     var simulationCore: BusHockeySimulation
 
     val fileManager: FileManager = FileManager()
+    var statisticExporter = ExperimentExporter("global_stats")
 
     val isLogEnabledProperty = SimpleBooleanProperty()
     var isLogEnabled: Boolean by isLogEnabledProperty

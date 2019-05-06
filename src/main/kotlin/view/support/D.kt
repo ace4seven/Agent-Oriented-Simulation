@@ -184,6 +184,10 @@ class D {
             controller.averageWaitingChartData.removeAll()
             controller.averageMissHockeyChartData.clear()
             controller.averageMissHockeyChartData.removeAll()
+            controller.globalStatisticsDatasource.clear()
+            controller.globalStatisticsDatasource.removeAll()
+            controller.localStatisticsDatasource.clear()
+            controller.localStatisticsDatasource.removeAll()
 
             controller.stopSimulation()
         }
@@ -200,6 +204,19 @@ class D {
             } else {
                 pauseButton.text = "Pokračovať"
             }
+        }
+
+        fun alert(type: Alert.AlertType,
+                  header: String,
+                  content: String,
+                  vararg buttons: ButtonType,
+                  actionFn: (Alert.(ButtonType) -> Unit)? = null): Alert {
+
+            val alert = Alert(type, content, *buttons)
+            alert.headerText = header
+            val buttonClicked = alert.showAndWait()
+            buttonClicked.ifPresent { actionFn?.invoke(alert, buttonClicked.get()) }
+            return alert
         }
 
     }

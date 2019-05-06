@@ -1,6 +1,8 @@
 package view.tabs
 
 import javafx.scene.chart.NumberAxis
+import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import model.StatisticCell
 import tornadofx.*
 import view.support.D
@@ -27,8 +29,22 @@ open class GlobalStatisticView : View("Globálne štatistiky") {
                     minWidth = 400.0
                 }
 
-                minHeight = 680.0
-                maxHeight = 680.0
+                minHeight = 650.0
+                maxHeight = 650.0
+            }
+
+            button("Ulož do súboru") {
+                vboxConstraints {
+                    marginLeft = 20.0
+                    marginRight = 20.0
+                    marginTop = 10.0
+                }
+
+                action {
+                    if (D.controller.exportGlobalStatistics()) {
+                        D.alert(Alert.AlertType.INFORMATION, "Úspech", "Štatistiky boli uložené", ButtonType.OK)
+                    }
+                }
             }
         }
         vbox {

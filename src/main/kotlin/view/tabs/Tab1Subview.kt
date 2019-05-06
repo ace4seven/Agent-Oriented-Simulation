@@ -1,5 +1,7 @@
 package view.tabs
 
+import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import model.BusTableData
 import tornadofx.*
 import view.support.D
@@ -183,7 +185,11 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
                     marginLeft = 20.0
                 }
                 action {
-                    D.clearBusTables()
+                    D.alert(Alert.AlertType.WARNING, "Pozor", "Naozaj chcete vymazat všetky záznamy?") {
+                        apply {
+                            D.clearBusTables()
+                        }
+                    }
                 }
             }
         }

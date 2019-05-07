@@ -109,16 +109,45 @@ class Analyzator {
             }
         }
 
-        for(k in 1..numberOfVehicles) {
-            core.addVehicle(
-                    Vehicle(Vehicle.getUniqueID(),
-                            BusLink.generateRandom(),
-                            if (preferredBusType == null) BusType.generateRandom() else preferredBusType!!,
-                            preferedStrategy,
-                            scheduleGenerator!!.sample().toDouble(), core
-                    )
-            )
+        var vehicles = mutableListOf<Vehicle>()
+
+        var allLinksHasBus = false
+
+        while (!allLinksHasBus) {
+            vehicles.clear()
+
+            for(k in 1..numberOfVehicles) {
+                vehicles.add(
+                        Vehicle(Vehicle.getUniqueID(),
+                                BusLink.generateRandom(),
+                                if (preferredBusType == null) BusType.generateRandom() else preferredBusType!!,
+                                preferedStrategy,
+                                scheduleGenerator!!.sample().toDouble(), core
+                        )
+                )
+            }
+
+            var linkACheck = 0
+            var linkBCheck = 0
+            var linkCCheck = 0
+
+            vehicles.forEach {
+                when (it.link) {
+                    BusLink.LINK_A -> linkACheck += 1
+                    BusLink.LINK_B -> linkBCheck += 1
+                    BusLink.LINK_C -> linkCCheck += 1
+                }
+            }
+
+            if (linkACheck != 0 && linkBCheck != 0 && linkCCheck !=0) {
+                allLinksHasBus = true
+            }
         }
+
+        vehicles.forEach {
+            core.agentBus()?.addVehicle(it)
+        }
+
     }
 
     fun startExperiments(completion: () -> Unit) {

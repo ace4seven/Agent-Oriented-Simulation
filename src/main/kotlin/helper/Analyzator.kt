@@ -1,6 +1,5 @@
 package helper
 
-import OSPRNG.UniformContinuousRNG
 import OSPRNG.UniformDiscreteRNG
 import aba.entities.BusType
 import aba.entities.TravelStrategyType
@@ -9,10 +8,6 @@ import aba.simulation.BusHockeySimulation
 import javafx.application.Platform
 
 /** Author: Bc. Juraj Macak **/
-
-interface AnalyzatorObserver {
-    fun analyzatorFinish()
-}
 
 class Analyzator {
     private var microbuses = arrayListOf<Vehicle>()
@@ -37,13 +32,7 @@ class Analyzator {
     private var actualResult = 0
     private var numberOfResults = 0
 
-    private var observer: AnalyzatorObserver? = null
-
     private val core = BusHockeySimulation()
-
-    fun register(observer: AnalyzatorObserver) {
-        this.observer = observer
-    }
 
     fun changeFileName(value: String) {
         experimentExporter.changeFileName(value)

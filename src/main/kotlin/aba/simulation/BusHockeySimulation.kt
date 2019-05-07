@@ -33,6 +33,9 @@ class BusHockeySimulation : Simulation() {
     var averageWaitingBusStopStat = mutableMapOf<String, Stat>()
         private set
 
+    var averageHeightBusStopStat = mutableMapOf<String, Stat>()
+        private set
+
     var averageMicrobusProfit = Stat()
         private set
 
@@ -60,6 +63,7 @@ class BusHockeySimulation : Simulation() {
 
             agentEnviroment()!!.arrivalGenerator[it.name] = ExponentialRNG(middleValue, Constants.randomSeader)
             averageWaitingBusStopStat[it.name] = Stat()
+            averageHeightBusStopStat[it.name] = Stat()
         }
     }
 
@@ -72,8 +76,7 @@ class BusHockeySimulation : Simulation() {
 
     public override fun replicationFinished() {
         // Collect local statistics into global, update UI, etc...
-        super.replicationFinished()
-        
+
         averageNumberOfPassengers!!.addSample(agentModel()!!.getNumberOfPassengers().toDouble())
         averageWaitingTimeStat!!.addSample(agentBusStop()!!.averageWaitingStat.mean())
         averageNoOnTime!!.addSample(agentModel()!!.getPercentagePeopleNoOnTime())
@@ -81,6 +84,7 @@ class BusHockeySimulation : Simulation() {
         agentBusStop()?.getBusStopAdministration()?.busStops?.forEach {
             if (it.key != BusStop.STATION.name) {
                 averageWaitingBusStopStat[it.key]?.addSample(it.value.getWaitingStats().mean())
+                averageHeightBusStopStat[it.key]!!.addSample(it.value.getStopHeight().mean())
             }
         }
 
@@ -90,6 +94,8 @@ class BusHockeySimulation : Simulation() {
         }
 
         averageMicrobusProfit.addSample(microbusProfit.toDouble())
+
+        super.replicationFinished()
     }
 
     public override fun simulationFinished() {
@@ -102,6 +108,10 @@ class BusHockeySimulation : Simulation() {
         averageMicrobusProfit.clear()
 
         averageWaitingBusStopStat.forEach {
+            it.value.clear()
+        }
+
+        averageHeightBusStopStat.forEach {
             it.value.clear()
         }
 

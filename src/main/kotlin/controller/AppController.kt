@@ -44,7 +44,16 @@ class AppController: CoreController(), ISimDelegate {
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalPassengerWaiting, core.averageWaitingTimeStat!!))
 
             core.averageWaitingBusStopStat.forEach {
-                globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalWaitingOnBusStop} ${it.key}", it.value))
+                if (it.key != "STATION") {
+                    globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalWaitingOnBusStop}: ${Formatter.busStopFormatter(it.key)}", it.value))
+                }
+            }
+
+            core.averageHeightBusStopStat.forEach {
+                println(it.value.mean())
+                if (it.key != "STATION") {
+                    globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalHeightOnBusStop}: ${Formatter.busStopFormatter(it.key)}", it.value))
+                }
             }
         }
     }

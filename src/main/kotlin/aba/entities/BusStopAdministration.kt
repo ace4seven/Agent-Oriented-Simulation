@@ -2,8 +2,10 @@ package aba.entities
 
 import OSPABA.Entity
 import OSPABA.Simulation
+import OSPStat.WStat
 import aba.simulation.BusHockeySimulation
 import helper.BusStop
+import java.lang.NullPointerException
 
 /** Author: Bc. Juraj Macak **/
 
@@ -49,6 +51,14 @@ class BusStopAdministration(val sim: Simulation): Entity(sim) {
         busStops["C_G"] = BusStopEntity(BusStop.C_G, sim)
 
         busStops["STATION"] = BusStopEntity(BusStop.STATION, sim)
+    }
+
+    fun updateBusStopHeight(stop: BusStop) {
+        try {
+            busStops[stop.getConcreteStop().name]!!.updateStopHeight()
+        } catch (error: NullPointerException) {
+            println(error.stackTrace)
+        }
     }
 
     fun busStopHasPassenger(busStop: BusStop): Boolean {

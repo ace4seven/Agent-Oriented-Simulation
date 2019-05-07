@@ -42,6 +42,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
                         startContinualAssistant(msg)
                     } else {
                         myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
+                        myAgent().getBusStopAdministration().updateBusStopHeight(msg.passengerIncomeStop!!)
                     }
                 }
                 else -> {
@@ -54,6 +55,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
             }
         } else {
             myAgent().getBusStopAdministration().busStops[msg.passengerIncomeStop!!.name]!!.addPassenger(msg.passenger!!)
+            myAgent().getBusStopAdministration().updateBusStopHeight(msg.passengerIncomeStop!!)
         }
     }
 

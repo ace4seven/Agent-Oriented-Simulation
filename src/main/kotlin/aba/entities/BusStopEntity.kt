@@ -4,6 +4,7 @@ import OSPABA.Entity
 import OSPABA.Simulation
 import OSPDataStruct.SimQueue
 import OSPStat.Stat
+import OSPStat.WStat
 import aba.simulation.AppMessage
 import aba.simulation.BusHockeySimulation
 import helper.BusStop
@@ -12,14 +13,20 @@ import model.LinkCell
 /** Author: Bc. Juraj Macak **/
 
 
-class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
+class BusStopEntity(val type: BusStop, sim: Simulation): Entity(sim) {
 
     private var waitingPassengersQueue = SimQueue<PassengerEntity>()
     private var waitingBuses = mutableMapOf<Int, AppMessage>()
     private var waitingOnStopStat = Stat()
 
+    private var stopHeight: WStat = WStat(mySim())
+
     fun addPassenger(passenger: PassengerEntity) {
         waitingPassengersQueue.add(passenger)
+    }
+
+    fun updateStopHeight() {
+        stopHeight.addSample(waitingPassengersQueue.count().toDouble())
     }
 
     fun addWaitingStat(passenger: PassengerEntity) {
@@ -28,6 +35,10 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
 
     fun getWaitingStats(): Stat {
         return waitingOnStopStat
+    }
+
+    fun getStopHeight(): WStat {
+        return stopHeight!!
     }
 
     fun addBusForWaiting(message: AppMessage) {
@@ -69,6 +80,7 @@ class BusStopEntity(val type: BusStop, val sim: Simulation): Entity(sim) {
         waitingPassengersQueue.clear()
         waitingBuses.clear()
         waitingOnStopStat.clear()
+        stopHeight?.clear()
     }
 
 }

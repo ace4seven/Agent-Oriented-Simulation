@@ -33,6 +33,8 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
                 val passenger = passengers.dequeue()
 
+                myAgent().getBusStopAdministration().updateBusStopHeight(passenger.type)
+
                 passenger.passengerIncomeIntoBus()
 
                 BusHockeySimulation.logEntry(mySim().currentTime(), "Pasažier ${passenger.id} - začiatok nástupu do AUTOBUS: ${bus.id} (dvere: ${i}) na zastávke ${bus.scheduler.getActualStop()!!.name}")

@@ -1,8 +1,5 @@
 package view.tabs
 
-import helper.AnalyzatorObserver
-import javafx.scene.control.Alert
-import model.LogCell
 import tornadofx.*
 import view.support.D
 

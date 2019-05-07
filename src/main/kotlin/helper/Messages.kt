@@ -20,7 +20,8 @@ class StatName {
         val globalNumberOfReplications = "Počet replikácii"
         val globallPassengersCount = "Priemerný počet príchodov pasažierov"
         val globalPassengerWaiting = "Priemerne celkové čakanie cestujúcich"
-        val globalWaitingOnBusStop = "Primerné celkové čakanie cestujúcich na zastávke: "
+        val globalWaitingOnBusStop = "Primerné celkové čakanie "
+        val globalHeightOnBusStop = "Primerná obsadenosť: "
         val globalMissHockey = "Priemerne % pasažierov zmeškalo zápas"
         val globalMicrobusProfit = "Priemerný zisk súkromnej spoločnosti"
 

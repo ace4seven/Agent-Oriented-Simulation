@@ -93,6 +93,10 @@ class BusHockeySimulation : Simulation() {
     }
 
     public override fun simulationFinished() {
+        agentBus()!!.vehicles.forEach {
+            it.clear()
+        }
+
         super.simulationFinished()
 
         averageMicrobusProfit.clear()

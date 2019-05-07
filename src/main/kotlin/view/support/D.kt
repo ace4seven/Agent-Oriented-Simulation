@@ -1,6 +1,8 @@
 package view.support
 
 import aba.entities.BusStopEntity
+import aba.entities.BusType
+import aba.entities.TravelStrategyType
 import aba.entities.Vehicle
 import controller.AppController
 import helper.Formatter
@@ -21,21 +23,55 @@ class D {
 
         var simulationTime: Label by singleAssign()
 
-        var bussPassengerSelectedIndex = 1
-
-        var busID = 1
-
         val busLinks = FXCollections.observableArrayList("Linka A", "Linka B","Linka C")
         val busType = FXCollections.observableArrayList("Malý autobus", "Veľký autobus")
         val busStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
 
+        val analyzerStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
+        val analyzerBusType = FXCollections.observableArrayList("Malý", "Veľký", "Kombinovaný")
+
+        var repeatDelimiterTextField: TextField by singleAssign()
+        var incomeBusMinTextField: TextField by singleAssign()
+        var incomeBusMaxTextField: TextField by singleAssign()
+
+        var numberOfBussesMin: TextField by singleAssign()
+        var numberOfBussesMax: TextField by singleAssign()
+
+        var analyzerResultCount: TextField by singleAssign()
+        var analyzeFileNameTextField: TextField by singleAssign()
+
+        var addMicrobusesCheckBox = CheckBox()
+
         var logCheckbox = CheckBox()
         var fastModeCheckBox = CheckBox()
+        var hasMicrobusesCheckBox = CheckBox()
 
         var speedSlider = Slider()
         var intensitySlider = Slider()
 
         var simulationProgressBar: ProgressBar by singleAssign()
+
+        fun startAnalyzer(completion: () -> Unit) {
+            controller.analyzator.addIndexStop(repeatDelimiterTextField.text.toInt())
+            controller.analyzator.addScheduleTimeBorder(incomeBusMinTextField.text.toInt(), incomeBusMaxTextField.text.toInt())
+            controller.analyzator.addVehiclesCount(numberOfBussesMin.text.toInt(), numberOfBussesMax.text.toInt())
+            controller.analyzator.setHasMicrobuses(addMicrobusesCheckBox.isSelected)
+            controller.analyzator.addNumberOfResults(analyzerResultCount.text.toInt())
+            controller.analyzator.changeFileName(analyzeFileNameTextField.text)
+
+            when(analyzerBusTypeCombobox.selectedItem) {
+                "Malý" -> controller.analyzator.setBusType(BusType.SMALL)
+                "Veľký" -> controller.analyzator.setBusType(BusType.BIG)
+                else -> controller.analyzator.setBusType(null)
+            }
+
+            when(analyzerBusStrategyCombobox.selectedItem) {
+                "S čakaním" -> controller.analyzator.setTravelStrategy(TravelStrategyType.WAIT)
+                else -> controller.analyzator.setTravelStrategy(TravelStrategyType.NO_WAIT)
+            }
+
+            controller.analyzator.startExperiments(completion)
+        }
 
         // TABLES
 
@@ -78,6 +114,8 @@ class D {
 
         // MARK: CoMBOBOX
 
+        var analyzerBusTypeCombobox: ComboBox<String> by singleAssign()
+        var analyzerBusStrategyCombobox: ComboBox<String> by singleAssign()
         var busLinkComboBox: ComboBox<String> by singleAssign()
         var busTypeComboBox: ComboBox<String> by singleAssign()
         var busStrategyComboBox: ComboBox<String> by singleAssign()
@@ -114,10 +152,6 @@ class D {
                     "Linka C" -> busLinkCTableViewDataSource.add(it)
                 }
             }
-        }
-
-        fun startExperiments() {
-            controller.startExperiments()
         }
 
         fun clearBusTables() {

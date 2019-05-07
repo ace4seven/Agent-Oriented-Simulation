@@ -136,7 +136,7 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
                     bus.incCircuit()
 
-                    if (bus.circuit > 500) {
+                    if (bus.circuit > 10000) {
                         val sim = mySim() as BusHockeySimulation
                         exporter.initializeWriter()
                         sim.agentBus()!!.vehicles.forEach {

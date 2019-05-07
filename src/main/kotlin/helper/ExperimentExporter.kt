@@ -1,6 +1,7 @@
 package helper
 
 import model.StatisticCell
+import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 
@@ -31,6 +32,10 @@ class ExperimentExporter(var fileName: String) {
 
     fun initializeWriter() {
         fileWriter = FileWriter(fileName)
+    }
+
+    fun changeFileName(value: String) {
+        fileWriter = FileWriter(value)
     }
 
     fun addRow(data: CSVBusEntry) {

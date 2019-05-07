@@ -10,39 +10,75 @@ import javafx.application.Platform
 
 /** Author: Bc. Juraj Macak **/
 
+interface AnalyzatorObserver {
+    fun analyzatorFinish()
+}
+
 class Analyzator {
+    private var microbuses = arrayListOf<Vehicle>()
 
-    var vehicles = arrayListOf<Vehicle>()
-    var microbuses = arrayListOf<Vehicle>()
+    private var scheduleGenerator: UniformDiscreteRNG? = null
 
-    var scheduleGenerator = UniformDiscreteRNG(0, 3600)
-    var vehicleIndex = UniformDiscreteRNG(0, 999999)
+    private var replicationCount = 10
+    private val experimentExporter = helper.ExperimentExporter("experiment_results.csv")
 
-    var replicationCount = 1
+    private var indexStart = 0
 
-    val experimentExporter = helper.ExperimentExporter("experiment_results.csv")
+    private var indexStop = 1000
 
-    var indexStart = 0
+    private var numberOfVehicles = 100
+    private var maxNumberOfVehicles = 150
 
-    var indexStop = 1000
+    private var hasMicrobuses: Boolean = false
 
-    var numberOfVehicles = 100
-    var maxNumberOfVehicles = 150
+    private var preferedStrategy = TravelStrategyType.NO_WAIT
+    private var preferredBusType: BusType? = null
 
-    val core = BusHockeySimulation()
+    private var actualResult = 0
+    private var numberOfResults = 0
 
-    private fun initVehiclesVariants() {
-        for (i in 1..1000000) {
-            vehicles.add(
-                    Vehicle(i,
-                            BusLink.generateRandom(),
-                            BusType.generateRandom(),
-                            TravelStrategyType.WAIT,
-                            scheduleGenerator.sample().toInt().toDouble(), core
-                    )
-            )
-        }
+    private var observer: AnalyzatorObserver? = null
+
+    private val core = BusHockeySimulation()
+
+    fun register(observer: AnalyzatorObserver) {
+        this.observer = observer
     }
+
+    fun changeFileName(value: String) {
+        experimentExporter.changeFileName(value)
+    }
+
+    fun addNumberOfResults(value: Int) {
+        numberOfResults = value
+    }
+
+    fun addIndexStop(value: Int) {
+        indexStop = value
+    }
+
+    fun addVehiclesCount(min: Int, max: Int) {
+        numberOfVehicles = min
+        maxNumberOfVehicles = max
+    }
+
+    fun addScheduleTimeBorder(min: Int, max: Int) {
+        scheduleGenerator = UniformDiscreteRNG(min, max)
+    }
+
+    fun setHasMicrobuses(value: Boolean) {
+        hasMicrobuses = value
+    }
+
+    fun setTravelStrategy(strategy: TravelStrategyType) {
+        preferedStrategy = strategy
+    }
+
+    fun setBusType(type: BusType?) {
+        preferredBusType = type
+    }
+
+    // MARK: - public
 
     fun prepareSimulation() {
         val thread = object: Thread() {
@@ -58,40 +94,43 @@ class Analyzator {
         core.agentBus()!!.vehicles.clear()
         microbuses.clear()
 
-        for (i in 1..13) {
-            microbuses.add(
-                    Vehicle(indexStop + i + 1,
-                            BusLink.generateRandom(),
-                            BusType.MICROBUS,
-                            TravelStrategyType.WAIT,
-                            scheduleGenerator.sample().toInt().toDouble(), core))
-        }
+        if (hasMicrobuses) {
+            for (i in 1..13) {
+                microbuses.add(
+                        Vehicle(Vehicle.getUniqueID(),
+                                BusLink.generateRandom(),
+                                BusType.MICROBUS,
+                                TravelStrategyType.WAIT,
+                                scheduleGenerator!!.sample().toDouble(), core))
+            }
 
-        microbuses.forEach {
-            core.addVehicle(it)
+            microbuses.forEach {
+                core.addVehicle(it)
+            }
         }
 
         for(k in 1..numberOfVehicles) {
             core.addVehicle(
                     Vehicle(Vehicle.getUniqueID(),
                             BusLink.generateRandom(),
-                            BusType.generateRandom(),
-                            TravelStrategyType.WAIT,
-                            scheduleGenerator.sample().toInt().toDouble(), core
+                            if (preferredBusType == null) BusType.generateRandom() else preferredBusType!!,
+                            preferedStrategy,
+                            scheduleGenerator!!.sample().toDouble(), core
                     )
             )
         }
     }
 
-    fun startExperiments() {
+    fun startExperiments(completion: () -> Unit) {
         experimentExporter.initializeWriter()
-        initVehiclesVariants()
 
         core.onSimulationDidFinish {
             it as BusHockeySimulation
             if (it.averageNoOnTime!!.mean() <= 0.07 && it.averageWaitingTimeStat!!.mean() <= 600) {
 
                 println("Nájdené riešenie")
+
+                actualResult += 1
 
                 experimentExporter.addBusHeader()
 
@@ -108,26 +147,33 @@ class Analyzator {
                 experimentExporter.addBlockLine()
             }
 
-            if (indexStart < indexStop) {
-                indexStart += 1
-
-                if (indexStart % 10 == 0) {
-                    println("INDEX replikacie ${indexStart} VEHICLES: ${numberOfVehicles}")
-                }
-
-                prepareSimulation()
+            if (actualResult >= numberOfResults || numberOfVehicles >= maxNumberOfVehicles) {
+                Platform.runLater(Runnable {
+                    completion()
+                })
             } else {
-                numberOfVehicles += 1
+                if (indexStart < indexStop) {
+                    indexStart += 1
 
-                if (numberOfVehicles < maxNumberOfVehicles) {
-                    indexStart = 0
+                    if (indexStart % 10 == 0) {
+                        println("INDEX replikacie ${indexStart} VEHICLES: ${numberOfVehicles}")
+                    }
 
                     prepareSimulation()
                 } else {
-                    experimentExporter.closeWriter()
+                    numberOfVehicles += 1
+
+                    if (numberOfVehicles < maxNumberOfVehicles) {
+                        indexStart = 0
+
+                        prepareSimulation()
+                    } else {
+                        experimentExporter.closeWriter()
+                    }
                 }
             }
         }
+
         prepareSimulation()
     }
 

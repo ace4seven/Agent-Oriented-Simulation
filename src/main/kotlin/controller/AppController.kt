@@ -240,12 +240,6 @@ class AppController: CoreController(), ISimDelegate {
         simulationCore.agentBus()?.vehicles?.clear()
     }
 
-    fun startExperiments() {
-        analyzator = Analyzator()
-
-        analyzator?.startExperiments()
-    }
-
     fun exportGlobalStatistics(): Boolean {
         if (globalStatisticsDatasource.count() > 0) {
             statisticExporter.initializeWriter()

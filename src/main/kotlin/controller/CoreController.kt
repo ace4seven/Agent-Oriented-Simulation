@@ -1,8 +1,5 @@
 package controller
 
-import OSPABA.ISimDelegate
-import OSPABA.SimState
-import OSPABA.Simulation
 import aba.simulation.BusHockeySimulation
 import helper.*
 import javafx.beans.property.SimpleBooleanProperty
@@ -57,7 +54,8 @@ abstract class CoreController: Controller() {
     var simulationCore: BusHockeySimulation
 
     val fileManager: FileManager = FileManager()
-    var statisticExporter = ExperimentExporter("global_stats")
+    var statisticExporter = ExperimentExporter()
+    var currentConfigurationExporter = ExperimentExporter()
 
     val isLogEnabledProperty = SimpleBooleanProperty()
     var isLogEnabled: Boolean by isLogEnabledProperty
@@ -65,7 +63,7 @@ abstract class CoreController: Controller() {
     val isFastModeEnabledProperty = SimpleBooleanProperty()
     var isFastModeEnabled: Boolean by isFastModeEnabledProperty
 
-    var analyzator = Analyzator()
+    var analyzator = Analyzer()
 
     init {
         simulationCore = BusHockeySimulation()

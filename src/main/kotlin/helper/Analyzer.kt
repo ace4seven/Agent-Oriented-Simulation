@@ -9,13 +9,14 @@ import javafx.application.Platform
 
 /** Author: Bc. Juraj Macak **/
 
-class Analyzator {
+class Analyzer {
     private var microbuses = arrayListOf<Vehicle>()
+    private var filemanager = FileManager()
 
     private var scheduleGenerator: UniformDiscreteRNG? = null
 
     private var replicationCount = 10
-    private val experimentExporter = helper.ExperimentExporter("experiment_results.csv")
+    private val experimentExporter = helper.ExperimentExporter()
 
     private var indexStart = 0
 
@@ -32,10 +33,14 @@ class Analyzator {
     private var actualResult = 0
     private var numberOfResults = 0
 
-    private val core = BusHockeySimulation()
+    private var microbusProfit = 0.0
+
+    private var buses = mutableListOf<Vehicle>()
+
+    private var core = BusHockeySimulation()
 
     fun changeFileName(value: String) {
-        experimentExporter.changeFileName(value)
+        experimentExporter.initializeWriter(value)
     }
 
     fun addNumberOfResults(value: Int) {
@@ -79,6 +84,42 @@ class Analyzator {
         thread.start()
     }
 
+    fun prepareSimulationWithMicrobuses() {
+        val thread = object: Thread() {
+            override fun run() {
+                var busesWithMicrobuses = mutableListOf<Vehicle>()
+
+                val busesClone = mutableListOf<Vehicle>()
+
+                buses.forEach {
+                    busesClone.add(it.clone())
+                }
+
+                busesClone.forEach {
+                    busesWithMicrobuses.add(it)
+                }
+
+                for (i in 1..13) {
+                    busesWithMicrobuses.add(
+                            Vehicle(Vehicle.getUniqueID(),
+                                    BusLink.generateRandom(),
+                                    BusType.MICROBUS,
+                                    preferedStrategy,
+                                    scheduleGenerator!!.sample().toDouble(), core))
+                }
+
+                core.agentBus()?.vehicles?.clear()
+
+                busesWithMicrobuses.forEach {
+                    core.agentBus()?.vehicles?.add(it)
+                }
+
+                core.simulate(replicationCount)
+            }
+        }
+        thread.start()
+    }
+
     private fun prepareValues() {
         core.agentBus()!!.vehicles.clear()
         microbuses.clear()
@@ -89,7 +130,7 @@ class Analyzator {
                         Vehicle(Vehicle.getUniqueID(),
                                 BusLink.generateRandom(),
                                 BusType.MICROBUS,
-                                TravelStrategyType.WAIT,
+                                preferedStrategy,
                                 scheduleGenerator!!.sample().toDouble(), core))
             }
 
@@ -139,11 +180,56 @@ class Analyzator {
 
     }
 
-    fun startExperiments(completion: () -> Unit) {
-        experimentExporter.initializeWriter()
+    fun startExperimentsMicrobuses() {
+        core = BusHockeySimulation()
+        val busTables = filemanager.getBusSchedule()
+
+        busTables.map { it.rawTime = it.scheduleTime.toDouble() }
+
+        buses = busTables.map { it.transformToVehicle(core) }.toMutableList()
 
         core.onSimulationDidFinish {
             it as BusHockeySimulation
+
+            if (it.averageMicrobusProfit.mean() > microbusProfit) {
+
+                microbusProfit = it.averageMicrobusProfit.mean()
+
+                println("Nájdené riešenie")
+
+                actualResult += 1
+
+                experimentExporter.addBusHeader()
+
+                var expenses = 0
+
+                it.agentBus()!!.vehicles.forEach {
+                    expenses += it.type.price()
+                    experimentExporter.addRow(CSVBusEntry(it.link.formattedName(true), it.type.formattedName(true), it.strategy.formattedName(true), "${it.deployTime}"))
+                }
+                experimentExporter.addResultHeader()
+                experimentExporter.addRow(CSVResultEntry(it.averageWaitingTimeStat!!.mean(), it.averageNoOnTime!!.mean(), it.averageMicrobusProfit.mean(), expenses))
+                expenses = 0
+                experimentExporter.addBlockLine()
+            }
+
+            if (indexStart < indexStop) {
+                indexStart += 1
+
+                println("INDEX Opakovanie ${indexStart}")
+                prepareSimulationWithMicrobuses()
+            } else {
+                experimentExporter.closeWriter()
+            }
+        }
+
+        prepareSimulationWithMicrobuses()
+    }
+
+    fun startExperiments(completion: () -> Unit) {
+        core.onSimulationDidFinish {
+            it as BusHockeySimulation
+
             if (it.averageNoOnTime!!.mean() <= 0.07 && it.averageWaitingTimeStat!!.mean() <= 600) {
 
                 println("Nájdené riešenie")
@@ -166,6 +252,7 @@ class Analyzator {
             }
 
             if (actualResult >= numberOfResults || numberOfVehicles >= maxNumberOfVehicles) {
+                experimentExporter.closeWriter()
                 Platform.runLater(Runnable {
                     completion()
                 })
@@ -174,7 +261,7 @@ class Analyzator {
                     indexStart += 1
 
                     if (indexStart % 10 == 0) {
-                        println("INDEX replikacie ${indexStart} VEHICLES: ${numberOfVehicles}")
+                        println("INDEX opakovania ${indexStart} VEHICLES: ${numberOfVehicles}")
                     }
 
                     prepareSimulation()

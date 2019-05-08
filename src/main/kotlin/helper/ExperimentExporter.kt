@@ -1,5 +1,6 @@
 package helper
 
+import model.BusTableData
 import model.StatisticCell
 import java.io.File
 import java.io.FileWriter
@@ -21,7 +22,7 @@ data class CSVResultEntry(
         val busCostExpenses: Int
 )
 
-class ExperimentExporter(var fileName: String) {
+class ExperimentExporter {
 
     var fileWriter: FileWriter? = null
     val delimeter = ','
@@ -30,12 +31,13 @@ class ExperimentExporter(var fileName: String) {
     val resultHeader = "Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti"
     val blockSeparator = "\n \n \n"
 
-    fun initializeWriter() {
+    fun initializeWriter(fileName: String) {
         fileWriter = FileWriter(fileName)
     }
 
-    fun changeFileName(value: String) {
-        fileWriter = FileWriter(value)
+    fun addRow(data: BusTableData) {
+        fileWriter?.append("${data.link} ${delimeter} ${data.type} ${delimeter} ${data.strategy} ${delimeter} ${data.scheduleTime}")
+        fileWriter?.append('\n')
     }
 
     fun addRow(data: CSVBusEntry) {

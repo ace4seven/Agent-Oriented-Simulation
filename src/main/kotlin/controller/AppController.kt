@@ -38,6 +38,14 @@ class AppController: CoreController(), ISimDelegate {
         globalStatisticsDatasource.clear()
         if (replicationNumb > 2) {
             globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.globalNumberOfReplications, "${replicationNumb}"))
+
+            var vehicleCost = 0
+            core.agentBus()!!.vehicles.forEach {
+                vehicleCost += it.type.price()
+            }
+
+            globalStatisticsDatasource.add(StatisticCell.makeCell(StatName.globalCompanyExpenses, Formatter.currencyFormatter(vehicleCost)))
+
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globallPassengersCount, core.averageNumberOfPassengers!!))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMicrobusProfit, core.averageMicrobusProfit))
             globalStatisticsDatasource.add(StatisticCell.makeCellConfidental(StatName.globalMissHockey, core.averageNoOnTime!!, true))
@@ -50,10 +58,13 @@ class AppController: CoreController(), ISimDelegate {
             }
 
             core.averageHeightBusStopStat.forEach {
-                println(it.value.mean())
                 if (it.key != "STATION") {
                     globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalHeightOnBusStop}: ${Formatter.busStopFormatter(it.key)}", it.value))
                 }
+            }
+
+            core.agentBus()!!.vehicles.forEach {
+                globalStatisticsDatasource.add(StatisticCell.makeCellConfidental("${StatName.globalBusAvailability} ID: ${it.id}", core.averageBusesAvailability[it.id]!!, true))
             }
         }
     }
@@ -251,7 +262,7 @@ class AppController: CoreController(), ISimDelegate {
 
     fun exportGlobalStatistics(): Boolean {
         if (globalStatisticsDatasource.count() > 0) {
-            statisticExporter.initializeWriter()
+            statisticExporter.initializeWriter("global_statistics_export.csv")
 
             globalStatisticsDatasource.forEach {
                 statisticExporter.addRow(it)

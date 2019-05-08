@@ -23,10 +23,13 @@ class BusTableData {
         var strategy: TravelStrategyType = TravelStrategyType.NO_WAIT
         var link: BusLink = BusLink.LINK_A
 
-        when(this.link) {
+        when(this.link.trim()) {
             "Linka A" -> link = BusLink.LINK_A
             "Linka B" -> link = BusLink.LINK_B
             "Linka C" -> link = BusLink.LINK_C
+            "A" -> link = BusLink.LINK_A
+            "B" -> link = BusLink.LINK_B
+            "C" -> link = BusLink.LINK_C
         }
 
         when(this.strategy) {
@@ -34,10 +37,13 @@ class BusTableData {
             "Bez čakania" -> strategy = TravelStrategyType.NO_WAIT
         }
 
-        when(this.type) {
+        when(this.type.trim()) {
             "Malý autobus" -> return Vehicle(this.id, link, BusType.SMALL, strategy, this.rawTime, sim)
             "Veľký autobus" -> return Vehicle(this.id, link, BusType.BIG, strategy, this.rawTime, sim)
             "Mikrobus" -> return Vehicle(this.id, link, BusType.MICROBUS, strategy, this.rawTime, sim)
+            "L" -> return Vehicle(this.id, link, BusType.BIG, strategy, this.rawTime, sim)
+            "S" -> return Vehicle(this.id, link, BusType.SMALL, strategy, this.rawTime, sim)
+            "M" -> return Vehicle(this.id, link, BusType.MICROBUS, strategy, this.rawTime, sim)
         }
 
         throw Exception("Error transform vehicle from table")

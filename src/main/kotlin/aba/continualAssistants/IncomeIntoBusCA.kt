@@ -67,7 +67,10 @@ class IncomeIntoBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Schedu
 
     fun processPassengerFinishIncome(message: MessageForm) {
         val msg = message as AppMessage
+
         val bus = msg.vehicle!!
+
+        bus.updateBusHeigtFactor()
 
         if (bus.type == BusType.MICROBUS) {
             bus.payForticket()

@@ -21,9 +21,7 @@ class FileManager {
     private val buses = mutableListOf<BusTableData>()
 
     fun getBusSchedule(): List<BusTableData> {
-        if (buses.count() > 0) {
-            return buses
-        }
+        buses.clear()
 
         readBuses()
 
@@ -41,8 +39,6 @@ class FileManager {
             Vehicle.clear()
 
             fileReader = BufferedReader(FileReader(busFileName))
-            fileReader?.readLine()
-
             line = fileReader?.readLine()
             while (line != null) {
                 val tokens = line.split(",")

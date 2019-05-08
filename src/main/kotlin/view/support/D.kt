@@ -44,7 +44,6 @@ class D {
 
         var logCheckbox = CheckBox()
         var fastModeCheckBox = CheckBox()
-        var hasMicrobusesCheckBox = CheckBox()
 
         var speedSlider = Slider()
         var intensitySlider = Slider()
@@ -71,6 +70,20 @@ class D {
             }
 
             controller.analyzator.startExperiments(completion)
+        }
+
+        fun startAnalyzeWithMicrobuses() {
+            controller.analyzator.addIndexStop(repeatDelimiterTextField.text.toInt())
+            controller.analyzator.addScheduleTimeBorder(incomeBusMinTextField.text.toInt(), incomeBusMaxTextField.text.toInt())
+            controller.analyzator.addNumberOfResults(analyzerResultCount.text.toInt())
+            controller.analyzator.changeFileName(analyzeFileNameTextField.text)
+
+            when(analyzerBusStrategyCombobox.selectedItem) {
+                "S čakaním" -> controller.analyzator.setTravelStrategy(TravelStrategyType.WAIT)
+                else -> controller.analyzator.setTravelStrategy(TravelStrategyType.NO_WAIT)
+            }
+
+            controller.analyzator.startExperimentsMicrobuses()
         }
 
         // TABLES
@@ -238,6 +251,24 @@ class D {
             } else {
                 pauseButton.text = "Pokračovať"
             }
+        }
+
+        fun exportCurrentConfigurationCSV() {
+            controller.currentConfigurationExporter.initializeWriter("current_configuration.csv")
+
+            busLinkATableViewDatasource.forEach {
+               controller.currentConfigurationExporter.addRow(it)
+            }
+
+            busLinkBTableViewDataSource.forEach {
+                controller.currentConfigurationExporter.addRow(it)
+            }
+
+            busLinkCTableViewDataSource.forEach {
+                controller.currentConfigurationExporter.addRow(it)
+            }
+
+            controller.currentConfigurationExporter.closeWriter()
         }
 
         fun alert(type: Alert.AlertType,

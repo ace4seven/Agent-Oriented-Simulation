@@ -1,0 +1,3936 @@
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 881.0
+B , L , WAIT , 2020.0
+B , S , WAIT , 165.0
+C , S , WAIT , 1860.0
+A , S , WAIT , 1001.0
+A , S , WAIT , 2320.0
+A , S , WAIT , 3207.0
+B , S , WAIT , 698.0
+A , S , WAIT , 1704.0
+B , S , WAIT , 2164.0
+A , L , WAIT , 3279.0
+A , L , WAIT , 150.0
+A , S , WAIT , 592.0
+B , L , WAIT , 435.0
+A , L , WAIT , 1064.0
+C , S , WAIT , 1029.0
+A , L , WAIT , 2915.0
+A , L , WAIT , 2835.0
+A , L , WAIT , 2631.0
+C , L , WAIT , 2482.0
+B , L , WAIT , 3002.0
+A , L , WAIT , 2646.0
+C , L , WAIT , 3557.0
+A , L , WAIT , 1174.0
+C , L , WAIT , 1498.0
+C , L , WAIT , 232.0
+C , L , WAIT , 801.0
+C , L , WAIT , 2355.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+505.1119997570769 , 0.057668473645341264 , 0.0 , 13010000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1369.0
+A , S , WAIT , 1607.0
+C , L , WAIT , 2152.0
+B , L , WAIT , 1984.0
+A , S , WAIT , 1442.0
+A , S , WAIT , 1579.0
+C , S , WAIT , 2405.0
+B , L , WAIT , 3360.0
+A , L , WAIT , 2954.0
+A , L , WAIT , 1431.0
+B , L , WAIT , 788.0
+C , S , WAIT , 2844.0
+A , S , WAIT , 431.0
+A , S , WAIT , 470.0
+C , S , WAIT , 21.0
+C , L , WAIT , 1465.0
+A , S , WAIT , 3299.0
+A , S , WAIT , 3092.0
+C , L , WAIT , 599.0
+A , S , WAIT , 3580.0
+A , L , WAIT , 3358.0
+A , L , WAIT , 2610.0
+A , L , WAIT , 1702.0
+B , S , WAIT , 2021.0
+C , S , WAIT , 3045.0
+A , L , WAIT , 753.0
+C , L , WAIT , 2223.0
+B , L , WAIT , 347.0
+B , L , WAIT , 210.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+550.5198235073076 , 0.05681837238328256 , 0.0 , 12880000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 38.0
+A , L , WAIT , 3528.0
+A , L , WAIT , 1275.0
+A , S , WAIT , 1391.0
+C , L , WAIT , 2622.0
+B , S , WAIT , 798.0
+A , L , WAIT , 1763.0
+C , L , WAIT , 2357.0
+C , S , WAIT , 1995.0
+B , L , WAIT , 680.0
+A , L , WAIT , 1123.0
+A , S , WAIT , 707.0
+C , S , WAIT , 3415.0
+B , S , WAIT , 2295.0
+A , S , WAIT , 1941.0
+C , S , WAIT , 2483.0
+A , L , WAIT , 706.0
+A , L , WAIT , 2154.0
+A , S , WAIT , 3188.0
+A , L , WAIT , 2597.0
+B , L , WAIT , 116.0
+C , L , WAIT , 975.0
+C , L , WAIT , 2524.0
+B , L , WAIT , 2513.0
+A , L , WAIT , 2314.0
+B , L , WAIT , 3049.0
+C , L , WAIT , 2416.0
+C , L , WAIT , 3410.0
+A , L , WAIT , 1714.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+574.2414526560699 , 0.02786680757912066 , 0.0 , 13555000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1610.0
+B , L , WAIT , 336.0
+C , L , WAIT , 2779.0
+A , S , WAIT , 2530.0
+B , S , WAIT , 995.0
+C , L , WAIT , 2536.0
+C , S , WAIT , 2955.0
+C , L , WAIT , 362.0
+B , L , WAIT , 93.0
+B , S , WAIT , 2448.0
+C , S , WAIT , 1295.0
+A , L , WAIT , 788.0
+A , S , WAIT , 2363.0
+C , L , WAIT , 463.0
+B , L , WAIT , 674.0
+B , S , WAIT , 2042.0
+A , S , WAIT , 780.0
+A , S , WAIT , 2380.0
+A , L , WAIT , 441.0
+A , L , WAIT , 3528.0
+A , S , WAIT , 1417.0
+C , L , WAIT , 3466.0
+A , L , WAIT , 3573.0
+C , L , WAIT , 2699.0
+A , L , WAIT , 180.0
+A , S , WAIT , 1764.0
+A , L , WAIT , 1327.0
+A , L , WAIT , 1999.0
+B , L , WAIT , 2215.0
+A , S , WAIT , 3578.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+467.19994328977 , 0.025422747472301926 , 0.0 , 13650000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2675.0
+B , S , WAIT , 996.0
+A , L , WAIT , 1923.0
+C , L , WAIT , 3008.0
+C , L , WAIT , 1069.0
+C , L , WAIT , 1685.0
+A , L , WAIT , 869.0
+A , S , WAIT , 2510.0
+A , S , WAIT , 905.0
+B , S , WAIT , 976.0
+B , L , WAIT , 3557.0
+B , L , WAIT , 1646.0
+B , S , WAIT , 1449.0
+C , S , WAIT , 1925.0
+C , L , WAIT , 3432.0
+A , S , WAIT , 2795.0
+A , S , WAIT , 2665.0
+A , S , WAIT , 734.0
+A , L , WAIT , 0.0
+A , L , WAIT , 3347.0
+A , L , WAIT , 2365.0
+B , L , WAIT , 1437.0
+B , L , WAIT , 3374.0
+A , S , WAIT , 1959.0
+C , L , WAIT , 1999.0
+C , S , WAIT , 3584.0
+C , S , WAIT , 885.0
+A , L , WAIT , 1282.0
+C , L , WAIT , 3470.0
+A , L , WAIT , 231.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+566.7373676665391 , 0.06587260938370817 , 0.0 , 13650000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 456.0
+B , L , WAIT , 188.0
+B , L , WAIT , 2010.0
+A , L , WAIT , 2645.0
+A , L , WAIT , 1399.0
+C , L , WAIT , 2175.0
+C , L , WAIT , 2358.0
+B , S , WAIT , 2304.0
+A , L , WAIT , 584.0
+A , L , WAIT , 2595.0
+A , L , WAIT , 1733.0
+A , S , WAIT , 2272.0
+C , L , WAIT , 3059.0
+C , L , WAIT , 1217.0
+C , S , WAIT , 3203.0
+B , L , WAIT , 3013.0
+C , L , WAIT , 3418.0
+C , L , WAIT , 356.0
+A , S , WAIT , 2660.0
+A , L , WAIT , 76.0
+B , S , WAIT , 2784.0
+A , L , WAIT , 2370.0
+B , S , WAIT , 2256.0
+A , L , WAIT , 2607.0
+B , L , WAIT , 2211.0
+A , L , WAIT , 3374.0
+B , L , WAIT , 3197.0
+B , L , WAIT , 791.0
+C , L , WAIT , 1983.0
+C , S , WAIT , 339.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+466.34910031356975 , 0.04140764404421863 , 0.0 , 14775000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 670.0
+A , L , WAIT , 1632.0
+C , S , WAIT , 140.0
+A , L , WAIT , 1091.0
+A , L , WAIT , 2936.0
+C , L , WAIT , 2843.0
+B , S , WAIT , 2227.0
+B , L , WAIT , 2974.0
+C , S , WAIT , 330.0
+C , L , WAIT , 3597.0
+B , L , WAIT , 2453.0
+A , S , WAIT , 136.0
+A , S , WAIT , 725.0
+C , S , WAIT , 1868.0
+C , L , WAIT , 1328.0
+B , L , WAIT , 716.0
+A , S , WAIT , 1287.0
+C , S , WAIT , 2415.0
+B , S , WAIT , 1663.0
+B , S , WAIT , 976.0
+A , L , WAIT , 1534.0
+A , S , WAIT , 1562.0
+B , S , WAIT , 1887.0
+A , L , WAIT , 1578.0
+A , S , WAIT , 2784.0
+B , L , WAIT , 3135.0
+C , L , WAIT , 3217.0
+A , L , WAIT , 2588.0
+A , L , WAIT , 3263.0
+A , S , WAIT , 298.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+516.7107239646625 , 0.06381910811591635 , 0.0 , 13200000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 3360.0
+B , L , WAIT , 1974.0
+B , L , WAIT , 108.0
+B , L , WAIT , 152.0
+C , L , WAIT , 2071.0
+A , S , WAIT , 1293.0
+A , L , WAIT , 2435.0
+B , S , WAIT , 1073.0
+A , L , WAIT , 1439.0
+A , L , WAIT , 3252.0
+A , L , WAIT , 278.0
+A , L , WAIT , 895.0
+B , S , WAIT , 1616.0
+A , L , WAIT , 3431.0
+C , S , WAIT , 2502.0
+A , L , WAIT , 3104.0
+B , S , WAIT , 13.0
+A , S , WAIT , 1203.0
+A , S , WAIT , 1378.0
+C , L , WAIT , 3553.0
+C , L , WAIT , 2147.0
+A , S , WAIT , 2572.0
+C , S , WAIT , 2933.0
+C , L , WAIT , 1725.0
+A , L , WAIT , 2216.0
+C , L , WAIT , 647.0
+A , S , WAIT , 2599.0
+B , L , WAIT , 506.0
+B , L , WAIT , 2743.0
+A , L , WAIT , 2287.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+591.1382714495231 , 0.036757330223358024 , 0.0 , 13875000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2772.0
+A , L , WAIT , 862.0
+A , S , WAIT , 1960.0
+A , S , WAIT , 1744.0
+C , S , WAIT , 3407.0
+C , L , WAIT , 1363.0
+B , L , WAIT , 3099.0
+C , S , WAIT , 1208.0
+A , L , WAIT , 1512.0
+C , L , WAIT , 1604.0
+A , L , WAIT , 1652.0
+A , L , WAIT , 3204.0
+B , S , WAIT , 3557.0
+A , L , WAIT , 730.0
+B , L , WAIT , 2464.0
+C , L , WAIT , 1857.0
+B , L , WAIT , 1971.0
+B , S , WAIT , 1749.0
+A , S , WAIT , 189.0
+C , L , WAIT , 3077.0
+B , L , WAIT , 3451.0
+A , L , WAIT , 2507.0
+B , S , WAIT , 421.0
+A , L , WAIT , 3144.0
+B , L , WAIT , 2918.0
+A , L , WAIT , 161.0
+C , S , WAIT , 871.0
+C , S , WAIT , 2666.0
+A , L , WAIT , 786.0
+C , S , WAIT , 2761.0
+A , S , WAIT , 1372.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+475.1127871035907 , 0.054403042011352175 , 0.0 , 14195000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2121.0
+A , L , WAIT , 3044.0
+A , S , WAIT , 1773.0
+A , L , WAIT , 1091.0
+A , S , WAIT , 2190.0
+A , S , WAIT , 1350.0
+A , L , WAIT , 3424.0
+C , L , WAIT , 2400.0
+A , L , WAIT , 228.0
+C , L , WAIT , 1672.0
+C , L , WAIT , 2452.0
+C , L , WAIT , 1249.0
+B , S , WAIT , 2008.0
+B , S , WAIT , 3546.0
+B , L , WAIT , 132.0
+A , L , WAIT , 1617.0
+B , L , WAIT , 712.0
+C , L , WAIT , 3252.0
+B , L , WAIT , 1133.0
+A , S , WAIT , 1226.0
+C , S , WAIT , 3483.0
+B , L , WAIT , 2296.0
+B , L , WAIT , 3139.0
+C , L , WAIT , 1263.0
+B , S , WAIT , 1708.0
+A , L , WAIT , 2065.0
+A , L , WAIT , 1668.0
+B , S , WAIT , 1709.0
+A , S , WAIT , 2479.0
+B , S , WAIT , 3173.0
+A , L , WAIT , 1631.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+520.5381277725998 , 0.053567924876661246 , 0.0 , 14420000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2280.0
+A , L , WAIT , 2690.0
+A , S , WAIT , 3031.0
+B , L , WAIT , 1498.0
+B , L , WAIT , 79.0
+B , S , WAIT , 5.0
+A , S , WAIT , 3039.0
+A , S , WAIT , 3179.0
+C , S , WAIT , 2030.0
+C , S , WAIT , 2824.0
+C , L , WAIT , 3178.0
+B , S , WAIT , 3364.0
+A , L , WAIT , 87.0
+B , S , WAIT , 1793.0
+A , L , WAIT , 748.0
+C , S , WAIT , 439.0
+A , L , WAIT , 739.0
+C , L , WAIT , 2971.0
+A , S , WAIT , 2329.0
+A , L , WAIT , 1262.0
+B , L , WAIT , 3111.0
+B , S , WAIT , 1254.0
+C , S , WAIT , 1359.0
+A , S , WAIT , 2294.0
+A , L , WAIT , 1334.0
+A , S , WAIT , 457.0
+C , S , WAIT , 1754.0
+C , S , WAIT , 2640.0
+A , L , WAIT , 1902.0
+A , L , WAIT , 3204.0
+A , S , WAIT , 610.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+584.259378645453 , 0.05350959397545555 , 0.0 , 13070000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 303.0
+A , L , WAIT , 182.0
+A , S , WAIT , 2859.0
+C , L , WAIT , 1762.0
+A , L , WAIT , 1397.0
+C , L , WAIT , 689.0
+B , L , WAIT , 3456.0
+A , L , WAIT , 3348.0
+A , L , WAIT , 1163.0
+A , L , WAIT , 2114.0
+B , S , WAIT , 1831.0
+B , S , WAIT , 3044.0
+C , L , WAIT , 940.0
+B , S , WAIT , 2116.0
+C , L , WAIT , 3487.0
+C , S , WAIT , 1338.0
+A , L , WAIT , 2136.0
+B , L , WAIT , 1420.0
+A , L , WAIT , 753.0
+B , S , WAIT , 2801.0
+C , L , WAIT , 2192.0
+C , S , WAIT , 1437.0
+A , L , WAIT , 2242.0
+B , S , WAIT , 2924.0
+C , S , WAIT , 3008.0
+A , L , WAIT , 2718.0
+C , L , WAIT , 629.0
+A , L , WAIT , 2561.0
+B , L , WAIT , 3549.0
+A , L , WAIT , 15.0
+B , S , WAIT , 523.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+432.7021305095353 , 0.052157372970750925 , 0.0 , 14420000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 3333.0
+C , S , WAIT , 2462.0
+B , L , WAIT , 135.0
+A , L , WAIT , 3197.0
+A , S , WAIT , 2779.0
+B , S , WAIT , 834.0
+A , S , WAIT , 2164.0
+A , S , WAIT , 877.0
+B , L , WAIT , 2105.0
+A , L , WAIT , 1242.0
+C , L , WAIT , 3271.0
+A , S , WAIT , 3397.0
+C , L , WAIT , 2069.0
+A , L , WAIT , 1154.0
+A , L , WAIT , 1519.0
+A , S , WAIT , 3144.0
+C , L , WAIT , 625.0
+B , S , WAIT , 439.0
+C , L , WAIT , 3424.0
+A , L , WAIT , 2267.0
+A , L , WAIT , 209.0
+A , S , WAIT , 3028.0
+B , L , WAIT , 1388.0
+A , S , WAIT , 991.0
+A , S , WAIT , 296.0
+A , S , WAIT , 178.0
+A , L , WAIT , 3006.0
+C , L , WAIT , 3270.0
+B , L , WAIT , 1460.0
+A , L , WAIT , 1673.0
+B , S , WAIT , 1349.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+546.4973524675803 , 0.046014374413694895 , 0.0 , 13745000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2592.0
+A , L , WAIT , 611.0
+C , S , WAIT , 880.0
+A , L , WAIT , 2824.0
+A , L , WAIT , 615.0
+A , S , WAIT , 3081.0
+A , L , WAIT , 264.0
+B , S , WAIT , 1299.0
+A , S , WAIT , 2528.0
+A , S , WAIT , 1533.0
+A , L , WAIT , 2282.0
+B , L , WAIT , 3436.0
+C , L , WAIT , 264.0
+C , L , WAIT , 2678.0
+C , L , WAIT , 3102.0
+A , L , WAIT , 1517.0
+A , L , WAIT , 1269.0
+A , S , WAIT , 2445.0
+B , L , WAIT , 552.0
+A , L , WAIT , 773.0
+B , L , WAIT , 1087.0
+B , L , WAIT , 1489.0
+B , S , WAIT , 1892.0
+B , S , WAIT , 174.0
+A , S , WAIT , 1984.0
+A , S , WAIT , 3232.0
+B , L , WAIT , 2113.0
+C , L , WAIT , 3168.0
+A , S , WAIT , 1837.0
+C , S , WAIT , 1240.0
+B , S , WAIT , 2767.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+407.68119868050997 , 0.05435894623624399 , 0.0 , 13970000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 533.0
+A , S , WAIT , 2167.0
+C , L , WAIT , 154.0
+A , L , WAIT , 2523.0
+A , L , WAIT , 3220.0
+C , S , WAIT , 1767.0
+B , S , WAIT , 1073.0
+B , S , WAIT , 3134.0
+B , S , WAIT , 3231.0
+A , L , WAIT , 433.0
+B , L , WAIT , 2378.0
+A , L , WAIT , 1090.0
+C , S , WAIT , 1241.0
+A , L , WAIT , 46.0
+B , S , WAIT , 2831.0
+C , S , WAIT , 3009.0
+A , S , WAIT , 2232.0
+C , S , WAIT , 2081.0
+C , L , WAIT , 2135.0
+A , L , WAIT , 915.0
+A , L , WAIT , 2247.0
+B , L , WAIT , 330.0
+A , S , WAIT , 2898.0
+B , S , WAIT , 1332.0
+C , L , WAIT , 985.0
+C , L , WAIT , 2631.0
+C , S , WAIT , 1572.0
+B , S , WAIT , 690.0
+A , L , WAIT , 1431.0
+A , L , WAIT , 2424.0
+A , S , WAIT , 3557.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+436.1732927310712 , 0.05967501281508338 , 0.0 , 13295000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2713.0
+B , L , WAIT , 634.0
+B , S , WAIT , 331.0
+A , S , WAIT , 1803.0
+A , L , WAIT , 574.0
+A , L , WAIT , 2659.0
+B , S , WAIT , 72.0
+A , S , WAIT , 3293.0
+A , L , WAIT , 3105.0
+C , L , WAIT , 1.0
+B , L , WAIT , 2864.0
+A , L , WAIT , 773.0
+B , L , WAIT , 3394.0
+C , S , WAIT , 2897.0
+B , L , WAIT , 282.0
+C , L , WAIT , 3412.0
+A , S , WAIT , 1416.0
+B , L , WAIT , 1515.0
+C , L , WAIT , 2707.0
+B , S , WAIT , 2521.0
+A , S , WAIT , 2992.0
+A , L , WAIT , 562.0
+C , S , WAIT , 3267.0
+C , L , WAIT , 2732.0
+A , L , WAIT , 57.0
+B , S , WAIT , 1626.0
+C , L , WAIT , 1031.0
+A , L , WAIT , 2625.0
+A , L , WAIT , 148.0
+C , S , WAIT , 1270.0
+A , L , WAIT , 90.0
+A , S , WAIT , 1166.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+554.6596014574254 , 0.06627884256489817 , 0.0 , 14740000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 322.0
+A , S , WAIT , 3379.0
+C , L , WAIT , 388.0
+B , S , WAIT , 2646.0
+A , L , WAIT , 3352.0
+A , S , WAIT , 1458.0
+C , L , WAIT , 2536.0
+A , L , WAIT , 2086.0
+C , S , WAIT , 479.0
+C , L , WAIT , 1624.0
+B , L , WAIT , 177.0
+A , S , WAIT , 846.0
+C , S , WAIT , 1017.0
+C , S , WAIT , 3157.0
+B , S , WAIT , 965.0
+A , S , WAIT , 2090.0
+A , S , WAIT , 1525.0
+A , L , WAIT , 3030.0
+A , S , WAIT , 2765.0
+A , S , WAIT , 2045.0
+A , S , WAIT , 785.0
+A , L , WAIT , 407.0
+B , L , WAIT , 826.0
+C , L , WAIT , 2778.0
+A , S , WAIT , 1707.0
+C , L , WAIT , 45.0
+A , L , WAIT , 866.0
+B , L , WAIT , 1362.0
+C , S , WAIT , 3250.0
+B , L , WAIT , 396.0
+C , L , WAIT , 1459.0
+A , S , WAIT , 710.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+525.9934934745418 , 0.06332499832885373 , 0.0 , 13840000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 3464.0
+B , L , WAIT , 696.0
+A , S , WAIT , 2160.0
+C , S , WAIT , 430.0
+C , L , WAIT , 1376.0
+C , S , WAIT , 2588.0
+B , S , WAIT , 514.0
+A , L , WAIT , 3447.0
+A , L , WAIT , 708.0
+B , S , WAIT , 2866.0
+C , L , WAIT , 2428.0
+C , S , WAIT , 1342.0
+A , L , WAIT , 2966.0
+B , L , WAIT , 1832.0
+A , L , WAIT , 86.0
+A , S , WAIT , 1549.0
+A , L , WAIT , 2456.0
+A , L , WAIT , 3254.0
+C , S , WAIT , 3342.0
+A , L , WAIT , 1077.0
+C , S , WAIT , 1629.0
+A , S , WAIT , 2392.0
+C , S , WAIT , 2093.0
+A , L , WAIT , 1594.0
+A , L , WAIT , 463.0
+A , S , WAIT , 2668.0
+A , S , WAIT , 3488.0
+C , L , WAIT , 1368.0
+B , L , WAIT , 193.0
+A , S , WAIT , 2837.0
+C , S , WAIT , 2861.0
+C , S , WAIT , 1520.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+518.3274195737894 , 0.03133190117997191 , 0.0 , 13615000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 1684.0
+A , L , WAIT , 1690.0
+C , L , WAIT , 3083.0
+C , S , WAIT , 2850.0
+B , L , WAIT , 3228.0
+A , S , WAIT , 1528.0
+C , L , WAIT , 1181.0
+A , S , WAIT , 967.0
+A , S , WAIT , 2282.0
+A , L , WAIT , 2455.0
+A , S , WAIT , 423.0
+B , L , WAIT , 2174.0
+A , S , WAIT , 1855.0
+A , L , WAIT , 3521.0
+B , S , WAIT , 13.0
+C , S , WAIT , 2114.0
+C , S , WAIT , 1939.0
+A , S , WAIT , 1195.0
+A , L , WAIT , 2375.0
+A , S , WAIT , 3014.0
+B , L , WAIT , 1241.0
+A , L , WAIT , 642.0
+A , L , WAIT , 3069.0
+C , L , WAIT , 3574.0
+A , S , WAIT , 1186.0
+B , L , WAIT , 400.0
+A , S , WAIT , 1725.0
+A , L , WAIT , 365.0
+A , S , WAIT , 2143.0
+B , S , WAIT , 2829.0
+B , L , WAIT , 2701.0
+C , L , WAIT , 1503.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+439.0478543599247 , 0.01909686873106677 , 0.0 , 14065000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 3457.0
+B , S , WAIT , 916.0
+B , L , WAIT , 2625.0
+C , L , WAIT , 2165.0
+A , S , WAIT , 170.0
+B , S , WAIT , 1199.0
+C , L , WAIT , 2035.0
+B , L , WAIT , 56.0
+A , S , WAIT , 1528.0
+A , S , WAIT , 2434.0
+C , S , WAIT , 895.0
+B , L , WAIT , 1977.0
+C , S , WAIT , 12.0
+B , L , WAIT , 481.0
+A , L , WAIT , 2408.0
+A , L , WAIT , 1126.0
+B , S , WAIT , 1346.0
+A , S , WAIT , 3435.0
+A , S , WAIT , 229.0
+C , S , WAIT , 2531.0
+A , L , WAIT , 2084.0
+A , S , WAIT , 1482.0
+B , L , WAIT , 1225.0
+B , L , WAIT , 1977.0
+C , S , WAIT , 3133.0
+C , L , WAIT , 3563.0
+C , L , WAIT , 2992.0
+A , L , WAIT , 15.0
+A , L , WAIT , 1198.0
+A , L , WAIT , 1866.0
+B , L , WAIT , 1298.0
+A , S , WAIT , 307.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+517.4321121744402 , 0.06944517839610492 , 0.0 , 14290000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 830.0
+A , S , WAIT , 1804.0
+A , S , WAIT , 1773.0
+B , S , WAIT , 950.0
+A , S , WAIT , 1841.0
+A , S , WAIT , 2795.0
+C , S , WAIT , 250.0
+A , L , WAIT , 3529.0
+C , L , WAIT , 46.0
+B , S , WAIT , 2798.0
+A , L , WAIT , 661.0
+B , L , WAIT , 120.0
+C , S , WAIT , 1480.0
+B , L , WAIT , 3533.0
+A , L , WAIT , 1064.0
+B , L , WAIT , 3235.0
+B , S , WAIT , 1986.0
+C , L , WAIT , 96.0
+C , S , WAIT , 2903.0
+C , S , WAIT , 3287.0
+A , L , WAIT , 141.0
+A , S , WAIT , 3384.0
+A , L , WAIT , 3112.0
+B , S , WAIT , 3542.0
+C , S , WAIT , 2252.0
+A , L , WAIT , 1207.0
+B , S , WAIT , 867.0
+C , L , WAIT , 2251.0
+C , L , WAIT , 3269.0
+A , L , WAIT , 1152.0
+A , L , WAIT , 2177.0
+A , L , WAIT , 3572.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+576.9814672294317 , 0.03959060516783337 , 0.0 , 14065000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2661.0
+C , L , WAIT , 2994.0
+B , S , WAIT , 3587.0
+B , L , WAIT , 93.0
+C , S , WAIT , 1540.0
+C , L , WAIT , 1731.0
+C , S , WAIT , 442.0
+C , L , WAIT , 647.0
+A , L , WAIT , 507.0
+A , L , WAIT , 2901.0
+B , L , WAIT , 2523.0
+A , L , WAIT , 956.0
+A , L , WAIT , 2668.0
+B , S , WAIT , 660.0
+A , S , WAIT , 1924.0
+C , L , WAIT , 1141.0
+C , S , WAIT , 3541.0
+A , L , WAIT , 2336.0
+C , S , WAIT , 3246.0
+C , L , WAIT , 1832.0
+A , S , WAIT , 469.0
+B , L , WAIT , 618.0
+A , S , WAIT , 1286.0
+A , L , WAIT , 2880.0
+C , L , WAIT , 2438.0
+C , L , WAIT , 1471.0
+B , L , WAIT , 1469.0
+A , L , WAIT , 3085.0
+A , S , WAIT , 2189.0
+A , S , WAIT , 3108.0
+A , S , WAIT , 1095.0
+B , S , WAIT , 1012.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+532.3546835416945 , 0.04069613895870443 , 0.0 , 14515000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 1991.0
+C , L , WAIT , 2107.0
+B , S , WAIT , 35.0
+B , S , WAIT , 1367.0
+A , S , WAIT , 1013.0
+C , S , WAIT , 1167.0
+C , L , WAIT , 2391.0
+C , S , WAIT , 2147.0
+C , L , WAIT , 3479.0
+A , S , WAIT , 768.0
+B , S , WAIT , 3587.0
+B , L , WAIT , 950.0
+A , L , WAIT , 2119.0
+C , S , WAIT , 2694.0
+B , S , WAIT , 2509.0
+A , S , WAIT , 3556.0
+A , L , WAIT , 404.0
+A , L , WAIT , 417.0
+A , L , WAIT , 1729.0
+A , L , WAIT , 2954.0
+A , L , WAIT , 2205.0
+B , S , WAIT , 416.0
+A , S , WAIT , 2430.0
+C , L , WAIT , 965.0
+B , S , WAIT , 2994.0
+B , L , WAIT , 3349.0
+C , L , WAIT , 2053.0
+A , L , WAIT , 2307.0
+A , L , WAIT , 479.0
+B , S , WAIT , 2223.0
+C , S , WAIT , 3203.0
+A , L , WAIT , 799.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+455.2835808070748 , 0.047588652714140804 , 0.0 , 13840000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 2937.0
+A , L , WAIT , 1195.0
+B , S , WAIT , 370.0
+C , S , WAIT , 269.0
+A , S , WAIT , 2776.0
+B , S , WAIT , 3298.0
+A , S , WAIT , 394.0
+A , S , WAIT , 1239.0
+C , S , WAIT , 1277.0
+A , S , WAIT , 3183.0
+A , L , WAIT , 3590.0
+A , L , WAIT , 198.0
+B , S , WAIT , 174.0
+C , S , WAIT , 399.0
+A , S , WAIT , 1341.0
+B , L , WAIT , 2217.0
+C , L , WAIT , 2419.0
+C , S , WAIT , 1367.0
+C , L , WAIT , 884.0
+C , S , WAIT , 1602.0
+B , L , WAIT , 1405.0
+A , L , WAIT , 2818.0
+C , S , WAIT , 1615.0
+A , L , WAIT , 1053.0
+B , S , WAIT , 721.0
+A , S , WAIT , 2781.0
+A , L , WAIT , 527.0
+B , L , WAIT , 1727.0
+A , L , WAIT , 1848.0
+B , L , WAIT , 3027.0
+C , L , WAIT , 3430.0
+A , L , WAIT , 2384.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+392.1694420596319 , 0.05136156538530258 , 0.0 , 13615000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 761.0
+A , S , WAIT , 1978.0
+A , L , WAIT , 644.0
+A , L , WAIT , 2400.0
+C , L , WAIT , 3121.0
+B , S , WAIT , 3102.0
+A , S , WAIT , 679.0
+A , S , WAIT , 3393.0
+A , L , WAIT , 3001.0
+B , L , WAIT , 2647.0
+B , S , WAIT , 1503.0
+A , L , WAIT , 2792.0
+B , L , WAIT , 394.0
+C , S , WAIT , 2942.0
+A , L , WAIT , 322.0
+C , S , WAIT , 2457.0
+A , S , WAIT , 3598.0
+C , L , WAIT , 1432.0
+C , S , WAIT , 1315.0
+B , L , WAIT , 2931.0
+C , L , WAIT , 783.0
+C , S , WAIT , 2553.0
+A , L , WAIT , 816.0
+C , L , WAIT , 2786.0
+A , L , WAIT , 801.0
+A , L , WAIT , 1475.0
+A , S , WAIT , 2195.0
+A , L , WAIT , 3531.0
+C , L , WAIT , 295.0
+B , S , WAIT , 1327.0
+A , S , WAIT , 1977.0
+A , L , WAIT , 2947.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+499.833269863852 , 0.049263861264425515 , 0.0 , 14290000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2941.0
+C , L , WAIT , 2837.0
+C , S , WAIT , 744.0
+A , L , WAIT , 2053.0
+A , S , WAIT , 1326.0
+A , L , WAIT , 2973.0
+A , S , WAIT , 3043.0
+B , S , WAIT , 1685.0
+A , L , WAIT , 311.0
+B , L , WAIT , 2268.0
+C , S , WAIT , 3043.0
+B , L , WAIT , 40.0
+A , L , WAIT , 3251.0
+C , S , WAIT , 3479.0
+B , L , WAIT , 417.0
+A , S , WAIT , 1418.0
+A , L , WAIT , 1621.0
+C , L , WAIT , 3346.0
+C , S , WAIT , 1505.0
+A , L , WAIT , 3082.0
+C , S , WAIT , 227.0
+B , L , WAIT , 1640.0
+B , L , WAIT , 361.0
+A , L , WAIT , 11.0
+C , S , WAIT , 119.0
+A , S , WAIT , 1651.0
+C , S , WAIT , 3384.0
+C , L , WAIT , 1570.0
+C , L , WAIT , 2205.0
+C , L , WAIT , 2806.0
+A , L , WAIT , 2118.0
+A , S , WAIT , 1656.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+540.4503616620348 , 0.04716578631678347 , 0.0 , 14515000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 25.0
+C , L , WAIT , 2719.0
+B , S , WAIT , 827.0
+C , L , WAIT , 2236.0
+B , S , WAIT , 2222.0
+C , S , WAIT , 142.0
+A , S , WAIT , 2339.0
+C , S , WAIT , 3262.0
+A , L , WAIT , 3346.0
+A , L , WAIT , 948.0
+B , L , WAIT , 1993.0
+A , S , WAIT , 622.0
+A , L , WAIT , 3446.0
+A , S , WAIT , 848.0
+A , L , WAIT , 3466.0
+A , L , WAIT , 3583.0
+B , S , WAIT , 2977.0
+C , S , WAIT , 3348.0
+B , S , WAIT , 1650.0
+A , S , WAIT , 3338.0
+B , S , WAIT , 1460.0
+C , L , WAIT , 2863.0
+A , S , WAIT , 234.0
+A , S , WAIT , 1374.0
+C , L , WAIT , 739.0
+C , L , WAIT , 1421.0
+A , L , WAIT , 736.0
+A , L , WAIT , 2062.0
+B , L , WAIT , 2508.0
+A , L , WAIT , 2122.0
+A , S , WAIT , 3416.0
+B , S , WAIT , 783.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+507.0906589584391 , 0.03452207952991048 , 0.0 , 13840000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2897.0
+A , S , WAIT , 2400.0
+A , S , WAIT , 55.0
+C , S , WAIT , 2918.0
+C , S , WAIT , 3554.0
+B , L , WAIT , 720.0
+A , S , WAIT , 2651.0
+A , S , WAIT , 3239.0
+A , S , WAIT , 571.0
+A , L , WAIT , 1533.0
+A , L , WAIT , 1315.0
+A , S , WAIT , 641.0
+C , S , WAIT , 2340.0
+A , L , WAIT , 2712.0
+A , S , WAIT , 1354.0
+A , S , WAIT , 2070.0
+C , S , WAIT , 3337.0
+A , S , WAIT , 1774.0
+A , S , WAIT , 2109.0
+B , L , WAIT , 1848.0
+B , L , WAIT , 3082.0
+C , L , WAIT , 2733.0
+C , L , WAIT , 2151.0
+C , L , WAIT , 2172.0
+C , S , WAIT , 2014.0
+A , S , WAIT , 2019.0
+C , L , WAIT , 236.0
+B , L , WAIT , 1176.0
+C , L , WAIT , 860.0
+A , L , WAIT , 3421.0
+B , S , WAIT , 898.0
+C , L , WAIT , 2802.0
+A , L , WAIT , 1551.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+507.2743199704411 , 0.04255721146716766 , 0.0 , 14160000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 229.0
+B , L , WAIT , 235.0
+C , S , WAIT , 2264.0
+B , L , WAIT , 594.0
+A , L , WAIT , 2798.0
+C , S , WAIT , 3346.0
+A , L , WAIT , 700.0
+C , S , WAIT , 493.0
+C , L , WAIT , 1283.0
+C , L , WAIT , 3010.0
+C , S , WAIT , 26.0
+C , L , WAIT , 3034.0
+B , L , WAIT , 2614.0
+C , L , WAIT , 2799.0
+C , S , WAIT , 334.0
+B , L , WAIT , 3508.0
+B , L , WAIT , 2646.0
+A , S , WAIT , 365.0
+B , S , WAIT , 1746.0
+A , L , WAIT , 2564.0
+B , L , WAIT , 2731.0
+C , S , WAIT , 1489.0
+C , L , WAIT , 3078.0
+C , S , WAIT , 2414.0
+A , L , WAIT , 2780.0
+A , L , WAIT , 873.0
+B , L , WAIT , 1781.0
+C , S , WAIT , 1636.0
+B , S , WAIT , 2930.0
+A , L , WAIT , 1364.0
+A , L , WAIT , 3018.0
+A , L , WAIT , 110.0
+A , L , WAIT , 3577.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+452.41828642025513 , 0.06607378464343555 , 0.0 , 15510000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1106.0
+C , S , WAIT , 2444.0
+A , L , WAIT , 188.0
+B , L , WAIT , 3003.0
+A , L , WAIT , 1272.0
+C , L , WAIT , 3458.0
+C , S , WAIT , 1240.0
+A , L , WAIT , 429.0
+A , L , WAIT , 3585.0
+C , S , WAIT , 594.0
+A , L , WAIT , 3375.0
+B , L , WAIT , 636.0
+B , S , WAIT , 2571.0
+C , S , WAIT , 2595.0
+A , S , WAIT , 2978.0
+B , S , WAIT , 203.0
+B , L , WAIT , 183.0
+B , S , WAIT , 1118.0
+C , L , WAIT , 3460.0
+C , S , WAIT , 1084.0
+C , L , WAIT , 2411.0
+A , S , WAIT , 2908.0
+A , S , WAIT , 1612.0
+A , L , WAIT , 1266.0
+A , L , WAIT , 59.0
+C , S , WAIT , 1768.0
+A , L , WAIT , 3348.0
+A , S , WAIT , 2872.0
+B , S , WAIT , 1327.0
+A , L , WAIT , 1090.0
+A , L , WAIT , 1609.0
+B , S , WAIT , 1476.0
+C , S , WAIT , 3256.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+515.7267069777178 , 0.01818154117453951 , 0.0 , 14385000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 151.0
+B , S , WAIT , 2767.0
+B , S , WAIT , 1091.0
+C , S , WAIT , 76.0
+B , S , WAIT , 3023.0
+B , L , WAIT , 11.0
+A , L , WAIT , 3431.0
+A , S , WAIT , 1068.0
+C , S , WAIT , 1988.0
+C , L , WAIT , 2156.0
+A , L , WAIT , 916.0
+A , L , WAIT , 1489.0
+B , L , WAIT , 3402.0
+B , L , WAIT , 3125.0
+C , L , WAIT , 2953.0
+C , S , WAIT , 85.0
+A , L , WAIT , 631.0
+A , L , WAIT , 3415.0
+A , L , WAIT , 419.0
+B , L , WAIT , 3118.0
+B , L , WAIT , 998.0
+B , L , WAIT , 602.0
+C , L , WAIT , 2421.0
+A , L , WAIT , 1238.0
+B , L , WAIT , 203.0
+C , L , WAIT , 1453.0
+B , L , WAIT , 2504.0
+A , L , WAIT , 3252.0
+C , L , WAIT , 595.0
+B , S , WAIT , 756.0
+A , L , WAIT , 327.0
+A , L , WAIT , 3079.0
+A , S , WAIT , 2580.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+460.1040553519091 , 0.06555777967502671 , 0.0 , 15960000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2821.0
+A , L , WAIT , 717.0
+A , L , WAIT , 3324.0
+C , L , WAIT , 1517.0
+B , S , WAIT , 1890.0
+A , L , WAIT , 3428.0
+C , L , WAIT , 1316.0
+C , L , WAIT , 2079.0
+A , S , WAIT , 1733.0
+A , S , WAIT , 2808.0
+A , S , WAIT , 3403.0
+B , S , WAIT , 2725.0
+C , S , WAIT , 1508.0
+A , S , WAIT , 2656.0
+A , L , WAIT , 2690.0
+C , L , WAIT , 2798.0
+A , S , WAIT , 232.0
+A , S , WAIT , 1040.0
+B , S , WAIT , 1280.0
+A , S , WAIT , 325.0
+B , L , WAIT , 1592.0
+A , S , WAIT , 3151.0
+A , L , WAIT , 543.0
+C , S , WAIT , 3095.0
+A , S , WAIT , 1061.0
+B , S , WAIT , 106.0
+A , L , WAIT , 1877.0
+B , S , WAIT , 2236.0
+C , L , WAIT , 2330.0
+A , S , WAIT , 1702.0
+A , L , WAIT , 1298.0
+B , L , WAIT , 818.0
+C , L , WAIT , 2121.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+493.79119059116135 , 0.05336922350502704 , 0.0 , 14160000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 3171.0
+A , S , WAIT , 594.0
+A , S , WAIT , 3406.0
+B , S , WAIT , 2302.0
+A , S , WAIT , 2971.0
+A , L , WAIT , 2892.0
+A , S , WAIT , 2330.0
+B , L , WAIT , 1598.0
+B , S , WAIT , 992.0
+C , S , WAIT , 1728.0
+A , L , WAIT , 788.0
+B , S , WAIT , 2852.0
+A , S , WAIT , 1443.0
+C , S , WAIT , 1188.0
+C , S , WAIT , 1912.0
+B , L , WAIT , 656.0
+A , S , WAIT , 2245.0
+B , S , WAIT , 478.0
+A , L , WAIT , 3404.0
+B , S , WAIT , 2228.0
+C , S , WAIT , 1739.0
+A , L , WAIT , 2299.0
+C , S , WAIT , 1127.0
+A , L , WAIT , 762.0
+A , L , WAIT , 2581.0
+A , L , WAIT , 923.0
+A , L , WAIT , 2974.0
+C , S , WAIT , 1037.0
+B , L , WAIT , 3228.0
+B , L , WAIT , 1544.0
+C , S , WAIT , 2661.0
+C , S , WAIT , 816.0
+C , L , WAIT , 3363.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+553.7980746413225 , 0.03159349051713807 , 0.0 , 13710000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 3381.0
+C , L , WAIT , 634.0
+A , L , WAIT , 2603.0
+B , L , WAIT , 2961.0
+A , L , WAIT , 2213.0
+A , L , WAIT , 1488.0
+A , L , WAIT , 3004.0
+B , L , WAIT , 3405.0
+B , L , WAIT , 3500.0
+C , S , WAIT , 3140.0
+C , S , WAIT , 1115.0
+A , L , WAIT , 447.0
+B , L , WAIT , 2276.0
+A , L , WAIT , 3600.0
+C , L , WAIT , 1904.0
+C , L , WAIT , 2079.0
+C , L , WAIT , 394.0
+C , L , WAIT , 2355.0
+A , L , WAIT , 1014.0
+C , S , WAIT , 2341.0
+B , L , WAIT , 1088.0
+A , S , WAIT , 651.0
+A , L , WAIT , 1598.0
+C , L , WAIT , 2963.0
+A , L , WAIT , 3391.0
+A , L , WAIT , 240.0
+A , S , WAIT , 2774.0
+B , L , WAIT , 449.0
+B , S , WAIT , 1681.0
+C , S , WAIT , 1647.0
+A , S , WAIT , 3209.0
+C , S , WAIT , 245.0
+C , S , WAIT , 2752.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+414.17410313531957 , 0.03594555124073384 , 0.0 , 15510000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2793.0
+B , S , WAIT , 3037.0
+C , S , WAIT , 1108.0
+A , L , WAIT , 3049.0
+B , L , WAIT , 189.0
+B , L , WAIT , 668.0
+A , L , WAIT , 2499.0
+A , L , WAIT , 1177.0
+B , S , WAIT , 844.0
+B , L , WAIT , 864.0
+A , L , WAIT , 288.0
+C , S , WAIT , 3085.0
+B , S , WAIT , 1585.0
+B , L , WAIT , 968.0
+A , L , WAIT , 2922.0
+B , L , WAIT , 2568.0
+B , L , WAIT , 3515.0
+A , L , WAIT , 2322.0
+A , L , WAIT , 3226.0
+C , S , WAIT , 2369.0
+C , L , WAIT , 1423.0
+A , L , WAIT , 2634.0
+C , L , WAIT , 2053.0
+C , L , WAIT , 2298.0
+A , S , WAIT , 1603.0
+C , L , WAIT , 228.0
+A , L , WAIT , 478.0
+B , L , WAIT , 3386.0
+C , S , WAIT , 3571.0
+A , L , WAIT , 1408.0
+C , S , WAIT , 263.0
+B , S , WAIT , 431.0
+C , L , WAIT , 2547.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+558.005515469561 , 0.0508593710295536 , 0.0 , 15510000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 936.0
+A , S , WAIT , 467.0
+A , S , WAIT , 3186.0
+C , L , WAIT , 2538.0
+A , S , WAIT , 959.0
+C , L , WAIT , 1248.0
+C , L , WAIT , 3567.0
+C , S , WAIT , 626.0
+A , L , WAIT , 1043.0
+B , L , WAIT , 3389.0
+A , S , WAIT , 1157.0
+B , L , WAIT , 381.0
+A , S , WAIT , 1801.0
+A , L , WAIT , 2638.0
+C , S , WAIT , 3366.0
+B , S , WAIT , 3310.0
+B , L , WAIT , 2838.0
+C , S , WAIT , 1563.0
+B , L , WAIT , 1926.0
+C , S , WAIT , 2854.0
+B , L , WAIT , 2477.0
+B , L , WAIT , 2526.0
+A , L , WAIT , 3423.0
+A , S , WAIT , 2600.0
+A , S , WAIT , 397.0
+A , S , WAIT , 2497.0
+A , S , WAIT , 115.0
+C , L , WAIT , 3336.0
+C , L , WAIT , 3225.0
+C , L , WAIT , 2745.0
+C , L , WAIT , 220.0
+A , L , WAIT , 3569.0
+B , L , WAIT , 3128.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+595.984536701158 , 0.056779312722789896 , 0.0 , 14835000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1997.0
+C , S , WAIT , 3126.0
+C , S , WAIT , 1077.0
+C , S , WAIT , 1063.0
+B , S , WAIT , 308.0
+B , L , WAIT , 3244.0
+C , L , WAIT , 1785.0
+A , L , WAIT , 2366.0
+A , S , WAIT , 3095.0
+B , S , WAIT , 2396.0
+C , L , WAIT , 1632.0
+B , L , WAIT , 2803.0
+A , L , WAIT , 3008.0
+A , L , WAIT , 1569.0
+A , L , WAIT , 1249.0
+A , L , WAIT , 2576.0
+C , S , WAIT , 299.0
+C , S , WAIT , 3337.0
+A , L , WAIT , 2416.0
+C , L , WAIT , 3146.0
+A , S , WAIT , 1024.0
+C , S , WAIT , 3204.0
+A , L , WAIT , 1420.0
+B , S , WAIT , 87.0
+B , S , WAIT , 486.0
+C , L , WAIT , 2607.0
+A , L , WAIT , 447.0
+A , S , WAIT , 3304.0
+A , S , WAIT , 2222.0
+A , S , WAIT , 3462.0
+A , L , WAIT , 2934.0
+B , S , WAIT , 2546.0
+A , L , WAIT , 607.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+536.0994679108402 , 0.032491465307720784 , 0.0 , 14385000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2907.0
+C , S , WAIT , 3119.0
+B , L , WAIT , 1879.0
+C , S , WAIT , 2249.0
+B , S , WAIT , 1594.0
+B , L , WAIT , 3503.0
+A , L , WAIT , 2763.0
+C , L , WAIT , 758.0
+A , L , WAIT , 2114.0
+A , L , WAIT , 2187.0
+A , S , WAIT , 425.0
+A , L , WAIT , 336.0
+A , L , WAIT , 3461.0
+C , S , WAIT , 178.0
+A , L , WAIT , 134.0
+A , L , WAIT , 2390.0
+B , L , WAIT , 1902.0
+A , L , WAIT , 1794.0
+B , L , WAIT , 3565.0
+A , L , WAIT , 1919.0
+C , L , WAIT , 3267.0
+A , S , WAIT , 2073.0
+C , L , WAIT , 1149.0
+C , S , WAIT , 1657.0
+B , S , WAIT , 3153.0
+C , L , WAIT , 1823.0
+B , S , WAIT , 3563.0
+A , S , WAIT , 3073.0
+C , S , WAIT , 360.0
+C , S , WAIT , 346.0
+A , L , WAIT , 2113.0
+B , L , WAIT , 2774.0
+C , L , WAIT , 1481.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+514.6426644367116 , 0.05823620015879495 , 0.0 , 15060000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 2168.0
+C , L , WAIT , 2234.0
+B , S , WAIT , 59.0
+B , L , WAIT , 2480.0
+A , L , WAIT , 171.0
+C , S , WAIT , 2772.0
+A , L , WAIT , 3210.0
+A , L , WAIT , 1082.0
+B , L , WAIT , 782.0
+A , L , WAIT , 1446.0
+C , S , WAIT , 2233.0
+C , S , WAIT , 2871.0
+A , L , WAIT , 1333.0
+C , S , WAIT , 1456.0
+A , S , WAIT , 376.0
+C , S , WAIT , 3057.0
+A , L , WAIT , 3171.0
+A , L , WAIT , 1464.0
+B , S , WAIT , 975.0
+B , L , WAIT , 922.0
+C , S , WAIT , 1364.0
+C , S , WAIT , 323.0
+B , L , WAIT , 1307.0
+C , S , WAIT , 2898.0
+B , L , WAIT , 2621.0
+A , L , WAIT , 3070.0
+A , L , WAIT , 246.0
+A , L , WAIT , 2504.0
+A , S , WAIT , 2510.0
+C , L , WAIT , 1632.0
+A , L , WAIT , 2529.0
+B , L , WAIT , 3560.0
+C , S , WAIT , 2212.0
+A , L , WAIT , 1078.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+438.7455256143926 , 0.050998078941067206 , 0.0 , 15380000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1913.0
+A , L , WAIT , 3177.0
+A , S , WAIT , 3090.0
+A , S , WAIT , 1766.0
+C , S , WAIT , 1346.0
+A , L , WAIT , 744.0
+A , S , WAIT , 2861.0
+A , S , WAIT , 803.0
+C , L , WAIT , 2032.0
+B , L , WAIT , 130.0
+A , S , WAIT , 1758.0
+A , L , WAIT , 161.0
+B , S , WAIT , 3430.0
+B , S , WAIT , 2950.0
+A , L , WAIT , 1377.0
+B , S , WAIT , 688.0
+C , S , WAIT , 3189.0
+C , S , WAIT , 2151.0
+A , S , WAIT , 1591.0
+C , S , WAIT , 3503.0
+A , L , WAIT , 2050.0
+B , L , WAIT , 2278.0
+C , S , WAIT , 1881.0
+B , S , WAIT , 76.0
+A , S , WAIT , 1101.0
+C , L , WAIT , 745.0
+B , L , WAIT , 495.0
+B , S , WAIT , 315.0
+C , L , WAIT , 2654.0
+B , L , WAIT , 2214.0
+C , S , WAIT , 172.0
+C , L , WAIT , 999.0
+A , L , WAIT , 950.0
+C , L , WAIT , 3281.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+419.6018554687691 , 0.06532281123903126 , 0.0 , 14480000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 119.0
+B , S , WAIT , 563.0
+B , S , WAIT , 1513.0
+C , L , WAIT , 2219.0
+A , S , WAIT , 3458.0
+A , L , WAIT , 2936.0
+B , L , WAIT , 636.0
+B , L , WAIT , 21.0
+C , S , WAIT , 3124.0
+A , L , WAIT , 64.0
+C , L , WAIT , 355.0
+A , L , WAIT , 1944.0
+C , S , WAIT , 1569.0
+A , S , WAIT , 508.0
+A , L , WAIT , 3515.0
+B , S , WAIT , 3405.0
+A , L , WAIT , 2116.0
+C , S , WAIT , 1693.0
+B , S , WAIT , 1522.0
+C , S , WAIT , 1049.0
+A , L , WAIT , 1251.0
+C , S , WAIT , 215.0
+A , L , WAIT , 745.0
+B , S , WAIT , 3589.0
+B , S , WAIT , 2212.0
+C , S , WAIT , 2745.0
+A , L , WAIT , 1575.0
+A , S , WAIT , 1405.0
+A , L , WAIT , 3381.0
+C , S , WAIT , 19.0
+C , L , WAIT , 2934.0
+C , S , WAIT , 2648.0
+C , L , WAIT , 2923.0
+A , L , WAIT , 643.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+451.59228095856525 , 0.03638261914485518 , 0.0 , 14705000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 2893.0
+C , L , WAIT , 884.0
+C , S , WAIT , 325.0
+A , S , WAIT , 3090.0
+C , L , WAIT , 3153.0
+B , L , WAIT , 3210.0
+A , S , WAIT , 937.0
+C , L , WAIT , 1846.0
+A , L , WAIT , 1557.0
+C , L , WAIT , 2411.0
+A , S , WAIT , 351.0
+A , S , WAIT , 603.0
+C , L , WAIT , 210.0
+B , L , WAIT , 44.0
+C , S , WAIT , 894.0
+C , L , WAIT , 1275.0
+A , S , WAIT , 922.0
+C , S , WAIT , 3189.0
+A , L , WAIT , 1340.0
+B , S , WAIT , 180.0
+B , L , WAIT , 2423.0
+A , L , WAIT , 3489.0
+C , L , WAIT , 1603.0
+A , L , WAIT , 3180.0
+B , S , WAIT , 3551.0
+A , L , WAIT , 2712.0
+A , S , WAIT , 1920.0
+A , L , WAIT , 3127.0
+B , S , WAIT , 3377.0
+A , S , WAIT , 238.0
+A , L , WAIT , 1439.0
+C , L , WAIT , 2133.0
+A , S , WAIT , 2651.0
+A , S , WAIT , 1911.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+574.3064227064849 , 0.04435349314624739 , 0.0 , 14930000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 3180.0
+A , L , WAIT , 2435.0
+C , S , WAIT , 993.0
+B , L , WAIT , 2260.0
+A , S , WAIT , 2823.0
+C , S , WAIT , 498.0
+A , L , WAIT , 1162.0
+C , S , WAIT , 2359.0
+C , S , WAIT , 964.0
+B , L , WAIT , 1457.0
+C , L , WAIT , 1575.0
+A , L , WAIT , 219.0
+C , L , WAIT , 3539.0
+A , S , WAIT , 2384.0
+C , L , WAIT , 2678.0
+B , L , WAIT , 195.0
+B , S , WAIT , 398.0
+C , S , WAIT , 3103.0
+B , S , WAIT , 2071.0
+C , L , WAIT , 2254.0
+C , S , WAIT , 1072.0
+A , L , WAIT , 2727.0
+B , L , WAIT , 478.0
+A , L , WAIT , 636.0
+A , L , WAIT , 926.0
+C , S , WAIT , 2127.0
+A , L , WAIT , 149.0
+A , L , WAIT , 1641.0
+C , L , WAIT , 2731.0
+B , S , WAIT , 3170.0
+A , S , WAIT , 3553.0
+C , S , WAIT , 3.0
+C , L , WAIT , 1043.0
+A , L , WAIT , 2768.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+373.4978793785022 , 0.03638667912974683 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1005.0
+B , S , WAIT , 865.0
+A , L , WAIT , 306.0
+A , L , WAIT , 3529.0
+A , L , WAIT , 1943.0
+C , L , WAIT , 351.0
+C , L , WAIT , 2410.0
+C , S , WAIT , 3544.0
+C , S , WAIT , 982.0
+C , L , WAIT , 3261.0
+C , L , WAIT , 121.0
+A , S , WAIT , 3092.0
+B , S , WAIT , 97.0
+B , L , WAIT , 1808.0
+A , L , WAIT , 2246.0
+A , S , WAIT , 1658.0
+C , L , WAIT , 603.0
+B , L , WAIT , 546.0
+A , S , WAIT , 2327.0
+B , L , WAIT , 1825.0
+A , S , WAIT , 1427.0
+A , L , WAIT , 608.0
+B , S , WAIT , 1301.0
+C , S , WAIT , 2804.0
+B , S , WAIT , 1242.0
+C , S , WAIT , 41.0
+C , L , WAIT , 1534.0
+A , L , WAIT , 2369.0
+C , S , WAIT , 1308.0
+B , S , WAIT , 2393.0
+A , L , WAIT , 3074.0
+C , S , WAIT , 243.0
+A , S , WAIT , 1217.0
+B , S , WAIT , 3035.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+467.12673292390326 , 0.05726947689646844 , 0.0 , 14705000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2324.0
+A , L , WAIT , 2936.0
+A , S , WAIT , 671.0
+B , L , WAIT , 1422.0
+C , L , WAIT , 1812.0
+C , S , WAIT , 162.0
+C , S , WAIT , 435.0
+A , L , WAIT , 2184.0
+B , L , WAIT , 2273.0
+A , L , WAIT , 816.0
+C , S , WAIT , 566.0
+B , L , WAIT , 2703.0
+B , S , WAIT , 955.0
+A , S , WAIT , 1124.0
+B , L , WAIT , 738.0
+B , L , WAIT , 2256.0
+A , S , WAIT , 2548.0
+A , L , WAIT , 1628.0
+C , L , WAIT , 1947.0
+A , L , WAIT , 999.0
+A , L , WAIT , 2419.0
+C , S , WAIT , 214.0
+A , L , WAIT , 1300.0
+A , L , WAIT , 956.0
+B , S , WAIT , 3596.0
+C , L , WAIT , 582.0
+C , L , WAIT , 3466.0
+B , S , WAIT , 1817.0
+A , L , WAIT , 1515.0
+B , L , WAIT , 2462.0
+C , S , WAIT , 1777.0
+B , S , WAIT , 1445.0
+C , L , WAIT , 2827.0
+C , L , WAIT , 3511.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+433.547547562884 , 0.05961269126053688 , 0.0 , 15830000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 3021.0
+A , L , WAIT , 1853.0
+A , L , WAIT , 2346.0
+B , S , WAIT , 599.0
+A , L , WAIT , 644.0
+C , L , WAIT , 303.0
+B , L , WAIT , 1319.0
+A , S , WAIT , 2364.0
+A , L , WAIT , 1326.0
+C , L , WAIT , 3024.0
+A , L , WAIT , 3248.0
+A , L , WAIT , 3022.0
+C , L , WAIT , 2519.0
+A , S , WAIT , 1118.0
+A , S , WAIT , 3321.0
+C , L , WAIT , 1214.0
+C , L , WAIT , 1431.0
+A , S , WAIT , 1496.0
+C , L , WAIT , 2237.0
+B , L , WAIT , 3209.0
+B , L , WAIT , 208.0
+C , L , WAIT , 1641.0
+C , S , WAIT , 2886.0
+B , S , WAIT , 1688.0
+A , S , WAIT , 1860.0
+B , S , WAIT , 375.0
+C , S , WAIT , 2698.0
+A , L , WAIT , 666.0
+B , L , WAIT , 812.0
+A , S , WAIT , 2584.0
+B , S , WAIT , 1786.0
+A , S , WAIT , 1436.0
+C , L , WAIT , 446.0
+A , L , WAIT , 1219.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+384.585455443643 , 0.04989302924936395 , 0.0 , 15605000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 668.0
+B , L , WAIT , 2417.0
+A , L , WAIT , 2369.0
+A , L , WAIT , 654.0
+C , L , WAIT , 2951.0
+C , L , WAIT , 1651.0
+C , S , WAIT , 1439.0
+A , S , WAIT , 1853.0
+A , S , WAIT , 433.0
+C , S , WAIT , 2832.0
+B , S , WAIT , 2596.0
+C , S , WAIT , 887.0
+C , S , WAIT , 1288.0
+A , L , WAIT , 1678.0
+A , S , WAIT , 2285.0
+A , S , WAIT , 2688.0
+A , S , WAIT , 2478.0
+A , S , WAIT , 238.0
+C , L , WAIT , 1528.0
+C , L , WAIT , 1062.0
+C , L , WAIT , 3573.0
+B , L , WAIT , 2584.0
+B , S , WAIT , 296.0
+C , S , WAIT , 3565.0
+A , S , WAIT , 1465.0
+B , L , WAIT , 1404.0
+B , L , WAIT , 2707.0
+A , S , WAIT , 2962.0
+A , L , WAIT , 3340.0
+C , S , WAIT , 2077.0
+B , S , WAIT , 1620.0
+A , S , WAIT , 1608.0
+A , L , WAIT , 3216.0
+B , S , WAIT , 3368.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+564.9214126902161 , 0.063831073983072 , 0.0 , 14255000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 2952.0
+B , S , WAIT , 2975.0
+B , S , WAIT , 2631.0
+B , L , WAIT , 2022.0
+A , L , WAIT , 88.0
+A , S , WAIT , 465.0
+A , S , WAIT , 2607.0
+B , S , WAIT , 3479.0
+B , L , WAIT , 2459.0
+A , L , WAIT , 1611.0
+A , S , WAIT , 2326.0
+B , S , WAIT , 900.0
+C , L , WAIT , 713.0
+C , L , WAIT , 2434.0
+C , L , WAIT , 2084.0
+B , L , WAIT , 1769.0
+A , S , WAIT , 944.0
+A , L , WAIT , 2283.0
+A , L , WAIT , 3356.0
+C , L , WAIT , 2109.0
+A , L , WAIT , 68.0
+C , L , WAIT , 3373.0
+A , L , WAIT , 3464.0
+C , L , WAIT , 1894.0
+A , L , WAIT , 2560.0
+C , L , WAIT , 2706.0
+A , S , WAIT , 3105.0
+A , S , WAIT , 1683.0
+C , L , WAIT , 2637.0
+C , S , WAIT , 2994.0
+A , L , WAIT , 3044.0
+A , L , WAIT , 215.0
+B , L , WAIT , 2722.0
+B , S , WAIT , 1857.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+558.0608410012866 , 0.023766150133432237 , 0.0 , 15605000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 1615.0
+C , L , WAIT , 3546.0
+B , L , WAIT , 2909.0
+A , L , WAIT , 1090.0
+A , S , WAIT , 1922.0
+A , S , WAIT , 3499.0
+A , S , WAIT , 299.0
+A , S , WAIT , 1693.0
+B , S , WAIT , 1435.0
+B , L , WAIT , 1428.0
+C , L , WAIT , 1893.0
+B , L , WAIT , 2251.0
+B , S , WAIT , 2696.0
+A , L , WAIT , 1056.0
+C , L , WAIT , 2569.0
+B , L , WAIT , 3346.0
+A , L , WAIT , 2080.0
+A , S , WAIT , 2147.0
+B , S , WAIT , 3357.0
+A , S , WAIT , 2886.0
+B , L , WAIT , 517.0
+A , L , WAIT , 1578.0
+B , S , WAIT , 2722.0
+B , L , WAIT , 1369.0
+A , L , WAIT , 710.0
+A , L , WAIT , 3277.0
+C , S , WAIT , 912.0
+B , S , WAIT , 3300.0
+C , L , WAIT , 1652.0
+C , L , WAIT , 1105.0
+B , S , WAIT , 2972.0
+A , L , WAIT , 3511.0
+A , L , WAIT , 3526.0
+A , S , WAIT , 1705.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+576.3123272107188 , 0.04845574011822093 , 0.0 , 15380000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2453.0
+B , S , WAIT , 1908.0
+A , L , WAIT , 1853.0
+C , S , WAIT , 799.0
+B , S , WAIT , 83.0
+A , L , WAIT , 678.0
+C , S , WAIT , 622.0
+C , S , WAIT , 2054.0
+C , S , WAIT , 585.0
+A , L , WAIT , 1081.0
+A , L , WAIT , 1683.0
+A , L , WAIT , 3366.0
+B , L , WAIT , 334.0
+C , S , WAIT , 2942.0
+C , L , WAIT , 2765.0
+A , S , WAIT , 3404.0
+A , L , WAIT , 1216.0
+A , S , WAIT , 2847.0
+C , S , WAIT , 1596.0
+A , L , WAIT , 3478.0
+A , L , WAIT , 2097.0
+A , S , WAIT , 1864.0
+C , S , WAIT , 29.0
+B , S , WAIT , 1146.0
+B , S , WAIT , 839.0
+A , L , WAIT , 2557.0
+C , L , WAIT , 3335.0
+A , L , WAIT , 1870.0
+A , L , WAIT , 2567.0
+C , L , WAIT , 3048.0
+C , L , WAIT , 2666.0
+C , S , WAIT , 1314.0
+B , S , WAIT , 3369.0
+A , S , WAIT , 2170.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+538.2651895531251 , 0.06317065369932551 , 0.0 , 14705000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 1538.0
+A , S , WAIT , 196.0
+B , L , WAIT , 2822.0
+B , L , WAIT , 1672.0
+C , L , WAIT , 1565.0
+C , S , WAIT , 500.0
+A , L , WAIT , 2180.0
+B , S , WAIT , 1367.0
+C , L , WAIT , 1899.0
+A , L , WAIT , 3499.0
+B , S , WAIT , 834.0
+B , L , WAIT , 1634.0
+A , L , WAIT , 3433.0
+A , L , WAIT , 1614.0
+B , S , WAIT , 3140.0
+C , S , WAIT , 2180.0
+B , L , WAIT , 2831.0
+A , S , WAIT , 983.0
+B , S , WAIT , 1967.0
+C , L , WAIT , 3394.0
+A , S , WAIT , 1397.0
+B , S , WAIT , 2361.0
+C , L , WAIT , 3128.0
+C , S , WAIT , 2927.0
+A , S , WAIT , 1193.0
+A , L , WAIT , 1879.0
+A , S , WAIT , 1853.0
+C , L , WAIT , 1152.0
+A , L , WAIT , 2680.0
+C , S , WAIT , 462.0
+A , L , WAIT , 567.0
+C , L , WAIT , 1708.0
+A , L , WAIT , 2691.0
+B , S , WAIT , 1967.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+530.0998883872537 , 0.05511755436746359 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 509.0
+A , S , WAIT , 727.0
+A , L , WAIT , 2603.0
+B , S , WAIT , 857.0
+A , L , WAIT , 123.0
+A , L , WAIT , 2556.0
+B , S , WAIT , 161.0
+B , L , WAIT , 1322.0
+C , S , WAIT , 2137.0
+C , S , WAIT , 3153.0
+A , L , WAIT , 2412.0
+C , L , WAIT , 2802.0
+B , L , WAIT , 2871.0
+A , L , WAIT , 2903.0
+A , L , WAIT , 2172.0
+B , S , WAIT , 489.0
+B , S , WAIT , 3571.0
+B , S , WAIT , 1505.0
+C , L , WAIT , 1997.0
+A , L , WAIT , 2332.0
+A , S , WAIT , 3215.0
+B , S , WAIT , 2635.0
+A , S , WAIT , 1821.0
+C , L , WAIT , 1778.0
+B , L , WAIT , 2718.0
+A , L , WAIT , 254.0
+C , S , WAIT , 3542.0
+A , S , WAIT , 1870.0
+B , L , WAIT , 1177.0
+A , L , WAIT , 1176.0
+B , L , WAIT , 3433.0
+C , S , WAIT , 3218.0
+A , L , WAIT , 2892.0
+A , S , WAIT , 2100.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+523.6702180444737 , 0.05443522807175527 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 177.0
+B , L , WAIT , 600.0
+B , L , WAIT , 1887.0
+C , L , WAIT , 867.0
+C , S , WAIT , 2339.0
+B , L , WAIT , 500.0
+B , S , WAIT , 2000.0
+A , L , WAIT , 874.0
+C , S , WAIT , 1516.0
+A , L , WAIT , 1290.0
+B , L , WAIT , 1854.0
+C , S , WAIT , 3574.0
+C , L , WAIT , 554.0
+A , S , WAIT , 2308.0
+A , L , WAIT , 189.0
+A , S , WAIT , 3245.0
+A , L , WAIT , 3320.0
+B , S , WAIT , 693.0
+A , S , WAIT , 2924.0
+C , L , WAIT , 3078.0
+C , L , WAIT , 2408.0
+B , L , WAIT , 2734.0
+A , L , WAIT , 2893.0
+B , S , WAIT , 3076.0
+C , S , WAIT , 274.0
+B , S , WAIT , 2699.0
+B , S , WAIT , 2726.0
+A , S , WAIT , 3198.0
+A , L , WAIT , 3071.0
+B , S , WAIT , 1725.0
+C , L , WAIT , 2170.0
+A , S , WAIT , 933.0
+A , L , WAIT , 1101.0
+C , S , WAIT , 1137.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+462.7115145089054 , 0.057207951422692215 , 0.0 , 14930000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 1533.0
+C , L , WAIT , 3589.0
+A , S , WAIT , 949.0
+B , L , WAIT , 2054.0
+C , L , WAIT , 1986.0
+A , L , WAIT , 3540.0
+A , S , WAIT , 2148.0
+B , S , WAIT , 1612.0
+A , L , WAIT , 1059.0
+C , S , WAIT , 3388.0
+A , S , WAIT , 1108.0
+A , S , WAIT , 3356.0
+A , S , WAIT , 532.0
+A , L , WAIT , 183.0
+C , S , WAIT , 305.0
+B , S , WAIT , 1560.0
+C , S , WAIT , 2602.0
+A , L , WAIT , 658.0
+A , L , WAIT , 2773.0
+B , L , WAIT , 2576.0
+C , S , WAIT , 2683.0
+A , L , WAIT , 2466.0
+A , L , WAIT , 2361.0
+A , S , WAIT , 650.0
+B , S , WAIT , 842.0
+A , S , WAIT , 2164.0
+C , L , WAIT , 683.0
+C , S , WAIT , 1367.0
+C , S , WAIT , 1440.0
+B , S , WAIT , 3438.0
+C , S , WAIT , 2247.0
+C , S , WAIT , 1706.0
+B , S , WAIT , 1389.0
+C , L , WAIT , 1859.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+474.36461592014956 , 0.06644849080036065 , 0.0 , 14030000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 220.0
+C , L , WAIT , 848.0
+B , L , WAIT , 614.0
+B , L , WAIT , 2116.0
+A , L , WAIT , 3288.0
+C , S , WAIT , 645.0
+A , L , WAIT , 3320.0
+A , L , WAIT , 1596.0
+A , L , WAIT , 474.0
+C , S , WAIT , 1587.0
+B , S , WAIT , 907.0
+C , L , WAIT , 77.0
+A , L , WAIT , 3393.0
+A , L , WAIT , 1666.0
+C , L , WAIT , 1271.0
+A , S , WAIT , 2154.0
+A , L , WAIT , 239.0
+A , L , WAIT , 2916.0
+C , L , WAIT , 2642.0
+A , S , WAIT , 20.0
+B , S , WAIT , 1522.0
+B , S , WAIT , 3542.0
+C , L , WAIT , 306.0
+A , L , WAIT , 551.0
+B , L , WAIT , 1652.0
+C , L , WAIT , 2490.0
+A , S , WAIT , 1584.0
+C , L , WAIT , 3394.0
+A , S , WAIT , 25.0
+C , S , WAIT , 226.0
+C , S , WAIT , 3319.0
+B , L , WAIT , 2945.0
+B , L , WAIT , 3448.0
+A , S , WAIT , 798.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+406.7785722441018 , 0.03580709540851031 , 0.0 , 15830000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , WAIT , 259.0
+A , L , WAIT , 3124.0
+A , S , WAIT , 2912.0
+B , L , WAIT , 1382.0
+B , S , WAIT , 2133.0
+B , S , WAIT , 1701.0
+B , L , WAIT , 730.0
+B , L , WAIT , 470.0
+B , L , WAIT , 455.0
+B , S , WAIT , 1629.0
+A , L , WAIT , 1374.0
+C , S , WAIT , 519.0
+C , S , WAIT , 3205.0
+C , S , WAIT , 3166.0
+C , L , WAIT , 1647.0
+C , L , WAIT , 1674.0
+C , L , WAIT , 3556.0
+C , L , WAIT , 3566.0
+B , L , WAIT , 2225.0
+C , S , WAIT , 1483.0
+A , S , WAIT , 2526.0
+A , S , WAIT , 1199.0
+A , S , WAIT , 883.0
+A , L , WAIT , 212.0
+A , L , WAIT , 3151.0
+C , S , WAIT , 2845.0
+A , S , WAIT , 2988.0
+A , S , WAIT , 628.0
+A , L , WAIT , 2425.0
+B , S , WAIT , 3075.0
+C , S , WAIT , 2319.0
+B , L , WAIT , 2721.0
+A , L , WAIT , 2923.0
+A , L , WAIT , 1298.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+580.0165498664433 , 0.047640462108728035 , 0.0 , 14930000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 3489.0
+C , L , WAIT , 787.0
+A , S , WAIT , 1121.0
+A , S , WAIT , 140.0
+B , L , WAIT , 1674.0
+B , S , WAIT , 549.0
+C , S , WAIT , 2943.0
+A , L , WAIT , 2374.0
+C , L , WAIT , 554.0
+A , L , WAIT , 716.0
+A , L , WAIT , 1400.0
+C , L , WAIT , 2426.0
+A , L , WAIT , 1717.0
+A , L , WAIT , 1345.0
+A , L , WAIT , 2783.0
+B , L , WAIT , 1197.0
+A , S , WAIT , 1074.0
+C , S , WAIT , 2098.0
+B , L , WAIT , 1300.0
+A , L , WAIT , 2513.0
+B , S , WAIT , 3596.0
+B , L , WAIT , 300.0
+C , S , WAIT , 3149.0
+B , L , WAIT , 904.0
+B , L , WAIT , 1283.0
+B , S , WAIT , 1501.0
+C , L , WAIT , 3489.0
+A , L , WAIT , 2094.0
+C , S , WAIT , 766.0
+C , S , WAIT , 3220.0
+A , S , WAIT , 1394.0
+A , L , WAIT , 1635.0
+B , S , WAIT , 3180.0
+A , L , WAIT , 2767.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+554.9938551029899 , 0.0666766996130326 , 0.0 , 15380000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 1489.0
+B , S , WAIT , 2109.0
+A , S , WAIT , 2621.0
+A , S , WAIT , 1214.0
+A , S , WAIT , 1555.0
+C , L , WAIT , 2773.0
+A , S , WAIT , 1677.0
+C , L , WAIT , 3077.0
+A , L , WAIT , 939.0
+B , S , WAIT , 170.0
+C , S , WAIT , 3409.0
+A , L , WAIT , 3465.0
+A , S , WAIT , 3497.0
+A , L , WAIT , 2223.0
+C , L , WAIT , 3019.0
+A , S , WAIT , 2629.0
+C , L , WAIT , 2112.0
+B , L , WAIT , 2574.0
+A , L , WAIT , 1356.0
+A , L , WAIT , 1874.0
+A , L , WAIT , 1468.0
+A , S , WAIT , 3574.0
+B , S , WAIT , 2679.0
+C , S , WAIT , 3401.0
+C , S , WAIT , 827.0
+A , S , WAIT , 315.0
+A , L , WAIT , 215.0
+C , S , WAIT , 2006.0
+B , S , WAIT , 33.0
+C , S , WAIT , 3191.0
+A , L , WAIT , 2579.0
+C , L , WAIT , 1264.0
+B , L , WAIT , 3243.0
+B , L , WAIT , 1206.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+554.86859881399 , 0.04314172688400111 , 0.0 , 14480000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 3526.0
+C , S , WAIT , 197.0
+B , L , WAIT , 2000.0
+A , S , WAIT , 1590.0
+A , S , WAIT , 1718.0
+A , S , WAIT , 3482.0
+C , L , WAIT , 3139.0
+A , L , WAIT , 1816.0
+B , S , WAIT , 3114.0
+B , L , WAIT , 3163.0
+C , L , WAIT , 1409.0
+C , S , WAIT , 3183.0
+A , L , WAIT , 496.0
+A , L , WAIT , 142.0
+B , S , WAIT , 108.0
+A , S , WAIT , 255.0
+A , L , WAIT , 1879.0
+A , L , WAIT , 3562.0
+C , L , WAIT , 1744.0
+C , S , WAIT , 453.0
+B , S , WAIT , 2661.0
+C , S , WAIT , 3196.0
+A , S , WAIT , 2439.0
+C , L , WAIT , 2206.0
+B , L , WAIT , 1090.0
+B , L , WAIT , 413.0
+A , S , WAIT , 1395.0
+A , S , WAIT , 1430.0
+A , L , WAIT , 977.0
+A , S , WAIT , 2623.0
+A , L , WAIT , 2841.0
+A , L , WAIT , 1016.0
+B , L , WAIT , 367.0
+B , S , WAIT , 2055.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+436.6157645627886 , 0.05057168759845685 , 0.0 , 14705000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 680.0
+C , S , WAIT , 3449.0
+B , S , WAIT , 330.0
+A , S , WAIT , 1040.0
+B , L , WAIT , 1978.0
+C , L , WAIT , 1946.0
+B , L , WAIT , 638.0
+C , S , WAIT , 1416.0
+C , S , WAIT , 3144.0
+A , L , WAIT , 612.0
+A , L , WAIT , 996.0
+A , S , WAIT , 120.0
+B , L , WAIT , 2263.0
+C , S , WAIT , 2689.0
+A , L , WAIT , 2183.0
+A , S , WAIT , 1379.0
+C , S , WAIT , 2362.0
+A , L , WAIT , 3293.0
+B , S , WAIT , 176.0
+A , S , WAIT , 992.0
+B , S , WAIT , 1052.0
+C , L , WAIT , 2636.0
+B , S , WAIT , 2154.0
+B , L , WAIT , 2646.0
+A , L , WAIT , 3380.0
+B , L , WAIT , 1181.0
+A , L , WAIT , 2703.0
+B , L , WAIT , 2399.0
+C , S , WAIT , 2266.0
+A , L , WAIT , 3570.0
+B , L , WAIT , 701.0
+A , L , WAIT , 995.0
+C , L , WAIT , 2827.0
+B , L , WAIT , 3008.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+557.0451782023125 , 0.054883224609649374 , 0.0 , 15380000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1597.0
+A , S , WAIT , 373.0
+C , S , WAIT , 828.0
+A , S , WAIT , 569.0
+C , L , WAIT , 2429.0
+C , L , WAIT , 2879.0
+B , S , WAIT , 3474.0
+C , L , WAIT , 1136.0
+C , S , WAIT , 2461.0
+B , S , WAIT , 1880.0
+A , L , WAIT , 476.0
+C , L , WAIT , 431.0
+A , L , WAIT , 2757.0
+A , L , WAIT , 1250.0
+C , L , WAIT , 696.0
+B , L , WAIT , 2542.0
+C , S , WAIT , 2711.0
+A , L , WAIT , 1582.0
+B , L , WAIT , 491.0
+A , L , WAIT , 2674.0
+C , S , WAIT , 799.0
+C , L , WAIT , 1331.0
+B , L , WAIT , 1509.0
+A , L , WAIT , 1799.0
+C , L , WAIT , 1567.0
+A , S , WAIT , 944.0
+A , L , WAIT , 3244.0
+B , S , WAIT , 2726.0
+B , S , WAIT , 35.0
+C , L , WAIT , 413.0
+A , L , WAIT , 2598.0
+B , S , WAIT , 832.0
+A , L , WAIT , 1232.0
+C , L , WAIT , 603.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+362.3682697380956 , 0.06643514917599908 , 0.0 , 15830000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 792.0
+C , S , WAIT , 3189.0
+B , L , WAIT , 3078.0
+A , L , WAIT , 1575.0
+C , S , WAIT , 882.0
+A , S , WAIT , 555.0
+C , L , WAIT , 3390.0
+A , L , WAIT , 2652.0
+A , L , WAIT , 1039.0
+C , L , WAIT , 1245.0
+C , S , WAIT , 3224.0
+C , S , WAIT , 2508.0
+C , L , WAIT , 3115.0
+B , L , WAIT , 2665.0
+A , L , WAIT , 1313.0
+C , S , WAIT , 80.0
+A , L , WAIT , 3445.0
+B , S , WAIT , 81.0
+A , L , WAIT , 2461.0
+A , S , WAIT , 1275.0
+C , S , WAIT , 1444.0
+B , L , WAIT , 628.0
+A , L , WAIT , 389.0
+A , S , WAIT , 2587.0
+A , L , WAIT , 3575.0
+B , L , WAIT , 902.0
+C , S , WAIT , 800.0
+C , S , WAIT , 2888.0
+A , S , WAIT , 1980.0
+A , S , WAIT , 2757.0
+C , L , WAIT , 606.0
+B , L , WAIT , 3035.0
+B , S , WAIT , 1939.0
+A , L , WAIT , 2766.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+422.2958463865533 , 0.016998113387696915 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 540.0
+A , S , WAIT , 137.0
+A , L , WAIT , 2171.0
+A , L , WAIT , 3490.0
+B , L , WAIT , 722.0
+A , S , WAIT , 896.0
+C , S , WAIT , 296.0
+C , L , WAIT , 2073.0
+C , L , WAIT , 1053.0
+A , S , WAIT , 578.0
+A , L , WAIT , 2925.0
+C , S , WAIT , 2857.0
+A , S , WAIT , 695.0
+A , L , WAIT , 2711.0
+B , S , WAIT , 588.0
+A , S , WAIT , 66.0
+A , L , WAIT , 3322.0
+B , L , WAIT , 2107.0
+C , S , WAIT , 3424.0
+B , L , WAIT , 38.0
+A , L , WAIT , 157.0
+A , L , WAIT , 2443.0
+A , S , WAIT , 2955.0
+B , S , WAIT , 1031.0
+A , S , WAIT , 1463.0
+A , L , WAIT , 1303.0
+A , S , WAIT , 1985.0
+A , L , WAIT , 1370.0
+C , L , WAIT , 2005.0
+B , L , WAIT , 744.0
+C , S , WAIT , 2426.0
+B , L , WAIT , 2629.0
+A , L , WAIT , 1069.0
+C , L , WAIT , 3193.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+407.1795058632741 , 0.03771491054392745 , 0.0 , 15380000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 1472.0
+A , L , WAIT , 610.0
+A , L , WAIT , 1285.0
+A , S , WAIT , 1354.0
+A , L , WAIT , 2603.0
+A , L , WAIT , 1753.0
+A , S , WAIT , 2156.0
+A , S , WAIT , 63.0
+A , L , WAIT , 863.0
+A , S , WAIT , 3554.0
+A , S , WAIT , 762.0
+A , S , WAIT , 1246.0
+A , S , WAIT , 2846.0
+C , L , WAIT , 2388.0
+C , L , WAIT , 501.0
+A , S , WAIT , 1093.0
+B , L , WAIT , 3543.0
+B , L , WAIT , 136.0
+C , L , WAIT , 1608.0
+C , S , WAIT , 1830.0
+C , L , WAIT , 3193.0
+B , S , WAIT , 2670.0
+A , L , WAIT , 2529.0
+C , S , WAIT , 773.0
+B , S , WAIT , 1195.0
+A , S , WAIT , 2405.0
+B , S , WAIT , 3573.0
+A , S , WAIT , 3570.0
+B , L , WAIT , 286.0
+A , L , WAIT , 3062.0
+B , L , WAIT , 1655.0
+B , S , WAIT , 272.0
+A , S , WAIT , 673.0
+C , S , WAIT , 470.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+475.24263896522626 , 0.06292943799309764 , 0.0 , 14255000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 3062.0
+C , S , WAIT , 2193.0
+A , S , WAIT , 2168.0
+A , L , WAIT , 3574.0
+B , L , WAIT , 3595.0
+A , S , WAIT , 148.0
+A , L , WAIT , 459.0
+C , S , WAIT , 1084.0
+B , S , WAIT , 2880.0
+B , L , WAIT , 861.0
+B , S , WAIT , 2562.0
+A , S , WAIT , 1244.0
+B , L , WAIT , 38.0
+C , L , WAIT , 1429.0
+C , S , WAIT , 263.0
+A , L , WAIT , 628.0
+A , L , WAIT , 434.0
+A , S , WAIT , 913.0
+C , L , WAIT , 3175.0
+A , L , WAIT , 2524.0
+B , S , WAIT , 869.0
+B , S , WAIT , 2437.0
+B , S , WAIT , 3470.0
+A , S , WAIT , 1099.0
+C , S , WAIT , 2575.0
+A , S , WAIT , 3387.0
+A , L , WAIT , 2416.0
+C , L , WAIT , 2256.0
+A , L , WAIT , 2832.0
+C , L , WAIT , 3151.0
+A , S , WAIT , 2738.0
+B , S , WAIT , 379.0
+B , S , WAIT , 2344.0
+A , L , WAIT , 1586.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+481.96265879647973 , 0.03379559060825719 , 0.0 , 14480000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2192.0
+B , S , WAIT , 1423.0
+B , L , WAIT , 2673.0
+C , L , WAIT , 1170.0
+A , L , WAIT , 2980.0
+C , S , WAIT , 3189.0
+A , L , WAIT , 2790.0
+A , L , WAIT , 609.0
+B , L , WAIT , 998.0
+C , S , WAIT , 2411.0
+C , S , WAIT , 2787.0
+A , L , WAIT , 1421.0
+C , L , WAIT , 2704.0
+A , L , WAIT , 2340.0
+B , S , WAIT , 1907.0
+C , S , WAIT , 2212.0
+C , S , WAIT , 386.0
+A , L , WAIT , 997.0
+A , S , WAIT , 246.0
+B , L , WAIT , 2349.0
+C , S , WAIT , 410.0
+B , L , WAIT , 2068.0
+C , S , WAIT , 853.0
+B , L , WAIT , 969.0
+C , S , WAIT , 2003.0
+A , S , WAIT , 1314.0
+A , L , WAIT , 3287.0
+A , L , WAIT , 1385.0
+B , L , WAIT , 2106.0
+A , S , WAIT , 764.0
+C , L , WAIT , 2918.0
+B , L , WAIT , 480.0
+C , L , WAIT , 3085.0
+A , S , WAIT , 3486.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+464.2562016829669 , 0.04928454367438428 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 1784.0
+C , L , WAIT , 2078.0
+C , L , WAIT , 2797.0
+B , L , WAIT , 3333.0
+A , L , WAIT , 1751.0
+C , L , WAIT , 856.0
+C , S , WAIT , 2165.0
+B , L , WAIT , 266.0
+A , L , WAIT , 2573.0
+B , S , WAIT , 2255.0
+C , S , WAIT , 129.0
+A , L , WAIT , 451.0
+C , L , WAIT , 2412.0
+C , S , WAIT , 1978.0
+A , L , WAIT , 2413.0
+B , S , WAIT , 1206.0
+B , L , WAIT , 2215.0
+A , S , WAIT , 3561.0
+C , S , WAIT , 1227.0
+C , S , WAIT , 2561.0
+A , L , WAIT , 300.0
+B , S , WAIT , 1504.0
+C , L , WAIT , 1963.0
+A , S , WAIT , 1586.0
+C , S , WAIT , 3462.0
+C , L , WAIT , 2271.0
+A , L , WAIT , 2822.0
+A , S , WAIT , 3100.0
+B , L , WAIT , 289.0
+A , L , WAIT , 2331.0
+A , L , WAIT , 1881.0
+A , L , WAIT , 1883.0
+A , S , WAIT , 213.0
+A , S , WAIT , 3395.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+471.09317741230336 , 0.04385972156802334 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 436.0
+A , S , WAIT , 2568.0
+A , L , WAIT , 2200.0
+A , L , WAIT , 2614.0
+C , L , WAIT , 3372.0
+C , S , WAIT , 1542.0
+A , S , WAIT , 2125.0
+B , S , WAIT , 2926.0
+A , L , WAIT , 3098.0
+A , L , WAIT , 2082.0
+C , L , WAIT , 2124.0
+A , L , WAIT , 1901.0
+A , L , WAIT , 1627.0
+A , S , WAIT , 2461.0
+C , S , WAIT , 422.0
+C , L , WAIT , 2218.0
+B , S , WAIT , 1938.0
+B , S , WAIT , 1364.0
+C , L , WAIT , 2813.0
+A , L , WAIT , 1798.0
+B , L , WAIT , 1168.0
+C , L , WAIT , 145.0
+B , S , WAIT , 1508.0
+B , S , WAIT , 153.0
+B , L , WAIT , 1905.0
+C , L , WAIT , 2865.0
+C , S , WAIT , 749.0
+B , L , WAIT , 333.0
+A , L , WAIT , 2138.0
+B , S , WAIT , 446.0
+B , L , WAIT , 1690.0
+A , S , WAIT , 598.0
+A , S , WAIT , 723.0
+B , S , WAIT , 708.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+520.6638803144423 , 0.05245004732448133 , 0.0 , 14930000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2662.0
+A , S , WAIT , 2988.0
+A , L , WAIT , 232.0
+A , L , WAIT , 2033.0
+B , L , WAIT , 2242.0
+B , S , WAIT , 1358.0
+C , S , WAIT , 1195.0
+C , S , WAIT , 327.0
+A , S , WAIT , 2622.0
+C , S , WAIT , 2218.0
+A , S , WAIT , 3434.0
+A , L , WAIT , 69.0
+C , S , WAIT , 3485.0
+C , L , WAIT , 3269.0
+C , L , WAIT , 1773.0
+A , S , WAIT , 246.0
+A , S , WAIT , 1946.0
+A , L , WAIT , 1976.0
+C , L , WAIT , 2048.0
+A , S , WAIT , 1033.0
+B , S , WAIT , 1082.0
+C , S , WAIT , 960.0
+C , S , WAIT , 3307.0
+C , L , WAIT , 2222.0
+A , S , WAIT , 1719.0
+A , S , WAIT , 1097.0
+A , L , WAIT , 1443.0
+C , S , WAIT , 870.0
+A , L , WAIT , 3041.0
+B , S , WAIT , 660.0
+A , S , WAIT , 76.0
+B , L , WAIT , 761.0
+A , S , WAIT , 78.0
+A , L , WAIT , 3101.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+505.2554138305454 , 0.06179240089948531 , 0.0 , 13805000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , WAIT , 1032.0
+C , S , WAIT , 816.0
+A , S , WAIT , 601.0
+B , L , WAIT , 3328.0
+A , L , WAIT , 1017.0
+C , S , WAIT , 987.0
+A , L , WAIT , 1348.0
+A , S , WAIT , 2409.0
+B , L , WAIT , 3461.0
+C , L , WAIT , 2204.0
+C , S , WAIT , 3437.0
+A , L , WAIT , 207.0
+A , L , WAIT , 2334.0
+B , L , WAIT , 3551.0
+B , L , WAIT , 2090.0
+C , L , WAIT , 3596.0
+A , L , WAIT , 1968.0
+C , S , WAIT , 1310.0
+B , S , WAIT , 43.0
+C , S , WAIT , 1358.0
+A , L , WAIT , 1382.0
+B , S , WAIT , 717.0
+B , S , WAIT , 1025.0
+A , L , WAIT , 1266.0
+B , L , WAIT , 1618.0
+B , S , WAIT , 2643.0
+A , L , WAIT , 520.0
+A , L , WAIT , 3523.0
+C , S , WAIT , 1314.0
+A , S , WAIT , 3076.0
+C , S , WAIT , 2897.0
+B , S , WAIT , 3353.0
+C , S , WAIT , 2921.0
+C , L , WAIT , 2360.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+475.5050236389517 , 0.0692863425079531 , 0.0 , 14930000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2320.0
+C , L , WAIT , 3114.0
+B , L , WAIT , 1085.0
+C , L , WAIT , 2291.0
+B , S , WAIT , 302.0
+C , L , WAIT , 3190.0
+A , L , WAIT , 1096.0
+B , S , WAIT , 174.0
+A , S , WAIT , 2840.0
+C , S , WAIT , 2713.0
+B , S , WAIT , 1335.0
+A , L , WAIT , 3176.0
+C , L , WAIT , 2927.0
+C , S , WAIT , 3003.0
+A , L , WAIT , 2270.0
+B , S , WAIT , 1923.0
+A , L , WAIT , 1352.0
+A , L , WAIT , 1817.0
+C , L , WAIT , 1833.0
+A , L , WAIT , 2921.0
+B , S , WAIT , 2314.0
+B , S , WAIT , 3206.0
+A , L , WAIT , 1777.0
+A , S , WAIT , 948.0
+A , L , WAIT , 1217.0
+B , S , WAIT , 2763.0
+A , L , WAIT , 24.0
+C , S , WAIT , 34.0
+C , L , WAIT , 2851.0
+B , L , WAIT , 2733.0
+C , S , WAIT , 2878.0
+C , L , WAIT , 62.0
+A , S , WAIT , 2707.0
+A , S , WAIT , 1418.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+533.5951183673267 , 0.06725754089074179 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2789.0
+A , S , WAIT , 3549.0
+A , S , WAIT , 2547.0
+B , L , WAIT , 579.0
+B , L , WAIT , 2086.0
+B , L , WAIT , 3498.0
+A , L , WAIT , 2645.0
+C , L , WAIT , 3020.0
+C , S , WAIT , 103.0
+B , S , WAIT , 3478.0
+C , L , WAIT , 1967.0
+A , S , WAIT , 3131.0
+C , S , WAIT , 3320.0
+B , L , WAIT , 3296.0
+A , L , WAIT , 2341.0
+A , L , WAIT , 852.0
+A , S , WAIT , 620.0
+B , S , WAIT , 2001.0
+A , S , WAIT , 3039.0
+C , L , WAIT , 124.0
+B , S , WAIT , 3387.0
+A , L , WAIT , 384.0
+B , L , WAIT , 2801.0
+A , L , WAIT , 789.0
+A , S , WAIT , 3542.0
+A , L , WAIT , 2893.0
+A , L , WAIT , 1425.0
+C , S , WAIT , 826.0
+C , S , WAIT , 879.0
+B , S , WAIT , 3098.0
+C , S , WAIT , 1053.0
+C , L , WAIT , 2582.0
+B , L , WAIT , 1533.0
+A , L , WAIT , 3446.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+584.7956471974591 , 0.04905353012668749 , 0.0 , 15155000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 618.0
+A , S , WAIT , 275.0
+B , L , WAIT , 442.0
+B , L , WAIT , 1898.0
+A , S , WAIT , 3420.0
+B , L , WAIT , 1664.0
+C , L , WAIT , 956.0
+B , S , WAIT , 2587.0
+B , L , WAIT , 1787.0
+B , S , WAIT , 2461.0
+A , S , WAIT , 2567.0
+C , L , WAIT , 150.0
+A , L , WAIT , 1656.0
+C , S , WAIT , 3254.0
+A , L , WAIT , 1710.0
+A , L , WAIT , 1510.0
+C , S , WAIT , 1284.0
+A , L , WAIT , 3471.0
+B , S , WAIT , 234.0
+A , S , WAIT , 2808.0
+C , L , WAIT , 904.0
+C , S , WAIT , 2995.0
+C , L , WAIT , 1887.0
+C , L , WAIT , 3584.0
+C , L , WAIT , 1852.0
+A , S , WAIT , 3243.0
+B , S , WAIT , 2100.0
+A , L , WAIT , 3121.0
+A , L , WAIT , 631.0
+C , L , WAIT , 140.0
+A , S , WAIT , 947.0
+A , L , WAIT , 2181.0
+A , L , WAIT , 3473.0
+C , S , WAIT , 5.0
+B , L , WAIT , 1321.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+467.31463365111733 , 0.04654597350129686 , 0.0 , 15925000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 757.0
+B , S , WAIT , 2329.0
+A , L , WAIT , 2378.0
+C , S , WAIT , 3554.0
+B , S , WAIT , 2582.0
+A , S , WAIT , 2829.0
+A , L , WAIT , 961.0
+A , L , WAIT , 2729.0
+A , S , WAIT , 2761.0
+A , L , WAIT , 583.0
+A , L , WAIT , 2802.0
+A , S , WAIT , 3516.0
+B , L , WAIT , 2108.0
+B , L , WAIT , 1669.0
+A , L , WAIT , 744.0
+B , L , WAIT , 3215.0
+C , S , WAIT , 1607.0
+A , S , WAIT , 1918.0
+C , S , WAIT , 363.0
+C , L , WAIT , 3262.0
+B , L , WAIT , 466.0
+C , L , WAIT , 3045.0
+A , L , WAIT , 1322.0
+A , S , WAIT , 2565.0
+B , S , WAIT , 1048.0
+C , S , WAIT , 2129.0
+B , S , WAIT , 1906.0
+C , S , WAIT , 2126.0
+C , S , WAIT , 1148.0
+B , S , WAIT , 1108.0
+A , L , WAIT , 3330.0
+C , L , WAIT , 1770.0
+C , L , WAIT , 1882.0
+B , L , WAIT , 352.0
+C , L , WAIT , 2335.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+485.3988812901486 , 0.02847570388813377 , 0.0 , 15475000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2433.0
+B , L , WAIT , 1977.0
+C , S , WAIT , 2560.0
+A , S , WAIT , 2361.0
+B , L , WAIT , 3265.0
+C , S , WAIT , 1064.0
+A , L , WAIT , 1100.0
+B , L , WAIT , 173.0
+C , L , WAIT , 2272.0
+B , L , WAIT , 843.0
+A , L , WAIT , 2167.0
+A , L , WAIT , 2977.0
+A , S , WAIT , 2410.0
+A , L , WAIT , 1151.0
+A , S , WAIT , 3510.0
+C , S , WAIT , 1041.0
+A , S , WAIT , 1670.0
+B , L , WAIT , 1762.0
+C , L , WAIT , 744.0
+C , S , WAIT , 908.0
+A , L , WAIT , 659.0
+B , S , WAIT , 1078.0
+B , S , WAIT , 834.0
+A , L , WAIT , 56.0
+C , S , WAIT , 695.0
+B , L , WAIT , 135.0
+C , S , WAIT , 1096.0
+C , S , WAIT , 3297.0
+A , L , WAIT , 1398.0
+C , L , WAIT , 1529.0
+C , L , WAIT , 3373.0
+A , S , WAIT , 700.0
+B , S , WAIT , 2725.0
+B , S , WAIT , 2180.0
+A , S , WAIT , 163.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+353.50295107172894 , 0.058002469547 , 0.0 , 15025000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 3562.0
+A , S , WAIT , 3426.0
+A , L , WAIT , 3504.0
+B , L , WAIT , 3452.0
+C , L , WAIT , 441.0
+C , L , WAIT , 629.0
+A , S , WAIT , 2979.0
+C , S , WAIT , 1676.0
+C , L , WAIT , 1708.0
+B , L , WAIT , 233.0
+B , L , WAIT , 2233.0
+C , L , WAIT , 1952.0
+B , L , WAIT , 1716.0
+A , S , WAIT , 583.0
+C , L , WAIT , 1303.0
+B , S , WAIT , 905.0
+A , L , WAIT , 1589.0
+C , S , WAIT , 1527.0
+B , L , WAIT , 1547.0
+C , L , WAIT , 733.0
+B , L , WAIT , 445.0
+A , L , WAIT , 2620.0
+C , L , WAIT , 3199.0
+A , L , WAIT , 2573.0
+A , L , WAIT , 2390.0
+B , S , WAIT , 1266.0
+B , S , WAIT , 2444.0
+C , L , WAIT , 3480.0
+A , S , WAIT , 1199.0
+A , S , WAIT , 465.0
+A , L , WAIT , 586.0
+A , L , WAIT , 2695.0
+C , S , WAIT , 3320.0
+A , S , WAIT , 265.0
+C , L , WAIT , 2035.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+512.4789087669238 , 0.04818078873899144 , 0.0 , 16375000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 704.0
+B , L , WAIT , 732.0
+B , L , WAIT , 3398.0
+B , L , WAIT , 343.0
+A , L , WAIT , 2147.0
+B , L , WAIT , 1583.0
+A , S , WAIT , 1478.0
+B , L , WAIT , 2083.0
+A , L , WAIT , 81.0
+B , S , WAIT , 83.0
+C , S , WAIT , 3593.0
+A , S , WAIT , 2619.0
+C , L , WAIT , 3018.0
+C , S , WAIT , 1842.0
+B , S , WAIT , 1690.0
+C , S , WAIT , 1673.0
+A , L , WAIT , 3050.0
+B , L , WAIT , 2196.0
+A , S , WAIT , 1824.0
+B , L , WAIT , 988.0
+A , S , WAIT , 1892.0
+C , L , WAIT , 358.0
+A , S , WAIT , 1045.0
+C , L , WAIT , 1821.0
+B , L , WAIT , 83.0
+A , L , WAIT , 2642.0
+A , L , WAIT , 1366.0
+A , L , WAIT , 2497.0
+B , S , WAIT , 1942.0
+C , L , WAIT , 1979.0
+C , S , WAIT , 3051.0
+A , L , WAIT , 2213.0
+C , S , WAIT , 2163.0
+C , L , WAIT , 994.0
+B , L , WAIT , 1783.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+519.6534338192007 , 0.0681488651067559 , 0.0 , 15925000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2781.0
+A , S , WAIT , 3058.0
+C , L , WAIT , 1389.0
+C , L , WAIT , 1687.0
+A , L , WAIT , 2675.0
+A , L , WAIT , 1876.0
+C , S , WAIT , 2961.0
+A , S , WAIT , 1432.0
+C , L , WAIT , 244.0
+C , S , WAIT , 980.0
+C , S , WAIT , 2159.0
+C , S , WAIT , 1584.0
+B , L , WAIT , 2473.0
+A , S , WAIT , 596.0
+A , S , WAIT , 2212.0
+A , L , WAIT , 3309.0
+C , S , WAIT , 358.0
+B , S , WAIT , 1544.0
+A , L , WAIT , 12.0
+C , S , WAIT , 1002.0
+B , S , WAIT , 3540.0
+C , S , WAIT , 3017.0
+A , S , WAIT , 714.0
+A , L , WAIT , 3492.0
+C , S , WAIT , 2960.0
+C , S , WAIT , 2493.0
+B , S , WAIT , 3042.0
+B , S , WAIT , 3323.0
+A , S , WAIT , 537.0
+B , L , WAIT , 2972.0
+A , L , WAIT , 2648.0
+C , L , WAIT , 3241.0
+A , L , WAIT , 1277.0
+A , L , WAIT , 683.0
+B , L , WAIT , 546.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+438.5930813279534 , 0.029892399783052248 , 0.0 , 14800000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 1960.0
+A , S , WAIT , 2247.0
+A , L , WAIT , 2252.0
+A , S , WAIT , 27.0
+C , S , WAIT , 1924.0
+C , L , WAIT , 2045.0
+A , L , WAIT , 3111.0
+C , L , WAIT , 191.0
+A , S , WAIT , 1907.0
+C , S , WAIT , 1972.0
+B , L , WAIT , 1607.0
+C , L , WAIT , 241.0
+A , L , WAIT , 2690.0
+C , L , WAIT , 3333.0
+A , S , WAIT , 1517.0
+A , S , WAIT , 2555.0
+A , L , WAIT , 2459.0
+A , L , WAIT , 700.0
+A , L , WAIT , 6.0
+A , L , WAIT , 1060.0
+B , S , WAIT , 951.0
+B , L , WAIT , 3201.0
+A , S , WAIT , 269.0
+B , S , WAIT , 244.0
+A , L , WAIT , 2957.0
+C , L , WAIT , 189.0
+C , L , WAIT , 1897.0
+C , S , WAIT , 2527.0
+A , L , WAIT , 2058.0
+B , L , WAIT , 2850.0
+A , L , WAIT , 3515.0
+A , S , WAIT , 125.0
+B , S , WAIT , 567.0
+A , L , WAIT , 162.0
+C , L , WAIT , 1664.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+427.5924942921405 , 0.04919046609274568 , 0.0 , 15925000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2514.0
+B , S , WAIT , 2002.0
+C , L , WAIT , 304.0
+C , L , WAIT , 1451.0
+A , L , WAIT , 1282.0
+A , L , WAIT , 3302.0
+A , S , WAIT , 315.0
+A , S , WAIT , 2962.0
+A , L , WAIT , 1729.0
+B , L , WAIT , 1896.0
+C , S , WAIT , 673.0
+C , S , WAIT , 3344.0
+B , L , WAIT , 1820.0
+A , S , WAIT , 1751.0
+A , S , WAIT , 3587.0
+B , L , WAIT , 144.0
+C , L , WAIT , 2712.0
+A , S , WAIT , 2257.0
+B , S , WAIT , 551.0
+A , L , WAIT , 575.0
+A , L , WAIT , 3103.0
+A , S , WAIT , 1384.0
+B , S , WAIT , 2198.0
+B , S , WAIT , 1217.0
+A , S , WAIT , 2688.0
+C , L , WAIT , 1678.0
+B , L , WAIT , 3041.0
+A , L , WAIT , 3488.0
+C , L , WAIT , 2469.0
+C , S , WAIT , 2921.0
+C , S , WAIT , 1713.0
+A , S , WAIT , 2224.0
+A , S , WAIT , 2308.0
+C , L , WAIT , 3573.0
+A , S , WAIT , 2037.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+493.0172921939182 , 0.009744573190003925 , 0.0 , 14800000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 2949.0
+C , L , WAIT , 407.0
+C , L , WAIT , 2132.0
+B , L , WAIT , 1747.0
+B , L , WAIT , 1957.0
+B , S , WAIT , 770.0
+B , S , WAIT , 1415.0
+B , S , WAIT , 3432.0
+B , S , WAIT , 265.0
+C , S , WAIT , 416.0
+A , L , WAIT , 2909.0
+C , L , WAIT , 3139.0
+C , S , WAIT , 2479.0
+A , L , WAIT , 2254.0
+A , L , WAIT , 1547.0
+A , S , WAIT , 1781.0
+A , S , WAIT , 3495.0
+A , L , WAIT , 3247.0
+A , S , WAIT , 1459.0
+B , L , WAIT , 918.0
+B , L , WAIT , 1314.0
+B , L , WAIT , 3327.0
+C , L , WAIT , 1590.0
+A , L , WAIT , 1919.0
+C , L , WAIT , 3267.0
+A , L , WAIT , 419.0
+A , S , WAIT , 794.0
+A , S , WAIT , 2480.0
+A , S , WAIT , 1483.0
+C , S , WAIT , 772.0
+B , S , WAIT , 2541.0
+A , S , WAIT , 2857.0
+B , S , WAIT , 1839.0
+A , S , WAIT , 2950.0
+C , L , WAIT , 1142.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+501.4554056033059 , 0.053899020663026154 , 0.0 , 15025000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 14.0
+A , S , WAIT , 72.0
+B , S , WAIT , 866.0
+B , L , WAIT , 2729.0
+A , L , WAIT , 2018.0
+B , S , WAIT , 2634.0
+B , S , WAIT , 1712.0
+C , L , WAIT , 267.0
+A , L , WAIT , 1562.0
+C , L , WAIT , 2944.0
+B , S , WAIT , 2642.0
+C , S , WAIT , 1902.0
+A , S , WAIT , 3463.0
+B , S , WAIT , 3182.0
+C , S , WAIT , 676.0
+A , S , WAIT , 774.0
+A , L , WAIT , 820.0
+A , L , WAIT , 1577.0
+C , S , WAIT , 3292.0
+C , L , WAIT , 3448.0
+A , S , WAIT , 1389.0
+A , L , WAIT , 3366.0
+B , L , WAIT , 1863.0
+A , S , WAIT , 3586.0
+C , S , WAIT , 2670.0
+C , L , WAIT , 2957.0
+B , L , WAIT , 1835.0
+A , S , WAIT , 1994.0
+B , S , WAIT , 704.0
+A , L , WAIT , 2676.0
+A , S , WAIT , 1634.0
+C , L , WAIT , 1208.0
+B , L , WAIT , 2779.0
+C , S , WAIT , 3124.0
+A , L , WAIT , 2340.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+532.737646570382 , 0.038896488579671734 , 0.0 , 15025000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 1417.0
+A , S , WAIT , 3591.0
+A , S , WAIT , 1250.0
+C , S , WAIT , 3405.0
+A , L , WAIT , 1291.0
+C , L , WAIT , 2526.0
+B , L , WAIT , 2041.0
+A , S , WAIT , 915.0
+A , S , WAIT , 1599.0
+A , L , WAIT , 2037.0
+C , L , WAIT , 634.0
+A , S , WAIT , 2313.0
+C , S , WAIT , 3530.0
+C , L , WAIT , 642.0
+A , S , WAIT , 187.0
+C , S , WAIT , 959.0
+C , L , WAIT , 1907.0
+C , S , WAIT , 3500.0
+B , L , WAIT , 572.0
+B , L , WAIT , 121.0
+A , L , WAIT , 2869.0
+A , L , WAIT , 2842.0
+A , S , WAIT , 2148.0
+C , L , WAIT , 2849.0
+B , S , WAIT , 1781.0
+A , S , WAIT , 2549.0
+B , L , WAIT , 3055.0
+B , S , WAIT , 1751.0
+C , S , WAIT , 2540.0
+B , L , WAIT , 1120.0
+C , L , WAIT , 241.0
+A , L , WAIT , 2777.0
+A , L , WAIT , 680.0
+C , S , WAIT , 3220.0
+A , L , WAIT , 2055.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+431.37293938575624 , 0.033744308636805984 , 0.0 , 15250000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , WAIT , 1269.0
+A , L , WAIT , 2441.0
+A , L , WAIT , 1396.0
+A , L , WAIT , 3468.0
+C , L , WAIT , 99.0
+B , L , WAIT , 1513.0
+C , L , WAIT , 3065.0
+A , L , WAIT , 1486.0
+A , S , WAIT , 3132.0
+B , S , WAIT , 1054.0
+A , L , WAIT , 1392.0
+C , L , WAIT , 3072.0
+B , S , WAIT , 1368.0
+C , S , WAIT , 997.0
+A , L , WAIT , 676.0
+B , L , WAIT , 2286.0
+A , L , WAIT , 522.0
+B , L , WAIT , 488.0
+A , L , WAIT , 1099.0
+B , L , WAIT , 1697.0
+B , S , WAIT , 1791.0
+A , L , WAIT , 3407.0
+A , S , WAIT , 83.0
+A , L , WAIT , 1930.0
+A , L , WAIT , 1749.0
+C , L , WAIT , 456.0
+A , L , WAIT , 1049.0
+C , S , WAIT , 626.0
+B , L , WAIT , 2845.0
+C , S , WAIT , 2336.0
+C , L , WAIT , 1424.0
+B , L , WAIT , 730.0
+B , S , WAIT , 1779.0
+C , S , WAIT , 3023.0
+B , L , WAIT , 1102.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+382.26009277529755 , 0.0611822058452265 , 0.0 , 16825000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 3198.0
+C , L , WAIT , 152.0
+B , S , WAIT , 1634.0
+A , L , WAIT , 639.0
+A , L , WAIT , 2599.0
+A , L , WAIT , 1140.0
+C , L , WAIT , 3467.0
+C , S , WAIT , 723.0
+C , L , WAIT , 1604.0
+C , L , WAIT , 3505.0
+A , L , WAIT , 1660.0
+B , S , WAIT , 749.0
+B , S , WAIT , 3158.0
+A , S , WAIT , 725.0
+B , S , WAIT , 843.0
+A , L , WAIT , 2478.0
+A , L , WAIT , 1214.0
+C , S , WAIT , 3432.0
+A , S , WAIT , 193.0
+A , L , WAIT , 2136.0
+A , L , WAIT , 236.0
+A , L , WAIT , 13.0
+A , L , WAIT , 3567.0
+A , S , WAIT , 1484.0
+A , S , WAIT , 2058.0
+B , S , WAIT , 91.0
+B , S , WAIT , 1951.0
+A , S , WAIT , 929.0
+C , L , WAIT , 1288.0
+A , L , WAIT , 1864.0
+C , S , WAIT , 888.0
+A , S , WAIT , 3246.0
+A , L , WAIT , 1894.0
+C , L , WAIT , 2421.0
+A , L , WAIT , 83.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+385.59262036320604 , 0.047631798073357254 , 0.0 , 15700000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2697.0
+B , S , WAIT , 3353.0
+C , S , WAIT , 1785.0
+A , S , WAIT , 2173.0
+A , L , WAIT , 1978.0
+C , L , WAIT , 2906.0
+C , L , WAIT , 2377.0
+C , L , WAIT , 1260.0
+C , S , WAIT , 2612.0
+A , S , WAIT , 3232.0
+A , L , WAIT , 3195.0
+B , S , WAIT , 3243.0
+A , L , WAIT , 778.0
+C , L , WAIT , 235.0
+C , S , WAIT , 3128.0
+A , S , WAIT , 1271.0
+B , S , WAIT , 2418.0
+A , L , WAIT , 858.0
+C , S , WAIT , 2635.0
+A , L , WAIT , 997.0
+B , L , WAIT , 276.0
+B , L , WAIT , 1858.0
+C , L , WAIT , 31.0
+A , L , WAIT , 1732.0
+A , S , WAIT , 3294.0
+C , L , WAIT , 1577.0
+C , S , WAIT , 1023.0
+A , S , WAIT , 2021.0
+A , L , WAIT , 1324.0
+A , S , WAIT , 2562.0
+B , S , WAIT , 1510.0
+B , L , WAIT , 1247.0
+A , S , WAIT , 584.0
+A , L , WAIT , 391.0
+C , L , WAIT , 1450.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+355.64775684800657 , 0.06546437479734571 , 0.0 , 15475000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 839.0
+C , L , WAIT , 668.0
+A , L , WAIT , 350.0
+B , S , WAIT , 1824.0
+C , S , WAIT , 2068.0
+A , S , WAIT , 3141.0
+C , S , WAIT , 1901.0
+C , L , WAIT , 3600.0
+B , S , WAIT , 2957.0
+A , L , WAIT , 607.0
+B , L , WAIT , 1742.0
+C , L , WAIT , 1334.0
+C , L , WAIT , 1024.0
+A , S , WAIT , 549.0
+C , S , WAIT , 514.0
+B , L , WAIT , 158.0
+A , L , WAIT , 1402.0
+A , S , WAIT , 3061.0
+A , S , WAIT , 3042.0
+A , L , WAIT , 2301.0
+B , S , WAIT , 2273.0
+A , S , WAIT , 2721.0
+C , S , WAIT , 3249.0
+B , S , WAIT , 2445.0
+A , L , WAIT , 3511.0
+A , L , WAIT , 178.0
+A , S , WAIT , 484.0
+B , S , WAIT , 2729.0
+B , S , WAIT , 2915.0
+C , S , WAIT , 1987.0
+A , S , WAIT , 3064.0
+B , S , WAIT , 94.0
+A , L , WAIT , 1852.0
+C , L , WAIT , 1407.0
+C , L , WAIT , 3546.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+518.7405848959218 , 0.06272209125366267 , 0.0 , 14800000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 2633.0
+B , S , WAIT , 3599.0
+C , L , WAIT , 1535.0
+A , L , WAIT , 1330.0
+B , L , WAIT , 150.0
+A , L , WAIT , 3462.0
+A , S , WAIT , 3007.0
+C , S , WAIT , 3391.0
+C , S , WAIT , 2318.0
+A , L , WAIT , 3351.0
+B , L , WAIT , 1838.0
+B , L , WAIT , 182.0
+C , L , WAIT , 2792.0
+A , L , WAIT , 1040.0
+B , L , WAIT , 1893.0
+A , L , WAIT , 1189.0
+A , L , WAIT , 1762.0
+A , L , WAIT , 1993.0
+C , L , WAIT , 475.0
+B , S , WAIT , 1097.0
+C , L , WAIT , 3005.0
+C , S , WAIT , 863.0
+C , L , WAIT , 1785.0
+C , S , WAIT , 2414.0
+B , S , WAIT , 783.0
+A , S , WAIT , 2286.0
+C , L , WAIT , 1217.0
+A , S , WAIT , 597.0
+C , S , WAIT , 44.0
+A , S , WAIT , 988.0
+A , L , WAIT , 658.0
+B , S , WAIT , 2153.0
+A , S , WAIT , 1756.0
+A , L , WAIT , 470.0
+C , S , WAIT , 1675.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+346.949332096431 , 0.04043672973444832 , 0.0 , 15475000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , WAIT , 359.0
+C , S , WAIT , 1078.0
+B , L , WAIT , 836.0
+A , S , WAIT , 690.0
+B , S , WAIT , 1035.0
+A , L , WAIT , 1817.0
+A , S , WAIT , 1771.0
+C , S , WAIT , 3045.0
+A , L , WAIT , 1755.0
+A , S , WAIT , 2922.0
+A , L , WAIT , 338.0
+B , L , WAIT , 2166.0
+A , S , WAIT , 3423.0
+B , L , WAIT , 22.0
+C , S , WAIT , 3048.0
+A , S , WAIT , 2448.0
+B , L , WAIT , 2821.0
+C , S , WAIT , 3531.0
+A , L , WAIT , 3465.0
+B , S , WAIT , 1341.0
+A , S , WAIT , 807.0
+C , L , WAIT , 3494.0
+C , S , WAIT , 1621.0
+A , S , WAIT , 1886.0
+A , S , WAIT , 1416.0
+B , L , WAIT , 3237.0
+A , S , WAIT , 3578.0
+B , S , WAIT , 615.0
+C , S , WAIT , 3570.0
+C , S , WAIT , 1657.0
+A , L , WAIT , 210.0
+A , S , WAIT , 1126.0
+C , L , WAIT , 1178.0
+B , S , WAIT , 3220.0
+A , L , WAIT , 2837.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+480.5789678228081 , 0.016091167743444962 , 0.0 , 14125000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 546.0
+B , L , WAIT , 373.0
+A , L , WAIT , 1424.0
+A , S , WAIT , 877.0
+B , L , WAIT , 2877.0
+B , S , WAIT , 3375.0
+C , S , WAIT , 3351.0
+A , S , WAIT , 2265.0
+A , S , WAIT , 2829.0
+B , L , WAIT , 2552.0
+B , L , WAIT , 2752.0
+C , L , WAIT , 3285.0
+A , L , WAIT , 2095.0
+A , S , WAIT , 3481.0
+C , L , WAIT , 3178.0
+C , S , WAIT , 2672.0
+C , L , WAIT , 1491.0
+A , S , WAIT , 2970.0
+B , L , WAIT , 305.0
+B , L , WAIT , 1685.0
+C , S , WAIT , 153.0
+A , S , WAIT , 3421.0
+B , L , WAIT , 861.0
+A , L , WAIT , 1503.0
+B , S , WAIT , 555.0
+A , L , WAIT , 983.0
+A , L , WAIT , 2449.0
+A , S , WAIT , 1508.0
+A , S , WAIT , 1952.0
+A , S , WAIT , 1302.0
+A , L , WAIT , 1571.0
+B , S , WAIT , 1254.0
+C , S , WAIT , 998.0
+C , S , WAIT , 1620.0
+B , S , WAIT , 713.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+522.9280438800123 , 0.04689834048188516 , 0.0 , 14800000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2300.0
+C , S , WAIT , 850.0
+B , S , WAIT , 3076.0
+A , L , WAIT , 1130.0
+A , S , WAIT , 391.0
+B , S , WAIT , 1193.0
+A , L , WAIT , 1351.0
+B , L , WAIT , 607.0
+C , L , WAIT , 327.0
+C , S , WAIT , 2808.0
+A , L , WAIT , 2702.0
+B , S , WAIT , 2620.0
+C , L , WAIT , 2812.0
+B , L , WAIT , 1709.0
+C , S , WAIT , 3428.0
+A , L , WAIT , 2727.0
+C , L , WAIT , 409.0
+A , L , WAIT , 2373.0
+B , S , WAIT , 2705.0
+A , S , WAIT , 1292.0
+C , S , WAIT , 311.0
+C , L , WAIT , 2172.0
+B , S , WAIT , 683.0
+C , S , WAIT , 2786.0
+B , S , WAIT , 1462.0
+C , S , WAIT , 1425.0
+C , L , WAIT , 2117.0
+A , S , WAIT , 3592.0
+C , L , WAIT , 3210.0
+A , S , WAIT , 1468.0
+A , S , WAIT , 1397.0
+C , S , WAIT , 915.0
+A , L , WAIT , 48.0
+B , S , WAIT , 2951.0
+A , L , WAIT , 1670.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+422.8927182392287 , 0.05438096651415605 , 0.0 , 14800000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 1031.0
+C , S , WAIT , 1274.0
+A , L , WAIT , 1759.0
+B , L , WAIT , 649.0
+B , S , WAIT , 1691.0
+B , L , WAIT , 2940.0
+B , S , WAIT , 2567.0
+A , L , WAIT , 1228.0
+B , L , WAIT , 1206.0
+A , S , WAIT , 3231.0
+A , L , WAIT , 300.0
+A , L , WAIT , 2687.0
+C , L , WAIT , 1128.0
+A , S , WAIT , 3225.0
+C , L , WAIT , 345.0
+B , S , WAIT , 2736.0
+B , S , WAIT , 3557.0
+A , S , WAIT , 1859.0
+C , L , WAIT , 1450.0
+C , L , WAIT , 2071.0
+A , L , WAIT , 1977.0
+A , S , WAIT , 1167.0
+A , L , WAIT , 2337.0
+C , L , WAIT , 3245.0
+B , L , WAIT , 3393.0
+A , L , WAIT , 651.0
+A , L , WAIT , 3552.0
+C , S , WAIT , 823.0
+C , S , WAIT , 2293.0
+B , L , WAIT , 1333.0
+A , L , WAIT , 496.0
+B , S , WAIT , 2625.0
+A , S , WAIT , 2144.0
+A , L , WAIT , 2243.0
+C , S , WAIT , 2438.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+349.982547806793 , 0.039373813339343845 , 0.0 , 15700000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 1617.0
+A , L , WAIT , 3172.0
+A , L , WAIT , 33.0
+C , L , WAIT , 3131.0
+C , S , WAIT , 2875.0
+C , L , WAIT , 3329.0
+B , S , WAIT , 3432.0
+A , S , WAIT , 1579.0
+B , L , WAIT , 682.0
+B , L , WAIT , 683.0
+B , S , WAIT , 2341.0
+A , S , WAIT , 2095.0
+C , S , WAIT , 2187.0
+C , L , WAIT , 3122.0
+A , S , WAIT , 2268.0
+C , L , WAIT , 3464.0
+A , L , WAIT , 467.0
+A , S , WAIT , 2910.0
+C , S , WAIT , 2537.0
+A , L , WAIT , 208.0
+B , L , WAIT , 2635.0
+B , L , WAIT , 848.0
+A , L , WAIT , 1199.0
+C , L , WAIT , 2875.0
+A , L , WAIT , 1431.0
+C , S , WAIT , 871.0
+A , L , WAIT , 3142.0
+A , S , WAIT , 814.0
+C , S , WAIT , 1442.0
+B , L , WAIT , 1841.0
+B , S , WAIT , 80.0
+B , S , WAIT , 2395.0
+C , S , WAIT , 2797.0
+C , L , WAIT , 17.0
+C , S , WAIT , 673.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+444.08623379980736 , 0.059706056594696376 , 0.0 , 15475000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , WAIT , 3542.0
+C , L , WAIT , 1148.0
+B , L , WAIT , 1928.0
+B , L , WAIT , 1806.0
+B , S , WAIT , 1784.0
+A , L , WAIT , 2252.0
+B , S , WAIT , 3468.0
+C , L , WAIT , 3069.0
+A , L , WAIT , 1287.0
+C , L , WAIT , 873.0
+A , S , WAIT , 1152.0
+C , L , WAIT , 3469.0
+A , S , WAIT , 2337.0
+A , L , WAIT , 989.0
+C , S , WAIT , 1011.0
+A , S , WAIT , 1637.0
+B , L , WAIT , 3391.0
+B , L , WAIT , 3434.0
+A , S , WAIT , 1783.0
+B , S , WAIT , 246.0
+A , L , WAIT , 1128.0
+A , S , WAIT , 2771.0
+A , S , WAIT , 3463.0
+C , L , WAIT , 281.0
+A , S , WAIT , 1048.0
+C , S , WAIT , 3578.0
+C , S , WAIT , 2670.0
+A , S , WAIT , 1198.0
+A , S , WAIT , 2524.0
+A , S , WAIT , 3057.0
+A , S , WAIT , 3214.0
+A , S , WAIT , 66.0
+C , L , WAIT , 2393.0
+A , L , WAIT , 1357.0
+A , L , WAIT , 2588.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+490.278089313011 , 0.03840277802712292 , 0.0 , 15025000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , WAIT , 1637.0
+B , L , WAIT , 2216.0
+B , S , WAIT , 761.0
+A , S , WAIT , 2120.0
+C , S , WAIT , 2090.0
+C , L , WAIT , 434.0
+A , L , WAIT , 1839.0
+B , S , WAIT , 1221.0
+A , S , WAIT , 3525.0
+A , L , WAIT , 895.0
+A , L , WAIT , 350.0
+C , S , WAIT , 2938.0
+B , L , WAIT , 812.0
+C , L , WAIT , 77.0
+A , L , WAIT , 693.0
+A , S , WAIT , 215.0
+A , L , WAIT , 2680.0
+C , L , WAIT , 2085.0
+A , S , WAIT , 3045.0
+C , L , WAIT , 1888.0
+A , L , WAIT , 2743.0
+A , S , WAIT , 2834.0
+B , L , WAIT , 355.0
+B , L , WAIT , 2823.0
+B , L , WAIT , 100.0
+C , L , WAIT , 2839.0
+A , S , WAIT , 873.0
+C , L , WAIT , 3254.0
+C , S , WAIT , 3291.0
+A , L , WAIT , 3394.0
+A , S , WAIT , 1092.0
+C , L , WAIT , 1935.0
+A , L , WAIT , 3331.0
+C , L , WAIT , 2896.0
+B , L , WAIT , 522.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+416.4878605117101 , 0.025409855184291265 , 0.0 , 16150000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 2317.0
+A , S , WAIT , 2104.0
+A , L , WAIT , 2221.0
+C , S , WAIT , 3419.0
+B , L , WAIT , 248.0
+B , S , WAIT , 2407.0
+B , L , WAIT , 893.0
+A , S , WAIT , 1548.0
+A , L , WAIT , 1610.0
+B , L , WAIT , 3492.0
+B , L , WAIT , 1675.0
+A , S , WAIT , 3031.0
+C , L , WAIT , 991.0
+B , S , WAIT , 859.0
+C , S , WAIT , 1957.0
+A , L , WAIT , 2041.0
+B , S , WAIT , 2723.0
+C , S , WAIT , 1348.0
+C , L , WAIT , 3538.0
+A , L , WAIT , 2723.0
+B , L , WAIT , 619.0
+C , S , WAIT , 1792.0
+A , L , WAIT , 2182.0
+B , L , WAIT , 1217.0
+A , L , WAIT , 3277.0
+A , L , WAIT , 2413.0
+C , L , WAIT , 1944.0
+A , L , WAIT , 2548.0
+B , L , WAIT , 134.0
+C , L , WAIT , 3127.0
+C , L , WAIT , 1200.0
+C , L , WAIT , 2740.0
+B , S , WAIT , 170.0
+C , L , WAIT , 323.0
+A , L , WAIT , 2545.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+589.9419784783365 , 0.027051817805778717 , 0.0 , 16600000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 3208.0
+C , S , WAIT , 1165.0
+B , S , WAIT , 1527.0
+A , L , WAIT , 329.0
+B , S , WAIT , 2667.0
+A , L , WAIT , 2179.0
+A , S , WAIT , 1123.0
+B , L , WAIT , 3047.0
+A , S , WAIT , 1686.0
+B , L , WAIT , 595.0
+A , S , WAIT , 1662.0
+C , L , WAIT , 2121.0
+A , L , WAIT , 1165.0
+B , L , WAIT , 3469.0
+B , L , WAIT , 740.0
+A , L , WAIT , 2661.0
+C , L , WAIT , 993.0
+C , S , WAIT , 951.0
+B , S , WAIT , 2048.0
+A , S , WAIT , 2825.0
+A , S , WAIT , 2943.0
+C , S , WAIT , 193.0
+B , S , WAIT , 1850.0
+A , S , WAIT , 1829.0
+A , L , WAIT , 1539.0
+C , S , WAIT , 2441.0
+A , S , WAIT , 421.0
+A , S , WAIT , 3449.0
+A , L , WAIT , 2607.0
+C , L , WAIT , 484.0
+C , L , WAIT , 3410.0
+A , L , WAIT , 590.0
+C , L , WAIT , 1318.0
+A , L , WAIT , 1285.0
+B , L , WAIT , 1515.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+302.67567686055907 , 0.030660990833720043 , 0.0 , 15475000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , WAIT , 59.0
+A , S , WAIT , 3208.0
+C , L , WAIT , 2740.0
+B , L , WAIT , 2945.0
+A , S , WAIT , 3195.0
+C , S , WAIT , 1460.0
+C , L , WAIT , 1659.0
+A , S , WAIT , 595.0
+B , L , WAIT , 1386.0
+B , L , WAIT , 2996.0
+A , S , WAIT , 560.0
+A , L , WAIT , 2752.0
+A , L , WAIT , 3127.0
+A , S , WAIT , 230.0
+C , S , WAIT , 2960.0
+B , L , WAIT , 1133.0
+A , L , WAIT , 3305.0
+A , L , WAIT , 3474.0
+C , S , WAIT , 2473.0
+B , L , WAIT , 1330.0
+A , S , WAIT , 1124.0
+A , S , WAIT , 2334.0
+A , L , WAIT , 1360.0
+C , L , WAIT , 337.0
+B , S , WAIT , 1814.0
+A , S , WAIT , 1701.0
+C , S , WAIT , 945.0
+A , S , WAIT , 2017.0
+C , S , WAIT , 2130.0
+C , S , WAIT , 1294.0
+B , S , WAIT , 1364.0
+A , L , WAIT , 3339.0
+A , L , WAIT , 1855.0
+A , L , WAIT , 920.0
+B , L , WAIT , 538.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+475.1071222148113 , 0.054511520360507694 , 0.0 , 15250000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , WAIT , 2076.0
+B , S , WAIT , 76.0
+A , L , WAIT , 1329.0
+C , L , WAIT , 475.0
+B , S , WAIT , 2071.0
+A , L , WAIT , 1049.0
+B , S , WAIT , 717.0
+A , L , WAIT , 892.0
+A , L , WAIT , 3246.0
+B , S , WAIT , 3309.0
+C , S , WAIT , 184.0
+B , S , WAIT , 2198.0
+A , S , WAIT , 3326.0
+C , S , WAIT , 3415.0
+B , S , WAIT , 912.0
+B , L , WAIT , 819.0
+A , L , WAIT , 936.0
+A , S , WAIT , 1940.0
+C , L , WAIT , 1567.0
+A , L , WAIT , 2706.0
+C , L , WAIT , 3232.0
+C , S , WAIT , 3035.0
+C , S , WAIT , 1946.0
+A , S , WAIT , 275.0
+A , S , WAIT , 2353.0
+B , S , WAIT , 1327.0
+B , S , WAIT , 3094.0
+C , S , WAIT , 2903.0
+A , L , WAIT , 740.0
+A , S , WAIT , 3241.0
+C , S , WAIT , 3438.0
+A , L , WAIT , 2274.0
+C , S , WAIT , 1828.0
+B , S , WAIT , 332.0
+B , L , WAIT , 140.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+417.9932102445156 , 0.022265466515774546 , 0.0 , 14350000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , S , WAIT , 2035.0
+B , S , WAIT , 1860.0
+C , L , WAIT , 237.0
+A , S , WAIT , 2427.0
+A , S , WAIT , 3330.0
+A , S , WAIT , 2481.0
+A , S , WAIT , 335.0
+C , S , WAIT , 1480.0
+B , S , WAIT , 1321.0
+C , L , WAIT , 2249.0
+A , L , WAIT , 810.0
+A , S , WAIT , 1675.0
+A , S , WAIT , 3546.0
+B , S , WAIT , 2542.0
+C , L , WAIT , 309.0
+B , L , WAIT , 2454.0
+B , S , WAIT , 1840.0
+A , L , WAIT , 1632.0
+A , L , WAIT , 757.0
+C , L , WAIT , 1687.0
+C , S , WAIT , 3457.0
+C , S , WAIT , 1127.0
+B , L , WAIT , 515.0
+A , S , WAIT , 3411.0
+B , S , WAIT , 1451.0
+A , S , WAIT , 2253.0
+C , L , WAIT , 2986.0
+C , L , WAIT , 1047.0
+A , S , WAIT , 1857.0
+B , S , WAIT , 657.0
+B , L , WAIT , 2115.0
+C , L , WAIT , 3443.0
+A , S , WAIT , 3226.0
+B , S , WAIT , 128.0
+A , L , WAIT , 3489.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+583.0320314578514 , 0.0643653845156785 , 0.0 , 14350000
+
+ 
+ 

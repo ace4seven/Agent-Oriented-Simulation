@@ -39,6 +39,9 @@ class BusHockeySimulation : Simulation() {
     var averageMicrobusProfit = Stat()
         private set
 
+    var averageBusesAvailability = mutableMapOf<Int, Stat>()
+        private set
+
     init {
         prepareAgents()
     }
@@ -65,6 +68,10 @@ class BusHockeySimulation : Simulation() {
             averageWaitingBusStopStat[it.name] = Stat()
             averageHeightBusStopStat[it.name] = Stat()
         }
+
+        agentBus()!!.vehicles.forEach {
+            averageBusesAvailability[it.id] = Stat()
+        }
     }
 
     public override fun prepareReplication() {
@@ -86,6 +93,10 @@ class BusHockeySimulation : Simulation() {
                 averageWaitingBusStopStat[it.key]?.addSample(it.value.getWaitingStats().mean())
                 averageHeightBusStopStat[it.key]!!.addSample(it.value.getStopHeight().mean())
             }
+        }
+
+        agentBus()!!.vehicles.forEach {
+            averageBusesAvailability[it.id]!!.addSample(it.busyFactorheight.mean() / it.type.capacity())
         }
 
         var microbusProfit = 0
@@ -112,6 +123,10 @@ class BusHockeySimulation : Simulation() {
         }
 
         averageHeightBusStopStat.forEach {
+            it.value.clear()
+        }
+
+        averageBusesAvailability.forEach {
             it.value.clear()
         }
 

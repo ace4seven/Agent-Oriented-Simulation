@@ -179,16 +179,28 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
         }
 
         vbox {
-            D.resetBusTables = button("Vymaž záznamy") {
-                vboxConstraints {
-                    marginTop = 20.0
-                    marginLeft = 20.0
-                }
-                action {
-                    D.alert(Alert.AlertType.WARNING, "Pozor", "Naozaj chcete vymazat všetky záznamy?") {
-                        apply {
-                            D.clearBusTables()
+            hbox {
+                D.resetBusTables = button("Vymaž záznamy") {
+                    hboxConstraints {
+                        marginTop = 20.0
+                        marginLeft = 20.0
+                    }
+                    action {
+                        D.alert(Alert.AlertType.WARNING, "Pozor", "Naozaj chcete vymazat všetky záznamy?") {
+                            apply {
+                                D.clearBusTables()
+                            }
                         }
+                    }
+                }
+
+                button("Uložiť konfiguráciu") {
+                    hboxConstraints {
+                        marginTop = 20.0
+                        marginLeft = 20.0
+                    }
+                    action {
+                       D.exportCurrentConfigurationCSV()
                     }
                 }
             }

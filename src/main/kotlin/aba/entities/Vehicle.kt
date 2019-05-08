@@ -3,6 +3,7 @@ package aba.entities
 import OSPABA.Entity
 import OSPABA.Simulation
 import OSPDataStruct.SimQueue
+import OSPStat.WStat
 import aba.simulation.BusHockeySimulation
 import com.sun.org.apache.xpath.internal.operations.Bool
 import helper.BusLink
@@ -21,7 +22,7 @@ enum class BusType {
         val random = Random()
 
         fun generateRandom(): BusType {
-            var rand = BusLink.random.nextDouble()
+            var rand = random.nextDouble()
 
             if (rand < 0.50) {
                 return SMALL
@@ -149,6 +150,9 @@ class Vehicle(val id: Int,
     var isWaiting = false
     var firstLoad = false
 
+    var busyFactorheight = WStat(sim)
+        private set
+
     var profit = 0
 
     var hasWait = false
@@ -159,6 +163,10 @@ class Vehicle(val id: Int,
 
     var circuit = 1
         private set
+
+    fun updateBusHeigtFactor() {
+        busyFactorheight.addSample(passengers.count().toDouble())
+    }
 
     fun getActualStop(): BusStop {
         return scheduler.getActualStop()!!
@@ -251,10 +259,15 @@ class Vehicle(val id: Int,
         hasLeftWithFullCapacity = false
         isWaiting = false
         firstLoad = false
+        busyFactorheight = WStat(sim)
     }
 
     fun payForticket() {
         profit += 1
+    }
+
+    fun clone(): Vehicle {
+        return Vehicle(this.id, this.link, this.type, this.strategy, this.deployTime, this.sim)
     }
 
 }

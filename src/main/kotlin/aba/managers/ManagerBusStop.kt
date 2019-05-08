@@ -14,8 +14,6 @@ import java.lang.Exception
 //meta! id="5"
 class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, mySim, myAgent) {
 
-    val exporter = ExperimentExporter("bad_config_for_test")
-
     init {
         init()
     }
@@ -140,11 +138,11 @@ class ManagerBusStop(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
                     if (bus.circuit > 10000) {
                         val sim = mySim() as BusHockeySimulation
-                        exporter.initializeWriter()
+//                        exporter.initializeWriter()
                         sim.agentBus()!!.vehicles.forEach {
-                            exporter.addRow(CSVBusEntry(it.link.formattedName(true), it.type.formattedName(true), it.strategy.formattedName(true), "${it.deployTime}"))
+//                            exporter.addRow(CSVBusEntry(it.link.formattedName(true), it.type.formattedName(true), it.strategy.formattedName(true), "${it.deployTime}"))
                         }
-                        exporter.closeWriter()
+//                        exporter.closeWriter()
                         throw Exception("Zacyklenie")
                     }
 

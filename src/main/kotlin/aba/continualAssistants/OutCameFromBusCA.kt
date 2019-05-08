@@ -24,10 +24,6 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
 
         var busPassengers = bus.getPassengers()
 
-        if (bus.id == 1) {
-//            println("Autobus")
-        }
-
         for (i in 1..bus.type.numbOfDors()) {
             if (busPassengers.size > 0) {
                 bus.incBusyDoor()
@@ -81,6 +77,8 @@ class OutCameFromBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Proce
         val bus = msg.vehicle!!
 
         bus.decBusyDoor()
+
+        bus.updateBusHeigtFactor()
 
         passengerOut(msg.outGoingPassenger!!)
 

@@ -62,6 +62,8 @@ class IncomeWaitingBusCA(id: Int, mySim: Simulation, myAgent: CommonAgent) : Pro
                 val msg = message as AppMessage
                 val bus = msg.passenger!!.incomingWaitingBus!!
 
+                bus.updateBusHeigtFactor()
+
                 bus.decBusyDoor()
 
                 assistantFinished(msg)

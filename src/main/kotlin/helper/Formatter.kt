@@ -1,12 +1,22 @@
 package helper
 
 import java.lang.Exception
+import java.util.Locale
+import java.text.NumberFormat
+
+
 
 /** Author: Bc. Juraj Macak **/
 
 class Formatter {
 
     companion object {
+
+        fun currencyFormatter(value: Int): String {
+            val str = NumberFormat.getNumberInstance(Locale.GERMANY).format(value)
+
+            return str
+        }
 
         fun timeFormatterInc(value: Double, noAddition: Boolean = false): String {
             var hours = (value / 3600).toInt()

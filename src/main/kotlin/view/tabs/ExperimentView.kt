@@ -75,7 +75,7 @@ open class ExperimentView : View("Experimenty") {
                     }
 
                     field("Aktivácia mikrobusov") {
-                        D.hasMicrobusesCheckBox = checkbox()
+                        D.addMicrobusesCheckBox = checkbox()
                     }
                 }
             }
@@ -93,6 +93,16 @@ open class ExperimentView : View("Experimenty") {
 //                    alert(Alert.AlertType.INFORMATION, "Experimenty dokončené", "Analyzér skončil prevádzku")
                     D.startExperiments.isDisable = false
                 }
+            }
+        }
+
+        button("Spusti experimenty s aplikáciou mikrobusov") {
+            vboxConstraints {
+                marginTop = 20.0
+                marginLeft = 20.0
+            }
+            action {
+                D.startAnalyzeWithMicrobuses()
             }
         }
     }

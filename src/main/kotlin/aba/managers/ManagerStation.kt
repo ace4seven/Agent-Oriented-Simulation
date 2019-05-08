@@ -59,8 +59,12 @@ class ManagerStation(id: Int, mySim: Simulation, myAgent: Agent) : Manager(id, m
 
     //meta! sender="AgentBus", id="51", type="Response"
     fun processPrepareForStart(message: MessageForm) {
-        message.setCode(Mc.busArrival)
-        message.setAddressee(mySim().findAgent(Id.agentBusStop))
+        val msg = message as AppMessage
+
+        msg.vehicle!!.updateBusHeigtFactor()
+
+        msg.setCode(Mc.busArrival)
+        msg.setAddressee(mySim().findAgent(Id.agentBusStop))
 
         request(message)
     }

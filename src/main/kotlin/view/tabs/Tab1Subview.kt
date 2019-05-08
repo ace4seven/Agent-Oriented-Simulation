@@ -200,7 +200,8 @@ open class Tab1Subview : View("Nastavenie parametrov simulácie") {
                         marginLeft = 20.0
                     }
                     action {
-                       D.exportCurrentConfigurationCSV()
+                        D.exportCurrentConfigurationCSV()
+                        D.alert(Alert.AlertType.INFORMATION, "Úspech", "Konfigurácia bola úspešne uložená")
                     }
                 }
             }

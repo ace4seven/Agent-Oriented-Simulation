@@ -30,8 +30,8 @@ class StatName {
         val localPassengersCount = "Príchody pasažierov"
         val localPassengerWaiting = "Celkové čakanie cestujúcich"
         val localWaitingOnBusStop = "Čakanie cestujúcich na zastávke: "
-        val localMissHockey = "Nestihli prísť včas na zápas"
-
+        val localMissHockey = "Nestihli prísť včas na zápas "
+        val localBusAvailability = "Vyťaženie vozidla: "
         val localMicrobusProfit = "Profit súkromnej spoločnosti"
     }
 

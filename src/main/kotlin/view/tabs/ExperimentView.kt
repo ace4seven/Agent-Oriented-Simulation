@@ -5,7 +5,7 @@ import view.support.D
 
 /** Author: Bc. Juraj Macak **/
 
-open class ExperimentView : View("Experimenty") {
+open class ExperimentView : View("Analyzer") {
 
     override val root = vbox {
         form {
@@ -90,7 +90,6 @@ open class ExperimentView : View("Experimenty") {
             action {
                 D.startExperiments.isDisable = true
                 D.startAnalyzer {
-//                    alert(Alert.AlertType.INFORMATION, "Experimenty dokončené", "Analyzér skončil prevádzku")
                     D.startExperiments.isDisable = false
                 }
             }

@@ -109,12 +109,24 @@ class AppController: CoreController(), ISimDelegate {
     private fun computeLocalStatistics(core: BusHockeySimulation) {
         val numbOfPassengers = core.agentModel()?.getNumberOfPassengers()
         val averageWaitingTime = core.agentBusStop()!!.averageWaitingStat.mean()
-        val profit = core.agentBus()!!.vehicles.fold(0) { sum, e -> e.profit + sum }
+        var profit = 0
+
+        core.agentBus()!!.vehicles.forEach {
+            profit += it.profit
+        }
 
         localStatisticsDatasource.clear()
+
         localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengersCount, "${numbOfPassengers}"))
         localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localPassengerWaiting, "${averageWaitingTime}"))
         localStatisticsDatasource.add(StatisticCell.makeCell(StatName.localMicrobusProfit, "${profit}"))
+
+        core.agentBusStop()!!.getBusStopAdministration().busStops.forEach {
+            if (it.key != "STATION") {
+                localStatisticsDatasource.add(StatisticCell.makeCell("${StatName.localWaitingOnBusStop} ${Formatter.busStopFormatter(it.key)}", "${it.value.getWaitingStats().mean()}"))
+            }
+        }
+
     }
 
     private fun refreshBusStopPassengers(core: BusHockeySimulation) {

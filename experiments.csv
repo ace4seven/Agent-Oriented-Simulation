@@ -1,0 +1,460 @@
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , NO WAIT , 2881.0
+A , L , NO WAIT , 2628.0
+B , S , NO WAIT , 2801.0
+B , S , NO WAIT , 101.0
+A , S , NO WAIT , 486.0
+C , S , NO WAIT , 3080.0
+C , L , NO WAIT , 2608.0
+A , L , NO WAIT , 2624.0
+C , L , NO WAIT , 1922.0
+B , S , NO WAIT , 2136.0
+A , S , NO WAIT , 2826.0
+A , S , NO WAIT , 794.0
+B , S , NO WAIT , 841.0
+B , L , NO WAIT , 590.0
+C , L , NO WAIT , 3547.0
+A , L , NO WAIT , 390.0
+A , S , NO WAIT , 226.0
+C , S , NO WAIT , 473.0
+C , S , NO WAIT , 1753.0
+A , L , NO WAIT , 1744.0
+C , S , NO WAIT , 1052.0
+B , L , NO WAIT , 2821.0
+B , S , NO WAIT , 2264.0
+A , S , NO WAIT , 544.0
+A , S , NO WAIT , 1615.0
+B , S , NO WAIT , 57.0
+A , L , NO WAIT , 1224.0
+A , L , NO WAIT , 3542.0
+C , L , NO WAIT , 2164.0
+C , S , NO WAIT , 781.0
+A , S , NO WAIT , 1589.0
+C , L , NO WAIT , 3171.0
+A , S , NO WAIT , 2205.0
+B , L , NO WAIT , 1099.0
+B , L , NO WAIT , 1034.0
+B , L , NO WAIT , 1303.0
+B , S , NO WAIT , 210.0
+B , L , NO WAIT , 3155.0
+C , L , NO WAIT , 2655.0
+C , L , NO WAIT , 1617.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+353.9199613256561 , 0.021481132034868195 , 0.0 , 17075000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , NO WAIT , 2316.0
+A , L , NO WAIT , 517.0
+B , L , NO WAIT , 315.0
+A , S , NO WAIT , 2241.0
+B , S , NO WAIT , 3303.0
+A , S , NO WAIT , 362.0
+A , S , NO WAIT , 2732.0
+B , S , NO WAIT , 264.0
+C , L , NO WAIT , 939.0
+C , L , NO WAIT , 2941.0
+A , L , NO WAIT , 446.0
+C , L , NO WAIT , 2045.0
+B , L , NO WAIT , 772.0
+A , S , NO WAIT , 3309.0
+C , L , NO WAIT , 1465.0
+B , S , NO WAIT , 553.0
+C , L , NO WAIT , 1500.0
+C , S , NO WAIT , 1247.0
+A , L , NO WAIT , 883.0
+C , S , NO WAIT , 667.0
+A , S , NO WAIT , 729.0
+B , S , NO WAIT , 3224.0
+C , L , NO WAIT , 2834.0
+A , S , NO WAIT , 3045.0
+C , L , NO WAIT , 2251.0
+A , L , NO WAIT , 302.0
+B , S , NO WAIT , 927.0
+B , S , NO WAIT , 680.0
+A , L , NO WAIT , 410.0
+A , L , NO WAIT , 2655.0
+C , L , NO WAIT , 103.0
+C , S , NO WAIT , 3172.0
+A , L , NO WAIT , 3142.0
+B , L , NO WAIT , 619.0
+A , L , NO WAIT , 2845.0
+A , L , NO WAIT , 312.0
+A , S , NO WAIT , 520.0
+B , L , NO WAIT , 2504.0
+C , S , NO WAIT , 2225.0
+B , S , NO WAIT , 414.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+552.5886030654291 , 0.03937152350979563 , 0.0 , 17750000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , L , NO WAIT , 2978.0
+C , S , NO WAIT , 594.0
+A , L , NO WAIT , 2791.0
+A , S , NO WAIT , 1103.0
+A , S , NO WAIT , 879.0
+C , L , NO WAIT , 2656.0
+A , L , NO WAIT , 2144.0
+B , S , NO WAIT , 2489.0
+A , S , NO WAIT , 3429.0
+C , L , NO WAIT , 1571.0
+A , L , NO WAIT , 731.0
+A , S , NO WAIT , 3422.0
+C , S , NO WAIT , 3024.0
+A , S , NO WAIT , 3571.0
+C , S , NO WAIT , 2848.0
+B , L , NO WAIT , 1376.0
+A , L , NO WAIT , 1563.0
+C , L , NO WAIT , 2942.0
+C , L , NO WAIT , 1495.0
+C , L , NO WAIT , 154.0
+A , L , NO WAIT , 1736.0
+B , S , NO WAIT , 1044.0
+A , L , NO WAIT , 690.0
+C , L , NO WAIT , 1266.0
+B , S , NO WAIT , 3033.0
+C , L , NO WAIT , 2175.0
+C , L , NO WAIT , 1440.0
+B , S , NO WAIT , 2392.0
+A , L , NO WAIT , 2532.0
+C , S , NO WAIT , 2350.0
+A , L , NO WAIT , 1056.0
+C , L , NO WAIT , 641.0
+B , S , NO WAIT , 3370.0
+C , L , NO WAIT , 3427.0
+A , S , NO WAIT , 1659.0
+A , S , NO WAIT , 693.0
+C , L , NO WAIT , 2747.0
+C , S , NO WAIT , 2159.0
+C , S , NO WAIT , 2655.0
+C , L , NO WAIT , 3260.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+386.14969323408434 , 0.055121653676577245 , 0.0 , 17750000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , NO WAIT , 483.0
+A , S , NO WAIT , 863.0
+A , S , NO WAIT , 1810.0
+A , L , NO WAIT , 723.0
+C , L , NO WAIT , 468.0
+B , L , NO WAIT , 395.0
+B , S , NO WAIT , 7.0
+C , L , NO WAIT , 1572.0
+B , L , NO WAIT , 1484.0
+A , S , NO WAIT , 3400.0
+B , S , NO WAIT , 3005.0
+A , S , NO WAIT , 3200.0
+B , L , NO WAIT , 96.0
+B , S , NO WAIT , 2256.0
+C , S , NO WAIT , 1097.0
+A , L , NO WAIT , 2381.0
+C , L , NO WAIT , 1614.0
+A , S , NO WAIT , 188.0
+B , L , NO WAIT , 1671.0
+C , S , NO WAIT , 1531.0
+A , L , NO WAIT , 159.0
+B , L , NO WAIT , 789.0
+A , S , NO WAIT , 3459.0
+B , S , NO WAIT , 1209.0
+B , L , NO WAIT , 3333.0
+B , S , NO WAIT , 1537.0
+C , L , NO WAIT , 2688.0
+A , S , NO WAIT , 1039.0
+B , L , NO WAIT , 3301.0
+B , L , NO WAIT , 2427.0
+B , S , NO WAIT , 120.0
+C , S , NO WAIT , 3227.0
+A , S , NO WAIT , 143.0
+A , L , NO WAIT , 2686.0
+A , L , NO WAIT , 2762.0
+A , S , NO WAIT , 1679.0
+A , S , NO WAIT , 3491.0
+C , S , NO WAIT , 2242.0
+C , L , NO WAIT , 1849.0
+C , L , NO WAIT , 2781.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+501.03149918803484 , 0.04763848077075655 , 0.0 , 17075000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , NO WAIT , 3455.0
+C , S , NO WAIT , 3037.0
+A , L , NO WAIT , 1187.0
+A , S , NO WAIT , 1636.0
+A , L , NO WAIT , 2142.0
+A , S , NO WAIT , 3266.0
+C , S , NO WAIT , 3381.0
+B , L , NO WAIT , 1790.0
+B , S , NO WAIT , 763.0
+A , S , NO WAIT , 2077.0
+A , L , NO WAIT , 241.0
+C , S , NO WAIT , 3093.0
+B , S , NO WAIT , 2417.0
+A , S , NO WAIT , 2757.0
+A , L , NO WAIT , 569.0
+A , S , NO WAIT , 1705.0
+C , S , NO WAIT , 219.0
+B , L , NO WAIT , 2983.0
+A , S , NO WAIT , 1136.0
+A , S , NO WAIT , 963.0
+A , L , NO WAIT , 3045.0
+A , L , NO WAIT , 297.0
+B , L , NO WAIT , 1584.0
+C , S , NO WAIT , 2237.0
+C , L , NO WAIT , 2817.0
+B , L , NO WAIT , 1518.0
+C , L , NO WAIT , 3173.0
+C , L , NO WAIT , 2475.0
+B , S , NO WAIT , 88.0
+C , S , NO WAIT , 1263.0
+C , L , NO WAIT , 2408.0
+A , S , NO WAIT , 2886.0
+A , L , NO WAIT , 2763.0
+A , S , NO WAIT , 1857.0
+C , L , NO WAIT , 2902.0
+C , S , NO WAIT , 1227.0
+B , S , NO WAIT , 2101.0
+C , L , NO WAIT , 652.0
+B , S , NO WAIT , 838.0
+B , S , NO WAIT , 2137.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+281.4775929929359 , 0.03177692991888241 , 0.0 , 16850000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , NO WAIT , 2284.0
+C , S , NO WAIT , 2833.0
+C , L , NO WAIT , 3206.0
+A , L , NO WAIT , 1945.0
+C , S , NO WAIT , 2365.0
+A , L , NO WAIT , 2844.0
+A , S , NO WAIT , 1444.0
+C , S , NO WAIT , 395.0
+A , S , NO WAIT , 2306.0
+C , S , NO WAIT , 861.0
+B , S , NO WAIT , 79.0
+B , S , NO WAIT , 3302.0
+A , S , NO WAIT , 2531.0
+B , S , NO WAIT , 1582.0
+A , L , NO WAIT , 2437.0
+C , L , NO WAIT , 2896.0
+B , S , NO WAIT , 604.0
+A , S , NO WAIT , 3507.0
+A , L , NO WAIT , 1299.0
+A , S , NO WAIT , 130.0
+B , S , NO WAIT , 2329.0
+C , L , NO WAIT , 2756.0
+C , S , NO WAIT , 1948.0
+C , L , NO WAIT , 271.0
+A , S , NO WAIT , 2493.0
+A , S , NO WAIT , 953.0
+C , L , NO WAIT , 245.0
+B , S , NO WAIT , 651.0
+A , L , NO WAIT , 2941.0
+A , L , NO WAIT , 1283.0
+A , S , NO WAIT , 637.0
+B , S , NO WAIT , 3051.0
+B , S , NO WAIT , 3542.0
+A , S , NO WAIT , 2691.0
+A , L , NO WAIT , 3047.0
+B , S , NO WAIT , 3514.0
+C , L , NO WAIT , 1194.0
+B , L , NO WAIT , 3496.0
+C , L , NO WAIT , 2891.0
+A , S , NO WAIT , 3072.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+470.6444652172337 , 0.05458916431514804 , 0.0 , 16175000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , S , NO WAIT , 2139.0
+A , L , NO WAIT , 809.0
+B , L , NO WAIT , 320.0
+A , S , NO WAIT , 665.0
+A , L , NO WAIT , 3356.0
+B , L , NO WAIT , 1373.0
+A , L , NO WAIT , 2672.0
+B , L , NO WAIT , 2099.0
+B , L , NO WAIT , 3102.0
+A , S , NO WAIT , 1705.0
+A , L , NO WAIT , 1100.0
+A , S , NO WAIT , 1703.0
+C , S , NO WAIT , 1048.0
+B , L , NO WAIT , 2069.0
+B , S , NO WAIT , 1292.0
+A , L , NO WAIT , 943.0
+C , S , NO WAIT , 2322.0
+C , S , NO WAIT , 136.0
+B , L , NO WAIT , 1772.0
+A , L , NO WAIT , 3234.0
+A , S , NO WAIT , 991.0
+A , S , NO WAIT , 3385.0
+A , L , NO WAIT , 794.0
+C , L , NO WAIT , 1927.0
+C , L , NO WAIT , 84.0
+C , S , NO WAIT , 1754.0
+B , S , NO WAIT , 1903.0
+B , S , NO WAIT , 2934.0
+B , L , NO WAIT , 1626.0
+C , L , NO WAIT , 2914.0
+A , L , NO WAIT , 1524.0
+B , L , NO WAIT , 1854.0
+A , S , NO WAIT , 3385.0
+C , S , NO WAIT , 838.0
+C , L , NO WAIT , 1325.0
+C , S , NO WAIT , 150.0
+A , S , NO WAIT , 2010.0
+B , L , NO WAIT , 2231.0
+B , S , NO WAIT , 188.0
+B , L , NO WAIT , 731.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+415.1722404324877 , 0.03711285613835079 , 0.0 , 17750000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+B , L , NO WAIT , 2320.0
+B , S , NO WAIT , 257.0
+A , L , NO WAIT , 3055.0
+B , S , NO WAIT , 471.0
+B , S , NO WAIT , 832.0
+A , S , NO WAIT , 76.0
+A , L , NO WAIT , 1383.0
+C , S , NO WAIT , 329.0
+A , S , NO WAIT , 500.0
+C , S , NO WAIT , 1533.0
+B , L , NO WAIT , 3347.0
+B , S , NO WAIT , 1921.0
+B , S , NO WAIT , 340.0
+C , L , NO WAIT , 3575.0
+B , S , NO WAIT , 2658.0
+A , L , NO WAIT , 95.0
+B , L , NO WAIT , 1383.0
+A , L , NO WAIT , 1186.0
+C , S , NO WAIT , 1606.0
+A , S , NO WAIT , 2403.0
+A , L , NO WAIT , 1901.0
+A , L , NO WAIT , 679.0
+C , L , NO WAIT , 2388.0
+C , L , NO WAIT , 3546.0
+A , L , NO WAIT , 2375.0
+B , L , NO WAIT , 3451.0
+C , S , NO WAIT , 2848.0
+C , L , NO WAIT , 1411.0
+B , S , NO WAIT , 2513.0
+A , S , NO WAIT , 2475.0
+C , L , NO WAIT , 1182.0
+B , S , NO WAIT , 3007.0
+A , L , NO WAIT , 2896.0
+A , L , NO WAIT , 1734.0
+B , S , NO WAIT , 1274.0
+C , S , NO WAIT , 2030.0
+C , L , NO WAIT , 1196.0
+B , L , NO WAIT , 2179.0
+A , L , NO WAIT , 2960.0
+A , L , NO WAIT , 1039.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+276.78309134461045 , 0.014970768099848198 , 0.0 , 17750000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+C , S , NO WAIT , 3273.0
+A , S , NO WAIT , 2223.0
+A , L , NO WAIT , 940.0
+B , L , NO WAIT , 1407.0
+C , S , NO WAIT , 1743.0
+A , L , NO WAIT , 2459.0
+A , L , NO WAIT , 2407.0
+C , S , NO WAIT , 629.0
+A , S , NO WAIT , 455.0
+C , L , NO WAIT , 2953.0
+A , L , NO WAIT , 242.0
+B , L , NO WAIT , 2357.0
+B , S , NO WAIT , 3405.0
+C , L , NO WAIT , 3000.0
+B , S , NO WAIT , 1711.0
+A , L , NO WAIT , 1729.0
+C , L , NO WAIT , 54.0
+B , S , NO WAIT , 1572.0
+C , S , NO WAIT , 2076.0
+C , S , NO WAIT , 162.0
+C , L , NO WAIT , 2748.0
+A , S , NO WAIT , 2822.0
+B , S , NO WAIT , 948.0
+A , L , NO WAIT , 3407.0
+C , L , NO WAIT , 2649.0
+A , S , NO WAIT , 646.0
+B , S , NO WAIT , 3218.0
+A , L , NO WAIT , 980.0
+A , S , NO WAIT , 410.0
+C , S , NO WAIT , 2860.0
+A , L , NO WAIT , 1475.0
+A , S , NO WAIT , 3393.0
+A , L , NO WAIT , 1848.0
+C , S , NO WAIT , 2436.0
+C , L , NO WAIT , 718.0
+A , S , NO WAIT , 2337.0
+B , S , NO WAIT , 2217.0
+A , S , NO WAIT , 1114.0
+C , S , NO WAIT , 1996.0
+A , S , NO WAIT , 2750.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+311.3260302571927 , 0.0 , 0.0 , 16625000
+
+ 
+ 
+Linka autobusu, Typ, Stratégia vozenia, Čas vyslania
+A , L , NO WAIT , 1290.0
+B , S , NO WAIT , 2521.0
+A , L , NO WAIT , 205.0
+A , L , NO WAIT , 2367.0
+A , L , NO WAIT , 668.0
+C , S , NO WAIT , 3517.0
+C , S , NO WAIT , 309.0
+C , L , NO WAIT , 73.0
+A , S , NO WAIT , 3020.0
+C , S , NO WAIT , 2925.0
+B , S , NO WAIT , 2494.0
+A , S , NO WAIT , 571.0
+C , L , NO WAIT , 1129.0
+A , S , NO WAIT , 3563.0
+A , L , NO WAIT , 2410.0
+B , L , NO WAIT , 127.0
+C , L , NO WAIT , 3136.0
+C , L , NO WAIT , 1521.0
+A , S , NO WAIT , 604.0
+B , L , NO WAIT , 1421.0
+C , L , NO WAIT , 2701.0
+C , L , NO WAIT , 2033.0
+B , L , NO WAIT , 2775.0
+C , S , NO WAIT , 494.0
+A , S , NO WAIT , 883.0
+A , S , NO WAIT , 2205.0
+C , S , NO WAIT , 3547.0
+B , L , NO WAIT , 195.0
+C , S , NO WAIT , 1975.0
+B , S , NO WAIT , 1169.0
+B , L , NO WAIT , 3297.0
+C , L , NO WAIT , 901.0
+C , L , NO WAIT , 2807.0
+C , S , NO WAIT , 688.0
+C , L , NO WAIT , 759.0
+C , S , NO WAIT , 1707.0
+A , L , NO WAIT , 1144.0
+A , S , NO WAIT , 632.0
+A , L , NO WAIT , 2400.0
+C , S , NO WAIT , 2587.0
+Priemerný čas čakania, Percent nestihli, Zisk z microbusov, Náklady spoločnosti
+396.5056699613609 , 0.05319833720327606 , 0.0 , 17525000
+
+ 
+ 

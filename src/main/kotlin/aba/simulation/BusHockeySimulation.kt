@@ -114,10 +114,6 @@ class BusHockeySimulation : Simulation() {
             it.clear()
         }
 
-        super.simulationFinished()
-
-        averageMicrobusProfit.clear()
-
         averageWaitingBusStopStat.forEach {
             it.value.clear()
         }
@@ -130,9 +126,12 @@ class BusHockeySimulation : Simulation() {
             it.value.clear()
         }
 
+        super.simulationFinished()
+
         averageNoOnTime?.clear()
         averageNumberOfPassengers?.clear()
         averageWaitingTimeStat?.clear()
+        averageMicrobusProfit.clear()
     }
 
     //meta! userInfo="Generated code: do not modify", tag="begin"

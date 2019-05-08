@@ -28,17 +28,23 @@ class D {
         val busStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
 
         val analyzerStrategy = FXCollections.observableArrayList("Bez čakania", "S čakaním")
+        val analyzerStrategyMicrobuses = FXCollections.observableArrayList("Bez čakania", "S čakaním")
         val analyzerBusType = FXCollections.observableArrayList("Malý", "Veľký", "Kombinovaný")
 
         var repeatDelimiterTextField: TextField by singleAssign()
+        var repeatDelimiterMicroBusesTextField: TextField by singleAssign()
         var incomeBusMinTextField: TextField by singleAssign()
         var incomeBusMaxTextField: TextField by singleAssign()
+        var incomeBusMinMicroBusesTextField: TextField by singleAssign()
+        var incomeBusMaxMicroBusesTextField: TextField by singleAssign()
 
         var numberOfBussesMin: TextField by singleAssign()
         var numberOfBussesMax: TextField by singleAssign()
 
         var analyzerResultCount: TextField by singleAssign()
+        var analyzerResultCountMicrobuses: TextField by singleAssign()
         var analyzeFileNameTextField: TextField by singleAssign()
+        var analyzeFileNameMicrobusesTextField: TextField by singleAssign()
 
         var addMicrobusesCheckBox = CheckBox()
 
@@ -73,12 +79,12 @@ class D {
         }
 
         fun startAnalyzeWithMicrobuses() {
-            controller.analyzator.addIndexStop(repeatDelimiterTextField.text.toInt())
-            controller.analyzator.addScheduleTimeBorder(incomeBusMinTextField.text.toInt(), incomeBusMaxTextField.text.toInt())
-            controller.analyzator.addNumberOfResults(analyzerResultCount.text.toInt())
-            controller.analyzator.changeFileName(analyzeFileNameTextField.text)
+            controller.analyzator.addIndexStop(repeatDelimiterMicroBusesTextField.text.toInt())
+            controller.analyzator.addScheduleTimeBorder(incomeBusMinMicroBusesTextField.text.toInt(), incomeBusMaxMicroBusesTextField.text.toInt())
+            controller.analyzator.addNumberOfResults(analyzerResultCountMicrobuses.text.toInt())
+            controller.analyzator.changeFileName(analyzeFileNameMicrobusesTextField.text)
 
-            when(analyzerBusStrategyCombobox.selectedItem) {
+            when(analyzerBusStrategyMicroBusesCombobox.selectedItem) {
                 "S čakaním" -> controller.analyzator.setTravelStrategy(TravelStrategyType.WAIT)
                 else -> controller.analyzator.setTravelStrategy(TravelStrategyType.NO_WAIT)
             }
@@ -129,6 +135,7 @@ class D {
 
         var analyzerBusTypeCombobox: ComboBox<String> by singleAssign()
         var analyzerBusStrategyCombobox: ComboBox<String> by singleAssign()
+        var analyzerBusStrategyMicroBusesCombobox: ComboBox<String> by singleAssign()
         var busLinkComboBox: ComboBox<String> by singleAssign()
         var busTypeComboBox: ComboBox<String> by singleAssign()
         var busStrategyComboBox: ComboBox<String> by singleAssign()

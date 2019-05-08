@@ -10,11 +10,15 @@ open class ExperimentView : View("Analyzer") {
     override val root = vbox {
         form {
             hbox {
-                fieldset("Nastavenie experimentov") {
+                fieldset("Nastavenie experimentov pri nájdenie konfigurácii") {
                     hboxConstraints {
-                        marginLeft = 15.0
+                        marginLeft = 20.0
+                        marginTop = 50.0
                     }
                     field("Počet opakovaní na 1 konfiguráciu") {
+                        vboxConstraints {
+                            marginTop = 30.0
+                        }
                         textfield {
                             D.repeatDelimiterTextField = this
                             text = "100"
@@ -77,31 +81,83 @@ open class ExperimentView : View("Analyzer") {
                     field("Aktivácia mikrobusov") {
                         D.addMicrobusesCheckBox = checkbox()
                     }
+
+                    field {
+                        D.startExperiments = button("Spusti experimenty") {
+                            vboxConstraints {
+                                marginTop = 20.0
+                                marginLeft = 20.0
+                            }
+                            action {
+                                D.startExperiments.isDisable = true
+                                D.startAnalyzer {
+                                    D.startExperiments.isDisable = false
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-        }
 
+                fieldset("Aplikácia mikrobusov experimenty") {
+                    hboxConstraints {
+                        marginLeft = 100.0
+                        marginTop = 50.0
+                    }
+                    field("Počet opakovaní na 1 konfiguráciu") {
+                        vboxConstraints {
+                            marginTop = 30.0
+                        }
+                        textfield {
+                            D.repeatDelimiterMicroBusesTextField = this
+                            text = "100"
+                        }
+                    }
 
-        D.startExperiments = button("Spusti experimenty") {
-            vboxConstraints {
-                marginTop = 20.0
-                marginLeft = 20.0
-            }
-            action {
-                D.startExperiments.isDisable = true
-                D.startAnalyzer {
-                    D.startExperiments.isDisable = false
+                    field("Stratégia vozidiel") {
+                        D.analyzerBusStrategyMicroBusesCombobox = combobox {
+                            items = D.analyzerStrategyMicrobuses
+                        }
+                    }
+
+                    field("Min vyslania") {
+                        textfield {
+                            D.incomeBusMinMicroBusesTextField = this
+                            text = "0"
+                        }
+                    }
+                    field("Max vyslania") {
+                        textfield {
+                            D.incomeBusMaxMicroBusesTextField = this
+                            text = "3600"
+                        }
+                    }
+
+                    field("Názov súboru") {
+                        textfield {
+                            D.analyzeFileNameMicrobusesTextField = this
+                            text = "experiments_microbuses.csv"
+                        }
+                    }
+
+                    field("Max počet uložených výsledkov") {
+                        textfield {
+                            D.analyzerResultCountMicrobuses = this
+                            text = "10"
+                        }
+                    }
+
+                    field {
+                        button("Spusti experimenty s aplikáciou mikrobusov") {
+                            vboxConstraints {
+                                marginTop = 20.0
+                                marginLeft = 20.0
+                            }
+                            action {
+                                D.startAnalyzeWithMicrobuses()
+                            }
+                        }
+                    }
                 }
-            }
-        }
-
-        button("Spusti experimenty s aplikáciou mikrobusov") {
-            vboxConstraints {
-                marginTop = 20.0
-                marginLeft = 20.0
-            }
-            action {
-                D.startAnalyzeWithMicrobuses()
             }
         }
     }

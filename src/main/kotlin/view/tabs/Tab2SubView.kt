@@ -1,16 +1,21 @@
 package view.tabs
 
-import view.support.CoreView
+import javafx.scene.control.TabPane
 import tornadofx.*
 
 /** Author: Bc. Juraj Macak **/
 
-open class Tab2Subview : CoreView("Tab 2 title") {
+open class Tab2Subview : View("Priebeh simulácie") {
 
-    override val root = vbox {
+    override val root = tabpane {
         prefWidth = 1500.0
         prefHeight = 1000.0
 
+        tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
+
+        tab(OverviewSimulationTabView::class)
+        tab(LocalStatisticView::class)
+        tab(LogTabView::class)
     }
 
 }
